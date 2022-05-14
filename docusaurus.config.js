@@ -50,6 +50,9 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -83,7 +86,7 @@ const config = {
             position: 'left',
             label: '專案文件',
           },
-          //{ to: '/blog', label: '數位手記', position: 'left' },
+          { to: '/blog', label: '數位手記', position: 'left' },
           {
             href: 'https://github.com/FlySkyPie',
             label: 'GitHub',
