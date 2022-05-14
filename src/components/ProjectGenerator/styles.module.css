@@ -1,0 +1,36 @@
+.projectGenerator {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  user-select    : none;
+  margin-top     : 3rem;
+}
+
+.title {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  height         : 200px;
+  overflow       : hidden;
+}
+
+.projectName {
+  text-align   : center;
+  font-size    : 4.5rem;
+  line-height  : 4.5rem;
+  margin-bottom: 0;
+  width        : fit-content;
+}
+
+.projectSubName {
+  text-align   : center;
+  font-size    : 1.5rem;
+  line-height  : 1.5rem;
+  width        : fit-content;
+  margin-bottom: 0;
+}
+
+.zombie {
+  width: 100%;
+}
