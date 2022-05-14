@@ -27,6 +27,27 @@ const sidebars = {
       ],
     },/** */
     'the-key-of-huanche/index',
+    //'the-key-of-huanche/hakoniwa/index',
+    {
+      type: 'category',
+      label: 'Hakoniwa',
+      link: { type: 'doc', id: 'the-key-of-huanche/hakoniwa/index' },
+      items: [
+        //'the-key-of-huanche/hakoniwa/voxel/index'
+        {
+          type: 'category',
+          label: 'Voxel World',
+          link: { type: 'doc', id: 'the-key-of-huanche/hakoniwa/voxel/index' },
+          items: [
+            'the-key-of-huanche/hakoniwa/voxel/torus-universe/index',
+            'the-key-of-huanche/hakoniwa/voxel/automata/index',
+            'the-key-of-huanche/hakoniwa/voxel/alchemy/index',
+            'the-key-of-huanche/hakoniwa/voxel/gravity-flow/index',
+            
+          ],
+        }
+      ],
+    },/** */
     {
       type: 'category',
       label: 'Primordial Soup',
