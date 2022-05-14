@@ -3,7 +3,9 @@ sidebar_position: 1
 title: Voxel World
 ---
 
-# Voxel World
+# ASMCBNFH
+
+> aka. "Another stupid Minecraft clone, but it's not for human."
 
 ## 緣由
 
