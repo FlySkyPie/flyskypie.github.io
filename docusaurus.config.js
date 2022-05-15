@@ -106,6 +106,12 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      metadata: [
+        { property: 'og:image', content: 'https://i.imgur.com/Mmyl0y8.png' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:locale', content: 'zh_tw' },
+      ],
     }),
 };
 

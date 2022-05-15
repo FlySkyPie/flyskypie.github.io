@@ -51,7 +51,9 @@ const ProjectGenerator: React.FC = () => {
                         <p className={styles.projectSubName} children={project.subName} />}
                 </div>
             </div>
-            <img className={styles.zombie} src={require('./mine-zombie-lookup.png').default} />
+            <img className={styles.zombie}
+                src={require('./mine-zombie-lookup.webp').default}
+                alt="FlyPie's avatar" />
         </div >
     );
 }
