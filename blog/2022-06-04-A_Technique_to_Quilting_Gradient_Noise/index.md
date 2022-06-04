@@ -1,5 +1,5 @@
 ---
-slug: 2019-01-11-A_Idea_of_Native_Agents_in_a_Voxel_World
+slug: 2022-06-04-A_Technique_to_Quilting_Gradient_Noise
 authors: [weiji,]
 tags: [development note, Hakoniwa, The Key of Huanche, ]
 ---
@@ -7,6 +7,10 @@ tags: [development note, Hakoniwa, The Key of Huanche, ]
 # 一種縫合 Gradient Noise 的技巧
 
 > A Technique to Quilting Gradient Noise
+
+<head>
+  <meta name="og:image" content="/blog/2022-06-05_parameter_of_Pseudo-planet_Torus/img/test-2.png" />
+</head>
 
 ## 目的
 
