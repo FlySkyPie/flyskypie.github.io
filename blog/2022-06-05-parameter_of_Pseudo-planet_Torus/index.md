@@ -7,7 +7,7 @@ tags: [development note, Hakoniwa, The Key of Huanche, ]
 # 仿星環的幾何參數
 
 <head>
-  <meta name="og:image" content="/blog/2022-06-05-parameter_of_Pseudo-planet_Torus/img/Pseudo-planet_Torus.png" />
+  <meta property="og:image" content="https://i.imgur.com/AKPhcgT.png" />
 </head>
 
 ![](./img/Pseudo-planet_Torus.png)

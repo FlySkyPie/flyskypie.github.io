@@ -9,7 +9,7 @@ tags: [development note, Hakoniwa, The Key of Huanche, ]
 > A Technique to Quilting Gradient Noise
 
 <head>
-  <meta name="og:image" content="/blog/2022-06-05_parameter_of_Pseudo-planet_Torus/img/test-2.png" />
+  <meta property="og:image" content="https://i.imgur.com/3acFj1y.png" />
 </head>
 
 ## 目的
