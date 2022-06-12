@@ -30,7 +30,7 @@ tags: [development note, Hakoniwa, The Key of Huanche, ]
 
 ![](./img/torus_parameter.svg)
 
-![](./img/torus edges.svg)
+![](./img/torus_edges.svg)
 
 接著計算 Voxel 平面的長度，也就是經度線H(紅)
 
