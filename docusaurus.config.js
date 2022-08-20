@@ -29,6 +29,7 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  plugins: ['docusaurus-plugin-sass'],
 
   presets: [
     [
@@ -87,12 +88,13 @@ const config = {
             position: 'left',
             label: '專案文件',
           },
-          { to: '/blog', label: '數位手記', position: 'left' },
+          //{ to: '/blog', label: '數位手記', position: 'left' },
           {
             href: 'https://github.com/FlySkyPie',
             label: 'GitHub',
             position: 'right',
           },
+          { to: "/blogs", label: "數位手記", position: "left" },
         ],
       },
       footer: {
