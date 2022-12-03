@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="400mm" height="350mm" version="1.1" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <marker id="marker4351" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#00f" fill-rule="evenodd" stroke="#00f" stroke-width="1pt"/>
+  </marker>
+  <marker id="marker7276" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#f00" fill-rule="evenodd" stroke="#f00" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mend" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mstart" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mstart-3" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#f00" fill-rule="evenodd" stroke="#f00" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mstart-3-1" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#00f" fill-rule="evenodd" stroke="#00f" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mend-5" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mstart-2-3" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#7a6b91" fill-rule="evenodd" stroke="#7a6b91" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mend-9-7" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="#7a6b91" fill-rule="evenodd" stroke="#7a6b91" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(0,-50)">
+  <rect x=".76712" y="50.767" width="398.47" height="348.47" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5342" style="paint-order:normal"/>
+ </g>
+ <g transform="translate(-54.939 183.98)">
+  <g transform="rotate(-25.111 274.37 -29.11)">
+   <g fill="none" stroke-width="1.51">
+    <path d="m422.27-38.101 8.3473 32.751" marker-end="url(#Arrow1Mend-5)" stroke="#000"/>
+    <path d="m422.29-38.118 27.111-42.373" marker-end="url(#marker4351)" stroke="#00f"/>
+    <path d="m375.26-61.607 47.006 23.505" marker-start="url(#marker7276)" stroke="#f00"/>
+   </g>
+   <g font-family="sans-serif" font-size="20.484px" letter-spacing="0px" stroke-width=".51211" word-spacing="0px">
+    <text transform="scale(.99424 1.0058)" x="456.00293" y="-72.101357" fill="#0000ff" style="line-height:1.25" xml:space="preserve"><tspan x="456.00293" y="-72.101357" fill="#0000ff" stroke-width=".51211">g</tspan></text>
+    <text transform="scale(.99424 1.0058)" x="387.99896" y="-61.373554" fill="#ff0000" style="line-height:1.25" xml:space="preserve"><tspan x="387.99896" y="-61.373554" fill="#ff0000" stroke-width=".51211">f</tspan></text>
+    <text transform="scale(.99424 1.0058)" x="410.51819" y="-2.9402721" fill="#000000" style="line-height:1.25" xml:space="preserve"><tspan x="410.51819" y="-2.9402721" fill="#000000" stroke-width=".51211">x</tspan></text>
+   </g>
+  </g>
+  <g fill="none">
+   <g>
+    <path d="m145.49-99.639 195.64 254.4" marker-end="url(#Arrow1Mend)" marker-start="url(#Arrow1Mstart)" stroke="#000" stroke-width="2.0116"/>
+    <path d="m226.84 5.3666 14.119-90.236" stroke="#000" stroke-width="2.5"/>
+    <path d="m239.55-76.173-12.99 81.873-70.621-91.76" stroke="#00f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+   </g>
+   <g stroke="#000">
+    <path d="m91.634-1.0118 134.92 6.7124" stroke-width="2.5144"/>
+    <path d="m315.46 120.71 15.945-101.91" stroke-width="2.5"/>
+    <path d="m180.48 114.52 134.92 6.7124" stroke-width="2.5144"/>
+   </g>
+   <g stroke-linecap="round">
+    <path d="m212.91 116.13 102.49 5.099 14.86 19.396" stroke="#f00" stroke-linejoin="round" stroke-width="2.5"/>
+    <path d="m212.91 116.13c-3.3606-30.36-48.68-34.003-41.178-57.604 7.5016-23.601-43.37-31.409-41.178-57.604" stroke="#f00" stroke-width="2.514"/>
+    <path d="m328.39 39.358c-3.3606-30.36-14.996 20.109-41.178-57.604-26.182-77.713-31.351-26.329-48.192-59.197" stroke="#00f" stroke-width="2.5144"/>
+   </g>
+   <path d="m80.663-63.736 49.892 64.66" marker-start="url(#Arrow1Mstart-3)" stroke="#f00" stroke-dasharray="8.04622936, 8.04622936" stroke-linecap="round" stroke-width="2.0116"/>
+   <path d="m376.87 103.46-48.478-64.1" marker-start="url(#Arrow1Mstart-3-1)" stroke="#00f" stroke-dasharray="8.04622945, 8.04622945" stroke-linecap="round" stroke-width="2.0116"/>
+  </g>
+  <path d="m239.55-76.173-99.45-9.8063-13.414 86.711 99.873 4.9687z" fill="#aa87de" opacity=".452" stroke="#a100ff" stroke-dasharray="4.02311461, 4.02311461" stroke-width="2.0116"/>
+  <text transform="matrix(.99422 -.0050325 .005091 1.0058 0 0)" x="82.014313" y="43.34573" fill="#ff0000" font-family="sans-serif" font-size="27.132px" letter-spacing="0px" stroke-width=".6783" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="82.014313" y="43.34573" fill="#ff0000" stroke-width=".6783">f(x)</tspan></text>
+  <text transform="matrix(.9934 .0408 -.041275 1.005 0 0)" x="349.97772" y="18.079525" fill="#0000ff" font-family="sans-serif" font-size="27.132px" letter-spacing="0px" stroke-width=".6783" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="349.97772" y="18.079525" fill="#0000ff" stroke-width=".6783">g(x)</tspan></text>
+  <path d="m278.71-40.864-93.653-11.221-12.885 103.01 94.077 6.3837z" fill="#aa87de" opacity=".452" stroke="#a100ff" stroke-dasharray="4.02311461, 4.02311461" stroke-width="2.0116"/>
+  <path d="m328.39 39.358-102.07-9.9365-13.414 86.711 102.49 5.099z" fill="#aa87de" opacity=".452" stroke="#a100ff" stroke-dasharray="4.02311457, 4.02311457" stroke-width="2.0116"/>
+  <g transform="rotate(-23.265 388.62 -99.26)">
+   <path d="m280.88-196.35 34.867 141.51" fill="none" marker-end="url(#Arrow1Mend-9-7)" marker-start="url(#Arrow1Mstart-2-3)" stroke="#7a6b91" stroke-width="2.0116"/>
+   <text transform="scale(.99424 1.0058)" x="308.07742" y="-129.42291" fill="#7a6b91" font-family="sans-serif" font-size="27.132px" letter-spacing="0px" stroke-width=".6783" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="308.07742" y="-129.42291" fill="#7a6b91" stroke-width=".6783">t</tspan></text>
+   <path d="m282.87-4.2836 47.035-73.512" fill="none" stroke="#000" stroke-dasharray="2.51444664, 5.02889326" stroke-width="2.5144"/>
+   <path d="m247.29-144.36 47.035-73.512" fill="none" stroke="#000" stroke-dasharray="2.51444667, 5.02889331" stroke-width="2.5144"/>
+  </g>
+ </g>
+</svg>
