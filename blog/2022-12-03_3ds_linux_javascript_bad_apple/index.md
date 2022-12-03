@@ -14,10 +14,10 @@ tags: [learning note, 3ds, javascript, quickjs, cross compilation ]
 
 本文以敘述的方式紀錄我在這個專案上的過程，並省略技術細節。若對實作細節有興趣，以下是以技術筆記的形式紀錄的文章：
 
-- [3DS 刷機筆記](2022-11-25_3ds_hack_note)
-- [3DS 刷 Linux 筆記](2022-11-25_3ds_linux_note)
-- [交叉編譯 QuickJs 筆記](2022-11-29_3ds_cross_compilation_note)
-- [Javascript x Bad Apple x Ascii 筆記](2022-12-03_3ds_bad_apple_node)
+- [3DS 刷機筆記](/blog/2022-11-25_3ds_hack_note)
+- [3DS 刷 Linux 筆記](/blog/2022-11-25_3ds_linux_note)
+- [交叉編譯 QuickJs 筆記](/blog/2022-11-29_3ds_cross_compilation_note)
+- [Javascript x Bad Apple x Ascii 筆記](/blog/2022-12-03_3ds_bad_apple_node)
 
 ## 前情提要
 
