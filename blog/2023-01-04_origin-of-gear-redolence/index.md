@@ -1,5 +1,5 @@
 ---
-slug: 2023-01-041_origin-of-gear-redolence
+slug: 2023-01-04_origin-of-gear-redolence
 authors: [weiji,]
 tags: [development note, The Key of Huanche, Gear Redolence ]
 --- 
