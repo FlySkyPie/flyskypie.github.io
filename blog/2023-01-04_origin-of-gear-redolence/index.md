@@ -1,7 +1,7 @@
 ---
 slug: 2023-01-041_origin-of-gear-redolence
 authors: [weiji,]
-tags: [development note, 3ds, The Key of Huanche, Gear Redolence ]
+tags: [development note, The Key of Huanche, Gear Redolence ]
 --- 
 
 # 底火的芬芳 - 專案起源
