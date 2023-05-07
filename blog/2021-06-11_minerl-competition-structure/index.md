@@ -1,7 +1,7 @@
 ---
 slug: 2021-06-11_minerl-competition-structure
 authors: [weiji,]
-tags: [learning note, minerl, machine learning ]
+tags: [learning note, minerl, machine learning, ]
 --- 
 
 # MineRL 挑戰 2021 - 競賽流程（翻譯）
@@ -13,7 +13,7 @@ tags: [learning note, minerl, machine learning ]
 在這個階段中，團隊最多可以有六名成員，以下為參賽流程：
 
 1. 在 AICrowd 競賽網站上註冊並使用下列資料。 或者，可以使用競賽的頁面上找到 "Create Team" 的按鈕組建隊伍（必須登入才能創建隊伍）。
-    1. 用於運行競賽任務環境的[入門代碼](github.com/minerllabs/competition_submission_starter_template)。 另請參閱 AICrowd 上的 "Notebooks" 部分。
+    1. 用於運行競賽任務環境的[入門代碼](https://github.com/minerllabs/competition_submission_starter_template)。 另請參閱 AICrowd 上的 "Notebooks" 部分。
     2. 主辦方提供的[基本實作](https://github.com/minerllabs/baselines)。
     3. [人類玩家的資料集](https://minerl.io/dataset/)
     4. 主辦方用來評分參賽隊伍提交模型時使用的 Docker image 和[入門模板](https://github.com/minerllabs/competition_submission_template)。
