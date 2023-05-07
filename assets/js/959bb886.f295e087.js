@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[8436],{5650:function(s){s.exports=JSON.parse('{"label":"quickjs","permalink":"/blog/tags/quickjs","allTagsPath":"/blog/tags","count":3}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[6312],{2373:a=>{a.exports=JSON.parse('{"label":"skeletal-animation","permalink":"/blog/tags/skeletal-animation","allTagsPath":"/blog/tags","count":1}')}}]);
