@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="253.92mm" height="197.07mm" version="1.1" viewBox="0 0 253.92 197.07" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <marker id="marker1299" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 2.96 .4)" d="m-2.5-1c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="DotM" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 2.96 .4)" d="m-2.5-1c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mstart-10-6" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mend-3-5" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mstart-10-6-7" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mend-3-5-5" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mstart-10-6-3" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mend-3-5-4" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mstart-10-6-1" overflow="visible" orient="auto">
+   <path transform="matrix(.4 0 0 .4 4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Mend-3-5-7" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <defs>
+  <filter id="shadow-4dp" x="-.10724" y="-.14218" width="1.2145" height="1.33">
+   <feOffset dy="4" in="SourceAlpha" result="offA"/>
+   <feOffset dy="1" in="SourceAlpha" result="offB"/>
+   <feOffset dy="2" in="SourceAlpha" result="offC"/>
+   <feMorphology in="offC" radius="1" result="spreadC"/>
+   <feGaussianBlur in="offA" result="blurA" stdDeviation="2.5"/>
+   <!--5px 0-->
+   <feGaussianBlur in="offB" result="blurB" stdDeviation="5"/>
+   <!--10px 0-->
+   <feGaussianBlur in="spreadC" result="blurC" stdDeviation="2"/>
+   <!--4px -1px-->
+   <feFlood flood-opacity=".14" result="opA"/>
+   <feFlood flood-opacity=".12" result="opB"/>
+   <feFlood flood-opacity=".4" result="opC"/>
+   <feComposite in="opA" in2="blurA" operator="in" result="shA"/>
+   <feComposite in="opB" in2="blurB" operator="in" result="shB"/>
+   <feComposite in="opC" in2="blurC" operator="in" result="shC"/>
+   <feMerge>
+    <feMergeNode in="shA"/>
+    <feMergeNode in="shB"/>
+    <feMergeNode in="shC"/>
+    <feMergeNode in="SourceGraphic"/>
+   </feMerge>
+  </filter>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(22.924 12.494)">
+  <rect x="3.9746" y="10.006" width="203.27" height="153.33" rx="12.476" ry="12.476" fill="#fff" filter="url(#shadow-4dp)" style="paint-order:markers fill stroke"/>
+  <rect x="31.868" y="26.766" width="61.401" height="70.808" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="62.672485" y="33.889793" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" text-anchor="middle" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="62.672485" y="33.889793" text-align="center">Minecraft</tspan><tspan x="62.672485" y="41.827293" text-align="center">(1.11.2)</tspan></text>
+  <rect x="38.28" y="44.33" width="50" height="50" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="54.366699" y="55.790871" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="54.366699" y="55.790871" stroke-width=".26458">Forge</tspan></text>
+  <rect x="42.778" y="59.818" width="42.197" height="30.368" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="44.944435" y="77.461288" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="44.944435" y="77.461288" stroke-width=".26458">Malmo MOD</tspan></text>
+  <rect x="127.4" y="47.818" width="46.55" height="30.368" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="150.64655" y="60.578037" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" text-anchor="middle" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="150.64655" y="60.578037" text-align="center">Malmo </tspan><tspan x="150.64655" y="68.515533" text-align="center">Library</tspan></text>
+  <path d="m84.782 66.47h42.481" fill="none" marker-end="url(#marker1299)" marker-start="url(#DotM)" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="101.15593" y="64.060013" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="101.15593" y="64.060013" stroke-width=".26458">TCP</tspan></text>
+  <text x="140.19696" y="43.886421" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="140.19696" y="43.886421" stroke-width=".26458" text-align="center" text-anchor="middle">Wrapper</tspan></text>
+  <rect x="122.98" y="36.347" width="57.718" height="50.968" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <rect x="127.06" y="82.12" width="47.383" height="10.437" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="150.15714" y="89.896233" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="150.15714" y="89.896233" stroke-width=".26458" text-align="center" text-anchor="middle">API</tspan></text>
+  <rect x="65.522" y="122.22" width="40.144" height="31.228" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="85.570717" y="131.00011" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" text-anchor="middle" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="85.570717" y="131.00011" text-align="center">Agent<tspan font-size="4.2333px">(C#)</tspan></tspan><tspan x="85.570717" y="138.93761" text-align="center">&amp;</tspan><tspan x="85.570717" y="146.87511" text-align="center">Env Config</tspan></text>
+  <rect x="112.37" y="122.02" width="40.144" height="31.228" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="132.41884" y="130.80151" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" text-anchor="middle" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="132.41884" y="130.80151" text-align="center">Agen<tspan font-size="4.2333px"><tspan font-size="6.35px">t</tspan>(Java)</tspan></tspan><tspan x="132.41884" y="138.73901" text-align="center">&amp;</tspan><tspan x="132.41884" y="146.67651" text-align="center">Env Config</tspan></text>
+  <rect x="20.452" y="122.46" width="40.144" height="31.228" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="40.50127" y="131.23753" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" text-anchor="middle" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="40.50127" y="131.23753" text-align="center">Agent<tspan font-size="4.2333px">(C++)</tspan></tspan><tspan x="40.50127" y="139.17503" text-align="center">&amp;</tspan><tspan x="40.50127" y="147.11253" text-align="center">Env Config</tspan></text>
+  <rect x="158.8" y="121.2" width="40.144" height="31.228" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".7" style="paint-order:markers fill stroke"/>
+  <text x="178.84554" y="129.98129" font-family="sans-serif" font-size="6.35px" letter-spacing="0px" stroke-width=".26458" text-anchor="middle" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="178.84554" y="129.98129" text-align="center">Agent<tspan font-size="4.2333px">(Python)</tspan></tspan><tspan x="178.84554" y="137.91879" text-align="center">&amp;</tspan><tspan x="178.84554" y="145.85629" text-align="center">Env Config</tspan></text>
+  <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+   <path d="m148.53 96.329-6.4857 22.72" marker-end="url(#Arrow1Mend-3-5)" marker-start="url(#Arrow1Mstart-10-6)" stroke-dasharray="2, 2"/>
+   <path d="m138.09 97.344c-9.7875 20.731-28.58 5.349-51.535 21.762" marker-end="url(#Arrow1Mend-3-5-5)" marker-start="url(#Arrow1Mstart-10-6-7)" stroke-dasharray="2, 4"/>
+   <path d="m129.33 96.229c-32.193 21.902-71.859 6.7617-90.013 24.08" marker-end="url(#Arrow1Mend-3-5-4)" marker-start="url(#Arrow1Mstart-10-6-3)" stroke-dasharray="2, 2"/>
+   <path d="m162.12 96.074 6.4857 22.72" marker-end="url(#Arrow1Mend-3-5-7)" marker-start="url(#Arrow1Mstart-10-6-1)" stroke-dasharray="2, 2"/>
+  </g>
+ </g>
+</svg>
