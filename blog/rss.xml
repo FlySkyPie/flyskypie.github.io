@@ -8,6 +8,7 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <copyright>Copyright © 2023 FlyPie (Wei Ji)</copyright>
         <item>
             <title><![CDATA[在 C++ 專案中處理仰賴套件的幾種方式]]></title>
             <link>https://flyskypie.github.io/blog/2023-04-11_dependencies-in-cpp-project</link>

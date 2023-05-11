@@ -7,6 +7,7 @@
     <link rel="alternate" href="https://flyskypie.github.io/blog"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <rights>Copyright © 2023 FlyPie (Wei Ji)</rights>
     <entry>
         <title type="html"><![CDATA[在 C++ 專案中處理仰賴套件的幾種方式]]></title>
         <id>2023-04-11_dependencies-in-cpp-project</id>
