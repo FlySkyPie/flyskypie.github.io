@@ -6,6 +6,10 @@ tags: [Polis, Hakoniwa, The Key of Huanche, ]
 
 # Polis 專案研究進度
 
+<head>
+  <meta property="og:image" content="https://i.imgur.com/BfkbXOK.png" />
+</head>
+
 稍微把 Polis 挖坑至今 (2023-08-05) 累積的嘗試做個紀錄。
 
 ## 基本概念
