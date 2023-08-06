@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="1431.7mm" height="1079.2mm" version="1.1" viewBox="0 0 1431.7 1079.2" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="TriangleStart" overflow="visible" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 5.3244081 6.1553851">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+  <marker id="TriangleStart-8" overflow="visible" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 5.3244081 6.1553851">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+  <marker id="TriangleStart-5" overflow="visible" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 5.3244081 6.1553851">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <g transform="translate(22.141 1.355)">
+  <g stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+   <rect x="-21.391" y="-.60502" width="1430.2" height="1077.7" fill="#fff" stop-color="#000000" stroke-width="1.5" style="paint-order:markers stroke fill"/>
+   <rect x="43.473" y="72.438" width="505.29" height="422.65" fill-opacity=".03" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="43.444" y="515" width="610.34" height="527.72" fill-opacity=".03" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <rect x="98.737" y="701.09" width="16.982" height="16.982" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <g transform="translate(-17.17 -42.171)" fill="#b3b3b3">
+   <rect x="139.5" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="173.46" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="207.43" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="241.39" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="translate(349.82 253.82)" fill="#b3b3b3">
+   <rect x="139.5" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="173.46" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="207.43" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="241.39" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <path d="m122.34 377.12v16.982h135.85v-16.982h-101.89z" fill="#fff" stop-color="#000000" stroke="#808080" stroke-dasharray="2, 2" stroke-linecap="round" stroke-linejoin="round" style="paint-order:fill markers stroke"/>
+  <g fill="#000000" font-family="'Noto Sans Arabic'" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+   <text x="64.827316" y="91.6511" font-size="15.747px" stop-color="#000000" stroke-width=".15942" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="64.827316" y="91.6511" fill="#000000" stroke-width=".15942">Basic Header</tspan></text>
+   <text x="41.626637" y="57.622684" font-size="37.171px" stop-color="#000000" stroke-width=".37631" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="41.626637" y="57.622684" fill="#000000" stroke-width=".37631">RTMP</tspan></text>
+   <g font-size="15.747px" stroke-width=".15942">
+    <text x="94.248932" y="666.26617" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="94.248932" y="666.26617" fill="#000000" stroke-width=".15942">Basic Header</tspan></text>
+    <text x="56.525124" y="538.55017" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="56.525124" y="538.55017" fill="#000000" stroke-width=".15942">Example</tspan></text>
+    <text x="61.484932" y="220.6324" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="61.484932" y="220.6324" fill="#000000" stroke-width=".15942">Message Header</tspan></text>
+    <text x="604.5567" y="218.42732" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="604.5567" y="218.42732" fill="#000000" stroke-width=".15942">Message Type</tspan></text>
+    <text x="1031.2609" y="86.747772" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1031.2609" y="86.747772" fill="#000000" stroke-width=".15942">Set Chunk Size</tspan></text>
+    <text x="1035.2059" y="506.43945" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1035.2059" y="506.43945" fill="#000000" stroke-width=".15942">Command Message</tspan></text>
+    <text x="1062.0281" y="540.95837" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1062.0281" y="540.95837" fill="#000000" stroke-width=".15942">NetConnection</tspan></text>
+    <text x="1062.7321" y="586.98877" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1062.7321" y="586.98877" fill="#000000" stroke-width=".15942">NetStream</tspan></text>
+    <text x="1032.1759" y="147.88986" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1032.1759" y="147.88986" fill="#000000" stroke-width=".15942">Abort Message</tspan></text>
+    <text x="1032.1759" y="209.03195" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1032.1759" y="209.03195" fill="#000000" stroke-width=".15942">Acknowledgement</tspan></text>
+    <text x="1031.776" y="270.17401" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1031.776" y="270.17401" fill="#000000" stroke-width=".15942">WAS (Window Acknowledgement Size)</tspan></text>
+    <text x="1032.2764" y="331.3161" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1032.2764" y="331.3161" fill="#000000" stroke-width=".15942">SPB (Set Peer Bandwidth)</tspan></text>
+    <text x="1032.2788" y="411.96048" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="1032.2788" y="411.96048" fill="#000000" stroke-width=".15942">USM ( User Control Messages)</tspan></text>
+    <text x="685.80121" y="537.1377" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="685.80121" y="537.1377" fill="#000000" stroke-width=".15942">AMF (Action Message Format)</tspan></text>
+    <text x="697.80853" y="570.88171" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="697.80853" y="570.88171" fill="#000000" stroke-width=".15942">AMF0</tspan></text>
+    <text x="232.03723" y="677.18738" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="232.03723" y="677.18738" fill="#000000" stroke-width=".15942">Message Header</tspan></text>
+   </g>
+  </g>
+  <text x="220.05803" y="762.9679" fill="#ff0000" font-family="'Noto Sans Arabic'" font-size="15.747px" stop-color="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".15942" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="220.05803" y="762.9679" fill="#ff0000" stroke-width=".15942">Context resued by following chunk without meta</tspan></text>
+  <g fill="#000000" font-family="'Noto Sans Arabic'" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+   <g font-size="15.747px" stroke-width=".15942">
+    <text x="307.53311" y="367.99698" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="307.53311" y="367.99698" fill="#000000" stroke-width=".15942">Message Header</tspan></text>
+    <text x="60.401329" y="367.99698" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="60.401329" y="367.99698" fill="#000000" stroke-width=".15942">Extended Timestamp</tspan></text>
+    <text x="58.08622" y="457.24594" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="58.08622" y="457.24594" fill="#000000" stroke-width=".15942">Chunk Data</tspan></text>
+    <text x="518.91022" y="680.48169" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="518.91022" y="680.48169" fill="#000000" stroke-width=".15942">Chunk Data</tspan></text>
+   </g>
+   <g font-size="9.8778px" stroke-width=".1">
+    <text x="82.10183" y="115.74313" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="82.10183" y="115.74313" fill="#000000" stroke-width=".1">1Byte</tspan></text>
+    <text x="67.218361" y="246.0428" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="67.218361" y="246.0428" fill="#000000" stroke-width=".1">Type0 11 Bytes</tspan></text>
+    <text x="612.35065" y="241.22523" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="612.35065" y="241.22523">1 Control - Set Chunk Size</tspan><tspan x="612.35065" y="254.65108">2 Control - Abort Message</tspan><tspan x="612.35065" y="268.0769">3 Control - Acknowledgement</tspan><tspan x="612.35065" y="281.50275">4 User Control Messages</tspan><tspan x="612.35065" y="294.92859">5 Control - Window Acknowledgement Size</tspan><tspan x="612.35065" y="308.35443">6 Control - Set Peer Bandwidth</tspan><tspan x="612.35065" y="321.78027">8 Audio</tspan><tspan x="612.35065" y="335.20612">9 Video</tspan><tspan x="612.35065" y="348.63196">15 Data Message - AMF3</tspan><tspan x="612.35065" y="362.0578">16 Shared Object Message - AMF3</tspan><tspan x="612.35065" y="375.48364">17 Command Message - AMF3</tspan><tspan x="612.35065" y="388.90948">18 Data Message - AMF0</tspan><tspan x="612.35065" y="402.33533">19 Shared Object Message - AMF0</tspan><tspan x="612.35065" y="415.76117">20 Command Message - AMF0 </tspan><tspan x="612.35065" y="429.18701">22 Aggregate Message</tspan></text>
+    <text x="698.35773" y="613.4502" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="698.35773" y="613.4502">0x00 Number</tspan><tspan x="698.35773" y="626.87604">0x01 Boolean</tspan><tspan x="698.35773" y="640.30188">0x02 String</tspan><tspan x="698.35773" y="653.72772">0x03 Object</tspan><tspan x="698.35773" y="667.15356">0x05 Null</tspan><tspan x="698.35773" y="680.57941">0x08 ECMA Array</tspan><tspan x="698.35773" y="694.00525">0x09 Object End</tspan><tspan x="698.35773" y="707.43109">0x0a Strict Array</tspan><tspan x="698.35773" y="720.85693">0x0b Date</tspan><tspan x="698.35773" y="734.28278">0x0c Long String</tspan><tspan x="698.35773" y="747.70862">0x0f XML Document</tspan><tspan x="698.35773" y="761.13446">0x10 Typed Object</tspan><tspan x="698.35773" y="774.5603">0x11 Switch to AMF3</tspan></text>
+    <text x="71.213097" y="416.16336" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="71.213097" y="416.16336" fill="#000000" stroke-width=".1">4 Bytes</tspan></text>
+    <text x="76.402786" y="388.17941" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="76.402786" y="388.17941" fill="#000000" stroke-width=".1">0 Byte</tspan></text>
+    <text x="76.761505" y="474.72757" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="76.761505" y="474.72757" fill="#000000" stroke-width=".1">n Bytes</tspan></text>
+    <text x="72.868431" y="272.67554" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="72.868431" y="272.67554" fill="#000000" stroke-width=".1">Type1 7 Bytes</tspan></text>
+    <text x="72.868431" y="299.30826" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="72.868431" y="299.30826" fill="#000000" stroke-width=".1">Type2 3 Bytes</tspan></text>
+    <text x="74.276459" y="325.94101" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="74.276459" y="325.94101" fill="#000000" stroke-width=".1">Type3 0 Byte</tspan></text>
+    <text x="71.542938" y="145.48381" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="71.542938" y="145.48381" fill="#000000" stroke-width=".1">2 Bytes</tspan></text>
+    <text x="68.741936" y="175.00624" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="68.741936" y="175.00624" fill="#000000" stroke-width=".1">3 Bytes</tspan></text>
+   </g>
+  </g>
+  <g transform="translate(4.1354 -41.875)">
+   <g fill="#b3b3b3">
+    <rect x="144.44" y="334.63" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="178.4" y="334.63" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="212.36" y="334.63" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="195.25128" y="345.84195" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="196.82121" y="345.84195" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">timestamp delta </tspan></text>
+  </g>
+  <g transform="translate(-5.3083 -40.436)">
+   <g fill="#b3b3b3">
+    <rect x="325.31" y="417.55" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="359.28" y="417.55" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="393.24" y="417.55" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="374.69861" y="428.76743" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="374.69861" y="428.76743" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">timestamp (delta)</tspan></text>
+  </g>
+  <g transform="translate(-5.3431 -41.209)">
+   <g fill="#b3b3b3">
+    <rect x="325.35" y="446.31" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="359.31" y="446.31" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="393.27" y="446.31" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="374.73349" y="457.52405" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="374.73349" y="457.52405" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">timestamp (delta)</tspan></text>
+   <text x="456.21301" y="458.35004" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="456.21301" y="458.35004" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">=0xFFFFFF</tspan></text>
+  </g>
+  <g transform="translate(3.2543 -44.026)">
+   <g fill="#b3b3b3">
+    <rect x="145.32" y="307.46" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="179.28" y="307.46" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="213.25" y="307.46" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#e6e6e6">
+    <rect x="247.21" y="307.46" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="281.17" y="307.46" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="315.14" y="307.46" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <rect x="349.1" y="307.46" width="33.964" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <g fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-anchor="middle">
+    <text x="194.88788" y="318.67212" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="196.45781" y="318.67212" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">timestamp delta </tspan></text>
+    <text x="297.57648" y="318.67212" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="297.57648" y="318.67212" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">length</tspan></text>
+    <text x="368.85364" y="318.38754" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="368.85364" y="318.38754" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">type</tspan></text>
+   </g>
+  </g>
+  <g transform="translate(2.1341 -41.875)">
+   <g fill="#e6e6e6">
+    <rect x="418.15" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="452.11" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="486.07" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#b3b3b3">
+    <rect x="146.44" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="180.4" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="214.37" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#e6e6e6">
+    <rect x="248.33" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="282.29" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="316.26" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <rect x="350.22" y="275.98" width="33.964" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="384.18" y="275.98" width="33.964" height="16.982" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <g fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-anchor="middle">
+    <text x="195.82492" y="287.20096" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="197.39485" y="287.20096" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">timestamp </tspan></text>
+    <text x="298.42361" y="287.20096" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="298.42361" y="287.20096" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">length</tspan></text>
+    <text x="367.84976" y="286.91638" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="367.84976" y="286.91638" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">type</tspan></text>
+    <text x="454.68295" y="288.15833" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="454.68295" y="288.15833" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">stream id</tspan></text>
+   </g>
+  </g>
+  <g transform="translate(-30.72 425.11)">
+   <g fill="#e6e6e6">
+    <rect x="418.15" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="452.11" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="486.07" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#b3b3b3">
+    <rect x="146.44" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="180.4" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="214.37" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#e6e6e6">
+    <rect x="248.33" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="282.29" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="316.26" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <rect x="350.22" y="275.98" width="33.964" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="384.18" y="275.98" width="33.964" height="16.982" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <g fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-anchor="middle">
+    <text x="195.82492" y="287.20096" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="197.39485" y="287.20096" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">timestamp </tspan></text>
+    <text x="298.42361" y="287.20096" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="298.42361" y="287.20096" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">length</tspan></text>
+    <text x="367.84976" y="286.91638" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="367.84976" y="286.91638" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">type</tspan></text>
+    <text x="454.68295" y="288.15833" stop-color="#000000" text-align="center" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="454.68295" y="288.15833" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">stream id</tspan></text>
+   </g>
+  </g>
+  <g transform="translate(1.265 -43.562)">
+   <rect x="114.91" y="147.02" width="16.982" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="131.89" y="147.02" width="16.982" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <g fill="#e6e6e6">
+    <rect x="148.88" y="147.02" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="165.86" y="147.02" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="182.84" y="147.02" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="199.82" y="147.02" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="216.8" y="147.02" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="233.78" y="147.02" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="124.23444" y="159.25923" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="124.23444" y="159.25923" fill="#000000" stroke-width=".1">fmt</tspan></text>
+   <text x="188.94954" y="159.1893" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="188.94954" y="159.1893" fill="#000000" stroke-width=".1">cs id</tspan></text>
+  </g>
+  <g transform="translate(4.1152 -43.888)">
+   <rect x="112.06" y="176.6" width="16.982" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="129.04" y="176.6" width="16.982" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <g fill="#e6e6e6">
+    <rect x="146.02" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="163.01" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="179.99" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="196.97" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="213.95" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="230.93" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#b3b3b3">
+    <rect x="247.92" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="264.9" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="281.88" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="298.86" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="315.84" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="332.82" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="349.81" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="366.79" y="176.6" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1">
+    <text x="123.21474" y="188.83897" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="123.21474" y="188.83897" fill="#000000" stroke-width=".1">fmt</tspan></text>
+    <text x="187.22018" y="188.61789" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="187.22018" y="188.61789" fill="#000000" stroke-width=".1">0x00</tspan></text>
+    <text x="308.71869" y="188.76904" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="308.71869" y="188.76904" fill="#000000" stroke-width=".1">cs id</tspan></text>
+   </g>
+  </g>
+  <g transform="translate(4.1152 -43.562)">
+   <rect x="112.06" y="205.52" width="16.982" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="129.04" y="205.52" width="16.982" height="16.982" fill="#b3b3b3" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <g fill="#e6e6e6">
+    <rect x="146.02" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="163.01" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="179.99" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="196.97" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="213.95" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="230.93" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#b3b3b3">
+    <rect x="247.92" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="264.9" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="281.88" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="298.86" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="315.84" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="332.82" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="349.81" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="366.79" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="383.77" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="400.75" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="417.73" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="434.72" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="451.7" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="468.68" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="485.66" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="502.64" y="205.52" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1">
+    <text x="122.68015" y="217.76666" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="122.68015" y="217.76666" fill="#000000" stroke-width=".1">fmt</tspan></text>
+    <text transform="translate(0 -40.748)" x="186.14639" y="258.29315" stop-color="#000000" style="inline-size:25.0723;paint-order:fill markers stroke;white-space:pre" xml:space="preserve"/>
+    <text x="383.25967" y="217.69673" stop-color="#000000" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="383.25967" y="217.69673" fill="#000000" stroke-width=".1">cs id</tspan></text>
+   </g>
+  </g>
+  <g fill="#e6e6e6" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+   <g stroke-width=".2">
+    <rect x="72.405" y="550.9" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="72.405" y="567.88" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="72.405" y="584.86" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="72.405" y="601.84" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="72.405" y="618.82" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g stroke-width=".24495">
+    <rect x="140.35" y="550.92" width="101.95" height="16.973" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="140.35" y="567.89" width="101.95" height="16.973" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="140.35" y="584.87" width="101.95" height="16.973" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="140.35" y="601.84" width="101.95" height="16.973" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="140.35" y="618.81" width="101.95" height="16.973" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g stroke-width=".23664">
+    <rect x="242.32" y="550.92" width="95.141" height="16.974" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="242.32" y="567.89" width="95.141" height="16.974" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="242.32" y="584.86" width="95.141" height="16.974" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="242.32" y="601.84" width="95.141" height="16.974" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="242.32" y="618.81" width="95.141" height="16.974" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <g stroke-width=".2">
+    <rect x="337.46" y="550.91" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="337.46" y="567.89" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="337.46" y="584.88" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="337.46" y="601.86" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="337.46" y="618.84" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="405.39" y="550.91" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="405.39" y="567.89" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="405.39" y="584.88" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="405.39" y="601.86" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="405.39" y="618.84" width="67.927" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+  </g>
+  <g fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" text-anchor="middle">
+   <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <text x="191.99236" y="562.54962" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="191.99236" y="562.54962" fill="#000000" stroke-width="2">Message Stream ID</tspan></text>
+    <text x="190.09079" y="580.41412" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="190.09079" y="580.41412" fill="#000000" stroke-width="2">12345</tspan></text>
+    <text x="430.15659" y="729.45343" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="430.15659" y="729.45343" fill="#000000" stroke-width="2">12345</tspan></text>
+    <text x="290.72299" y="580.34509" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="290.72299" y="580.34509" fill="#000000" stroke-width="2">8</tspan></text>
+    <text x="290.72299" y="597.15137" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="290.72299" y="597.15137" fill="#000000" stroke-width="2">8</tspan></text>
+    <text x="290.72299" y="613.95764" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="290.72299" y="613.95764" fill="#000000" stroke-width="2">8</tspan></text>
+    <text x="290.72296" y="630.76392" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="290.72296" y="630.76392" fill="#000000" stroke-width="2">8</tspan></text>
+    <text x="337.51761" y="729.45343" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="337.51761" y="729.45343" fill="#000000" stroke-width="2">8</tspan></text>
+    <text x="190.09081" y="597.34033" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="190.09081" y="597.34033" fill="#000000" stroke-width="2">12345</tspan></text>
+    <text x="116.51675" y="731.47552" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="116.51675" y="731.47552">csid: 3</tspan><tspan x="116.51675" y="744.90137">fmt: 0</tspan></text>
+    <text x="190.09079" y="614.26648" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="190.09079" y="614.26648" fill="#000000" stroke-width="2">12345</tspan></text>
+    <text x="190.09079" y="631.19269" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="190.09079" y="631.19269" fill="#000000" stroke-width="2">12345</tspan></text>
+    <text x="288.40402" y="562.4845" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="289.97394" y="562.4845" fill="#000000" stroke-width="2">Message Type ID </tspan></text>
+    <text x="371.54742" y="563.59381" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="371.54742" y="563.59381" fill="#000000" stroke-width="2">Time</tspan></text>
+    <text x="372.11639" y="581.22101" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="372.11639" y="581.22101" fill="#000000" stroke-width="2">1000</tspan></text>
+    <text x="166.62181" y="730.91278" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="166.62181" y="730.91278" fill="#000000" stroke-width="2">1000</tspan></text>
+    <text x="439.67615" y="579.8894" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="439.67615" y="579.8894" fill="#000000" stroke-width="2">32</tspan></text>
+    <text x="439.67615" y="596.66656" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="439.67615" y="596.66656" fill="#000000" stroke-width="2">32</tspan></text>
+    <text x="439.67615" y="613.44379" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="439.67615" y="613.44379" fill="#000000" stroke-width="2">32</tspan></text>
+    <text x="439.67615" y="630.22095" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="439.67615" y="630.22095" fill="#000000" stroke-width="2">32</tspan></text>
+    <text x="270.37521" y="729.45343" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="270.37521" y="729.45343" fill="#000000" stroke-width="2">32</tspan></text>
+    <text x="372.11636" y="597.9552" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="372.11636" y="597.9552" fill="#000000" stroke-width="2">1020</tspan></text>
+    <text x="372.11639" y="614.68945" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="372.11639" y="614.68945" fill="#000000" stroke-width="2">1040</tspan></text>
+    <text x="372.11639" y="631.42365" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="372.11639" y="631.42365" fill="#000000" stroke-width="2">1060</tspan></text>
+    <text x="439.38239" y="562.63641" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="439.38239" y="562.63641" fill="#000000" stroke-width="2">Length</tspan></text>
+    <text x="103.38318" y="578.94611" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="103.38318" y="578.94611" fill="#000000" stroke-width="2">Msg # 1</tspan></text>
+    <text x="70.752174" y="714.29559" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="70.752174" y="714.29559" fill="#000000" stroke-width="2">Chunk#1</tspan></text>
+    <text x="71.813522" y="811.25208" stop-color="#000000" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="71.813522" y="811.25208" fill="#000000" stroke-width="2">Chunk#2</tspan></text>
+   </g>
+   <text transform="translate(-16.566 -57.197)" x="119.94941" y="653.51666" stop-color="#000000" text-align="center" style="inline-size:48.8899;paint-order:fill markers stroke;white-space:pre" xml:space="preserve"/>
+   <text x="103.38318" y="613.66339" stop-color="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="103.38318" y="613.66339" fill="#000000" stroke-width="2">Msg # 3</tspan></text>
+   <text x="103.38318" y="630.42407" stop-color="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" text-align="center" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="103.38318" y="630.42407" fill="#000000" stroke-width="2">Msg # 4</tspan></text>
+  </g>
+  <path d="m555.91 726.7s6.535-6.4315 6.8957-8.9941-9.6882-9.7164-9.1471-13.56c0.54106-3.844 6.58-8.1973 6.58-8.1973l9.0416 0.21815s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56s-6.8957 8.9941-6.8957 8.9941l-9.0416-0.21815" fill="#fff" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <path d="m570.03 696.15s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56s-6.8957 8.9941-6.8957 8.9941" fill="none" stop-color="#000000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:fill markers stroke"/>
+  <path d="m560.23 695.76s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56s-6.8957 8.9941-6.8957 8.9941" fill="none" stop-color="#000000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:fill markers stroke"/>
+  <g transform="translate(82.143 -139.06)">
+   <g fill="#999">
+    <rect x="980.66" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="963.67" y="294.91" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="972.17" y="294.91" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="1014.6" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="997.64" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1031.6 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1099.5 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1167.5 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="1099.681" y="306.50436" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="1099.681" y="306.50436" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">chunk stream id (32 bits)</tspan></text>
+  </g>
+  <g transform="translate(81.642 -138.91)">
+   <g transform="translate(.5008 63.551)" fill="#999">
+    <rect x="980.66" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="963.67" y="294.91" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="972.17" y="294.91" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="1014.6" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="997.64" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1031.6 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1099.5 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1167.5 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="1100.1866" y="370.05545" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="1100.1866" y="370.05545" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">sequence number (4 bytes)</tspan></text>
+  </g>
+  <g transform="translate(79.308 -153.42)">
+   <g transform="translate(2.8354 138.13)" fill="#999">
+    <rect x="980.66" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="963.67" y="294.91" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="972.17" y="294.91" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="1014.6" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="997.64" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1031.6 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1099.5 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1167.5 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="1102.5212" y="444.63593" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="1102.5212" y="444.63593" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Acknowledgement Window size (4 bytes)</tspan></text>
+  </g>
+  <g transform="translate(83.451 -130.87)">
+   <rect x="979.35" y="227.22" width="16.982" height="16.982" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="962.37" y="227.22" width="8.4909" height="16.982" fill="#999" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <g fill="#e6e6e6">
+    <rect x="970.86" y="227.22" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="1013.3" y="227.22" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="996.33" y="227.22" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1030.3 227.22v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1098.2 227.22v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1166.1 227.22v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="1107.3917" y="238.80849" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="1107.3917" y="238.80849" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">chunk size (31 bits)</tspan></text>
+   <text x="967.26434" y="239.23853" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="967.26434" y="239.23853" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">0</tspan></text>
+  </g>
+  <g transform="translate(83.451 -128.51)">
+   <path d="m1232.6 471.17v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <g transform="translate(-2.8331 176.26)" fill="#999">
+    <rect x="980.66" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="963.67" y="294.91" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="972.17" y="294.91" width="8.4909" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="1014.6" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="997.64" y="294.91" width="16.982" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1031.6 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1099.5 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m1167.5 294.91v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="1096.8527" y="482.76315" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="1096.8527" y="482.76315" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Acknowledgement Window size (4 bytes)</tspan></text>
+   <text x="1266.2919" y="482.38693" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="1266.2919" y="482.38693" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Limit Type</tspan></text>
+  </g>
+  <path d="m695.71 579.5v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" fill="#999" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <text x="729.44684" y="590.72015" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="729.44684" y="590.72015" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Type</tspan></text>
+  <g transform="translate(-268.74 -5.0363)" fill="#999">
+   <path d="m1100.3 584.54v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m1168.2 584.54v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <text x="899.87268" y="590.72009" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="899.87268" y="590.72009" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Value (0~n bytes)</tspan></text>
+  <path d="m763.63 579.5v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <g fill="#000000" font-family="'Noto Sans Arabic'" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+   <text x="797.37415" y="590.72009" font-size="9.8778px" stop-color="#000000" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="797.37415" y="590.72009" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Length</tspan></text>
+   <text x="699.86322" y="815.11444" font-size="15.747px" stop-color="#000000" stroke-width=".15942" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="699.86322" y="815.11444" fill="#000000" stroke-width=".15942">AMF3</tspan></text>
+   <text x="700.41254" y="855.21149" font-size="9.8778px" stop-color="#000000" stroke-width=".1" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="700.41254" y="855.21149">0x00 Undefined</tspan><tspan x="700.41254" y="868.63733">0x01 Null</tspan><tspan x="700.41254" y="882.06317">0x02 Boolean False</tspan><tspan x="700.41254" y="895.48901">0x03 Boolean True</tspan><tspan x="700.41254" y="908.91486">0x04 Integer</tspan><tspan x="700.41254" y="922.3407">0x05 Double</tspan><tspan x="700.41254" y="935.76654">0x06 String</tspan><tspan x="700.41254" y="949.19238">0x07 XMLDocument</tspan><tspan x="700.41254" y="962.61823">0x08 Date</tspan><tspan x="700.41254" y="976.04407">0x09 Array</tspan><tspan x="700.41254" y="989.46991">0x0a Object</tspan><tspan x="700.41254" y="1002.8958">0x0b XML</tspan><tspan x="700.41254" y="1016.3216">0x0c ByteArray</tspan></text>
+  </g>
+  <path d="m697.76 821.27v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" fill="#999" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <text x="731.50165" y="832.48145" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="731.50165" y="832.48145" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Type</tspan></text>
+  <g transform="translate(-266.69 236.72)" fill="#999">
+   <path d="m1100.3 584.54v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m1168.2 584.54v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <text x="901.92737" y="832.48138" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="901.92737" y="832.48138" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Value (0~n bytes)</tspan></text>
+  <path d="m765.69 821.27v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <text x="799.42883" y="832.48138" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="799.42883" y="832.48138" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Length</tspan></text>
+  <path d="m1043.8 434.93v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" fill="#999" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <path d="m1111.7 434.93v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" fill="#999" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <g fill="#e6e6e6">
+   <path d="m1179.6 434.93v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m1247.6 434.93v16.981h16.981v-16.981zm16.982 0v16.981h50.945v-16.981h-33.964z" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <text x="1111.9552" y="446.14917" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="1111.9552" y="446.14917" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Event Type (16 bits)</tspan></text>
+  <text x="1247.5289" y="446.95459" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="1247.5289" y="446.95459" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">Event Data</tspan></text>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+   <g stroke="#f00">
+    <g stroke-dasharray="8, 8">
+     <rect x="141.07" y="227.05" width="119.08" height="91.123" stop-color="#000000" style="paint-order:fill markers stroke"/>
+     <rect x="347.91" y="226.44" width="45.326" height="59.093" stop-color="#000000" style="paint-order:fill markers stroke"/>
+     <rect x="112.58" y="95.535" width="42.941" height="91.393" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    </g>
+    <g>
+     <path d="m139.82 280.9h-113.99v82.389h25.709" marker-end="url(#TriangleStart)" stop-color="#000000" style="paint-order:fill markers stroke"/>
+     <path d="m373.33 226.07v-13.408h219.16" marker-end="url(#TriangleStart-5)" stop-color="#000000" style="paint-order:fill markers stroke"/>
+     <path d="m110.39 155.06h-83.142v61.457h25.709" marker-end="url(#TriangleStart-8)" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    </g>
+   </g>
+   <path d="m99.205 696.5v-24.019h16.628v24.019" stop-color="#000000" stroke="#000" style="paint-order:fill markers stroke"/>
+   <path d="m116.07 696.69v-8.8781h373.25v8.8782" stop-color="#000000" stroke="#000" style="paint-order:fill markers stroke"/>
+  </g>
+  <rect x="101.7" y="797.44" width="16.982" height="16.982" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <text x="85.527817" y="764.02985" fill="#000000" font-family="'Noto Sans Arabic'" font-size="10.234px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".10361" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="85.527817" y="764.02985" fill="#000000" stroke-width=".10361">Basic Header</tspan></text>
+  <text x="128.45219" y="778.99512" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.4982px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".096156" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="128.45219" y="778.99512" fill="#000000" stroke-width=".096156">Message Header</tspan></text>
+  <g transform="translate(-27.762 521.46)">
+   <g fill="#b3b3b3">
+    <rect x="146.44" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="180.4" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <rect x="214.37" y="275.98" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="195.82492" y="287.20096" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" text-align="center" text-anchor="middle" style="line-height:0.8;paint-order:fill markers stroke" xml:space="preserve"><tspan x="197.39485" y="287.20096" fill="#000000" stroke-width=".1" text-align="center" text-anchor="middle">timestamp delta </tspan></text>
+  </g>
+  <text x="119.47536" y="827.82513" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" text-align="center" text-anchor="middle" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="119.47536" y="827.82513">csid: 3</tspan><tspan x="119.47536" y="841.25098">fmt: 2</tspan></text>
+  <text x="169.58041" y="827.26239" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" text-align="center" text-anchor="middle" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="169.58041" y="827.26239" fill="#000000" stroke-width="2">20</tspan></text>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+   <g stroke="#000">
+    <path d="m102.16 792.85v-24.019h16.628v24.019" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m119.03 793.04v-8.8781h101.31v8.8782" stop-color="#000000" style="paint-order:fill markers stroke"/>
+    <path d="m489.47 696.82v-8.8781h135.66v8.8782" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   </g>
+   <path d="m218.21 727.07v18.532h271.3v-18.532" stop-color="#000000" stroke="#f00" stroke-dasharray="2, 8" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="translate(81.067 350.17)" fill="#e6e6e6">
+   <rect x="139.5" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="173.46" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="207.43" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="241.39" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <text x="258.22595" y="778.37421" fill="#000000" font-family="'Noto Sans Arabic'" font-size="10.421px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1055" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="258.22595" y="778.37421" fill="#000000" stroke-width=".1055">Chunk Data</tspan></text>
+  <path d="m287.16 823.05s6.535-6.4315 6.8957-8.9941-9.6882-9.7164-9.1471-13.56c0.54106-3.844 6.58-8.1973 6.58-8.1973l9.0416 0.21815s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56s-6.8957 8.9941-6.8957 8.9941l-9.0416-0.21815" fill="#fff" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+   <path d="m301.28 792.5s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56s-6.8957 8.9941-6.8957 8.9941" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m291.48 792.11s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56s-6.8957 8.9941-6.8957 8.9941" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m220.72 793.17v-8.8781h135.66v8.8782" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <text x="71.818443" y="908.6803" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" text-align="center" text-anchor="middle" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="71.818443" y="908.6803" fill="#000000" stroke-width="2">Chunk#3</tspan></text>
+  <rect x="101.7" y="894.87" width="16.982" height="16.982" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+   <text x="85.532738" y="861.45807" fill="#000000" font-family="'Noto Sans Arabic'" font-size="10.234px" stop-color="#000000" stroke="#000000" stroke-width=".10361" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="85.532738" y="861.45807" fill="#000000" stroke-width=".10361">Basic Header</tspan></text>
+   <text x="119.48028" y="925.25336" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke-width="2" text-align="center" text-anchor="middle" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="119.48028" y="925.25336">csid: 3</tspan><tspan x="119.48028" y="938.6792">fmt: 3</tspan></text>
+   <path d="m102.17 890.27v-24.019h16.628v24.019" fill="none" stop-color="#000000" stroke="#000" stroke-width="2" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="translate(-20.819 447.6)" fill="#b3b3b3">
+   <rect x="139.5" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="173.46" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="207.43" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="241.39" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <text x="156.34019" y="875.80249" fill="#000000" font-family="'Noto Sans Arabic'" font-size="10.421px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1055" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="156.34019" y="875.80249" fill="#000000" stroke-width=".1055">Chunk Data</tspan></text>
+  <path d="m185.27 920.48s6.535-6.4315 6.8957-8.9941c0.36071-2.5626-9.6882-9.7164-9.1471-13.56s6.58-8.1973 6.58-8.1973l9.0416 0.21815s-6.0389 4.3533-6.58 8.1973c-0.54106 3.844 9.5078 10.998 9.1471 13.56-0.3607 2.5626-6.8957 8.9941-6.8957 8.9941l-9.0416-0.21815" fill="#fff" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+   <path d="m199.39 889.93s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56s-6.8957 8.9941-6.8957 8.9941" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m189.6 889.54s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56s-6.8957 8.9941-6.8957 8.9941" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m118.84 890.6v-8.8781h135.66v8.8782" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <text x="71.752899" y="998.5058" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" text-align="center" text-anchor="middle" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="71.752899" y="998.5058" fill="#000000" stroke-width="2">Chunk#4</tspan></text>
+  <rect x="101.63" y="984.7" width="16.982" height="16.982" fill="#e6e6e6" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+   <text x="85.467186" y="951.28369" fill="#000000" font-family="'Noto Sans Arabic'" font-size="10.234px" stop-color="#000000" stroke="#000000" stroke-width=".10361" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="85.467186" y="951.28369" fill="#000000" stroke-width=".10361">Basic Header</tspan></text>
+   <text x="119.41473" y="1015.0789" fill="#000000" font-family="'Noto Sans Arabic'" font-size="9.8778px" stop-color="#000000" stroke-width="2" text-align="center" text-anchor="middle" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="119.41473" y="1015.0789">csid: 3</tspan><tspan x="119.41473" y="1028.5048">fmt: 3</tspan></text>
+   <path d="m102.1 980.1v-24.019h16.628v24.019" fill="none" stop-color="#000000" stroke="#000" stroke-width="2" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="translate(-20.885 537.43)" fill="#b3b3b3">
+   <rect x="139.5" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="173.46" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="207.43" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <rect x="241.39" y="447.27" width="33.964" height="16.982" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+  <text x="156.27464" y="965.62811" fill="#000000" font-family="'Noto Sans Arabic'" font-size="10.421px" stop-color="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1055" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="156.27464" y="965.62811" fill="#000000" stroke-width=".1055">Chunk Data</tspan></text>
+  <path d="m185.21 1010.3s6.535-6.4315 6.8957-8.9942c0.36071-2.5626-9.6882-9.7164-9.1471-13.56 0.54107-3.844 6.58-8.1974 6.58-8.1974l9.0416 0.2182s-6.0389 4.3533-6.58 8.1973c-0.54106 3.844 9.5078 10.998 9.1471 13.56-0.3607 2.5626-6.8957 8.9941-6.8957 8.9941l-9.0416-0.2181" fill="#fff" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+   <path d="m199.33 979.76s-6.0389 4.3533-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56-0.36071 2.5626-6.8957 8.9941-6.8957 8.9941" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m189.53 979.37s-6.0389 4.3534-6.58 8.1973c-0.54107 3.844 9.5078 10.998 9.1471 13.56-0.36071 2.5626-6.8957 8.9942-6.8957 8.9942" stop-color="#000000" style="paint-order:fill markers stroke"/>
+   <path d="m118.77 980.42v-8.8781h135.66v8.8781" stop-color="#000000" style="paint-order:fill markers stroke"/>
+  </g>
+ </g>
+</svg>
