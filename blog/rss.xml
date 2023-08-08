@@ -4,11 +4,24 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/blog</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sat, 05 Aug 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2023 FlyPie (Wei Ji)</copyright>
+        <item>
+            <title><![CDATA[WebRTC 學習筆記]]></title>
+            <link>https://flyskypie.github.io/blog/2023-08-07_webrtc-learning-note</link>
+            <guid>2023-08-07_webrtc-learning-note</guid>
+            <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[本篇學習筆記以 Javascript 在應用上的實作為切入點，關於 WebRTC 背後的技術並不是本文的重點。]]></description>
+            <content:encoded><![CDATA[<div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>本篇學習筆記以 Javascript 在應用上的實作為切入點，關於 WebRTC 背後的技術並不是本文的重點。</p></div></div><p>看了幾篇教學仍然對 WebRTC Web API 的使用不是很理解，因為這些文章不是都著墨在 WebRTC 協定本身然後程式碼的實作就簡略帶過；就是跟使用 WebSocket 處理 SDP (Session Description Protocol) 的部份一起講，造成程式碼充滿了各種事件 callback，讓程式碼變得比較不好理解。</p><p>後來看到了一個<a href="https://github.com/Tinywan/WebRTC-tutorial/tree/master/docs/demo-02" target="_blank" rel="noopener noreferrer">範例程式</a>，單純針對 <code>RTCPeerConnection</code> 如何建立連線，從而省略實務上會透過其他機制完成 SDP，讓程式碼變得稍微好理解一點。</p><p>經過重構、Reivew 之後終於看懂使用 Javascript 建立 WebRTC 連線的流程，我把它整理成一張圖：</p><p><img loading="lazy" src="/assets/images/01_create-webrtc-b478fce1aac1c446153b8f810dc9c964.webp" width="1024" height="1141" class="img_E7b_"></p><p>大致有三個重點：</p><ol><li>兩邊的 Connection 都分別要從自己跟對方獲得 SessionDescription。</li><li>成對的 ICE (Interactive Connectivity Establishment) 處理程式 (handler)。</li><li><code>addTrack()</code> 與 <code>.on("track")</code> 用來發送/接收串流。</li></ol><hr><p>另外我練習<a href="https://github.com/FlySkyPie/canvas-webrtc-sample" target="_blank" rel="noopener noreferrer">使用 WebRTC 的程式</a>試著用不同的界面分離職責：</p><p><img loading="lazy" src="/assets/images/02_architecture-5e396c8f943429a3e6cc2bea1d560c1b.webp" width="886" height="958" class="img_E7b_"></p><ul><li><code>ITransmittable</code>: 發送端應用領域對傳輸領域的界面，專住於「對外串流」的職責。</li><li><code>IReceivable</code>: 接收端應用領域對傳輸領域的界面，，專注於「接收串流」的職責。</li><li><code>IRTCOfferable</code>: 發送端對連線建立領域的界面，專注於「發送方的 WebRTC 構成要件」的職責上。</li><li><code>IRTCAnswerable</code>: 接收端對連線建立領域的界面，專注於「接收方的 WebRTC 構成要件」的職責上。</li></ul><hr><p><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="創用 CC 授權條款" class="img_E7b_"></a><br>
+<!-- -->Wei Ji 以<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">創用CC 姓名標示-相同方式分享 4.0 國際 授權條款</a>釋出。</p>]]></content:encoded>
+            <category>learning note</category>
+            <category>javascript</category>
+            <category>typescript</category>
+            <category>WebRTC</category>
+        </item>
         <item>
             <title><![CDATA[Polis 專案研究進度]]></title>
             <link>https://flyskypie.github.io/blog/2023-08-05_polis-progress</link>
