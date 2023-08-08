@@ -4,11 +4,23 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/blog</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Mon, 07 Aug 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 08 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2023 FlyPie (Wei Ji)</copyright>
+        <item>
+            <title><![CDATA[Electron 學習筆記 - IPC]]></title>
+            <link>https://flyskypie.github.io/blog/2023-08-08_electron-learning-note</link>
+            <guid>2023-08-08_electron-learning-note</guid>
+            <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 childprocess 模組的 spawn 或是使用過 Web API 的 Worker 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。]]></description>
+            <content:encoded><![CDATA[<p>行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 <code>child_process</code> 模組的 <a href="https://nodejs.org/api/child_process.html#child_processspawncommand-args-options" target="_blank" rel="noopener noreferrer">spawn</a> 或是使用過 Web API 的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank" rel="noopener noreferrer">Worker</a> 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="區塊之間的通訊方式一覽">區塊之間的通訊方式一覽<a class="hash-link" href="#區塊之間的通訊方式一覽" title="Direct link to heading">​</a></h2><p>在<a href="/blog/2023-04-01_electron_learning_note_intro">前一篇文章</a>提到，在 Electron 中 Render 和 Main 彼此之間是獨立的，必須透過 Preload 和 API 來實現兩者之間的溝通。參考了官方的範例程式碼以及一篇文章<sup id="fnref-electron-ipc-bef557"><a href="#fn-electron-ipc-bef557" class="footnote-ref">electron-ipc</a></sup>之後，整理成一個圖表：</p><p><img loading="lazy" src="/assets/images/01_electron-ipc-api-2614c898ac2d7076cfc25d7ca88f52c4.webp" width="1377" height="1354" class="img_E7b_"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="後記">後記<a class="hash-link" href="#後記" title="Direct link to heading">​</a></h2><p>這篇文章原本在 2023-04-05 就已經寫好草稿了，沒想到完全忘記這篇還沒歸檔，然後圖表的 SVG 也已經刪掉了。</p><hr><p><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="創用 CC 授權條款" class="img_E7b_"></a><br>
+<!-- -->Wei Ji 以<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">創用CC 姓名標示-相同方式分享 4.0 國際 授權條款</a>釋出。</p><div class="footnotes"><hr><ol><li id="fn-electron-ipc-bef557">[ Day 9 ]<!-- --> - 動物聊天室(二) - IPC 與訊息交換 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天. Retrieved 2023-08-08, from <a href="https://ithelp.ithome.com.tw/articles/10235110" target="_blank" rel="noopener noreferrer">https://ithelp.ithome.com.tw/articles/10235110</a><a href="#fnref-electron-ipc-bef557" class="footnote-backref">↩</a></li></ol></div>]]></content:encoded>
+            <category>learning note</category>
+            <category>javascript</category>
+            <category>Electron</category>
+        </item>
         <item>
             <title><![CDATA[WebRTC 學習筆記]]></title>
             <link>https://flyskypie.github.io/blog/2023-08-07_webrtc-learning-note</link>
