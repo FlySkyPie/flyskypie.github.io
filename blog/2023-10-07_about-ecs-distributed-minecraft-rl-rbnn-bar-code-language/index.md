@@ -64,7 +64,7 @@ Minecraft 大部分的運算是在同一個執行緒 (Thread) 上完成的，這
 
 RBNN 單純是參考了遞迴類神經網路 (RNN) 加入了遞迴的要素使該演算法具備記憶性。
 
-[^bnn]: https://www.semanticscholar.org/paper/Boolean-Neural-Networks-Kohut-Steinbach/1c472945ab2970a709efe97f81d9a5e7bf37baae
+[^bnn]: Boolean Neural Network. (R. Kohut, B. Steinbach). Retrieved 2023-10-08, from https://www.semanticscholar.org/paper/Boolean-Neural-Networks-Kohut-Steinbach/1c472945ab2970a709efe97f81d9a5e7bf37baae
 
 ## 完全視覺化
 
@@ -91,7 +91,7 @@ RBNN 單純是參考了遞迴類神經網路 (RNN) 加入了遞迴的要素使�
 
 「完全視覺化」意味著必須重新設計一套完全基於 FPV 控制器的遊戲體驗。
 
-[^minerl-api]: https://minerl.io/docs/environments/index.html#id20
+[^minerl-api]: MineRL 0.3.0 documentation. (William H. Guss, Brandon Houghton). Retrieved 2023-10-08, from https://minerl.io/docs/environments/index.html#id20
 
 ## 二維條碼人造語言
 
@@ -104,7 +104,7 @@ RBNN 單純是參考了遞迴類神經網路 (RNN) 加入了遞迴的要素使�
 :::spoiler 可能涉及「異星入境」的劇透，請斟酌點閱
 劇中的外星人不具備基於聲音的「語言」，
 它們透過操控懸浮的沙粒構成文字來傳達意思：
-![](/uploads/upload_8563b0e474117e7bd75329c6242a33d1.png)
+![https://brand-new-life.org/b-n-l/learning-from-time/](./img/05_arrival.webp)
 :::
 <p></p>
 
