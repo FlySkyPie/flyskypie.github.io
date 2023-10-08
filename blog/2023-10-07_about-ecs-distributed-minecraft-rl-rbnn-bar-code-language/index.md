@@ -101,12 +101,21 @@ RBNN 單純是參考了遞迴類神經網路 (RNN) 加入了遞迴的要素使�
 
 如果你看過或是知道異星入境 (Arrival) 這部電影，要理解這個概念就會顯得很容易，沒有沒有也沒關係。
 
-:::spoiler 可能涉及「異星入境」的劇透，請斟酌點閱
-劇中的外星人不具備基於聲音的「語言」，
-它們透過操控懸浮的沙粒構成文字來傳達意思：
-![https://brand-new-life.org/b-n-l/learning-from-time/](./img/05_arrival.webp)
-:::
-<p></p>
+
+<details>
+  <summary>可能涉及「異星入境」的劇透，請斟酌點閱</summary>
+  <div>
+    <div>劇中的外星人不具備基於聲音的「語言」，</div>
+     <div>它們透過操控懸浮的沙粒構成文字來傳達意思：</div>
+     {/**<img src="./img/05_arrival.webp" alt="https://brand-new-life.org/b-n-l/learning-from-time/" />*/}
+     <img 
+       src={require("./img/05_arrival.webp").default} 
+       alt="https://brand-new-life.org/b-n-l/learning-from-time/" />
+   
+
+<!-- ![https://brand-new-life.org/b-n-l/learning-from-time/](./img/05_arrival.webp) -->
+  </div>
+</details>
 
 我希望訓練 AI 在遊戲中表現出「部落」的特性，也就是複數個獨立的 AI 能夠溝通並且協調作業，在這個基礎上透過解析它們的溝通方式來實現「人類對某種數位智慧進行溝通」這件事。
 
