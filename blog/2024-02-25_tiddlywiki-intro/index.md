@@ -4,7 +4,7 @@ authors: [weiji,]
 tags: [TiddlyWiki]
 --- 
 
-# 我的 Tiddlywiki 之旅 - 介紹
+# 我的 Tiddlywiki 之旅 - 啟程
 
 我從接觸 Tiddlywiki 到現在 (2023-10-29~2024-01-30) 也已經三個月了，雖然預計要做的事情還沒完成，不過想把累積的筆記做個階段性的總整理。
 
