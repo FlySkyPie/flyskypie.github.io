@@ -6,6 +6,11 @@ tags: [Tellus, Hakoniwa, The Key of Huanche,]
 
 # 一種包含旋轉資訊的 Voxel 資料格式 | Tellus Dev Log
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/blog/2024-03-24_tellus-voxel-test/img/02_crystal-lattice-structure-formation.webp" />
+</head>
+
+
 ## 前情提要
 
 - [Tellus](https://flyskypie.github.io/sideprojects-wiki/#Project%3ATellus
