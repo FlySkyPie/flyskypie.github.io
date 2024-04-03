@@ -24,7 +24,7 @@ tags: [TiddlyWiki]
 
 只是非常陽春的「拖拉」功能實做，完全未達到實用的標準。在 Tiddlywiki 官方論壇內發現的。[^TiddlyKanban]
 
-[^TiddlyKanban]: Three plugins available - Plugins - Talk TW. https://talk.tiddlywiki.org/t/three-plugins-available/1999
+[^TiddlyKanban]: Three plugins available - Plugins - Talk TW. Retrieved 2024-04-04, from https://talk.tiddlywiki.org/t/three-plugins-available/1999
 
 ### [BTC/Muuri-Kanban](https://github.com/BurningTreeC/tiddlywiki-muuri-kanban)
 
