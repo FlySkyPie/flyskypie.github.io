@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[8802],{8414:a=>{a.exports=JSON.parse('{"label":"mathematical","permalink":"/blog/tags/mathematical","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
