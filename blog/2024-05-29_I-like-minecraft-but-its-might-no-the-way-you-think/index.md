@@ -6,6 +6,10 @@ tags: [The Key of Huanche, Minecraft]
 
 # 我喜歡 Minecraft，不過可能不是一般人認知的那種
 
+<head>
+  <meta property="og:image" content="http://img.youtube.com/vi/fjZAgoxFKiQ/0.jpg" />
+</head>
+
 :::info
 稍微盤點一下我所知道的 Minecraft
 :::
