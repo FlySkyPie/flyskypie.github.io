@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[4312],{87109:e=>{e.exports=JSON.parse('{"label":"minerl","permalink":"/blog/tags/minerl","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);

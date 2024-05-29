@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[348],{3950:s=>{s.exports=JSON.parse('{"label":"RIFF","permalink":"/blog/tags/riff","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
