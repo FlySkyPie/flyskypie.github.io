@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="259.46mm" height="163.35mm" version="1.1" viewBox="0 0 259.46 163.35" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-33.395 -51.6)" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="33.895" y="52.1" width="258.46" height="162.35" fill="#fff" stroke="#000" style="paint-order:fill markers stroke"/>
+  <g fill="#000000" font-family="sans-serif" font-size="11.289px">
+   <text x="46.845261" y="115.9392" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="46.845261" y="115.9392" fill="#000000">Home</tspan></text>
+   <text x="37.608597" y="66.664124" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="37.608597" y="66.664124" fill="#000000">OS</tspan></text>
+   <text x="54.213879" y="164.57797" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="54.213879" y="164.57797" fill="#000000">Project</tspan></text>
+  </g>
+  <rect x="49.725" y="152.2" width="108.62" height="47.875" fill="none" stroke="#000" style="paint-order:markers stroke fill"/>
+  <text x="66.215691" y="185.7885" fill="#000000" font-family="sans-serif" font-size="11.289px" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="66.215691" y="185.7885" fill="#000000">source code</tspan></text>
+  <rect x="59.371" y="171.34" width="92.26" height="22.058" fill="none" stroke="#000" style="paint-order:markers stroke fill"/>
+  <text x="169.7133" y="164.00554" fill="#000000" font-family="sans-serif" font-size="11.289px" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="169.7133" y="164.00554" fill="#000000">Project</tspan></text>
+  <rect x="165.22" y="151.62" width="108.62" height="47.875" fill="none" stroke="#000" style="paint-order:markers stroke fill"/>
+  <text x="181.71512" y="185.21606" fill="#000000" font-family="sans-serif" font-size="11.289px" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="181.71512" y="185.21606" fill="#000000">source code</tspan></text>
+  <rect x="174.87" y="170.77" width="92.26" height="22.058" fill="none" stroke="#000" style="paint-order:markers stroke fill"/>
+  <text x="56.750607" y="136.37323" fill="#000000" font-family="sans-serif" font-size="11.289px" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="56.750607" y="136.37323" fill="#000000">packages</tspan></text>
+  <rect x="49.906" y="121.92" width="92.26" height="22.058" fill="none" stroke="#000" style="paint-order:markers stroke fill"/>
+  <text x="49.60548" y="88.45018" fill="#000000" font-family="sans-serif" font-size="11.289px" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="49.60548" y="88.45018" fill="#000000">packages</tspan></text>
+  <rect x="42.761" y="74.001" width="92.26" height="22.058" fill="none" stroke="#000" style="paint-order:markers stroke fill"/>
+  <rect x="42.578" y="104.65" width="240.02" height="100.66" fill="none" stroke="#000" style="paint-order:markers stroke fill"/>
+ </g>
+</svg>
