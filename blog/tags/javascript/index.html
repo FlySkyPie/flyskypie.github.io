@@ -11,7 +11,7 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.7cc1d85a.css">
-<script src="/assets/js/runtime~main.567560b3.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.661f7d7d.js" defer="defer"></script>
 <script src="/assets/js/main.093c9243.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -23,10 +23,10 @@
 <p><img decoding="async" loading="lazy" src="/assets/images/01_w3school-0f2668437fcd7862b39b250e9e74be27.webp" width="1255" height="818" class="img_RpFt"></p>
 <p>不過對於我這樣一個有開發經驗的人而言，語法反而不是最重要的。</p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="執行環境">執行環境<a href="#執行環境" class="hash-link" aria-label="Direct link to 執行環境" title="Direct link to 執行環境">​</a></h2>
-<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>Javascript::NVM + Javascript::NPM → Python::Poetry</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>Javascript::NVM → Python::pyenv</p><p>Javascript::NPM → Python::pip</p><p>Javascript::Yarn → Python::Poetry</p></div></div>
 <h3 class="anchor anchorWithStickyNavbar_mpuI" id="javascript">Javascript<a href="#javascript" class="hash-link" aria-label="Direct link to Javascript" title="Direct link to Javascript">​</a></h3>
 <p>相較於其他程式語言，Javascript 的生態系除了它那容易令人誤解的名稱之外，還有規範 (Specification) 與實做 (Implementation) 分離的奇怪現象。</p>
-<p>Javascript 本身是一團抽象規範，真正能夠執行的是實做，而開發者主要需要區分的實做分別 是網頁瀏覽器 (Web Browser) 與 Node.js。</p>
+<p>Javascript 本身是一團抽象規範，真正能夠執行的是實做，而開發者主要需要區分的實做分別是網頁瀏覽器 (Web Browser) 與 Node.js。</p>
 <p>其中 Node.js 有著非常多的版本<sup><a href="#user-content-fn-node-releases-cfcec1" id="user-content-fnref-node-releases-cfcec1" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>，而這個版本也是開發者需要留意的對象，當程式碼與直譯器版本不批配時就會出現問題。</p>
 <p>因此 Javascript 開發者通常不會直接安裝 Node.js，而是透過 <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener noreferrer">NVM</a> (Node Version Manager) 去決定與切換當前的 Node.js 版本。</p>
 <p>接著是 Javascript 作為現代語言如何處理模組 (Module)，每個專案資料夾都有各自儲存模組的路徑，並且為了減少複數個專案之間下載相同模組的時間，會在使用者的 home 留下快取。</p>
@@ -34,7 +34,9 @@
 <p>主流的工具有 <a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">npm</a>、 <a href="https://yarnpkg.com/" target="_blank" rel="noopener noreferrer">Yarn</a>、 <a href="https://pnpm.io/" target="_blank" rel="noopener noreferrer">pnpm</a>...，技術層面各有差異，不過在 Javascript 專案中擔任的角色是相同的。</p>
 <p>值得一提的是，在 Javascript 的生態系中，「套件管理器」就不只一種，因此 Node.js 考慮引入 「套件管理器管理器」：<a href="https://nodejs.org/api/corepack.html" target="_blank" rel="noopener noreferrer">Corepack</a>。</p>
 <h3 class="anchor anchorWithStickyNavbar_mpuI" id="python">Python<a href="#python" class="hash-link" aria-label="Direct link to Python" title="Direct link to Python">​</a></h3>
-<p>相較於 Node.js 直譯器版本一路從 4.0 演化到 22.0，Python 要煩惱的版本幾乎只剩 2 跟 3 了（？），不過 Python 有其他問題需要煩惱：</p>
+<p>如同 Node.js 使用 NVM 解決 Node.js 版本眾多的問題，Python 使用 <a href="https://github.com/pyenv/pyenv" target="_blank" rel="noopener noreferrer">pyenv</a> 解決：</p>
+<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain"># 安裝 pyenv</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl https://pyenv.run | bash</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 把 PATH 加入 `~/.bashrc`</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">echo &#x27;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#x27; &gt;&gt; ~/.bashrc</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">echo &#x27;command -v pyenv &gt;/dev/null || export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#x27; &gt;&gt; ~/.bashrc</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">echo &#x27;eval &quot;$(pyenv init -)&quot;&#x27; &gt;&gt; ~/.bashrc</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>除此之外 Python 有其他問題需要煩惱：</p>
 <p><img decoding="async" loading="lazy" src="/assets/images/03_python-meme-0ea41fdc94282e4a469c132c026137dd.webp" width="492" height="487" class="img_RpFt"></p>
 <p>除了 Python 直譯器的安裝路徑外，套件的管理是另外一個問題：</p>
 <p><img decoding="async" loading="lazy" src="/assets/images/04_python-modules-1f80770c3baf032cd306620fcdaea6bb.webp" width="981" height="617" class="img_RpFt"></p>
@@ -79,8 +81,7 @@
 <p>關於 Poetry 的介紹與使用這裡有一篇文章講的蠻完整的：</p>
 <p><a href="https://blog.kyomind.tw/python-poetry/" target="_blank" rel="noopener noreferrer">Python 套件管理器——Poetry 完全入門指南 </a></p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="型別檢查">型別檢查<a href="#型別檢查" class="hash-link" aria-label="Direct link to 型別檢查" title="Direct link to 型別檢查">​</a></h2>
-<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>Javascript::Typescript → Python::Mypy
-Javascript::tsconfig.json → Python::mypy.ini</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>Javascript::Typescript → Python::Mypy</p><p>Javascript::tsconfig.json → Python::mypy.ini</p></div></div>
 <h3 class="anchor anchorWithStickyNavbar_mpuI" id="javascript-1">Javascript<a href="#javascript-1" class="hash-link" aria-label="Direct link to Javascript" title="Direct link to Javascript">​</a></h3>
 <p>JavaScript 本身是一種動態型別/弱型別語言，這種特性給予了開發者極高的彈性，但容易造成很多基本的錯誤需要在執行期間 (runtime) 才能被發現。</p>
 <p><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">Typescript</a> 就是為了解決這個問題而誕生的。Typescript 的另外一個特性是「Javascript 的超集 (superset)」，不過在 ES6 已經普及的今天 (2024 年)，這個特性已經不是最有價值的部份了。</p>
@@ -90,7 +91,7 @@ Javascript::tsconfig.json → Python::mypy.ini</p></div></div>
 <p>Python 的動態型別特性是筆者一直以來對 Python 保有排斥心裡的原因之一，因此解決型別問題是筆者重返 Python 最高優先解決的問題。</p>
 <p>值得慶幸的是 Python 確實陸續將型別標記之類的功能引入自己的標準之中，諸如：PEP3107、PEP484、PEP526、PEP561...。<sup><a href="#user-content-fn-python-type-pep-cfcec1" id="user-content-fnref-python-type-pep-cfcec1" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup></p>
 <blockquote>
-<p>型別註釋能夠提供團隊成員對於變數型別的了  解，不過仍不能真正解決型別誤用的情況，畢竟 Python 的型別註釋也只是註釋，並無法偵測誤用/錯用型別的情況。<sup><a href="#user-content-fn-python-typing-cfcec1" id="user-content-fnref-python-typing-cfcec1" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>:</p>
+<p>型別註釋能夠提供團隊成員對於變數型別的了解，不過仍不能真正解決型別誤用的情況，畢竟 Python 的型別註釋也只是註釋，並無法偵測誤用/錯用型別的情況。<sup><a href="#user-content-fn-python-typing-cfcec1" id="user-content-fnref-python-typing-cfcec1" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>:</p>
 </blockquote>
 <p>雖然 Python 支援型別標記，卻仍然缺少型別檢查的實做，為了解決這個問題確實有不少型別檢查的工具：</p>
 <ul>
@@ -381,7 +382,7 @@ Javascript::TypedArray → Python::Array (NumPy)</p></div></div>
 </section></div><footer class="row docusaurus-mt-lg"><div class="col"><b>Tags:</b><ul class="tags_Wp5O padding--none margin-left--sm"><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/blog/tags/javascript">javascript</a></li><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/blog/tags/python">python</a></li></ul></div></footer></article><article class="margin-bottom--xl" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting"><meta itemprop="description" content="行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 childprocess 模組的 spawn 或是使用過 Web API 的 Worker 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。"><header><h2 class="title_BVkY" itemprop="headline"><a itemprop="url" href="/blog/2023-08-08_electron-learning-note">Electron 學習筆記 - IPC</a></h2><div class="container_sDB1 margin-vert--md"><time datetime="2023-08-08T00:00:00.000Z" itemprop="datePublished">August 8, 2023</time> · <!-- -->2 min read</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--6 authorCol_SrKl"><div class="avatar margin-bottom--sm"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="avatar__photo-link"><img class="avatar__photo" src="https://avatars.githubusercontent.com/u/9475660" alt="Wei Ji" itemprop="image"></a><div class="avatar__intro" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><div class="avatar__name"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" itemprop="url"><span itemprop="name">Wei Ji</span></a></div><small class="avatar__subtitle" itemprop="description">閃亮症候群工程屍</small></div></div></div></div></header><div class="markdown" itemprop="articleBody">
 <p>行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 <code>child_process</code> 模組的 <a href="https://nodejs.org/api/child_process.html#child_processspawncommand-args-options" target="_blank" rel="noopener noreferrer">spawn</a> 或是使用過 Web API 的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank" rel="noopener noreferrer">Worker</a> 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。</p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="區塊之間的通訊方式一覽">區塊之間的通訊方式一覽<a href="#區塊之間的通訊方式一覽" class="hash-link" aria-label="Direct link to 區塊之間的通訊方式一覽" title="Direct link to 區塊之間的通訊方式一覽">​</a></h2>
-<p>在<a href="/blog/2023-04-01_electron_learning_note_intro">前一篇文章</a>提到，在 Electron 中 Render 和 Main 彼此之間是獨立的，必須透過 Preload 和 API 來實現兩者之間的溝通。參考了官方的範例程式碼以及一  篇文章<sup><a href="#user-content-fn-electron-ipc-bef557" id="user-content-fnref-electron-ipc-bef557" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>之後，整理成一個圖表：</p>
+<p>在<a href="/blog/2023-04-01_electron_learning_note_intro">前一篇文章</a>提到，在 Electron 中 Render 和 Main 彼此之間是獨立的，必須透過 Preload 和 API 來實現兩者之間的溝通。參考了官方的範  例程式碼以及一篇文章<sup><a href="#user-content-fn-electron-ipc-bef557" id="user-content-fnref-electron-ipc-bef557" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>之後，整理成一個圖表：</p>
 <p><img decoding="async" loading="lazy" src="/assets/images/01_electron-ipc-api-2614c898ac2d7076cfc25d7ca88f52c4.webp" width="1377" height="1354" class="img_RpFt"></p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="後記">後記<a href="#後記" class="hash-link" aria-label="Direct link to 後記" title="Direct link to 後記">​</a></h2>
 <p>這篇文章原本在 2023-04-05 就已經寫好草稿了，沒想到完全忘記這篇還沒歸檔，然後圖表的 SVG 也已經刪掉了。</p>
@@ -479,7 +480,7 @@ Javascript::TypedArray → Python::Array (NumPy)</p></div></div>
 <p>過幾天 (2022-11-09)，我便利用下班之餘試著在 3DS 上刷 Linux。刷機的第一部就是透過系統漏洞刷入 CFW (Custom firmware)，讓 3DS 能夠從 SD Card 讀取 bootloader 開機，因為<a href="https://3ds.hacks.guide/get-started" target="_blank" rel="noopener noreferrer">教學</a>很詳細，照著步驟做沒有花太多時間就成功刷機了，當中有些教學性質的步驟也讓我看了 <a href="https://www.gamebrew.org/wiki/Linux_for_3DS" target="_blank" rel="noopener noreferrer">3DS Linux</a> 的頁面之後就知道大概要做什麼，也成功的在 3DS 上進入 Linux 了。</p>
 <p>到目前為止都出乎我意料之外的順利，於是我想：</p>
 <blockquote>
-<p>我都有一台跑著 Linux 的 3DS 了，寫個  程式讓它跑 Bad Apple 應該不難吧？</p>
+<p>我都有一台跑著 Linux  的 3DS 了，寫個程式讓它跑 Bad Apple 應該不難吧？</p>
 </blockquote>
 <p>接著我又想：</p>
 <blockquote>
@@ -510,7 +511,7 @@ Javascript::TypedArray → Python::Array (NumPy)</p></div></div>
 </blockquote>
 <p>並且正如我朋友說的，雖然我也不是不會寫 Shell 或是 C，但是感覺這樣就太無聊了（？）既然都難得要解 Bad Apple 的成就了，當然是加點料比較有趣，而且作為網頁前端工程師，窩真的不是很想用 Shell 或是 C 寫啊 <code>_(:3」∠)_</code>。誰知道 Node.js 毫無反應，就只是一團 stack 直接死在 Armv6 上。</p>
 <p><img decoding="async" loading="lazy" src="/assets/images/rake-9113dbba7c8351351e4f18c878d3bfea.webp" width="720" height="479" class="img_RpFt"></p>
-<p>碰巧那天 (2022-11-13) 跟朋友聊天的時候有提到在 Javascript 的圈子有個叫做「包」的東西，後來趁著放 假整理瀏覽器書籤的時候發現 Bun 相關的東西，稍微查一下資料才想起來除了 Node.js 之外還有 Deno 跟 Bun 兩個實作 Javascript 的專案。</p>
+<p>碰巧那天 (2022-11-13) 跟朋友聊天的時候有提到在 Javascript 的圈子有個叫做「包」的東  西，後來趁著放假整理瀏覽器書籤的時候發現 Bun 相關的東西，稍微查一下資料才想起來除了 Node.js 之外還有 Deno 跟 Bun 兩個實作 Javascript 的專案。</p>
 <p>Bun 因為是後起之秀，Deno 又是用 Rust 寫的，具我所知 Rust 也能拿來寫嵌入式韌體，移植到 3DS Linux 的機率比較高一點，於是我便朝著這個方向去研究。</p>
 <p>雖然 Deno 本身有一些很酷的 feature，包含交叉編譯的功能，可以把 Javascript 編譯成目標平台的執行檔。但是它本身卻沒有 arm linux 的 prebuild。就算自己跑編譯也會在下載仰賴套件 <code>rusty_v8</code> 的時候失敗，加上官方關於 32 bit ARM 支援的 <a href="https://github.com/denoland/deno/issues/2295" target="_blank" rel="noopener noreferrer">issue</a> 仍然開著。這些都還不包括 musl libc 可能會遇到的問題。看來此路仍然不通。我甚至一度產生了「乾脆用 Rust 寫吧，順便學一下這個我有興趣但是保持觀望一段時間的語言」的念頭。(2022-11-18)</p>
 <p>等等，既然 Javascript 都有諸如 Node.js, Bun, Deno 這些不同的實作，甚至使用不同的 runtime 引擎(V8, JavaScriptCore)，ECMAScript 單純作為標準，它的實作應該不只這樣吧？我也應該不是第一個想在嵌入式系統跑 Javascript 的人吧？</p>
