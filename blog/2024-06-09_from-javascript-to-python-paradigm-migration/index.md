@@ -27,7 +27,11 @@ tags: [javascript, python]
 ## 執行環境
 
 :::info
-Javascript::NVM + Javascript::NPM → Python::Poetry
+Javascript::NVM → Python::pyenv
+
+Javascript::NPM → Python::pip
+
+Javascript::Yarn → Python::Poetry
 :::
 
 ### Javascript
@@ -52,7 +56,19 @@ Javascript 本身是一團抽象規範，真正能夠執行的是實做，而開
 
 ### Python
 
-相較於 Node.js 直譯器版本一路從 4.0 演化到 22.0，Python 要煩惱的版本幾乎只剩 2 跟 3 了（？），不過 Python 有其他問題需要煩惱：
+如同 Node.js 使用 NVM 解決 Node.js 版本眾多的問題，Python 使用 [pyenv](https://github.com/pyenv/pyenv) 解決：
+
+```shell
+# 安裝 pyenv
+curl https://pyenv.run | bash
+
+# 把 PATH 加入 `~/.bashrc`
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+```
+
+除此之外 Python 有其他問題需要煩惱：
 
 ![](img/03_python-meme.webp)
 
@@ -109,6 +125,7 @@ curl https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore > 
 
 :::info
 Javascript::Typescript → Python::Mypy
+
 Javascript::tsconfig.json → Python::mypy.ini
 :::
 
