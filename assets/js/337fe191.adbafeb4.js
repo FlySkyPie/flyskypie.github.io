@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[3537],{56551:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u662f\u5ee2\u6587\u8036","permalink":"/posts/2024-07-10_post","unlisted":false}]}')}}]);

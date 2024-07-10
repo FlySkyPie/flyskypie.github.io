@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[1052],{11599:s=>{s.exports=JSON.parse('{"label":"frieren","permalink":"/posts/tags/frieren","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);
