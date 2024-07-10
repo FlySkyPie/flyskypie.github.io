@@ -27,7 +27,19 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: ['docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'post',
+        routeBasePath: 'posts',
+        path: './post',
+        showReadingTime: false,
+        blogTitle: '廢文雜談',
+        blogDescription: 'Random post just like FB or Twitter.',
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -97,6 +109,7 @@ const config = {
             position: 'right',
           },
           { to: "/blogs", label: "數位手記", position: "left" },
+          { to: "/posts", label: "廢文雜談", position: "left" },
         ],
       },
       footer: {
