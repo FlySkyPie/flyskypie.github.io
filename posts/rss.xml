@@ -4,10 +4,28 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Wed, 10 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[終於擺脫那一坨筆電變壓器了]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-12_type-c-to-dc-adapter</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-12_type-c-to-dc-adapter</guid>
+            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[ヽ(\'∀`\)ノ]]></description>
+            <content:encoded><![CDATA[
+<code>ヽ(*'∀`*)ノ</code>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_hero-df78beb7de1d8fdf2e3d6d0ab26da778.webp" width="1024" height="508" class="img_RpFt"></p>
+<p>雖然是已經退役的筆電，不過偶爾要帶它出任務的時候還要帶一堆筆電變壓器仍然有點麻煩，這下終於可以精簡配備了。</p>
+<p>精簡前：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_before-582247b34e380b710f7d17787de47135.webp" width="1024" height="731" class="img_RpFt"></p>
+<p>精簡後：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_after-2d23582d5736cbee45fc4bdcd7ff0e61.webp" width="1024" height="751" class="img_RpFt"></p>]]></content:encoded>
+            <category>Type-C</category>
+            <category>PD</category>
+            <category>誘騙器</category>
+        </item>
         <item>
             <title><![CDATA[是廢文耶]]></title>
             <link>https://flyskypie.github.io/posts/2024-07-10_post</link>

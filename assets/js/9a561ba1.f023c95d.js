@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[7939],{69944:t=>{t.exports=JSON.parse('{"permalink":"/posts/tags/\u8a98\u9a19\u5668","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Random post just like FB or Twitter.","blogTitle":"\u5ee2\u6587\u96dc\u8ac7"}')}}]);
