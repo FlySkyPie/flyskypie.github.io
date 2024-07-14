@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[9573],{6287:s=>{s.exports=JSON.parse('{"label":"\u5922\u7b46\u8a18","permalink":"/posts/tags/\u5922\u7b46\u8a18","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);
