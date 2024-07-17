@@ -4,10 +4,48 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sun, 14 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[擱置了 3 年左右的小筆電維修計畫]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-17_joybook</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-17_joybook</guid>
+            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[因為某些原因入手的小筆電，理論上找到電源應該就能開機，只是一直擱著，直到 2023-11-04 在大海電子材料行＿快閃店 入手需要的接頭跟變壓器之後又繼續擱。]]></description>
+            <content:encoded><![CDATA[
+<p>因為某些原因入手的小筆電，理論上找到電源應該就能開機，只是一直擱著，直到 2023-11-04 在<a href="https://www.facebook.com/events/315791727705852/" target="_blank" rel="noopener noreferrer">大海電子材料行＿快閃店</a> 入手需要的接頭跟變壓器之後又繼續擱。</p>
+<p>這幾天心血來潮把電源線跟變壓器接一接，開機才發現這東西居然被裝了 Windows 8.1</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-d248e271fd8260a7c3e01c593caa10f6.webp" width="1024" height="1103" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-105d595db1479224ff1ddb2e053f0016.webp" width="1024" height="817" class="img_RpFt"></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[為梅茵獻上祝福]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-17_novel</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-17_novel</guid>
+            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[上個禮拜訂的小說前幾天到貨啦～週末的時候應該可以一口氣喀完～]]></description>
+            <content:encoded><![CDATA[
+<p>上個禮拜訂的小說前幾天到貨啦～週末的時候應該可以一口氣喀完～</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-052dff89980536ecb538ebe7eda80945.webp" width="1024" height="1241" class="img_RpFt"></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[開箱 Framework 氣泡紙袋]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-17_paper-pack</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-17_paper-pack</guid>
+            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[幾個禮拜前補充了一下 Framework 筆電的插槽配件跟鍵盤的備料，包裝裡面有個紙袋讓我很在意，明明是紙袋但是確做出防撞氣泡紙袋的感覺。]]></description>
+            <content:encoded><![CDATA[
+<p>幾個禮拜前補充了一下 Framework 筆電的插槽配件跟鍵盤的備料，包裝裡面有個紙袋讓我很在意，明明是紙袋但是確做出防撞氣泡紙袋的感覺。</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-b4f7075f38080fa962d92331d2b3c910.webp" width="1024" height="595" class="img_RpFt"></p>
+<p>側面</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-42a74eb3aae3dd7ec95f2136e29b7601.webp" width="1024" height="768" class="img_RpFt"></p>
+<p>內部構造</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02-ea04d57528b29b8ffbb1d0122e628ff4.webp" width="1024" height="768" class="img_RpFt"></p>
+<p>特寫</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03-90a735c2f89ff47e9b9ab1e8360ab726.webp" width="1024" height="768" class="img_RpFt"></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[夢筆記 - 外星軟體開發者]]></title>
             <link>https://flyskypie.github.io/posts/2024-07-14_dream-note</link>
@@ -55,6 +93,15 @@
 <div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">$ sudo tcpdump -A -i lo -vv -n tcp port 1715</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>喔拉拉，原來只是打 POST HTTP Request 啊～</p>
 <p>很好，我滿意了。＊關掉逆向工程回去做正事＊</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Ya，我房間也有「固定網路」了～]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-12_network</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-12_network</guid>
+            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_network-8c251fb4f75da87637f056684b5ae9c1.webp" width="1024" height="798" class="img_RpFt"></p>]]></content:encoded>
+            <category>Foundation</category>
         </item>
         <item>
             <title><![CDATA[終於擺脫那一坨筆電變壓器了]]></title>
