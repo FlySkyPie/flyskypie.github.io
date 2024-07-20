@@ -2,11 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2024-07-17T00:00:00.000Z</updated>
+    <updated>2024-07-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[「隱藏著資本主義力量的二進制檔案啊，在我面前顯示你真正的內容，不打算遵守 EULA 的工程師命令你，封印解除」]]></title>
+        <id>https://flyskypie.github.io/posts/2024-07-20_strace</id>
+        <link href="https://flyskypie.github.io/posts/2024-07-20_strace"/>
+        <updated>2024-07-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[strace 和 tcpdump 真好玩～]]></summary>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-2f63af3b53ef1d3673a5110251073356.webp" width="1354" height="211" class="img_RpFt"></p>
+<p><code>strace</code> 和 <code>tcpdump</code> 真好玩～</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="strace" term="strace"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[擱置了 3 年左右的小筆電維修計畫]]></title>
         <id>https://flyskypie.github.io/posts/2024-07-17_joybook</id>

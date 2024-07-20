@@ -4,10 +4,21 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Wed, 17 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 20 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[「隱藏著資本主義力量的二進制檔案啊，在我面前顯示你真正的內容，不打算遵守 EULA 的工程師命令你，封印解除」]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-20_strace</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-20_strace</guid>
+            <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[strace 和 tcpdump 真好玩～]]></description>
+            <content:encoded><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-2f63af3b53ef1d3673a5110251073356.webp" width="1354" height="211" class="img_RpFt"></p>
+<p><code>strace</code> 和 <code>tcpdump</code> 真好玩～</p>]]></content:encoded>
+            <category>strace</category>
+        </item>
         <item>
             <title><![CDATA[擱置了 3 年左右的小筆電維修計畫]]></title>
             <link>https://flyskypie.github.io/posts/2024-07-17_joybook</link>
