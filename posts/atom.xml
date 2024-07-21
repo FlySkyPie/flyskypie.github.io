@@ -2,11 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2024-07-20T00:00:00.000Z</updated>
+    <updated>2024-07-21T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Server Dayo!]]></title>
+        <id>https://flyskypie.github.io/posts/2024-07-21_server</id>
+        <link href="https://flyskypie.github.io/posts/2024-07-21_server"/>
+        <updated>2024-07-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[雖然是 10 年前的小筆電，但是看起來是被人整頓過了，原本應該內裝 Windows XP 的換成 Windows 8.1、原本應該是 HDD 硬碟換成一顆 256GB 的 SSD。]]></summary>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-4f3d303c352d282bdd625b50ac16599b.webp" width="656" height="287" class="img_RpFt"></p>
+<p>雖然是 10 年前的小筆電，但是看起來是被人整頓過了，原本應該內裝 Windows XP 的換成 Windows 8.1、原本應該是 HDD 硬碟換成一顆 256GB 的 SSD。</p>
+<p>話說回來安裝速度是各種慢，從裝系統、 <code>apt install</code> 一些工具還有編譯 Python 都覺得很花時間，拿來跑 X Window 應該會慢到想殺人。←_←</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[「隱藏著資本主義力量的二進制檔案啊，在我面前顯示你真正的內容，不打算遵守 EULA 的工程師命令你，封印解除」]]></title>
         <id>https://flyskypie.github.io/posts/2024-07-20_strace</id>
