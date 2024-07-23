@@ -4,10 +4,31 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sun, 21 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Go 的 cross compile 能力讓我有點驚喜]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-23_golang</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-23_golang</guid>
+            <pubDate>Tue, 23 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近在自編 K8s 的組件，Go 的 cross compile 能力讓我有點驚喜]]></description>
+            <content:encoded><![CDATA[<p>最近在自編 K8s 的組件，Go 的 cross compile 能力讓我有點驚喜</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[私以為颱風假是一種恥辱]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-23_typhoon</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-23_typhoon</guid>
+            <pubDate>Tue, 23 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[隨著科技與工業的進步，我們能在夜晚點起亮光照亮道路甚至讓產線三班制無視日夜、能在溫室栽種植物無視夏季...]]></description>
+            <content:encoded><![CDATA[<p>隨著科技與工業的進步，我們能在夜晚點起亮光照亮道路甚至讓產線三班制無視日夜、能在溫室栽種植物無視夏季...
+科技的力量讓我們減少「看老天爺臉色」了機會了，但是我們依然必須向天災屈服，
+強大的工業文明應該可以丈著完善的基礎建設無視氣候繼續運作，
+甚至用某種手段直接把低氣壓瓦解，
+颱風假應該視為一種恥辱，是我們不夠強大的象徵。</p>
+<p>是的，我沒放假，要照常工作，我很自豪自己不用接受這種恥辱。（社畜發言）</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Server Dayo!]]></title>
             <link>https://flyskypie.github.io/posts/2024-07-21_server</link>
