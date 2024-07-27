@@ -4,10 +4,20 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Thu, 25 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Jojo 我不想再寫反向代理設定檔啦！]]></title>
+            <link>https://flyskypie.github.io/posts/2024-07-27_traefik</link>
+            <guid>https://flyskypie.github.io/posts/2024-07-27_traefik</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[這 Traefik 是什麼神奇的東西！？ Sevices 上 tag 就自己接上去了，太神奇啦～]]></description>
+            <content:encoded><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/traefik-architecture-c0e3b030d71e6e9c53908519a78e5db0.webp" width="2875" height="1501" class="img_RpFt"></p>
+<p>這 Traefik 是什麼神奇的東西！？ Sevices 上 tag 就自己接上去了，太神奇啦～</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[我把 Python 移除了，然後就嗚呼了]]></title>
             <link>https://flyskypie.github.io/posts/2024-07-25_i-removed-python</link>
