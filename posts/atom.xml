@@ -2,11 +2,55 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2024-07-27T00:00:00.000Z</updated>
+    <updated>2024-07-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[使用 GVM (Greenbone Vulnerability Manager) 的感覺]]></title>
+        <id>https://flyskypie.github.io/posts/2024-07-30_hacker</id>
+        <link href="https://flyskypie.github.io/posts/2024-07-30_hacker"/>
+        <updated>2024-07-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[上個禮拜，用 strace 偷看 system call 和用 tcpdump 偷看封包；]]></summary>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_hacker-meme-a9f713d8b1439cb375ada35f903acc71.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p>上個禮拜，用 <code>strace</code> 偷看 system call 和用 <code>tcpdump</code> 偷看封包；
+今天，用 GVM 掃描公司的伺服器。</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一個蠢想法：逆線上購物]]></title>
+        <id>https://flyskypie.github.io/posts/2024-07-29_reversed-online-shop</id>
+        <link href="https://flyskypie.github.io/posts/2024-07-29_reversed-online-shop"/>
+        <updated>2024-07-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[1. 架一個線上購物網站。]]></summary>
+        <content type="html"><![CDATA[<ol>
+<li>架一個線上購物網站。</li>
+<li>在線下買東西。</li>
+<li>把買過得商品資訊登錄到這個購物網站。</li>
+<li>瀏覽網站享受自己曾經買過得東西。</li>
+</ol>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[「我只是一個前端工程師」]]></title>
+        <id>https://flyskypie.github.io/posts/2024-07-28_irregular</id>
+        <link href="https://flyskypie.github.io/posts/2024-07-28_irregular"/>
+        <updated>2024-07-28T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_irregular-e1eb48503080a7a480ec0ec0b6fe6d2b.webp" width="1071" height="600" class="img_RpFt"></p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Jojo 我不想再寫反向代理設定檔啦！]]></title>
         <id>https://flyskypie.github.io/posts/2024-07-27_traefik</id>
