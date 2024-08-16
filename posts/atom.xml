@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2024-07-30T00:00:00.000Z</updated>
+    <updated>2024-08-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[他說世界的秩序何其脆弱，我不同意]]></title>
+        <id>https://flyskypie.github.io/posts/2024-08-16_the-order</id>
+        <link href="https://flyskypie.github.io/posts/2024-08-16_the-order"/>
+        <updated>2024-08-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[疫情爆發後，有個人感受到了世界秩序何其脆弱，說崩壞就崩壞，於是他決定要享受人生做自己，刺青跟整形。]]></summary>
+        <content type="html"><![CDATA[<p>疫情爆發後，有個人感受到了世界秩序何其脆弱，說崩壞就崩壞，於是他決定要享受人生做自己，刺青跟整形。</p>
+<p>他是誰不重要，重點是從別人的眼光看世界秩序是一件有趣的事情，從我對這個人的了解，可以合理推測他出生在中產階級以上相對安逸的環境之中。</p>
+<p>而我呢？一個相對不穩定的原生家庭，讓我曾經相信審判日的存在，夢想活在計有秩序崩壞的末世 (post-apocalyptic) 之中，
+從我的眼光來看，疫情反而體現了現有秩序的穩固，只要一年的時間就讓大家滾回去當社畜，地球依然照常轉動。</p>
+<p>他眼中的世界比他想的還要脆弱，我眼中的世界比我想的還要堅固；
+他是渴望安逸不變得既得利益者，我是時代洪流中的紊流與噪音，不安定因子。</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用 GVM (Greenbone Vulnerability Manager) 的感覺]]></title>
         <id>https://flyskypie.github.io/posts/2024-07-30_hacker</id>
