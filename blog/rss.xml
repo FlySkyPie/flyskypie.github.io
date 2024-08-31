@@ -4,11 +4,186 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/blog</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sat, 15 Jun 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 31 Aug 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2024 FlyPie (Wei Ji)</copyright>
+        <item>
+            <title><![CDATA[Polis 專案研究進度]]></title>
+            <link>https://flyskypie.github.io/blog/2024-08-31_polis-dev-log</link>
+            <guid>https://flyskypie.github.io/blog/2024-08-31_polis-dev-log</guid>
+            <pubDate>Sat, 31 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[前情提要]]></description>
+            <content:encoded><![CDATA[
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
+<ul>
+<li>TKOH (The Key Of Huanche) 是我的一個 side project<!-- -->
+<ul>
+<li>目前最大的 side project</li>
+<li>更多細節請見：<a href="https://flyskypie.github.io/docs/the-key-of-huanche/">文件</a>或是 <a href="https://flyskypie.github.io/sideprojects-wiki/#Project%3A%E7%92%B0%E9%A9%85%E4%B9%8B%E9%91%B0" target="_blank" rel="noopener noreferrer">Wiki</a></li>
+</ul>
+</li>
+<li>Hakoniwa  是我的一個 side project<!-- -->
+<ul>
+<li>TKOH 的子專案</li>
+<li>更多細節請見：<a href="https://flyskypie.github.io/docs/the-key-of-huanche/hakoniwa/">文件</a>或是 <a href="https://flyskypie.github.io/sideprojects-wiki/#Project%3AHakoniwa" target="_blank" rel="noopener noreferrer">Wiki</a></li>
+</ul>
+</li>
+<li>Polis 是我的一個 side project<!-- -->
+<ul>
+<li>Hakoniwa 的子專案</li>
+<li>更多細節請見<a href="https://flyskypie.github.io/blog/2023-05-14_project-polis">之前發過的文章</a></li>
+<li><a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress">上次的開發日誌（進度與回顧）</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="進度">進度<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E9%80%B2%E5%BA%A6" class="hash-link" aria-label="Direct link to 進度" title="Direct link to 進度">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_demo-c62e96bf264bfa8cd7e00dfe103350be.webp" width="720" height="419" class="img_RpFt"></p>
+<p>先講結論，今天 (2024-08-31) 我終於把這幾個要素組裝在一起了：</p>
+<ul>
+<li>Three.js</li>
+<li>後端渲染/無頭 (Headless) 渲染</li>
+<li>ECS (Entity Component System)</li>
+<li>開發用瀏覽窗口</li>
+</ul>
+<p>實作：<a href="https://github.com/FlySkyPie/polis-node/commit/aca8f24012848de30bef2b17cd07c1f2b32fc53b" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/polis-node/commit/aca8f24012848de30bef2b17cd07c1f2b32fc53b</a></p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="技術選擇與技術堆疊的困難">技術選擇與技術堆疊的困難<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E6%8A%80%E8%A1%93%E9%81%B8%E6%93%87%E8%88%87%E6%8A%80%E8%A1%93%E5%A0%86%E7%96%8A%E7%9A%84%E5%9B%B0%E9%9B%A3" class="hash-link" aria-label="Direct link to 技術選擇與技術堆疊的困難" title="Direct link to 技術選擇與技術堆疊的困難">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="3d-x-javascript">3D x Javascript<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#3d-x-javascript" class="hash-link" aria-label="Direct link to 3D x Javascript" title="Direct link to 3D x Javascript">​</a></h3>
+<p>不論是在工作上還是 side project，我其實經歷不少機會去使用不熟悉的語言，因此我意識到在原型開發 (Prototyping) 這一目標上，熟悉語言的經驗有時候能夠彌補語言特性帶來的缺陷，舉例來說：使用熟悉的語言因此知道某些需求需要使用特定的實作或是對於某些需求基於語言限制必須要使用某種 by pass；比起使用不熟悉的語言而在未知中摸索甚至踩到語言特性的坑。時間並沒有使用在開發上反而花在學習與試錯。</p>
+<p>用 Javascript 來寫 3D 的東西聽起來很反直覺，但是我手上有的卡牌就是：</p>
+<ul>
+<li>接近 4 年的前端 (Javascript/Typescript) 開發經驗</li>
+<li>工作或業餘經手過超過 5 個以上的 Three.js 專案</li>
+</ul>
+<p>比起重新學習另外一種技術棧 (Tech Stack)，使用熟悉的工具不只可以加速開發，更可以在過程中累積的經驗值回過來貢獻在工作上使用的技能。</p>
+<p>不過這是基於我的手牌採取的遊戲策略，並不見得適合其他人。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="後端-x-3d-threejs">後端 X 3D (Three.js)<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E5%BE%8C%E7%AB%AF-x-3d-threejs" class="hash-link" aria-label="Direct link to 後端 X 3D (Three.js)" title="Direct link to 後端 X 3D (Three.js)">​</a></h3>
+<p>很明顯的，WebGL 是為了網頁瀏覽器而生的東西，而 Three.js 更是建立在此之上的抽象層，本身並不支援在 Node.js 這樣的後端環境執行。舉例來說，在 Web API 的設計之中 <code>WebGLRenderingContext</code> 是和 <code>&lt;canvas&gt;</code> 元素榜定的，但是後端的環境中根本沒有 DOM 實做 <code>&lt;canvas&gt;</code>。</p>
+<p>另外一個問題是後端環境是無頭 (headless) 的，在缺乏視覺反饋的情況下，很難對程式進行 debug，因此一個可以「窺見」程式內 3D 渲染結果的手段是十分必要的。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="開發用瀏覽窗口">開發用瀏覽窗口<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E9%96%8B%E7%99%BC%E7%94%A8%E7%80%8F%E8%A6%BD%E7%AA%97%E5%8F%A3" class="hash-link" aria-label="Direct link to 開發用瀏覽窗口" title="Direct link to 開發用瀏覽窗口">​</a></h3>
+<p>「如何窺見 3D 的後端程式」這件事情產生另外一個問題，就是如何實現快速（低延遲）的向外串流？</p>
+<p>為了避免開發與維護另外一個讀取並顯示串流的 Client 端，基於 Web 的方案對我而言是相對合理的。於是就得出了「使用 WebRTC 來串流用於 debug 的畫面」這個結論。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="ecs-x-threejs">ECS x Three.js<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#ecs-x-threejs" class="hash-link" aria-label="Direct link to ECS x Three.js" title="Direct link to ECS x Three.js">​</a></h3>
+<p>ECS 是我計畫用來管理複雜遊戲環境的架構，不過當它需要跟其他函式庫組合使用就會產生一些問提，諸如：</p>
+<ul>
+<li>Three.js</li>
+<li>Rapier.js</li>
+</ul>
+<p>原因在於大部分的 Javascript ECS 實現把重心放在「密集的資料」這個 ECS 特性，因此這些函式庫只能用來儲存諸如浮點數、整數之類的基本資料型別，並不能方便的和其他基於 OOP 邏輯的函式庫組合使用，使用那些 ECS 函式庫的邏輯再現其他函式庫的功能顯得不合乎成本。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="回顧">回顧<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E5%9B%9E%E9%A1%A7" class="hash-link" aria-label="Direct link to 回顧" title="Direct link to 回顧">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="串流">串流<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E4%B8%B2%E6%B5%81" class="hash-link" aria-label="Direct link to 串流" title="Direct link to 串流">​</a></h3>
+<p>串流算是第一個急著解決的問題，畢竟就算我能在後端渲染的東西，只要不能把畫面丟出來我就不能 debug。</p>
+<p>在考慮了 FLV (Flash Video), RTMP (Real-Time Messaging Protocol), HLS (HTTP Live Streaming) 和 MPEG-DASH (Dynamic Adaptive Streaming over HTTP) 等方案之後，我選擇使用 WebRTC。</p>
+<p>考慮延遲以及瀏覽器支援兩個要素下，WebRTC 都是一個比較合理的方案。</p>
+<p><img decoding="async" loading="lazy" alt="https://www.wowza.com/wp-content/uploads/latency-continuum-2021-with-protocols-700x300-1.png" src="https://flyskypie.github.io/assets/images/02_latency-3fbcd9361c5da837d56376698fa66149.webp" width="700" height="380" class="img_RpFt"></p>
+<p>瀏覽器上的 Javascript 並沒有能力建立 TCP Socket，大部分網路連線需求都是由 HTTP 完成，即便是 WebSocket 實際上也是建立在 HTTP 連線之上。而 WebRTC 則是會由瀏覽器實做，實際上會依情況使用 TCP 或 UDP 連線。在這先天特性之下，WebRTC 能夠比其他基於 HTTP 的手段來得低延遲。</p>
+<p>去年 (2023) 在我短暫的學習串流相關技術之後，</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/Node-Media-Server-ts" target="_blank" rel="noopener noreferrer">Node-Media-Server-ts</a>
+<ul>
+<li>學習 RTMP 的中間產物。</li>
+</ul>
+</li>
+</ul>
+<p>我使用 WebRTC 寫了一個小範例。</p>
+<ul>
+<li><a href="https://flyskypie.github.io/blog/2023-08-07_webrtc-learning-note">WebRTC 學習筆記</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="後端渲染">後端渲染<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E5%BE%8C%E7%AB%AF%E6%B8%B2%E6%9F%93" class="hash-link" aria-label="Direct link to 後端渲染" title="Direct link to 後端渲染">​</a></h3>
+<p>網路上關於如何在後端 (Node.js) 渲染 Three.js 的方案並沒有很多，其中還不乏用重新實做 WebGL 兼容界面然後用 CPU 算圖的方法。甚至一度考慮使用 Deno，不過最後也做罷了，這些細節在我<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress">前一篇文章</a>都有紀錄。</p>
+<p>在 2023-08-16 的時候我試著用 Electron <a href="https://github.com/FlySkyPie/polis-node/tree/755be48e5180a6e56fd42969b06977a8f51c0678" target="_blank" rel="noopener noreferrer">實做伺服器</a>，</p>
+<ul>
+<li><a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note">Electron 學習筆記 - IPC</a></li>
+</ul>
+<p>不過把資訊從 Browser 在 Node.js 之間轉發是一件很麻煩的事情，大大的提高了程式的複雜度。引此在完成測試之後就沒有什麼進展了。</p>
+<p>之後 (~2024-08) 有試著嘗試了這裡提供的範例：</p>
+<p><a href="https://sbcode.net/threejs/ssr-branch/" target="_blank" rel="noopener noreferrer">SSR - Three.js Tutorials</a></p>
+<p>它使用 <a href="https://github.com/stackgl/headless-gl" target="_blank" rel="noopener noreferrer">headless-gl</a> 實現後端渲染，不過它的前置作業相對複雜，除了要用 <a href="https://github.com/jsdom/jsdom" target="_blank" rel="noopener noreferrer">jsdom</a> 補足 DOM 的實作之外，光是安裝套件就要處理 <code>node-gyp</code> 帶來的一些問題，因此沒有完全說服我使用它。</p>
+<p>我在網路上瞎逛的時候發現了 <a href="https://github.com/node-3d/3d-core-raub" target="_blank" rel="noopener noreferrer">node-3d/3d-core-raub</a>，它提供另外一種簡單粗暴的解法：把 GLFW binding 到 Node.js 上去再加上 Three.js 的兼容實作。能夠在 Linux 開啟一個視窗顯示渲染結果更是大大的減少專案初期的阻礙。</p>
+<p>跟線有的 WebRTC 實作整合之後，確發現畫面不太正常，起初我以為是延遲的問題，於是想在裡面 Three.js 裡面放個時鐘，沒想到卻是另外一個坑。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="threejs-x-text">Three.js x Text<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#threejs-x-text" class="hash-link" aria-label="Direct link to Three.js x Text" title="Direct link to Three.js x Text">​</a></h3>
+<p>在 Three.js 裡面渲染文字並不是一個被非常重視的功能，因為瀏覽器上已經有 HTML + CSS 這樣一個方便顯示文字的方法了。</p>
+<p>在經過一番折騰之後，我得到了一個像這樣的問題清單：</p>
+<ul>
+<li><a href="https://github.com/Experience-Monks/three-bmfont-text" target="_blank" rel="noopener noreferrer">three-bmfont-text</a>
+<ul>
+<li>沒有型別定義</li>
+<li><code>THREE is not defined</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/protectwise/troika" target="_blank" rel="noopener noreferrer">troika-three-text</a>
+<ul>
+<li>仰賴 <code>XMLHttpRequest</code> 和 <code>window.document</code></li>
+</ul>
+</li>
+<li><a href="https://threejs.org/docs/#examples/en/geometries/TextGeometry" target="_blank" rel="noopener noreferrer">TextGeometry</a>
+<ul>
+<li>花費 60ms 建立新的 Geometry</li>
+</ul>
+</li>
+<li><a href="https://github.com/vasturiano/three-spritetext" target="_blank" rel="noopener noreferrer">three-spritetext</a>
+<ul>
+<li>仰賴 <code>ctx.measureText</code></li>
+<li><code>TypeError: ctx.measureText is not a function</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/gamestdio/three-text2d" target="_blank" rel="noopener noreferrer">three-text2d</a>
+<ul>
+<li><code>TypeError: Class constructor Object3D cannot be invoked without 'new'</code></li>
+<li>build target 的語法過於老舊造成</li>
+<li>仰賴 <code>document</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/felixmariotto/three-mesh-ui" target="_blank" rel="noopener noreferrer">three-mesh-ui</a>
+<ul>
+<li><code>ctx.canvas.width = 1;</code></li>
+<li><code>TypeError: Cannot set properties of undefined (setting 'width')</code></li>
+</ul>
+</li>
+</ul>
+<p>在電腦圖學中（特別是 3D 遊戲領域），有一門叫做 Texture Atlas 的技術，就是把文字先烘培成貼圖與幾何資訊，在程式中再把這兩者組合起來在顯示卡的 context 中顯示文字。</p>
+<p>這個過程需要仰賴額外的工具（例如：<a href="https://www.angelcode.com/products/bmfont/" target="_blank" rel="noopener noreferrer">Angelcode’s bmfont</a>），或是由遊戲引擎內建的工具承擔（例如：Unity3D, Godot），因此在 Three.js 開發圈更常用的手段是在 runtime 時產生這些貼圖，而過程仰賴瀏覽器的渲染引擎對文字進行運算及排版，而使用這種手段的函式庫會無法在後端 (Node.js) 環境中使用。</p>
+<p>這麼一看 <code>three-bmfont-text</code> 似乎是最有潛力的選擇，最後我透過：</p>
+<ul>
+<li>使用 Typescript 重構<!-- -->
+<ul>
+<li><a href="https://github.com/FlySkyPie/three-bmfont-text" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/three-bmfont-text</a></li>
+</ul>
+</li>
+<li>使用 <a href="https://github.com/SilenceLeo/snowb-bmf" target="_blank" rel="noopener noreferrer">SilenceLeo/snowb-bmf</a> 製作與輸出該 <code>three-bmfont-text</code> 要求的檔案格式（貼圖與幾何資訊）。</li>
+</ul>
+<p>解決了問題並且完成一個數位時鐘的實作：</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/three-digital-clock" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/three-digital-clock</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="ecs">ECS<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#ecs" class="hash-link" aria-label="Direct link to ECS" title="Direct link to ECS">​</a></h3>
+<p>在正式開始之前，我選擇了一個小題目來練手：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/blog/2023-09-24_a-journey-about-learning-ecs">ECS 學習與 aimAndShoot 重構之旅</a></li>
+</ul>
+<p>其實原本想再練一個題目的，</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/three-fps-ts" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/three-fps-ts</a></li>
+</ul>
+<p>只是從 <a href="https://github.com/mohsenheydari/three-fps" target="_blank" rel="noopener noreferrer">mohsenheydari/three-fps</a> fork 之後用 Typescript 重構、更新 Ammo.js 之後，發現它的實作邏輯有點複雜（物件互相呼叫的時序），就暫時放棄嘗試把它轉成 ECS 了。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="monorepo">Monorepo<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#monorepo" class="hash-link" aria-label="Direct link to Monorepo" title="Direct link to Monorepo">​</a></h3>
+<p>試著使用 pnpm 提供的 monorepo 功能來整合前後端的專案，大大的提高了開發體驗。沒有使用 nx 的原因是它看起來配置較為複雜，學習成本是一個阻礙。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="下一步">下一步<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E4%B8%8B%E4%B8%80%E6%AD%A5" class="hash-link" aria-label="Direct link to 下一步" title="Direct link to 下一步">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="logger-系統的改善">Logger 系統的改善<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#logger-%E7%B3%BB%E7%B5%B1%E7%9A%84%E6%94%B9%E5%96%84" class="hash-link" aria-label="Direct link to Logger 系統的改善" title="Direct link to Logger 系統的改善">​</a></h3>
+<p>在目前的程式碼之中有一些我為了 debug WebRTC 保留下來的 log 點，我想把它們移到 <a href="https://github.com/winstonjs/winston" target="_blank" rel="noopener noreferrer">winston</a> 或 <a href="https://github.com/pinojs/pino" target="_blank" rel="noopener noreferrer">pino</a> 之類的專門函式庫去。</p>
+<p>畢竟在後端環境中，未來還要面對更複雜的遊戲實作，這樣的機制來紀錄並整理 log 是非常必要的。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="自由的觀戰者">自由的觀戰者<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E8%87%AA%E7%94%B1%E7%9A%84%E8%A7%80%E6%88%B0%E8%80%85" class="hash-link" aria-label="Direct link to 自由的觀戰者" title="Direct link to 自由的觀戰者">​</a></h3>
+<p>目前觀戰者並沒有移動能力，需要透過 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock" target="_blank" rel="noopener noreferrer">requestPointerLock</a> 之類的手段錨定滑鼠來提供 FPV (First Person View) 的瀏覽體驗。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="整合-voxel-實作">整合 Voxel 實作<a href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log#%E6%95%B4%E5%90%88-voxel-%E5%AF%A6%E4%BD%9C" class="hash-link" aria-label="Direct link to 整合 Voxel 實作" title="Direct link to 整合 Voxel 實作">​</a></h3>
+<p>既然前置作業已經完成，我就可以把我之前 Fork 的 Voxel 實作整合過來了：</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/MC.js-Alpha" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/MC.js-Alpha</a></li>
+</ul>]]></content:encoded>
+            <category>Polis</category>
+            <category>Hakoniwa</category>
+            <category>The Key of Huanche</category>
+        </item>
         <item>
             <title><![CDATA[Pocket AI 開箱]]></title>
             <link>https://flyskypie.github.io/blog/2024-06-15_pocket-ai</link>
@@ -1045,7 +1220,7 @@ a non-linear personal web notebook</p>
 <hr>
 <p>另外值得一提的是，<code>tiddlywiki</code> 不只能夠以 Node.js 啟動一個伺服器，還提供了一系列的 CLI 操作，比如：建構 (Build) 靜態版本、從 HTML 抽出指定條目...等。</p>
 <div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">$ tiddlywiki --help</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">usage: tiddlywiki [&lt;wikifolder&gt;] [--&lt;command&gt; [&lt;args&gt;...]...]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Available commands:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* build: Automatically run configured commands</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* clearpassword: Clear a password for subsequent crypto operations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* commands: Run commands returned from a filter</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* deletetiddlers: Deletes a group of tiddlers</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* editions: Lists the available editions of TiddlyWiki</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* fetch: Fetch tiddlers from wiki by URL</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* help: Display help for TiddlyWiki commands</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* import: Import tiddlers from a file</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* init: Initialise a new wiki folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* listen: Provides an HTTP server interface to TiddlyWiki</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* load: Load tiddlers from a file</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* makelibrary: Construct library plugin required by upgrade process</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* output: Set the base output directory for subsequent commands</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* password: Set a password for subsequent crypto operations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* render: Renders individual tiddlers to files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* rendertiddler: Render an individual tiddler as a specified ContentType</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* rendertiddlers: Render tiddlers matching a filter to a specified ContentType</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* save: Saves individual raw tiddlers to files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* savelibrarytiddlers: </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* savetiddler: Saves a raw tiddler to a file</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* savetiddlers: Saves a group of raw tiddlers to a directory</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* savewikifolder: Saves a wiki to a new wiki folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* server: Provides an HTTP server interface to TiddlyWiki (deprecated in favour of the new listen command)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* setfield: Prepares external tiddlers for use</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* unpackplugin: Unpack the payload tiddlers from a plugin</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* verbose: Triggers verbose output mode</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* version: Displays the version number of TiddlyWiki</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="變體與其他衍生">變體與其他衍生<a href="https://flyskypie.github.io/blog/2024-02-25_tiddlywiki-journey-1#%E8%AE%8A%EF%BF%BD%E9%AB%94%E8%88%87%E5%85%B6%E4%BB%96%E8%A1%8D%E7%94%9F" class="hash-link" aria-label="Direct link to 變體與其他衍生" title="Direct link to 變體與其他衍生">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="變體與其他衍生">變體與其他衍生<a href="https://flyskypie.github.io/blog/2024-02-25_tiddlywiki-journey-1#%E8%AE%8A%E9%AB%94%E8%88%87%E5%85%B6%E4%BB%96%E8%A1%8D%E7%94%9F" class="hash-link" aria-label="Direct link to 變體與其他衍生" title="Direct link to 變體與其他衍生">​</a></h2>
 <p>基於 Tiddlywiki 的設計哲學，而造就了「基本模式」、「進階模式」或是「伺服器模式」這幾種不同的使用方式，不過其實它們都不太符合一般使用者使用軟體的習慣，因此有不少衍生專案正是為了改善它的使用體驗而存在的。這裡是一些我在爬文的過程發現的衍生型 Tiddlywiki<sup><a href="https://flyskypie.github.io/blog/2024-02-25_tiddlywiki-journey-1#user-content-fn-variant-57f790" id="user-content-fnref-variant-57f790" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>：</p>
 <ul>
 <li><a href="https://noteself.org/" target="_blank" rel="noopener noreferrer">NoteSelf</a>
@@ -1335,7 +1510,7 @@ a non-linear personal web notebook</p>
             <description><![CDATA[行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 childprocess 模組的 spawn 或是使用過 Web API 的 Worker 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。]]></description>
             <content:encoded><![CDATA[
 <p>行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 <code>child_process</code> 模組的 <a href="https://nodejs.org/api/child_process.html#child_processspawncommand-args-options" target="_blank" rel="noopener noreferrer">spawn</a> 或是使用過 Web API 的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank" rel="noopener noreferrer">Worker</a> 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="區塊之間的通訊方式一�覽">區塊之間的通訊方式一覽<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%8D%80%E5%A1%8A%E4%B9%8B%E9%96%93%E7%9A%84%E9%80%9A%E8%A8%8A%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A6%BD" class="hash-link" aria-label="Direct link to 區塊之間的通訊方式一覽" title="Direct link to 區塊之間的通訊方式一覽">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="區塊之間的通訊方式一覽">區塊之間的通訊方式一覽<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%8D%80%E5%A1%8A%E4%B9%8B%E9%96%93%E7%9A%84%E9%80%9A%E8%A8%8A%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A6%BD" class="hash-link" aria-label="Direct link to 區塊之間的通訊方式一覽" title="Direct link to 區塊之間的通訊方式一覽">​</a></h2>
 <p>在<a href="https://flyskypie.github.io/blog/2023-04-01_electron_learning_note_intro">前一篇文章</a>提到，在 Electron 中 Render 和 Main 彼此之間是獨立的，必須透過 Preload 和 API 來實現兩者之間的溝通。參考了官方的範例程式碼以及一篇文章<sup><a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#user-content-fn-electron-ipc-bef557" id="user-content-fnref-electron-ipc-bef557" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>之後，整理成一個圖表：</p>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_electron-ipc-api-2614c898ac2d7076cfc25d7ca88f52c4.webp" width="1377" height="1354" class="img_RpFt"></p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="後記">後記<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%BE%8C%E8%A8%98" class="hash-link" aria-label="Direct link to 後記" title="Direct link to 後記">​</a></h2>
@@ -1697,124 +1872,6 @@ a non-linear personal web notebook</p>
             <category>learning note</category>
             <category>javascript</category>
             <category>electron</category>
-        </item>
-        <item>
-            <title><![CDATA[一場關於 2D Skeletal animation 動畫的 Web Runtime 的旅程]]></title>
-            <link>https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime</link>
-            <guid>https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime</guid>
-            <pubDate>Tue, 17 Jan 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[前情提要]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
-<p>如果對我的 Side Project 「底火的芬芳」不清楚的讀者可能需要先閱讀<a href="https://flyskypie.github.io/blog/2023-01-04_origin-of-gear-redolence">底火的芬芳 - 專案起源</a>才能理解這場旅程是怎麼開始的。而最近 (2022-12-19) 在逛 Github 的時候晃到一個 <a href="https://github.com/neko-gg/gfl-combat-simulator" target="_blank" rel="noopener noreferrer">repo</a>，它是<a href="https://en.wikipedia.org/wiki/Girls%27_Frontline" target="_blank" rel="noopener noreferrer">少女前線</a>這款遊戲的數值模擬器，往程式語言構成一看是用 Typescript 寫的立刻勾起了我的興趣。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="neko-gggfl-combat-simulator"><code>neko-gg/gfl-combat-simulator</code><a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#neko-gggfl-combat-simulator" class="hash-link" aria-label="Direct link to neko-gggfl-combat-simulator" title="Direct link to neko-gggfl-combat-simulator">​</a></h2>
-<p>2022-12-19 在 Github 上閒逛的時候，看到一個 <a href="https://github.com/neko-gg/gfl-combat-simulator" target="_blank" rel="noopener noreferrer">repo</a>。</p>
-<blockquote>
-<p>喔啦啦，這不是 Typescript 嗎？
-喔啦啦，這不是 React 嗎？
-是我的主場呢 = =+</p>
-</blockquote>
-<p>於是就 <code>clone</code> 下來研究研究。</p>
-<p>後來（約 2022-12-20）照著 <code>README.md</code> 的指示：</p>
-<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">yarn update-resources</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">yarn update-assets</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>找到了 <a href="https://github.com/neko-gg/gfl-combat-simulator/blob/senpai/src/app/data/ResourcesUpdater.ts" target="_blank" rel="noopener noreferrer">ResourcesUpdater</a> 和 <a href="https://github.com/neko-gg/gfl-combat-simulator/blob/senpai/src/app/data/AssetsUpdater.ts" target="_blank" rel="noopener noreferrer">AssetsUpdater</a> 這兩個程式，發現它把遊戲素材放在另外一個 <a href="https://github.com/36base/girlsfrontline-resources" target="_blank" rel="noopener noreferrer">repo</a>。以及會從遊戲官方的 cdn 下載名為 <code>ResData.ab</code> 的檔案，因為不知道是什麼檔案類型，就用 Hex 瀏覽器打開來看：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/unity-asset-bundle-binary-bbcfbbe578f898920ce7ab41171aa256.webp" width="355" height="260" class="img_RpFt"></p>
-<p>啊啦啦，原來是 Unity ResData Bundle。</p>
-<p>另外，從 <code>ResourcesUpdater</code> 看到它呼叫了來自 <a href="https://github.com/neko-gg/gfl-combat-simulator/blob/senpai/src/app/data/ChibiUpdater.ts" target="_blank" rel="noopener noreferrer">ChibiUpdater.ts</a> 的方法，稍微研究一下內容發現它使用 Puppeteer 打開一個<a href="https://naganeko.github.io/spine-gif/" target="_blank" rel="noopener noreferrer">網站</a>並做了某些事，不過因為程式碼已經有點過時了，網站已經被移到<a href="https://naganeko.pages.dev/" target="_blank" rel="noopener noreferrer">其他地方</a>，DOM 的操作也和原本腳本內的方式有點落差。研究了它使用 Puppeteer 的方式，看得出來目的是取得一張 Chibi 站立的圖片。</p>
-<ul>
-<li>原始的 Chibi （程式內對人偶的稱呼）檔案是將人偶拆件，並透過組態檔組裝的。</li>
-<li>naganeko 的網站能夠上傳 Spine 檔案，並播放動畫。</li>
-<li>naganeko 的網站也能下載組裝後的圖檔。</li>
-</ul>
-<p>試著逆向工程 naganeko 的網站，發現它應該是使用了 Spine 的 Runtime。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="2d-骨架動畫">2D 骨架動畫<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#2d-%E9%AA%A8%E6%9E%B6%E5%8B%95%E7%95%AB" class="hash-link" aria-label="Direct link to 2D 骨架動畫" title="Direct link to 2D 骨架動畫">​</a></h2>
-<p>在 3D 模型/動畫中，會使用骨架 (Armature) 綁定模型節點，並透過權重、關鍵影格等方式讓模型執行動畫。</p>
-<p>透過把模型壓扁，將這種技術應用在 2D 場景就是 2D 骨架動畫，可以解決傳統 Sprite 的一些<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#sprite-%E9%99%90%E5%88%B6">限制</a>。另外還有三渲二之類在遊戲開發上常見的手段，不過不在本次題目的討論範圍內。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="spine">Spine<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#spine" class="hash-link" aria-label="Direct link to Spine" title="Direct link to Spine">​</a></h3>
-<p><a href="http://esotericsoftware.com/" target="_blank" rel="noopener noreferrer">Spine</a> 是目前極為普及的 2D 骨架動畫 tool chain。用工業建模比喻的話就像 SolidWork，或是美術產業中的 PhotoShop 以及 Illustrator。原因在於其應用端成功的布局，包含 Unity3D, 又或是網頁遊戲開發 Three.js, Phaser, PixiJS...之類的執行環境，有著非常廣泛的 <a href="http://en.esotericsoftware.com/spine-runtimes" target="_blank" rel="noopener noreferrer">Runtime</a> 支援。換句話使用它的產品，佈署目標的選擇十分多元。</p>
-<p>然而這個格式終究是商業產品，編輯器本身需要付費，使用者（如：遊戲開發者）也需要購買<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#spine-%E6%8E%88%E6%AC%8A">授權</a>。即便有 Runtime 的原始碼，其授權範圍仍不算開源的範疇，對我而言尋找替代方案就很重要了，因為我只是想寫寫 side project。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="替代方案">替代方案<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88" class="hash-link" aria-label="Direct link to 替代方案" title="Direct link to 替代方案">​</a></h3>
-<p>與 Spine 類似的產品還有 <a href="https://creature.kestrelmoon.com/" target="_blank" rel="noopener noreferrer">Creature Animation</a>、<a href="https://rive.app/" target="_blank" rel="noopener noreferrer">Rive</a> 之類的，不過它們跟 Spine 一樣都有一股商業味，自然就排除在我的選項之外了。</p>
-<p>往開源的生態系望去，則有 Blender 的生態系內有個名為 <a href="https://github.com/ndee85/coa_tools" target="_blank" rel="noopener noreferrer">COA Tools</a> 的工具能夠製作 2D 動畫。或是 Godot 作為開源的遊戲引擎也有內建的 <a href="https://docs.godotengine.org/en/stable/tutorials/animation/cutout_animation.html" target="_blank" rel="noopener noreferrer">2D 骨架動畫系統</a>。</p>
-<p>只是我懶得自己重頭綁骨架跟刷權重，能夠直接用<del>撿到</del>的少女前線檔案轉檔是在好不過了。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="dragonbones">DragonBones<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#dragonbones" class="hash-link" aria-label="Direct link to DragonBones" title="Direct link to DragonBones">​</a></h3>
-<p>最後 (2022-12-22) 決定使用 <a href="https://docs.egret.com/dragonbones/en" target="_blank" rel="noopener noreferrer">DragonBones</a> 的格式，雖然編輯軟體本身沒開源而且只能在 Windows 執行，但是至少是免費的而且能夠用 Wine 跑起來。這個工具背後的中國公司的 Tech Stack 算是從 Flash 長出來的，後來往 Javascript 轉型。因此它的 <a href="https://github.com/DragonBones/DragonBonesJS" target="_blank" rel="noopener noreferrer">runtime</a> 支援不少諸如 Three.js Pixi, Phaser 等知名的 Javascript 的套件。</p>
-<p>最重要的是，它能夠匯入 Spine 格式的檔案，並輸出成 DragonBones 的格式。~~這樣我就可以直接撿 Chibi 的檔案來用囉～~~還有其他考量就是，如果編輯器也是基於 Javascript 的話，日後逆向工程起來比較容易。</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/smile-80f08926f2ee3bb5bbf8f30446881436.webp" width="540" height="360" class="img_RpFt"></p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="dragonbonesjs-重構">DragonBonesJS 重構<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#dragonbonesjs-%E9%87%8D%E6%A7%8B" class="hash-link" aria-label="Direct link to DragonBonesJS 重構" title="Direct link to DragonBonesJS 重構">​</a></h2>
-<p>然而 DragonBonesJS 的 Javascript Runtime 自 2020 就沒有維護了，而且並不支援 ES6 的模組載入方式。從程式碼看得出來它使用的設計是有一個處理事務邏輯的核心，以及針對各種不同套件實作的 Runtime 。因此即便我重構了核心，也無法直接測試，必須選用一個 Runtime 作為測試用途。</p>
-<p>原本支援的 Runtime 中，Three.js 是我的目標，但是沒有充足的 Demo code 能夠測試重構，當中的 Phaser 是我有接觸過得遊戲引擎，但是它的<a href="https://github.com/DragonBones/DragonBonesJS/tree/master/Phaser/3.x/src/dragonBones/phaser" target="_blank" rel="noopener noreferrer">實作</a>較為複雜，而 PixiJS 的版本我雖然沒使用過，但是<a href="https://github.com/DragonBones/DragonBonesJS/tree/master/Pixi/4.x/src/dragonBones/pixi" target="_blank" rel="noopener noreferrer">實作</a>比較簡單，只有 4 個檔案，於是重構的任務就拆成了 3 個部份：</p>
-<ul>
-<li>Core<!-- -->
-<ul>
-<li>真正處理動畫邏輯的部份</li>
-</ul>
-</li>
-<li>PixiJS Runetime<!-- -->
-<ul>
-<li>主要是為了完整的 Demo 範例，好測試 Core 的重構運作正不正常</li>
-</ul>
-</li>
-<li>Three.js Runtime<!-- -->
-<ul>
-<li>目標，因為我想把 Chibi 丟進 3D 的空間中</li>
-</ul>
-</li>
-</ul>
-<p>Core 跟 PixiJS Runtime 的重構過程沒什麼好紀錄的，就是要轉換成 ES6 的寫法跟解決 <code>tsconfig</code> 設定不同的問題。Three.js Runtime 的重構過程倒是問題不少。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="threejs-runtime-重構">Three.js Runtime 重構<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#threejs-runtime-%E9%87%8D%E6%A7%8B" class="hash-link" aria-label="Direct link to Three.js Runtime 重構" title="Direct link to Three.js Runtime 重構">​</a></h3>
-<p>DragonBones 提供的 Demo 中，只有線性變換的部份（Translate, Rotation, Scale），並沒有包含網格變形，當我匯入 Chibi 的檔案時，得到了破圖的結果：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/glitch-433919c2c301c10f480f1b177486567c.gif" width="252" height="228" class="img_RpFt"></p>
-<p>慶幸的是在 issues 撿到野生的 <a href="https://github.com/DragonBones/DragonBonesJS/issues/133" target="_blank" rel="noopener noreferrer">patch</a>。</p>
-<p>接著要處理的要件是升級 Three.js 的版本，DragonBones 遺留的程式碼僅支援到 0.89.0，而目前版本是 0.148.0。升級的過程遇到一個問題是 Three.js 在 0.125.0 的時候棄用了一個名為 Geometry 的物件，而在 DragonBones 的實作中是仰賴這個物件的，即使可以透過 <a href="https://discourse.threejs.org/t/three-geometry-will-be-removed-from-core-with-r125/22401" target="_blank" rel="noopener noreferrer">Legacy Code</a> 拿來使用，卻會有性能問題。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="重構成果">重構成果<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#%E9%87%8D%E6%A7%8B%E6%88%90%E6%9E%9C" class="hash-link" aria-label="Direct link to 重構成果" title="Direct link to 重構成果">​</a></h3>
-<ul>
-<li>Runtime Demo<!-- -->
-<ul>
-<li><a href="https://flyskypie.github.io/dragonbones-pixi/demo/" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/dragonbones-pixi/demo/</a></li>
-</ul>
-</li>
-<li>Github Repo<!-- -->
-<ul>
-<li><a href="https://github.com/FlySkyPie/dragonbones-js" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/dragonbones-js</a></li>
-<li><a href="https://github.com/FlySkyPie/dragonbones-pixi" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/dragonbones-pixi</a></li>
-<li><a href="https://github.com/FlySkyPie/dragonbones-threejs" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/dragonbones-threejs</a></li>
-</ul>
-</li>
-<li>NPM Package<!-- -->
-<ul>
-<li><a href="https://www.npmjs.com/package/@flyskypie/dragonbones-js" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/@flyskypie/dragonbones-js</a></li>
-<li><a href="https://www.npmjs.com/package/@flyskypie/dragonbones-pixi" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/@flyskypie/dragonbones-pixi</a></li>
-<li><a href="https://www.npmjs.com/package/@flyskypie/dragonbones-threejs" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/@flyskypie/dragonbones-threejs</a></li>
-</ul>
-</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="threejs-chibi-game-sample">Three.js Chibi Game Sample<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#threejs-chibi-game-sample" class="hash-link" aria-label="Direct link to Three.js Chibi Game Sample" title="Direct link to Three.js Chibi Game Sample">​</a></h2>
-<p>就只是想做個概念驗證：</p>
-<ul>
-<li>如果我有一個 2D 人偶</li>
-<li>放進 3D 空間，像是<a href="https://threejs.org/examples/?q=control#misc_controls_orbit" target="_blank" rel="noopener noreferrer">Three.js 的範例</a></li>
-<li>做成類似<a href="https://youtu.be/xXOa4xqtnfE" target="_blank" rel="noopener noreferrer">尼爾：自動人形</a>駭客小遊戲的風格</li>
-</ul>
-<p><a href="https://youtu.be/lVCbXohxvPQ" target="_blank" rel="noopener noreferrer" title="Three.js Chibi Animation Shoot Game Prototype"><img decoding="async" loading="lazy" src="http://img.youtube.com/vi/lVCbXohxvPQ/0.jpg" alt="" class="img_RpFt"></a></p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="註解">註解<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#%E8%A8%BB%E8%A7%A3" class="hash-link" aria-label="Direct link to 註解" title="Direct link to 註解">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="sprite-限制">Sprite 限制<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#sprite-%E9%99%90%E5%88%B6" class="hash-link" aria-label="Direct link to Sprite 限制" title="Direct link to Sprite 限制">​</a></h3>
-<p>傳統 Sprite 是透過切換數張點陣圖達到視覺暫留的動畫效果，點陣圖除了繪製費工之外、檔案較大還有幀數受限制等問題。</p>
-<p>與之相對的 3D 模型是用點數據構成的，也就是所謂的向量圖檔。透過綁定骨架就重複使用同一張貼圖製作不同的動畫。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="spine-授權">Spine 授權<a href="https://flyskypie.github.io/blog/2023-01-17_a-journey-about-2D-skeletal-animation-of-runtime#spine-%E6%8E%88%E6%AC%8A" class="hash-link" aria-label="Direct link to Spine 授權" title="Direct link to Spine 授權">​</a></h3>
-<p>Spine 的授權規則很哆嗦：</p>
-<ul>
-<li><a href="http://zh.esotericsoftware.com/spine-editor-license#s2" target="_blank" rel="noopener noreferrer">http://zh.esotericsoftware.com/spine-editor-license#s2</a></li>
-<li><a href="https://github.com/EsotericSoftware/spine-runtimes/blob/4.1/LICENSE" target="_blank" rel="noopener noreferrer">https://github.com/EsotericSoftware/spine-runtimes/blob/4.1/LICENSE</a></li>
-</ul>
-<hr>
-<p><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="創用 CC 授權條款" class="img_RpFt"></a><br>
-<!-- -->Wei Ji以<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">創用CC 姓名標示-相同方式分享 4.0 國際 授權條款</a>釋出。</p>]]></content:encoded>
-            <category>development note</category>
-            <category>The Key of Huanche</category>
-            <category>Gear Redolence</category>
-            <category>2d animation</category>
-            <category>skeletal-animation</category>
-            <category>DragonBones</category>
         </item>
     </channel>
 </rss>

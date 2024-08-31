@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.1">
+<title data-rh="true">Polis 專案研究進度 | 工程屍 FlyPie 的異想世界</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:locale" content="zh_tw"><meta data-rh="true" property="og:title" content="Polis 專案研究進度 | 工程屍 FlyPie 的異想世界"><meta data-rh="true" name="description" content="前情提要"><meta data-rh="true" property="og:description" content="前情提要"><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2024-08-31T00:00:00.000Z"><meta data-rh="true" property="article:author" content="https://github.com/FlySkyPie"><meta data-rh="true" property="article:tag" content="Polis,Hakoniwa,The Key of Huanche"><meta data-rh="true" property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/blog/2024-08-31_polis-dev-log/img/00_hero.webp"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log"><link data-rh="true" rel="alternate" href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log" hreflang="en"><link data-rh="true" rel="alternate" href="https://flyskypie.github.io/blog/2024-08-31_polis-dev-log" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="工程屍 FlyPie 的異想世界 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="工程屍 FlyPie 的異想世界 Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="工程屍 FlyPie 的異想世界 JSON Feed">
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/posts/rss.xml" title="工程屍 FlyPie 的異想世界 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/posts/atom.xml" title="工程屍 FlyPie 的異想世界 Atom Feed">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.7cc1d85a.css">
+<script src="/assets/js/runtime~main.3984c4da.js" defer="defer"></script>
+<script src="/assets/js/main.2ec03df9.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_LBgp" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_yFA9 themedComponent--light_gNzW"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_yFA9 themedComponent--dark_IRH4"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/docs/the-key-of-huanche/">專案文件</a><a class="navbar__item navbar__link" href="/blogs">數位手記</a><a class="navbar__item navbar__link" href="/posts">廢文雜談</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_s2nU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_DonJ colorModeToggle_KBLq"><button class="clean-btn toggleButton_qwn5 toggleButtonDisabled_tRn_" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_bYdl"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_D9Q4"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Cbrq"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_GUBX"><div class="container margin-vert--lg"><div class="row"><aside class="col col--3"><nav class="sidebar_UgN6 thin-scrollbar" aria-label="Blog recent posts navigation"><div class="sidebarItemTitle_PkUw margin-bottom--md">Recent posts</div><ul class="sidebarItemList_HFnO clean-list"><li class="sidebarItem_NmoJ"><a aria-current="page" class="sidebarItemLink_GF4N sidebarItemLinkActive_abzQ" href="/blog/2024-08-31_polis-dev-log">Polis 專案研究進度</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/blog/2024-06-15_pocket-ai">Pocket AI 開箱</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/blog/2024-06-09_from-javascript-to-python-paradigm-migration">從 Javascript 到 Python 的範式遷移 (Paradigm Migration)</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/blog/2024-05-29_I-like-minecraft-but-its-might-no-the-way-you-think">我喜歡 Minecraft，不過可能不是一般人認知的那種</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/blog/2024-05-26_polis-gpu-context-issue">關於 Polis 的 GPU Context 問題</a></li></ul></nav></aside><main class="col col--7" itemscope="" itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting"><meta itemprop="description" content="前情提要"><header><h1 class="title_BVkY" itemprop="headline">Polis 專案研究進度</h1><div class="container_sDB1 margin-vert--md"><time datetime="2024-08-31T00:00:00.000Z" itemprop="datePublished">August 31, 2024</time> · <!-- -->12 min read</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--6 authorCol_SrKl"><div class="avatar margin-bottom--sm"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="avatar__photo-link"><img class="avatar__photo" src="https://avatars.githubusercontent.com/u/9475660" alt="Wei Ji" itemprop="image"></a><div class="avatar__intro" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><div class="avatar__name"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" itemprop="url"><span itemprop="name">Wei Ji</span></a></div><small class="avatar__subtitle" itemprop="description">閃亮症候群工程屍</small></div></div></div></div></header><div id="__blog-post-container" class="markdown" itemprop="articleBody">
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="#前情提要" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
+<ul>
+<li>TKOH (The Key Of Huanche) 是我的一個 side project<!-- -->
+<ul>
+<li>目前最大的 side project</li>
+<li>更多細節請見：<a href="/docs/the-key-of-huanche/">文件</a>或是 <a href="https://flyskypie.github.io/sideprojects-wiki/#Project%3A%E7%92%B0%E9%A9%85%E4%B9%8B%E9%91%B0" target="_blank" rel="noopener noreferrer">Wiki</a></li>
+</ul>
+</li>
+<li>Hakoniwa  是我的一個 side project<!-- -->
+<ul>
+<li>TKOH 的子專案</li>
+<li>更多細節請見：<a href="/docs/the-key-of-huanche/hakoniwa/">文件</a>或是 <a href="https://flyskypie.github.io/sideprojects-wiki/#Project%3AHakoniwa" target="_blank" rel="noopener noreferrer">Wiki</a></li>
+</ul>
+</li>
+<li>Polis 是我的一個 side project<!-- -->
+<ul>
+<li>Hakoniwa 的 子專案</li>
+<li>更多細節請見<a href="/blog/2023-05-14_project-polis">之前發過的文章</a></li>
+<li><a href="/blog/2023-08-05_polis-progress">上次的開發日誌（進度與回顧）</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="進度">進度<a href="#進度" class="hash-link" aria-label="Direct link to 進度" title="Direct link to 進度">​</a></h2>
+<p><img decoding="async" loading="lazy" src="/assets/images/01_demo-c62e96bf264bfa8cd7e00dfe103350be.webp" width="720" height="419" class="img_RpFt"></p>
+<p>先講結論，今天 (2024-08-31) 我終於把這幾個要素組裝在一起了：</p>
+<ul>
+<li>Three.js</li>
+<li>後端渲染/無頭 (Headless) 渲染</li>
+<li>ECS (Entity Component System)</li>
+<li>開發用瀏覽窗口</li>
+</ul>
+<p>實作：<a href="https://github.com/FlySkyPie/polis-node/commit/aca8f24012848de30bef2b17cd07c1f2b32fc53b" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/polis-node/commit/aca8f24012848de30bef2b17cd07c1f2b32fc53b</a></p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="技術選擇與技術堆疊的困難">技術選擇與技術堆疊的困難<a href="#技術選擇與技術堆疊的困難" class="hash-link" aria-label="Direct link to 技術選擇與技術堆疊的困難" title="Direct link to 技術選擇與技術堆疊的困難">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="3d-x-javascript">3D x Javascript<a href="#3d-x-javascript" class="hash-link" aria-label="Direct link to 3D x Javascript" title="Direct link to 3D x Javascript">​</a></h3>
+<p>不論是在工作上還是 side project，我其實經歷不少機會去使用不熟悉的語言，因此我意識到在原型開發 (Prototyping) 這一目標上，熟悉語言的經驗有時候能夠彌補語言特性帶來的缺陷，舉例來說：使用熟悉的語言因此知道某些需求需要使用特定的實作或是對於某些需求基於語言限制必須要使用某種 by pass；比起使用不熟悉的語言而在未知中摸 索甚至踩到語言特性的坑。時間並沒有使用在開發上反而花在學習與試錯。</p>
+<p>用 Javascript 來寫 3D 的東西聽起來很反直覺，但是我手上有的卡牌就是：</p>
+<ul>
+<li>接近 4 年的前端 (Javascript/Typescript) 開發經驗</li>
+<li>工作或業餘經手過超過 5 個以上的 Three.js 專案</li>
+</ul>
+<p>比起重新學習另外一種技術棧 (Tech Stack)，使用熟悉的工具不只可以加速開發，更可以在過程中累積的經驗值回過來貢獻在工作上使用的技能。</p>
+<p>不過這是基於我的手牌採取的遊戲策略，並不見得適合其他人。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="後端-x-3d-threejs">後端 X 3D (Three.js)<a href="#後端-x-3d-threejs" class="hash-link" aria-label="Direct link to 後端 X 3D (Three.js)" title="Direct link to 後端 X 3D (Three.js)">​</a></h3>
+<p>很明顯的，WebGL 是為了網頁瀏覽器而生的東西，而 Three.js 更是建立在此之上的抽象層，本身並不支援在 Node.js 這樣的後端環境執行。舉例來說，在 Web API 的設計之中 <code>WebGLRenderingContext</code> 是和 <code>&lt;canvas&gt;</code> 元素榜定的，但是後端的環境中根本沒有 DOM 實做 <code>&lt;canvas&gt;</code>。</p>
+<p>另外一個問題是後端環境是無頭 (headless) 的，在缺乏視覺反饋的情況下，很難對程式進行 debug，因此一個可以「窺見」程式內 3D 渲染結果的手段是十分必要的。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="開發用瀏覽窗口">開發用瀏覽窗口<a href="#開發用瀏覽窗口" class="hash-link" aria-label="Direct link to 開發用瀏覽窗口" title="Direct link to 開發用瀏覽窗口">​</a></h3>
+<p>「如何窺見 3D 的後端程式」這件事情產生另外一個問題，就是如何實現快速（低延遲）的向外串流？</p>
+<p>為了避免開發與維護另外一個讀取並顯示串流的 Client 端，基於 Web 的方案對我而言是相對合理的。於是就得 出了「使用 WebRTC 來串流用於 debug 的畫面」這個結論。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="ecs-x-threejs">ECS x Three.js<a href="#ecs-x-threejs" class="hash-link" aria-label="Direct link to ECS x Three.js" title="Direct link to ECS x Three.js">​</a></h3>
+<p>ECS 是我計畫用來管理複雜遊戲環境的架構，不過當它需要跟其他函式庫組合使用就會產生一些問提，諸如：</p>
+<ul>
+<li>Three.js</li>
+<li>Rapier.js</li>
+</ul>
+<p>原因在於大部分的 Javascript ECS 實現把重心放在「密集的資料」這個 ECS 特性，因此這些函式庫只能用來儲存諸如浮點數、整數之類的基本資料型別，並不能方便的和其他基於 OOP 邏輯的函式庫組合使用，使用那些 ECS 函式庫的邏輯再現其他函式庫的功能顯得不合乎成本。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="回顧">回顧<a href="#回顧" class="hash-link" aria-label="Direct link to 回顧" title="Direct link to 回顧">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="串流">串流<a href="#串流" class="hash-link" aria-label="Direct link to 串流" title="Direct link to 串流">​</a></h3>
+<p>串流算是第一個急著解決的問題，畢竟就算我能在後端渲染的東西，只要不能把畫面丟出來我就不能 debug。</p>
+<p>在考慮了 FLV (Flash Video), RTMP (Real-Time Messaging Protocol), HLS (HTTP Live Streaming) 和 MPEG-DASH (Dynamic Adaptive Streaming over HTTP) 等方案之後，我選擇使用 WebRTC。</p>
+<p>考慮延遲以及瀏覽器支援兩個要素下，WebRTC 都是一個比較合理的方案。</p>
+<p><img decoding="async" loading="lazy" alt="https://www.wowza.com/wp-content/uploads/latency-continuum-2021-with-protocols-700x300-1.png" src="/assets/images/02_latency-3fbcd9361c5da837d56376698fa66149.webp" width="700" height="380" class="img_RpFt"></p>
+<p>瀏覽器上的 Javascript 並沒有能力建立 TCP Socket，大部分網路連線需求都是由 HTTP 完成，即便是 WebSocket 實際上也是建立在 HTTP 連線之上。而 WebRTC 則是會由瀏覽器實做，實際上會依情況使用 TCP 或 UDP 連線。在這先天特性之下，WebRTC 能夠比其他基於 HTTP 的手段來得低延遲。</p>
+<p>去年 (2023) 在我短暫的學習串流相關技術之後，</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/Node-Media-Server-ts" target="_blank" rel="noopener noreferrer">Node-Media-Server-ts</a>
+<ul>
+<li>學習 RTMP 的中間產物。</li>
+</ul>
+</li>
+</ul>
+<p>我使用 WebRTC 寫了一個小範例。</p>
+<ul>
+<li><a href="/blog/2023-08-07_webrtc-learning-note">WebRTC 學習筆記</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="後端渲染">後端渲染<a href="#後端渲染" class="hash-link" aria-label="Direct link to 後端渲染" title="Direct link to 後端渲染">​</a></h3>
+<p>網路上關於如何在後端 (Node.js) 渲染 Three.js 的方案並沒有很多，其中還不乏用重新實做 WebGL 兼容界面然後用 CPU 算圖的方法。甚至一度考慮使用 Deno，不過最後也做罷了，這些細節在我<a href="/blog/2023-08-05_polis-progress">前一篇文章</a>都有紀錄。</p>
+<p>在 2023-08-16 的時候我試著用 Electron <a href="https://github.com/FlySkyPie/polis-node/tree/755be48e5180a6e56fd42969b06977a8f51c0678" target="_blank" rel="noopener noreferrer">實做伺服器</a>，</p>
+<ul>
+<li><a href="/blog/2023-08-08_electron-learning-note">Electron 學習筆記 - IPC</a></li>
+</ul>
+<p>不過把資訊從 Browser 在 Node.js 之間轉發是一件很麻煩的事情，大大的提高了程式的複雜度。引此在完成測試之後就沒有什麼進展了。</p>
+<p>之後 (~2024-08) 有試著嘗試了這裡提供的範例：</p>
+<p><a href="https://sbcode.net/threejs/ssr-branch/" target="_blank" rel="noopener noreferrer">SSR - Three.js Tutorials</a></p>
+<p>它使用 <a href="https://github.com/stackgl/headless-gl" target="_blank" rel="noopener noreferrer">headless-gl</a> 實現後端渲染，不過它的前置作業相對複雜，除了要用 <a href="https://github.com/jsdom/jsdom" target="_blank" rel="noopener noreferrer">jsdom</a> 補足 DOM 的實作之外，光是安裝套件就要處理 <code>node-gyp</code> 帶來的一些問題，因此沒有完全說服我使用它。</p>
+<p>我在網路上瞎逛的時候發現了 <a href="https://github.com/node-3d/3d-core-raub" target="_blank" rel="noopener noreferrer">node-3d/3d-core-raub</a>，它提供另外一種簡單粗暴的解法：把 GLFW binding 到 Node.js 上去再加上 Three.js 的兼容實作。能夠在 Linux 開啟一個視窗顯示渲染結果更是大大的減少專案初期的阻礙。</p>
+<p>跟線有的 WebRTC 實作整合之後，確發現畫面不太正常，起初我以為是延遲的問題，於是想在裡面 Three.js 裡面放個時鐘，沒想到卻是另外一個坑。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="threejs-x-text">Three.js x Text<a href="#threejs-x-text" class="hash-link" aria-label="Direct link to Three.js x Text" title="Direct link to Three.js x Text">​</a></h3>
+<p>在 Three.js 裡面渲染文字並不是一個被非常重視的功能，因為瀏覽器上已經有 HTML + CSS 這樣一個方便顯示文字的方法了。</p>
+<p>在經過一番折騰之後，我得到了一個像這樣的問題清單：</p>
+<ul>
+<li><a href="https://github.com/Experience-Monks/three-bmfont-text" target="_blank" rel="noopener noreferrer">three-bmfont-text</a>
+<ul>
+<li>沒有型別定義</li>
+<li><code>THREE is not defined</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/protectwise/troika" target="_blank" rel="noopener noreferrer">troika-three-text</a>
+<ul>
+<li>仰賴 <code>XMLHttpRequest</code> 和 <code>window.document</code></li>
+</ul>
+</li>
+<li><a href="https://threejs.org/docs/#examples/en/geometries/TextGeometry" target="_blank" rel="noopener noreferrer">TextGeometry</a>
+<ul>
+<li>花費 60ms 建立新的 Geometry</li>
+</ul>
+</li>
+<li><a href="https://github.com/vasturiano/three-spritetext" target="_blank" rel="noopener noreferrer">three-spritetext</a>
+<ul>
+<li>仰賴 <code>ctx.measureText</code></li>
+<li><code>TypeError: ctx.measureText is not a function</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/gamestdio/three-text2d" target="_blank" rel="noopener noreferrer">three-text2d</a>
+<ul>
+<li><code>TypeError: Class constructor Object3D cannot be invoked without &#x27;new&#x27;</code></li>
+<li>build target 的語法過於老舊造成</li>
+<li>仰賴 <code>document</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/felixmariotto/three-mesh-ui" target="_blank" rel="noopener noreferrer">three-mesh-ui</a>
+<ul>
+<li><code>ctx.canvas.width = 1;</code></li>
+<li><code>TypeError: Cannot set properties of undefined (setting &#x27;width&#x27;)</code></li>
+</ul>
+</li>
+</ul>
+<p>在電腦圖學中（特別是 3D 遊戲領域），有一門叫做 Texture Atlas 的技術，就是把文字先烘培成貼圖與幾何資訊，在程式中再把這兩者組合起來在顯示卡的 context 中顯示文字。</p>
+<p>這個過程需要仰賴額外的工具（例如：<a href="https://www.angelcode.com/products/bmfont/" target="_blank" rel="noopener noreferrer">Angelcode’s bmfont</a>），或是由遊戲引擎內建的工具承擔（例如：Unity3D, Godot），因此在 Three.js 開發圈更常用的手段是在 runtime 時產生這些貼圖，而過程仰賴瀏覽器的渲染引擎對文字進行運算及排版，而使用這種手段的函式庫會無法在後端 (Node.js) 環境中使用。</p>
+<p>這麼一看 <code>three-bmfont-text</code> 似乎是最有潛力的選擇，最後我透過：</p>
+<ul>
+<li>使用 Typescript 重構<!-- -->
+<ul>
+<li><a href="https://github.com/FlySkyPie/three-bmfont-text" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/three-bmfont-text</a></li>
+</ul>
+</li>
+<li>使用 <a href="https://github.com/SilenceLeo/snowb-bmf" target="_blank" rel="noopener noreferrer">SilenceLeo/snowb-bmf</a> 製作與輸出該 <code>three-bmfont-text</code> 要求的檔案格式（貼圖與幾何資訊）。</li>
+</ul>
+<p>解決了問題並且完成一個數位時鐘的實作：</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/three-digital-clock" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/three-digital-clock</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="ecs">ECS<a href="#ecs" class="hash-link" aria-label="Direct link to ECS" title="Direct link to ECS">​</a></h3>
+<p>在正式開始之前，我選擇了一個小題目來練手：</p>
+<ul>
+<li><a href="/blog/2023-09-24_a-journey-about-learning-ecs">ECS 學習與 aimAndShoot 重構之旅</a></li>
+</ul>
+<p>其實原本想再練一個題目的，</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/three-fps-ts" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/three-fps-ts</a></li>
+</ul>
+<p>只是從 <a href="https://github.com/mohsenheydari/three-fps" target="_blank" rel="noopener noreferrer">mohsenheydari/three-fps</a> fork 之後用 Typescript 重構、更新 Ammo.js 之後，發現它的實作邏輯有點複雜（物件互相呼叫的時序），就暫時放棄嘗試把它轉成 ECS 了。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="monorepo">Monorepo<a href="#monorepo" class="hash-link" aria-label="Direct link to Monorepo" title="Direct link to Monorepo">​</a></h3>
+<p>試著使用 pnpm 提供的 monorepo 功能來整合前後端的專案，大大的提高了開發體驗。沒有使用 nx 的原因是它看起來配置較為複雜，學習成本是一個阻礙。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="下一步">下一步<a href="#下一步" class="hash-link" aria-label="Direct link to 下一步" title="Direct link to 下一步">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="logger-系統的改善">Logger 系統的改善<a href="#logger-系統的改善" class="hash-link" aria-label="Direct link to Logger 系統的改善" title="Direct link to Logger 系統的改善">​</a></h3>
+<p>在目前的程式碼之中有一些我為了 debug WebRTC 保留下來的 log 點，我想把它們移到 <a href="https://github.com/winstonjs/winston" target="_blank" rel="noopener noreferrer">winston</a> 或 <a href="https://github.com/pinojs/pino" target="_blank" rel="noopener noreferrer">pino</a> 之類的專門函式庫去。</p>
+<p>畢竟在後端環境中，未來還要面對更複雜的遊戲實作，這樣的機制來紀錄並整理 log 是非常必要的。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="自由的觀戰者">自由的觀戰者<a href="#自由的觀戰者" class="hash-link" aria-label="Direct link to 自由的觀戰者" title="Direct link to 自由的觀戰者">​</a></h3>
+<p>目前觀戰者並沒有移動能力，需要透過 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock" target="_blank" rel="noopener noreferrer">requestPointerLock</a> 之類的手段錨定滑鼠來提供 FPV (First Person View) 的瀏覽體驗。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="整合-voxel-實作">整合 Voxel 實作<a href="#整合-voxel-實作" class="hash-link" aria-label="Direct link to 整合 Voxel 實作" title="Direct link to 整合 Voxel 實作">​</a></h3>
+<p>既然前置作業已經完成，我就可以把我之前 Fork 的 Voxel 實作整合過來了：</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/MC.js-Alpha" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/MC.js-Alpha</a></li>
+</ul></div><footer class="row docusaurus-mt-lg blogPostFooterDetailsFull_Dvxa"><div class="col"><b>Tags:</b><ul class="tags_Wp5O padding--none margin-left--sm"><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/blog/tags/polis">Polis</a></li><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/blog/tags/hakoniwa">Hakoniwa</a></li><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/blog/tags/the-key-of-huanche">The Key of Huanche</a></li></ul></div></footer></article><div id="disqus_thread"></div><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--next" href="/blog/2024-06-15_pocket-ai"><div class="pagination-nav__sublabel">Older Post</div><div class="pagination-nav__label">Pocket AI 開箱</div></a></nav></main><div class="col col--2"><div class="tableOfContents_OfXd thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#前情提要" class="table-of-contents__link toc-highlight">前情提要</a></li><li><a href="#進度" class="table-of-contents__link toc-highlight">進度</a></li><li><a href="#技術選擇與技術堆疊的困難" class="table-of-contents__link toc-highlight">技術選擇與技術堆疊的困難</a><ul><li><a href="#3d-x-javascript" class="table-of-contents__link toc-highlight">3D x Javascript</a></li><li><a href="#後端-x-3d-threejs" class="table-of-contents__link toc-highlight">後端 X 3D (Three.js)</a></li><li><a href="#開發用瀏覽窗口" class="table-of-contents__link toc-highlight">開發用瀏覽窗口</a></li><li><a href="#ecs-x-threejs" class="table-of-contents__link toc-highlight">ECS x Three.js</a></li></ul></li><li><a href="#回顧" class="table-of-contents__link toc-highlight">回顧</a><ul><li><a href="#串流" class="table-of-contents__link toc-highlight">串流</a></li><li><a href="#後端渲染" class="table-of-contents__link toc-highlight">後端渲染</a></li><li><a href="#threejs-x-text" class="table-of-contents__link toc-highlight">Three.js x Text</a></li><li><a href="#ecs" class="table-of-contents__link toc-highlight">ECS</a></li><li><a href="#monorepo" class="table-of-contents__link toc-highlight">Monorepo</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a><ul><li><a href="#logger-系統的改善" class="table-of-contents__link toc-highlight">Logger 系統的改善</a></li><li><a href="#自由的觀戰者" class="table-of-contents__link toc-highlight">自由的觀戰者</a></li><li><a href="#整合-voxel-實作" class="table-of-contents__link toc-highlight">整合 Voxel 實作</a></li></ul></li></ul></div></div></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 FlyPie (Wei Ji)</div></div></div></footer></div>
+</body>
+</html>
