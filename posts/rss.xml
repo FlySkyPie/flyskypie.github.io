@@ -4,10 +4,29 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Fri, 16 Aug 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 25 Sep 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[圖書館之於圖書館員（學者），就像網際網路 (FOSS) 之於軟體工程師]]></title>
+            <link>https://flyskypie.github.io/posts/2024-09-25_library</link>
+            <guid>https://flyskypie.github.io/posts/2024-09-25_library</guid>
+            <pubDate>Wed, 25 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[這陣子在 GitHub 上閒晃找到不少有趣的東西：]]></description>
+            <content:encoded><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_ann-marie-kennon-39730eef7694b523472149b5a57dafd1.webp" width="2736" height="1824" class="img_RpFt"></p>
+<p>這陣子在 GitHub 上閒晃找到不少有趣的東西：</p>
+<ul>
+<li>監視器管理軟體 (<a href="https://github.com/SentryShot/sentryshot" target="_blank" rel="noopener noreferrer">SentryShot</a>)</li>
+<li>資訊器材財產管理 (<a href="https://github.com/snipe/snipe-it" target="_blank" rel="noopener noreferrer">Snipe-IT</a>)</li>
+<li>空拍圖資處理工具 (<a href="https://github.com/OpenDroneMap/WebODM" target="_blank" rel="noopener noreferrer">WebODM</a>)</li>
+<li>3D 重建軟體 (<a href="https://github.com/alicevision/meshroom" target="_blank" rel="noopener noreferrer">Meshroom</a>)</li>
+<li>庫存管理軟體 (<a href="https://github.com/inventree/InvenTree" target="_blank" rel="noopener noreferrer">InvenTree</a>)</li>
+<li>電子零件管理軟體 (<a href="https://github.com/Part-DB/Part-DB-server" target="_blank" rel="noopener noreferrer">Part-DB</a>)</li>
+</ul>
+<p>軟體本質上是針對特定問題而被開發出來的解答，換句話說這些問題都已經被其他人解決過了，但是缺乏相關背景的人沒辦法找到這些解，而軟體工程師就是一群能夠從網際網路這個圖書館中翻出書本（解答）的人。</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[他說世界的秩序何其脆弱，我不同意]]></title>
             <link>https://flyskypie.github.io/posts/2024-08-16_the-order</link>

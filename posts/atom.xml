@@ -2,11 +2,34 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2024-08-16T00:00:00.000Z</updated>
+    <updated>2024-09-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[圖書館之於圖書館員（學者），就像網際網路 (FOSS) 之於軟體工程師]]></title>
+        <id>https://flyskypie.github.io/posts/2024-09-25_library</id>
+        <link href="https://flyskypie.github.io/posts/2024-09-25_library"/>
+        <updated>2024-09-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[這陣子在 GitHub 上閒晃找到不少有趣的東西：]]></summary>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_ann-marie-kennon-39730eef7694b523472149b5a57dafd1.webp" width="2736" height="1824" class="img_RpFt"></p>
+<p>這陣子在 GitHub 上閒晃找到不少有趣的東西：</p>
+<ul>
+<li>監視器管理軟體 (<a href="https://github.com/SentryShot/sentryshot" target="_blank" rel="noopener noreferrer">SentryShot</a>)</li>
+<li>資訊器材財產管理 (<a href="https://github.com/snipe/snipe-it" target="_blank" rel="noopener noreferrer">Snipe-IT</a>)</li>
+<li>空拍圖資處理工具 (<a href="https://github.com/OpenDroneMap/WebODM" target="_blank" rel="noopener noreferrer">WebODM</a>)</li>
+<li>3D 重建軟體 (<a href="https://github.com/alicevision/meshroom" target="_blank" rel="noopener noreferrer">Meshroom</a>)</li>
+<li>庫存管理軟體 (<a href="https://github.com/inventree/InvenTree" target="_blank" rel="noopener noreferrer">InvenTree</a>)</li>
+<li>電子零件管理軟體 (<a href="https://github.com/Part-DB/Part-DB-server" target="_blank" rel="noopener noreferrer">Part-DB</a>)</li>
+</ul>
+<p>軟體本質上是針對特定問題而被開發出來的解答，換句話說這些問題都已經被其他人解決過了，但是缺乏相關背景的人沒辦法找到這些解，而軟體工程師就是一群能夠從網際網路這個圖書館中翻出書本（解答）的人。</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[他說世界的秩序何其脆弱，我不同意]]></title>
         <id>https://flyskypie.github.io/posts/2024-08-16_the-order</id>
