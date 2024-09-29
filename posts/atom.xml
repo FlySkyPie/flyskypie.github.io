@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2024-09-25T00:00:00.000Z</updated>
+    <updated>2024-09-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[屁股]]></title>
+        <id>https://flyskypie.github.io/posts/2024-09-29_ass</id>
+        <link href="https://flyskypie.github.io/posts/2024-09-29_ass"/>
+        <updated>2024-09-29T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_butt-0e634e70a1c50542c6e624d2afadbbc3.webp" width="716" height="499" class="img_RpFt"></p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[圖書館之於圖書館員（學者），就像網際網路 (FOSS) 之於軟體工程師]]></title>
         <id>https://flyskypie.github.io/posts/2024-09-25_library</id>
@@ -343,26 +355,5 @@
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
         </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[關於葬送的芙莉蓮中的南之勇者的一些想法]]></title>
-        <id>https://flyskypie.github.io/posts/2024-07-10_frieren</id>
-        <link href="https://flyskypie.github.io/posts/2024-07-10_frieren"/>
-        <updated>2024-07-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[並沒有爬太多原作設定，不算嚴謹的推論，單純有感而發的一些想法]]></summary>
-        <content type="html"><![CDATA[
-<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>並沒有爬太多原作設定，不算嚴謹的推論，單純有感而發的一些想法</p></div></div>
-<p><img decoding="async" loading="lazy" alt="https://yamakamu.net/wp-content/uploads/2021/09/3-1-500x245.jpg" src="https://flyskypie.github.io/assets/images/hero-of-south-4bd0a9b548deacb1f2fa75d461a5b89b.webp" width="500" height="245" class="img_RpFt"></p>
-<p>全知魔族（修拉哈特）和南之勇者兩個作為預知能力者的同歸於盡的原因是目前作者留白的部份，這部份我就不客氣的想像了一下：我假設了另一個未來，暫稱為 Aplha 世界線，而這個未來是全知魔族和南之勇者都想要避免的。</p>
-<p>如果全知魔族沒有帶著所有七崩賢去給南之勇者削弱魔王的戰力，這些多出來的戰力很有可能會讓欣梅爾一行人落敗，甚至讓欣梅爾丟去了性命。芙莉蓮對欣梅爾抱有感情是確定的，即便芙莉蓮只是慵懶的完成了長達十年的討伐之旅，還是將殺人魔法授予了人類的魔法體系從而增強了人類陣營對於魔族的戰鬥力，試想如果這樣的芙莉蓮對於魔族抱持著「殺害重視之人」的恨意會如何？</p>
-<p>精靈悠久的壽命允許讓芙莉蓮君臨人類政治體系的頂點，就像賽莉耶管理魔法師協會那樣，但是賽莉耶對於魔族這種「魔法玩物」並不會抱持著將之完全殲滅的想法。Aplha 線的芙莉蓮可能並不會這樣想，掌握政治權力的話能夠系統性的研發針對魔族的魔法，已經訓練針對魔族的人員，甚至是把仇恨寫進歷史裡面去驅動「將魔族從世界上抹去」這一意志。</p>
-<p>Aplha 線的芙莉蓮與賽莉耶目的根本上的不同將造成體系之間的鬥爭，甚至引發內戰。對全知魔族而言，在 Aplha 線中對於魔族的迫害想必會是絕無僅有的吧；對南之勇者而言，兩大體系的內戰可能會造成更多的悲劇發生在人類身上。Aplha 線對雙方而言都應該是想要極力避免的發展。</p>
-<p>話又說回來，弗蘭梅培養芙莉蓮後讓她隱居數百年這件事對於魔族而言可以說是一筆死棋。原作中活了 500 年的阿烏拉在魔族之中也算是長壽的，可以推論全知魔族誕生的時候，芙莉蓮已經修煉了數百年，隱居的地理位置應該處於人類陣營的大後方，因此想要盡早除掉芙莉蓮可以說是一個不存在的選項。</p>
-<p>相較於 Aplha 線魔族那悽慘的未來，拉著七崩賢去送死、魔王會被討伐，但是魔族的明天將會被延續，或與對於全知魔族而言這是可以被接受的妥協了吧。</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="frieren" term="frieren"/>
     </entry>
 </feed>
