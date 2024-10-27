@@ -4,10 +4,44 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sun, 29 Sep 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 26 Oct 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[膛線]]></title>
+            <link>https://flyskypie.github.io/posts/2024-10-26_rifling</link>
+            <guid>https://flyskypie.github.io/posts/2024-10-26_rifling</guid>
+            <pubDate>Sat, 26 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[自動化的膛線穿過康莊大道，紅線是生物與死物的分界線。]]></description>
+            <content:encoded><![CDATA[<p>自動化的膛線穿過康莊大道，紅線是生物與死物的分界線。</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[YADI 的 PD 充電器]]></title>
+            <link>https://flyskypie.github.io/posts/2024-10-25_pd-charger</link>
+            <guid>https://flyskypie.github.io/posts/2024-10-25_pd-charger</guid>
+            <pubDate>Fri, 25 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[別的不說，我買三顆就買到一個 Type-A 接反的。]]></description>
+            <content:encoded><![CDATA[
+<p>別的不說，我買三顆就買到一個 Type-A 接反的。</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/YADI_01-915f86c17c67a1d58f9de0babf252864.webp" width="2154" height="782" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/YADI_02-cfcc9e9c1487a1cb198d5a157493afdf.webp" width="3227" height="1479" class="img_RpFt"></p>
+<p>怒貼產品資訊</p>
+<blockquote>
+<p>YADI</p>
+<p>65W 氮化鎵快充</p>
+<p>GaN Fast Charger</p>
+<p>電源供應器</p>
+<p>認證型號：WB-20TW65GAN 型號：CG4GA-65W2C1A</p>
+<p>輸入/Input： 100<del>240V</del>50/60Hz</p>
+<p>輸出 Output：</p>
+<p>USB-C1 or C2: 3.3V<del>11V</del>5A (PPS)</p>
+<p>（省略）</p>
+<p>製造商：深圳市創世達實業股份有限公司</p>
+<p>委製商：亞第科技股份有限公司</p>
+<p>地址：新北市板橋區信義路一巷28號</p>
+</blockquote>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[屁股]]></title>
             <link>https://flyskypie.github.io/posts/2024-09-29_ass</link>
@@ -250,32 +284,6 @@
             <content:encoded><![CDATA[
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_network-8c251fb4f75da87637f056684b5ae9c1.webp" width="1024" height="798" class="img_RpFt"></p>]]></content:encoded>
             <category>Foundation</category>
-        </item>
-        <item>
-            <title><![CDATA[終於擺脫那一坨筆電變壓器了]]></title>
-            <link>https://flyskypie.github.io/posts/2024-07-12_type-c-to-dc-adapter</link>
-            <guid>https://flyskypie.github.io/posts/2024-07-12_type-c-to-dc-adapter</guid>
-            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[ヽ(\'∀`\)ノ]]></description>
-            <content:encoded><![CDATA[
-<code>ヽ(*'∀`*)ノ</code>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_hero-df78beb7de1d8fdf2e3d6d0ab26da778.webp" width="1024" height="508" class="img_RpFt"></p>
-<p>雖然是已經退役的筆電，不過偶爾要帶它出任務的時候還要帶一堆筆電變壓器仍然有點麻煩，這下終於可以精簡配備了。</p>
-<p>精簡前：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_before-582247b34e380b710f7d17787de47135.webp" width="1024" height="731" class="img_RpFt"></p>
-<p>精簡後：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_after-2d23582d5736cbee45fc4bdcd7ff0e61.webp" width="1024" height="751" class="img_RpFt"></p>]]></content:encoded>
-            <category>Type-C</category>
-            <category>PD</category>
-            <category>誘騙器</category>
-        </item>
-        <item>
-            <title><![CDATA[是廢文耶]]></title>
-            <link>https://flyskypie.github.io/posts/2024-07-10_post</link>
-            <guid>https://flyskypie.github.io/posts/2024-07-10_post</guid>
-            <pubDate>Wed, 10 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[第一偏廢文 O_OP]]></description>
-            <content:encoded><![CDATA[<p>第一偏廢文 O_OP</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
