@@ -4,10 +4,74 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sat, 26 Oct 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 Nov 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[潛談我對自製人形機器人的看法]]></title>
+            <link>https://flyskypie.github.io/posts/2024-11-03_talk-about-diy-gynoid</link>
+            <guid>https://flyskypie.github.io/posts/2024-11-03_talk-about-diy-gynoid</guid>
+            <pubDate>Sun, 03 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[說到人形機器人，不少人或許會想到波士頓動力或是 Tesla 的 Optimus)，不過我這邊想聚焦在「自製」這一個範疇。想要自製人形機器人的人，我不是第一個，也不會是最後一個，例如：]]></description>
+            <content:encoded><![CDATA[
+<p>說到人形機器人，不少人或許會想到<a href="https://en.wikipedia.org/wiki/Boston_Dynamics" target="_blank" rel="noopener noreferrer">波士頓動力</a>或是 Tesla 的 <a href="https://en.wikipedia.org/wiki/Optimus_(robot)" target="_blank" rel="noopener noreferrer">Optimus</a>，不過我這邊想聚焦在「自製」這一個範疇。想要自製人形機器人的人，我不是第一個，也不會是最後一個，例如：</p>
+<ul>
+<li><a href="https://www.youtube.com/@%E3%83%A1%E3%82%AB%E3%83%8B%E3%82%AB%E3%83%AB%E3%82%AC%E3%83%BC%E3%83%AB%E7%AC%AC0%E7%A0%94%E7%A9%B6%E5%AE%A4%E8%B6%B3" target="_blank" rel="noopener noreferrer">メカニカルガール@第0研究室[足立レイ]</a></li>
+<li><a href="https://www.youtube.com/@MaSiRoProject" target="_blank" rel="noopener noreferrer">MaSiRo Project</a></li>
+<li><a href="https://www.youtube.com/@DaveMakes" target="_blank" rel="noopener noreferrer">David Browne</a></li>
+</ul>
+<p>這些創作者往往較著重於頭部與手部，或是由外而內的方式去模仿人類的外貌，不過對此我有不一樣的看法，分別從幾個角度切入。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="皮質小人-cortical-homunculus">皮質小人 (Cortical Homunculus)<a href="https://flyskypie.github.io/posts/2024-11-03_talk-about-diy-gynoid#%E7%9A%AE%E8%B3%AA%E5%B0%8F%E4%BA%BA-cortical-homunculus" class="hash-link" aria-label="Direct link to 皮質小人 (Cortical Homunculus)" title="Direct link to 皮質小人 (Cortical Homunculus)">​</a></h2>
+<p><a href="https://zh.wikipedia.org/wiki/File:Sensory_Homunculus_Figure_(side_view,_black_background).gif" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_Sensory_Homunculus-2597d53f0f90ab70d8395fb733a65ecb.webp" width="516" height="600" class="img_RpFt"></a></p>
+<p>皮質小人是以大腦皮質層功能區對應的比例來繪製的人類，並且分成運動小人（motor homunculus）與感官小人（sensory homunculus）兩種。</p>
+<p>私以為這是一種對於「實做人類複雜度」的暗示與視覺化，在皮質小人中比重越大的器官代表需要更多、更複雜的運算能力，因此在有限的預算內，應該優先迴避這些可能需要高研發成本的部位，又或是對這些部位做謹慎的預算控制。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="秘密客-mimic-1997">秘密客 (Mimic 1997)<a href="https://flyskypie.github.io/posts/2024-11-03_talk-about-diy-gynoid#%E7%A7%98%E5%AF%86%E5%AE%A2-mimic-1997" class="hash-link" aria-label="Direct link to 秘密客 (Mimic 1997)" title="Direct link to 秘密客 (Mimic 1997)">​</a></h2>
+<p>Mimic 是一部 1997 年上映的科幻驚悚電影。</p>
+<div class="theme-admonition theme-admonition-warning admonition_a71W alert alert--warning"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_fKWC"><p>下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。
+下方可能有劇透，請讀者斟酌瀏覽。</p></div></div>
+<p>在這部電影中，基因改造的蟑螂發生了變異，可以長到 2 公尺高，並且成為了人類的狩獵者，而且演化出透過外殼模仿人臉的擬態能力：</p>
+<p><img decoding="async" loading="lazy" alt="https://screenrant.com/mimic-movies-ranked-worst-best/" src="https://flyskypie.github.io/assets/images/02_Mimic-d331e79b68c0d1e7731cf6fb28d231b6.webp" width="1140" height="570" class="img_RpFt"></p>
+<p>對我而言使用硬質材料作為外殼（框架）的人形機器人，都像是模仿人類外型的外骨骼偽物。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="競品">競品<a href="https://flyskypie.github.io/posts/2024-11-03_talk-about-diy-gynoid#%E7%AB%B6%E5%93%81" class="hash-link" aria-label="Direct link to 競品" title="Direct link to 競品">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_mr-bean-meme-ec73afcb1a7c4e31ce399bddf59948b2.webp" width="400" height="298" class="img_RpFt"></p>
+<p>作為工程師，想要建造一個東西的時候第一件事情是什麼？絕對不是閉門造車，而是先看看競品長怎樣，<del>然後能抄多少就抄多少。</del></p>
+<p>那麼人形機器人的競品是什麼？當然就是人類本身。畢竟這個「設計」可是經過萬年迭代演化而來的，每一吋規格都得有個幾分道理。</p>
+<p>所以我認為「研究人形機器人的競品」這一件事情應該是走向醫學系學生走過得路：學習解剖學。接著才考慮「在不丟失現有 Feature 的情況把設計從有機的 techstack 遷移到基於電機的 techstack 去」。</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[教科書 (Textbook) 與上下文 (Context)]]></title>
+            <link>https://flyskypie.github.io/posts/2024-11-03_textbook-and-context</link>
+            <guid>https://flyskypie.github.io/posts/2024-11-03_textbook-and-context</guid>
+            <pubDate>Sun, 03 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[上下文 (Context) 在軟體工程是一個很常見的概念，它所代表的是：]]></description>
+            <content:encoded><![CDATA[
+<p>上下文 (Context) 在軟體工程是一個很常見的概念，它所代表的是：</p>
+<blockquote>
+<p>某個詞（變數）在當下在當下的語境（區塊）代表什麼意思？</p>
+</blockquote>
+<p>比如說，當我們在日常對話提到「蘋果」，可能指的水果的蘋果，也可能是科技公司的那個蘋果。電腦的呆板促成程式碼的嚴謹性造成我們在程式碼使用某個變數的時候，必須明確的告訴電腦這個詞對應的是什麼具體的東西，沒有模糊空間。</p>
+<p>然而自然語言對話卻不是這樣運作的，兩個工學院學生談論「傑森」的時候，可能是指 JSON (JavaScript Object Notation) 也可能是指 NVIDIA Jetson，對話有時候能奇妙的繼續下去，直到有人察覺哪裡怪怪的。</p>
+<p>又或是雙方對於同一個詞有不同的見解，讓對話陷入鬼打牆，因為每個人都想用自己的詮釋描述，這種情況我認為最好的解決方式是向程式語言取經：建立命名空間，用「小明::蘋果」和「小美::蘋果」分離兩種定義，在不否定任何人的「蘋果」的前提下，讓對話繼續下去。</p>
+<p>接著來到我昨天 (2024-11-02) 花了一天溫吞的學習骨骼名稱的過程，讓我想到我們在義務教育的歷程中，有著不少的「背科」。以我正在學習的解剖學來說，每一個骨頭都有自己麼名字：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/blender-and-skeleton-1974446a5ec66fdf3bdd47be19381bd8.webp" width="1440" height="895" class="img_RpFt"></p>
+<p>如果每個人能夠以自己的方式理解每一個物件，其實根本不需要背這些東西，但是事實是在社會之中人與人需要互相合作，就需要透過語言或文字來傳達概念，而這些被定義的名稱能夠在溝通的時候精準定位特定的物件。</p>
+<p>工程師在面對問題的時候往往也沒有太多的模糊空間，M4 螺絲就是 M4 螺絲，CLK 跟 VCC 就是不同的接腳；在這一點上，醫學和工程或許沒有太多差別。而這些教科書 (Textbook) 本質上的作用就是幫人們同步上下文 (Context)。</p>
+<p>（看著西方的 Woke 運動）當一個社會的 Context 沒辦法達到一定程度的共識，那又是另外一個話題了。</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[膛線]]></title>
             <link>https://flyskypie.github.io/posts/2024-10-26_rifling</link>
@@ -261,29 +325,6 @@
 <p>「唉～？！」</p>
 <p>終</p>]]></content:encoded>
             <category>夢筆記</category>
-        </item>
-        <item>
-            <title><![CDATA[ლ(◉◞౪◟◉ )ლ 尼是閉源軟體？窩看看]]></title>
-            <link>https://flyskypie.github.io/posts/2024-07-13_reverse-engineering</link>
-            <guid>https://flyskypie.github.io/posts/2024-07-13_reverse-engineering</guid>
-            <pubDate>Sat, 13 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[閉源軟體：＊出現＊]]></description>
-            <content:encoded><![CDATA[<p>閉源軟體：＊出現＊</p>
-<p>我：</p>
-<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">$ strace ./blablabla_launcher</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>喔喔喔，這東西想抓什麼 library 都看得到耶～</p>
-<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">$ sudo tcpdump -A -i lo -vv -n tcp port 1715</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>喔拉拉，原來只是打 POST HTTP Request 啊～</p>
-<p>很好，我滿意了。＊關掉逆向工程回去做正事＊</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Ya，我房間也有「固定網路」了～]]></title>
-            <link>https://flyskypie.github.io/posts/2024-07-12_network</link>
-            <guid>https://flyskypie.github.io/posts/2024-07-12_network</guid>
-            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_network-8c251fb4f75da87637f056684b5ae9c1.webp" width="1024" height="798" class="img_RpFt"></p>]]></content:encoded>
-            <category>Foundation</category>
         </item>
     </channel>
 </rss>
