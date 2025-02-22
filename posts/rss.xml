@@ -4,10 +4,55 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sun, 03 Nov 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 22 Feb 2025 05:01:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[生者與死物的距離，一種人形仿生機器人開發路徑的視角]]></title>
+            <link>https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless</link>
+            <guid>https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless</guid>
+            <pubDate>Sat, 22 Feb 2025 05:01:17 GMT</pubDate>
+            <description><![CDATA[本文可能觸及敏感的社會議題或現象，目的是提出一種看事情的角度，並無針對特定族群冒犯之意。]]></description>
+            <content:encoded><![CDATA[
+<div class="theme-admonition theme-admonition-warning admonition_a71W alert alert--warning"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_fKWC"><p>本文可能觸及敏感的社會議題或現象，目的是提出一種看事情的角度，並無針對特定族群冒犯之意。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景-context">背景 (Context)<a href="https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless#%E8%83%8C%E6%99%AF-context" class="hash-link" aria-label="Direct link to 背景 (Context)" title="Direct link to 背景 (Context)">​</a></h2>
+<p>作為一個理工死宅男，我想做機器人妹抖 (Maid)。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="靈感">靈感<a href="https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless#%E9%9D%88%E6%84%9F" class="hash-link" aria-label="Direct link to 靈感" title="Direct link to 靈感">​</a></h2>
+<p>事後整理了一下思緒，我想一切的起因來自這則貼文：</p>
+<blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/QcYEAUBqBV"></a><a href="https://t.co/QcYEAUBqBV" target="_blank" rel="noopener noreferrer">https://t.co/QcYEAUBqBV</a> <a href="https://t.co/kLkziAlPVj">pic.twitter.com/kLkziAlPVj</a></p>— jet (@natwjeq) <a href="https://twitter.com/natwjeq/status/1892580946274050411?ref_src=twsrc%5Etfw">February 20, 2025</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>這個貼文包含了兩個實體：Clone 和足立レイ，等等我會稍做解釋。</p>
+<p>關於足立レイ的具體資訊可以從<a href="https://zh.moegirl.org.cn/zh-tw/%E8%B6%B3%E7%AB%8B%E9%9B%B6" target="_blank" rel="noopener noreferrer">萌娘百科</a>了解，簡單來說它是一個 ACG 圈的原創角色，然後作者有愛到造了一個等身大小的機器人。可以在作者的 Twitter 帳號 (<a href="https://x.com/missile_39" target="_blank" rel="noopener noreferrer">@missile_39</a>)看到各種關於足立レイ的貼文，並且機器人看起來被安置在一個像是電子實驗室的空間中。</p>
+<p>另外一件事則是前幾天 (2025-02-20) Clone 發布了一支<a href="https://www.youtube.com/watch?v=H7dhwFcuUn0" target="_blank" rel="noopener noreferrer">影片</a>：</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Protoclone, the world's first bipedal, musculoskeletal android. <a href="https://t.co/oIV1yaMSyE">pic.twitter.com/oIV1yaMSyE</a></p>— Clone (@clonerobotics) <a href="https://twitter.com/clonerobotics/status/1892250639360561234?ref_src=twsrc%5Etfw">February 19, 2025</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>內容就是一個神似 Westworld 中的機器人被吊著抽搐（？）的畫面。</p>
+<p>對於 Clone 不熟悉的讀者，我這邊稍微介紹一下，Clone 在研發"仿生機器人"的方向與主流機器人公司不同的地方在於它們是在基於人類骨骼的骨架上附上基於液壓的仿生肌肉來製作機器人的肢體，而不是直接「把基於電機的機器關節打造成人形」的形式，後者是包含波士頓動力和 Tesla Optimus 等知名公司製造人形機器人的方式。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="批判與反思">批判與反思<a href="https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless#%E6%89%B9%E5%88%A4%E8%88%87%E5%8F%8D%E6%80%9D" class="hash-link" aria-label="Direct link to 批判與反思" title="Direct link to 批判與反思">​</a></h3>
+<p>對於 Clone 的貼文，大部分留言的反應是感到不安，一來是 Clone 的配樂有意的製造驚悚的氣氛，而「像人一樣的肢體抽搐」更是命中了不少人的恐怖谷，更有人批評「開發團隊甚至不能讓它做出有意義的動作，只是讓特定的組件做動而已，這裡沒有新聞」。</p>
+<p>事實是，足立レイ的貼文出現在我的 Twitter 動態牆上時，大部分都是坐在椅子上的擺拍，它的本質就像一個二次元角色的巨大手辦而已，對於這些貼文我的心態大部分是嗤之以鼻的。</p>
+<p>另一方面，一些 Clone 更早的<a href="https://www.youtube.com/watch?v=guDIwspRGJ8" target="_blank" rel="noopener noreferrer">影片</a>中，那栩栩如生的手臂確實讓不少人感到驚豔，不過背景的噪音透漏的是旁邊有一組體積異常龐大的驅動裝置在做動<sup><a href="https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless#user-content-fn-clone-arm-18b136" id="user-content-fnref-clone-arm-18b136" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/04_clone-arm-66e7192a045d838623061e414aeb1dbd.webp" width="982" height="594" class="img_RpFt"></p>
+<p>因此不論 Clone 在鏡頭前呈現多少東西，只要開發者沒有辦法微縮化那坨液壓驅動系統，就不可能實現真正意義的實用化人形機器人。</p>
+<p>不過話說回來，挑別人毛病容易，我呢？作為一個想開發類似的東西後進者有沒有因此學到什麼？</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="過程與中間狀態">過程與中間狀態<a href="https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless#%E9%81%8E%E7%A8%8B%E8%88%87%E4%B8%AD%E9%96%93%E7%8B%80%E6%85%8B" class="hash-link" aria-label="Direct link to 過程與中間狀態" title="Direct link to 過程與中間狀態">​</a></h2>
+<p>讓我們來想像，起點是空無一物；終點是實用化的人形機器人，那麼中間的過度狀態是什麼？我該如何設定階段性目標 (milestone)?</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-5ab291db743ca006eb31117b5dc118a0.webp" width="894" height="461" class="img_RpFt"></p>
+<p>實用化人形機器人理論上應該具備自然人的大部分能力，因此如果我把問題反過來思考會發生什麼事？起點是自然人；終點是死物。</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02-2be2e94806c985b249c8aeb6dee4a087.webp" width="894" height="461" class="img_RpFt"></p>
+<p>我們會發現這是一個失能 (Disable) 的過程：從一個功能完全正常的人，經歷輕度、中度、重度、極重度殘疾直到不再被承認為活物。</p>
+<p>採用這個視角看待問題會有一個好處，那就是殘疾這件事是已經被經過系統化討論與歸納的主題，各國對於殘疾等級都有一定的規範與定義，作為開發者在這個問題上就不太需要重複造輪子去定義中間的過度狀態了。</p>
+<p>接著我們再把這個人類失能的過程反過來看，變成賦能 (Enable)，從死物、極重度、重度、中度、輕度殘疾到正常人，就是一個實用化人形機器人的開發路徑了：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03-e5a0895849bc801e748a9152b83f856d.webp" width="894" height="461" class="img_RpFt"></p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-clone-arm-18b136">
+<p>Strongest Biomimetic Hand in the World - Clone (V16) - YouTube, <a href="https://www.youtube.com/watch?v=lGnSQbEzI9s" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=lGnSQbEzI9s</a> <a href="https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless#user-content-fnref-clone-arm-18b136" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[潛談我對自製人形機器人的看法]]></title>
             <link>https://flyskypie.github.io/posts/2024-11-03_talk-about-diy-gynoid</link>
@@ -291,40 +336,6 @@
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02-ea04d57528b29b8ffbb1d0122e628ff4.webp" width="1024" height="768" class="img_RpFt"></p>
 <p>特寫</p>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03-90a735c2f89ff47e9b9ab1e8360ab726.webp" width="1024" height="768" class="img_RpFt"></p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[夢筆記 - 外星軟體開發者]]></title>
-            <link>https://flyskypie.github.io/posts/2024-07-14_dream-note</link>
-            <guid>https://flyskypie.github.io/posts/2024-07-14_dream-note</guid>
-            <pubDate>Sun, 14 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[夢境內容純屬本人腦內各種資訊的隨機組合，故事人物純屬虛構，如有雷同，實屬巧合。]]></description>
-            <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>夢境內容純屬本人腦內各種資訊的隨機組合，故事人物純屬虛構，如有雷同，實屬巧合。
-本夢境內容可能包含但不限於以下要素：</p><ul>
-<li>Ben 10</li>
-</ul></div></div>
-<p>「我的薪水也太少了吧～！」 M 小姐突然抱怨道。</p>
-<p>M 小姐是幾個禮拜前入職沒多久的軟體工程師。</p>
-<p>「昨天晚上跟 J 先生聊天的時候，發現他的待遇比我好太多了吧？」</p>
-<p>J 先生是前幾天被資遣的軟體工程師，雖然有天賦不過做事態度慵懶，老闆最後不想留他。J 先生也真厲害，才共識幾天而已就跟 M 小姐關係好到離職之後還會私下聊天啊。</p>
-<p>「要解釋嗎？」我看了老闆一眼，老闆點點點頭，「好吧...」。</p>
-<p>「我想想該從哪裡開始講呢...」</p>
-<p>「直接給妳看可能比較快」我拿起安裝了測試軟體的手機走向陽台。</p>
-<p>「？」M 小姐一臉困惑</p>
-<p>我打開手機 App，並把相機對準公司旁的空地，按下軟體上的啟動按鈕，接著出現了就像常見的遊戲軟體一般特有的技能施放讀秒。</p>
-<p>經過 10 秒鐘的倒數，「轟隆！」一道閃電打在鏡頭指向的地方。</p>
-<p>「唉！？這是怎麼回事」M 小姐驚訝地大叫。</p>
-<p>「總之，我們公司的寫的軟體其實有剛剛你看到的那種功能」</p>
-<p>「然後我們的客戶其實都是外星人」我接著說道。</p>
-<p>「？？？」</p>
-<p>「外星人擁有超越地球文明的科技，然後又不受到地球政府表面世界法規的約束，所以它們違約的時候很難搞。」</p>
-<p>「於是這裡有另外一個需要解釋的東西，就是靈能的存在，被靈能附魔的程式碼具有改變現實的能力。」</p>
-<p>「所以表面上我們招募開發遊戲工程師，其實是在開發保護公司的武器。」</p>
-<p>「像 J 先生這種人，雖然不會使用靈能，但是有著靈能的天賦，他寫的程式碼會有靈能的殘留，經過一些處理之後就能像剛剛那樣把遊戲裡面的技能施放在現實世界。」</p>
-<p>「然後正如你看到的，靈能的濃度不夠的話就會像剛剛那樣需要花個 10 秒鐘才能發動。」</p>
-<p>「好了，妳知道我們公司的祕密了，短時間內應該是離不開這間公司了」</p>
-<p>「唉～？！」</p>
-<p>終</p>]]></content:encoded>
-            <category>夢筆記</category>
         </item>
     </channel>
 </rss>
