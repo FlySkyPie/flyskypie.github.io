@@ -2,12 +2,143 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/blog</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2024-11-04T00:00:00.000Z</updated>
+    <updated>2025-03-15T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/blog"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
     <rights>Copyright © 2025 FlyPie (Wei Ji)</rights>
+    <entry>
+        <title type="html"><![CDATA[一種開源工具鏈嘗試，以最近幫風機製作角座為例]]></title>
+        <id>https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow</id>
+        <link href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow"/>
+        <updated>2025-03-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[先講結論，整個工作流程大致如下：]]></summary>
+        <content type="html"><![CDATA[
+<p>先講結論，整個工作流程大致如下：</p>
+<ol>
+<li>待辦事項與專案管理<!-- -->
+<ul>
+<li>在 <a href="https://github.com/wekan/wekan" target="_blank" rel="noopener noreferrer">WeKan</a> 新增卡片（待辦事項）</li>
+</ul>
+</li>
+<li>測量<!-- -->
+<ul>
+<li>在 <a href="https://gitlab.com/inkscape/inkscape" target="_blank" rel="noopener noreferrer">Inkscape</a> 簡單繪製風機尺寸、鎖點跟鋁擠鎖點的相對位置。</li>
+</ul>
+</li>
+<li>建模/製圖<!-- -->
+<ul>
+<li>用 <a href="https://github.com/FreeCAD/FreeCAD" target="_blank" rel="noopener noreferrer">FreeCAD</a> 建模，輸出 STEP 檔。</li>
+</ul>
+</li>
+<li>切片<!-- -->
+<ul>
+<li>用 <a href="https://github.com/prusa3d/PrusaSlicer" target="_blank" rel="noopener noreferrer">PrusaSlicer</a> 匯入 STEP 切片後輸出 G-code 再拿給 3D 列印機列印。</li>
+</ul>
+</li>
+<li>物料管理<!-- -->
+<ul>
+<li>在 <a href="https://github.com/Part-DB/Part-DB-server" target="_blank" rel="noopener noreferrer">Part-DB</a> 對該物件建檔，上傳實物縮圖以及 FreeCAD 原始檔（<code>FCStd</code>）。</li>
+</ul>
+</li>
+</ol>
+<p>接著再來談整件事情的來龍去脈。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景-context">背景 (Context)<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E8%83%8C%E6%99%AF-context" class="hash-link" aria-label="Direct link to 背景 (Context)" title="Direct link to 背景 (Context)">​</a></h2>
+<p>我的置物架基礎結構是由鋁擠型、鎖管與洞洞板構成的，因此我可以很輕易的外掛東西上去。去年末入手了一台 3D 列印機（熔融沉積），為了避免列印的時候吸毒氣就放了一台（浴室用）抽風機，臨時草草安裝上去就變成這樣：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_fan-94b7db0c0bd69331512e4bdf19fb3aa5.webp" width="1024" height="678" class="img_RpFt"></p>
+<p>至於抽風機外面的防塵網我是怎麼做的，那又是另外一個故事了。</p>
+<p>最近 (2025-03-09) 心血來潮想說把它整頓一下。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="待辦事項與專案管理">待辦事項與專案管理<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85%E8%88%87%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86" class="hash-link" aria-label="Direct link to 待辦事項與專案管理" title="Direct link to 待辦事項與專案管理">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_wekan-9fcc2d312ff9b3b08d4c380bfec88894.webp" width="1440" height="833" class="img_RpFt"></p>
+<p>其實開 card 這件事在整個流程裡面根本算不上什麼值得一提的事情，只是因為最近開始搞所謂的 homelab，並且在上面跑了一堆服務，WeKan 也是其中之一。主要目的是為了更有組織的管理我那為數眾多的 Side Project 、待辦事項與因為閃亮事物症候群許的新願望。</p>
+<p><a href="https://en.wikipedia.org/wiki/Kanban_(development)" target="_blank" rel="noopener noreferrer">Kanban</a> 類型的軟體在軟體開發上是一種十分常見的工具，是工作流程中十分重要的一環，因此我覺得值得稍微提一下。</p>
+<p>WeKan 對我而言也只是嘗試的階段，在這之前在工作上使用過 Jira, OpenProject 和 GitLab Board；個人則是嘗試過 Trello 和 Planka，並沒有特別推薦哪一款的意思。</p>
+<p>不過讓我願意嘗試 WeKan 而不是使用之前有過用過得 Planka 主要原因是讓<a href="https://github.com/wekan/wekan/pull/3935" target="_blank" rel="noopener noreferrer">卡片顯示人類可讀的連續編號</a>，Trello 和 Planka 的定位比較接近「電子化的 KanBan （便條紙）」，個人使用或是對於比較不是嚴謹的用例已經十分足夠，但是對於工程管理或商業使用就有管理工單（訂單、Ticket, Issue）的需求，因此每一個卡片必須要有方便人類辨識的 ID。</p>
+<p>Jira, OpenProject 和 GitLab Board 的卡片都有數字編號，仔細觀察 Trello 和 Planka 的話會則發現它們則都是使用類似雪花 ID 的方式來區分卡片，細節就不在此多提，因為那又是另外一個故事了。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="測量">測量<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E6%B8%AC%E9%87%8F" class="hash-link" aria-label="Direct link to 測量" title="Direct link to 測量">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_inkscape-f6d73dbdf3d32a35e216b7f4005d5a9d.webp" width="1440" height="923" class="img_RpFt"></p>
+<p>其實就只是拿尺量東西然後寫下來而已，只是這幾年有在訓練自己盡量把書寫的動作電子化降低對傳統紙筆的依賴，來讓自己的工作流程更一致。Inkscape 雖然作為向量繪圖軟體，不過這幾年我更常把它當成整理思緒的電子白板/紙使用。</p>
+<p>將工作流程的要素統一成電子媒介，最具體的例子如下圖所示：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/04_inkscape-7c16e1d733fe5b9b8cb11d38fe814f5a.webp" width="1440" height="919" class="img_RpFt"></p>
+<p>迭代過程在 FreeCAD 畫的內容可以截圖後放進原本的「筆記」內，如此一來把複數來源的資訊展開在同一個視覺空間內。我在工作上經歷的 UI 開發也一樣，從一開始溝通用的線稿、第一個實做的版本到後續修改的規格與需求都可以用類似的方法在 Inkscape 內的視覺空間中展開來幫助思考或與其他人溝通。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="建模製圖">建模/製圖<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E5%BB%BA%E6%A8%A1%E8%A3%BD%E5%9C%96" class="hash-link" aria-label="Direct link to 建模/製圖" title="Direct link to 建模/製圖">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/05_freecad-ab50d7f95979741e4a1f59ea3dc5414d.webp" width="1440" height="916" class="img_RpFt"></p>
+<p>FreeCAD 也算是我的老朋友了，作為工程繪圖/參數化建模軟體，大學時使用 Solidworks 的一部分經驗可以轉移過來，使用的細節就不在此多提了。</p>
+<p>話說回來，<a href="https://en.wikipedia.org/wiki/ISO_10303-21" target="_blank" rel="noopener noreferrer">STEP</a> 格式反而是我畢業之後才接觸的，有別於 STL 儲存三角面資訊，STEP 檔案能夠儲存參數資訊。用平面圖檔比喻的話，STEP 和 STL 的差異就像是 SVG 和 PNG 的差異。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="切片">切片<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E5%88%87%E7%89%87" class="hash-link" aria-label="Direct link to 切片" title="Direct link to 切片">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/06_prusaslicer-89f935ecf912e666d2b42966eb74a991.webp" width="1440" height="922" class="img_RpFt"></p>
+<p>切片軟體顧名思義就是把 3D 模型切成一層層的指令交給 3D 列印機作業。大學的時候比較常使用 Cura，但是畢業之後就沒有在使用 3D 列印了，直到最近重返 3D 列印使用者的身份便花點時間做功課，最後選擇 GitHub 星星數最高的 PrusaSlicer，這裡放個當時做的筆記供參考：</p>
+<ul>
+<li><a href="https://github.com/prusa3d/PrusaSlicer" target="_blank" rel="noopener noreferrer">https://github.com/prusa3d/PrusaSlicer</a>
+<ul>
+<li>7.7k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/SoftFever/OrcaSlicer" target="_blank" rel="noopener noreferrer">https://github.com/SoftFever/OrcaSlicer</a>
+<ul>
+<li>7.1k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/Ultimaker/Cura/" target="_blank" rel="noopener noreferrer">https://github.com/Ultimaker/Cura/</a>
+<ul>
+<li>6.1k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/supermerill/SuperSlicer" target="_blank" rel="noopener noreferrer">https://github.com/supermerill/SuperSlicer</a>
+<ul>
+<li>4.1k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/slic3r/Slic3r" target="_blank" rel="noopener noreferrer">https://github.com/slic3r/Slic3r</a>
+<ul>
+<li>3.3k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/bambulab/BambuStudio" target="_blank" rel="noopener noreferrer">https://github.com/bambulab/BambuStudio</a>
+<ul>
+<li>2.1k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/MatterHackers/MatterControl" target="_blank" rel="noopener noreferrer">https://github.com/MatterHackers/MatterControl</a>
+<ul>
+<li>458 ⭐</li>
+</ul>
+</li>
+</ul>
+<p>請留意星星數與現在實際值可能有落差。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="迭代">迭代<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E8%BF%AD%E4%BB%A3" class="hash-link" aria-label="Direct link to 迭代" title="Direct link to 迭代">​</a></h2>
+<blockquote>
+<p>工程第一守則，不要第一次就用真才實料，永遠先做小規模測試或模擬。</p>
+<p>Fredi Cameron from 拼湊夢想 (Spare Parts)</p>
+</blockquote>
+<p>畢竟我不清楚整個過程的測量誤差與製造誤差為何，因此我並沒有一次就把整個模型畫出來，而是先印一些確定相對位置與尺寸的樣品出來。並且不出意外得出意外了，樣品的孔位有一點點落差，只好把整顆風機從架子上拆下來仔細量一次。</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/07_sample-ddb0d218fd8913bcfcd4f20d49b5fcd4.webp" width="1024" height="768" class="img_RpFt"></p>
+<p>透過把鎖點放在厚紙板上再用筆作記號的方式，把孔位複製到紙上再測量方式取得中心孔與邊界間距。過去 DIY 的經驗告訴我永遠不要吝嗇製作治具，剛好我手邊有很多卡片大小的厚紙板沒什麼好吝嗇的。至於那一疊厚紙板是哪裡來的則又是另外一段故事了。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="物料管理">物料管理<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E7%89%A9%E6%96%99%E7%AE%A1%E7%90%86" class="hash-link" aria-label="Direct link to 物料管理" title="Direct link to 物料管理">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/08_partdb-8a573c838e42d3104b1758106695cacf.webp" width="1440" height="830" class="img_RpFt"></p>
+<p>PartDB 不只允許對物品建檔並以及紀錄位置與數量等資訊，還有附件功能上傳規格書、使用者手冊...等檔案，同時也是個適合放置 CAD 檔案與藍圖的地方。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="產出">產出<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E7%94%A2%E5%87%BA" class="hash-link" aria-label="Direct link to 產出" title="Direct link to 產出">​</a></h2>
+<p><img decoding="async" loading="lazy" src="data:image/webp;base64,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" width="1024" height="746" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/10_result-27fde28348fefff53eddcd9686e1a060.webp" width="1024" height="606" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/11_result-91ac50e61986254e30fe8bbed005abf7.webp" width="1024" height="638" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/12_result-42898ddf0efd006dc1940daae25a84f2.webp" width="1024" height="647" class="img_RpFt"></p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="結論">結論<a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E7%B5%90%E8%AB%96" class="hash-link" aria-label="Direct link to 結論" title="Direct link to 結論">​</a></h2>
+<p>正如標題所說的，以上只是一個基於個人使用情境的「嘗試」，不能說是什麼經過審慎考慮或是實務考驗的流程。加上工具的選擇除了一點隨便之外還帶有個人偏好的成份，比如說有些人就是喜歡 Jira 那種整套還跟一堆東西整合的平台，但是我個人就是喜歡能夠自己架設而且不會太吃重的軟體。</p>
+<p>另外一方面算是當作開源軟體的火力展示，大部分軟體其實都能在開源領域找到對標的替代方案，只是商業軟體通常會提供一些高度整合的使用體驗來讓消費者使用起來比較流暢，再加上增加對競品摩擦力的一些巧思來把消費者圈養在自家產品生態系的舒適圈內...喔，離題了。</p>
+<p>總之我最近的策略就是，比起單純用檔案系統管理檔案與資料，不如用各種自架服務，把檔案或資料放在最適合的服務上，專案管理視角的就丟 <a href="https://github.com/topics/kanban" target="_blank" rel="noopener noreferrer">Kanban</a>、物料管理就找 <a href="https://github.com/topics/inventory-management-system" target="_blank" rel="noopener noreferrer">WMS (Warehouse Management System)</a> 相關的...</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/13_homelab-1bca8ccd4b22a8c73df72580fc5085e7.webp" width="1440" height="829" class="img_RpFt"></p>
+<p>喔，關於我最近在玩的 Homelab，那又是另外一個故事了。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="到底有多少故事"><del>到底有多少故事</del><a href="https://flyskypie.github.io/blog/2025-03-15_opensource-3d-workflow#%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E5%B0%91%E6%95%85%E4%BA%8B" class="hash-link" aria-label="Direct link to 到底有多少故事" title="Direct link to 到底有多少故事">​</a></h2>
+<p>其實過去幾個月也有斷斷續續花時間在幾個主題上，不過都還不到足夠完整寫文章的程度，不然就是這篇文章寫到一半才發現有些事情我之前沒有在 Blog 上提過，就變成這樣了。ლ(́´・ω・`ლ)</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="freecad" term="freecad"/>
+        <category label="model" term="model"/>
+        <category label="opensource" term="opensource"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[從 Blender 開始的解剖學筆記 - 骨骼篇 - 啟程]]></title>
         <id>https://flyskypie.github.io/blog/2024-11-04_blender-anatomy</id>
@@ -1279,7 +1410,7 @@ a non-linear personal web notebook</p>
 <hr>
 <p>另外值得一提的是，<code>tiddlywiki</code> 不只能夠以 Node.js 啟動一個伺服器，還提供了一系列的 CLI 操作，比如：建構 (Build) 靜態版本、從 HTML 抽出指定條目...等。</p>
 <div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">$ tiddlywiki --help</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">usage: tiddlywiki [&lt;wikifolder&gt;] [--&lt;command&gt; [&lt;args&gt;...]...]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Available commands:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* build: Automatically run configured commands</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* clearpassword: Clear a password for subsequent crypto operations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* commands: Run commands returned from a filter</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* deletetiddlers: Deletes a group of tiddlers</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* editions: Lists the available editions of TiddlyWiki</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* fetch: Fetch tiddlers from wiki by URL</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* help: Display help for TiddlyWiki commands</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* import: Import tiddlers from a file</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* init: Initialise a new wiki folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* listen: Provides an HTTP server interface to TiddlyWiki</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* load: Load tiddlers from a file</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* makelibrary: Construct library plugin required by upgrade process</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* output: Set the base output directory for subsequent commands</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* password: Set a password for subsequent crypto operations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* render: Renders individual tiddlers to files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* rendertiddler: Render an individual tiddler as a specified ContentType</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* rendertiddlers: Render tiddlers matching a filter to a specified ContentType</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* save: Saves individual raw tiddlers to files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* savelibrarytiddlers: </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* savetiddler: Saves a raw tiddler to a file</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* savetiddlers: Saves a group of raw tiddlers to a directory</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* savewikifolder: Saves a wiki to a new wiki folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* server: Provides an HTTP server interface to TiddlyWiki (deprecated in favour of the new listen command)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* setfield: Prepares external tiddlers for use</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* unpackplugin: Unpack the payload tiddlers from a plugin</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* verbose: Triggers verbose output mode</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">* version: Displays the version number of TiddlyWiki</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="變體與其他衍生">變體與其他衍生<a href="https://flyskypie.github.io/blog/2024-02-25_tiddlywiki-journey-1#%E8%AE%8A%EF%BF%BD%E9%AB%94%E8%88%87%E5%85%B6%E4%BB%96%E8%A1%8D%E7%94%9F" class="hash-link" aria-label="Direct link to 變體與其他衍生" title="Direct link to 變體與其他衍生">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="變體與其他衍生">變體與其他衍生<a href="https://flyskypie.github.io/blog/2024-02-25_tiddlywiki-journey-1#%E8%AE%8A%E9%AB%94%E8%88%87%E5%85%B6%E4%BB%96%E8%A1%8D%E7%94%9F" class="hash-link" aria-label="Direct link to 變體與其他衍生" title="Direct link to 變體與其他衍生">​</a></h2>
 <p>基於 Tiddlywiki 的設計哲學，而造就了「基本模式」、「進階模式」或是「伺服器模式」這幾種不同的使用方式，不過其實它們都不太符合一般使用者使用軟體的習慣，因此有不少衍生專案正是為了改善它的使用體驗而存在的。這裡是一些我在爬文的過程發現的衍生型 Tiddlywiki<sup><a href="https://flyskypie.github.io/blog/2024-02-25_tiddlywiki-journey-1#user-content-fn-variant-57f790" id="user-content-fnref-variant-57f790" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>：</p>
 <ul>
 <li><a href="https://noteself.org/" target="_blank" rel="noopener noreferrer">NoteSelf</a>
@@ -1589,7 +1720,7 @@ a non-linear personal web notebook</p>
         <summary type="html"><![CDATA[行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 childprocess 模組的 spawn 或是使用過 Web API 的 Worker 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。]]></summary>
         <content type="html"><![CDATA[
 <p>行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 <code>child_process</code> 模組的 <a href="https://nodejs.org/api/child_process.html#child_processspawncommand-args-options" target="_blank" rel="noopener noreferrer">spawn</a> 或是使用過 Web API 的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank" rel="noopener noreferrer">Worker</a> 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="區塊之間的通訊方式一�覽">區塊之間的通訊方式一覽<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%8D%80%E5%A1%8A%E4%B9%8B%E9%96%93%E7%9A%84%E9%80%9A%E8%A8%8A%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A6%BD" class="hash-link" aria-label="Direct link to 區塊之間的通訊方式一覽" title="Direct link to 區塊之間的通訊方式一覽">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="區塊之間的通訊方式一覽">區塊之間的通訊方式一覽<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%8D%80%E5%A1%8A%E4%B9%8B%E9%96%93%E7%9A%84%E9%80%9A%E8%A8%8A%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A6%BD" class="hash-link" aria-label="Direct link to 區塊之間的通訊方式一覽" title="Direct link to 區塊之間的通訊方式一覽">​</a></h2>
 <p>在<a href="https://flyskypie.github.io/blog/2023-04-01_electron_learning_note_intro">前一篇文章</a>提到，在 Electron 中 Render 和 Main 彼此之間是獨立的，必須透過 Preload 和 API 來實現兩者之間的溝通。參考了官方的範例程式碼以及一篇文章<sup><a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#user-content-fn-electron-ipc-bef557" id="user-content-fnref-electron-ipc-bef557" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>之後，整理成一個圖表：</p>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_electron-ipc-api-2614c898ac2d7076cfc25d7ca88f52c4.webp" width="1377" height="1354" class="img_RpFt"></p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="後記">後記<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%BE%8C%E8%A8%98" class="hash-link" aria-label="Direct link to 後記" title="Direct link to 後記">​</a></h2>
@@ -1891,37 +2022,5 @@ a non-linear personal web notebook</p>
         <category label="Polis" term="Polis"/>
         <category label="Hakoniwa" term="Hakoniwa"/>
         <category label="The Key of Huanche" term="The Key of Huanche"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[在 C++ 專案中處理仰賴套件的幾種方式]]></title>
-        <id>https://flyskypie.github.io/blog/2023-04-11_dependencies-in-cpp-project</id>
-        <link href="https://flyskypie.github.io/blog/2023-04-11_dependencies-in-cpp-project"/>
-        <updated>2023-04-11T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[這裡整理幾種 C++ 專案常見的處理仰賴函式庫的模式（或是工具）。]]></summary>
-        <content type="html"><![CDATA[<p>這裡整理幾種 C++ 專案常見的處理仰賴函式庫的模式（或是工具）。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="copypaste-source">Copy/Paste Source<a href="https://flyskypie.github.io/blog/2023-04-11_dependencies-in-cpp-project#copypaste-source" class="hash-link" aria-label="Direct link to Copy/Paste Source" title="Direct link to Copy/Paste Source">​</a></h2>
-<p>最簡單暴力的方式，把仰賴函式庫的 source 跟 header 直接複製到專案的資料夾下，直接編譯進去專案本身。舉例來說 <a href="https://github.com/fogleman/Craft" target="_blank" rel="noopener noreferrer">fogleman/Craft</a> 是屬於這類。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="native-cmake">Native CMake<a href="https://flyskypie.github.io/blog/2023-04-11_dependencies-in-cpp-project#native-cmake" class="hash-link" aria-label="Direct link to Native CMake" title="Direct link to Native CMake">​</a></h2>
-<p>在 <a href="https://cmake.org/" target="_blank" rel="noopener noreferrer">CMake</a> 中有個指令 <code>find_library</code> 允許在專案的 config 階段先偵測環境中是否有指定的函式庫，找不到的話就會拋出錯誤。這種專案配置將安裝仰賴函式庫責任交給 host 本身，通常專案的 build guild 會寫著 「先執行 <code>sudo apt install ....</code>」之類的。舉例來說 <a href="https://github.com/LibreSprite/LibreSprite/blob/18e16ef410d410f18c180ec7282861ea61def68f/CMakeLists.txt#L144-L187" target="_blank" rel="noopener noreferrer">LibreSprite</a> 是屬於這類。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="git">Git<a href="https://flyskypie.github.io/blog/2023-04-11_dependencies-in-cpp-project#git" class="hash-link" aria-label="Direct link to Git" title="Direct link to Git">​</a></h2>
-<p>利用 Git 的 submodule 功能，把其他 repository 參考到專案中。舉例來說 <a href="https://github.com/cuberite/cuberite/tree/master/lib" target="_blank" rel="noopener noreferrer">Cuberite</a> 是屬於這類。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="dependencies-tool">Dependencies Tool<a href="https://flyskypie.github.io/blog/2023-04-11_dependencies-in-cpp-project#dependencies-tool" class="hash-link" aria-label="Direct link to Dependencies Tool" title="Direct link to Dependencies Tool">​</a></h2>
-<p>就像 PHP 有 Composer；Node.js 有 NPM；Python 有 pip；Rust 有 Cargo 一樣，C++ 的開發者們當然也製作了工具來處理專案仰賴函式庫的問題，不過受限於 C++ 的語言特性，目前並沒有一勞永逸的殺手級工具，仍然處於百家爭鳴的狀態。</p>
-<ul>
-<li><a href="https://github.com/cpm-cmake/CPM.cmake" target="_blank" rel="noopener noreferrer">CPM.cmake</a></li>
-<li><a href="https://conan.io/" target="_blank" rel="noopener noreferrer">Conan</a></li>
-<li><a href="https://github.com/microsoft/vcpkg" target="_blank" rel="noopener noreferrer">Vcpkg</a></li>
-<li><a href="https://github.com/cpp-pm/hunter" target="_blank" rel="noopener noreferrer">Hunter</a></li>
-<li><a href="https://buckaroo.pm/" target="_blank" rel="noopener noreferrer">Buckaroo</a></li>
-</ul>
-<hr>
-<p><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="創用 CC 授權條款" class="img_RpFt"></a><br>
-<!-- -->Wei Ji以<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">創用CC 姓名標示-相同方式分享 4.0 國際 授權條款</a>釋出。</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="learning note" term="learning note"/>
-        <category label="c++" term="c++"/>
     </entry>
 </feed>
