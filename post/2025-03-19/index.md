@@ -1,5 +1,5 @@
 ---
-slug: 2025-03-19
+slug: 2025-03-19_post
 authors: [weiji]
 tags: []
 ---
