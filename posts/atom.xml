@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-03-19T11:55:07.000Z</updated>
+    <updated>2025-03-19T12:00:29.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[生者與死物的距離，一種人形仿生機器人開發路徑的視角]]></title>
         <id>https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless</id>
         <link href="https://flyskypie.github.io/posts/2025_02_22_the-distance-between-life-and-lifeless"/>
-        <updated>2025-03-19T11:55:07.000Z</updated>
+        <updated>2025-03-19T12:00:29.000Z</updated>
         <summary type="html"><![CDATA[本文可能觸及敏感的社會議題或現象，目的是提出一種看事情的角度，並無針對特定族群冒犯之意。]]></summary>
         <content type="html"><![CDATA[
 <div class="theme-admonition theme-admonition-warning admonition_a71W alert alert--warning"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_fKWC"><p>本文可能觸及敏感的社會議題或現象，目的是提出一種看事情的角度，並無針對特定族群冒犯之意。</p></div></div>
@@ -58,10 +58,12 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[RE:在加速崩塌的中國網際網路上，正在消失的集體記憶]]></title>
-        <id>https://flyskypie.github.io/posts/Wed Mar 19 2025 00:00:00 GMT+0000 (Coordinated Universal Time)</id>
-        <link href="https://flyskypie.github.io/posts/Wed Mar 19 2025 00:00:00 GMT+0000 (Coordinated Universal Time)"/>
+        <id>https://flyskypie.github.io/posts/2025-03-19_post</id>
+        <link href="https://flyskypie.github.io/posts/2025-03-19_post"/>
         <updated>2025-03-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[上個週末整理書籤，發現大概死了 25% 的連結，另一方面發現有一些看起來比較「傳統」的網站雖然還活著，可是反過來說，我現在 Google 也很少搜尋到這種網站，感覺老網站死掉是一回事，然後被 SEO 過濾掉是另外一個問題。]]></summary>
+        <content type="html"><![CDATA[<p>上個週末整理書籤，發現大概死了 25% 的連結，另一方面發現有一些看起來比較「傳統」的網站雖然還活著，可是反過來說，我現在 Google 也很少搜尋到這種網站，感覺老網站死掉是一回事，然後被 SEO 過濾掉是另外一個問題。
+P.S. 有些書籤是 10 年前左右加的</p>]]></content>
         <author>
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
