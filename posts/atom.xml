@@ -2,11 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-03-19T00:00:00.000Z</updated>
+    <updated>2025-03-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[RPG Maker MV 與 NW.js]]></title>
+        <id>https://flyskypie.github.io/posts/2025-03-26_rpg-maker</id>
+        <link href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker"/>
+        <updated>2025-03-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[週末買了 RPG Maker MV，然後不出意外的出意外了（Linux 使用者日常）：]]></summary>
+        <content type="html"><![CDATA[<p>週末買了 RPG Maker MV，然後不出意外的出意外了（Linux 使用者日常）：</p>
+<div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">Check failed: InitDefaultFont(). Could not find the default font</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>先講結論 RPG Maker MV 不管目標平台是什麼，都是輸出成 <a href="https://github.com/nwjs/nw.js" target="_blank" rel="noopener noreferrer">NW.js</a> 程式，而 RPG Maker MV 內建的 NW.js 樣板版本太舊：</p>
+<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">./nw --version</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">nwjs 65.0.3325.146</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>這個當下 (2025-03-26) 最新的 NW.js 是 <code>0.97.0</code>，照著網路上查到的資料<sup><a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#user-content-fn-discussions-55d7ad" id="user-content-fnref-discussions-55d7ad" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>，從 <a href="http://nwjs.io/" target="_blank" rel="noopener noreferrer">http://nwjs.io</a> 下載 Normal 和 SDK 並且放到 <code>~/.steam/steam/steamapps/common/RPG Maker MV/</code> 之類的路徑下就能解決了：</p>
+<ul>
+<li><code>/nwjs-lnx</code>
+<ul>
+<li>Normal NW.js</li>
+</ul>
+</li>
+<li><code>/nwjs-lnx-test</code>
+<ul>
+<li>SDK NW.js</li>
+</ul>
+</li>
+</ul>
+<p>兩者的差別是在編輯器按「測試」執行跟「發布」執行。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="nwjs">NW.js<a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#nwjs" class="hash-link" aria-label="Direct link to NW.js" title="Direct link to NW.js">​</a></h2>
+<p>NW.js 一個類似於 <a href="https://github.com/electron/electron" target="_blank" rel="noopener noreferrer">Electron</a> 用「寫網頁的方式製作桌面應用程式」的工具，不過兩者實做的方式不太一樣，我先不在這邊做比較。</p>
+<p>NW.js 專案提供了一個 <code>nw.exe</code> 執行檔（和一些動態函式庫），而這個執行檔就像是 Chromium 和 Node.js 的奇美拉，只是 Node.js 會去找 <code>app,js</code> 而 <code>nw</code> 會去找 <code>index.html</code> 來執行，看似跑在 Chromium 瀏覽器上卻又能解析 Commonjs 的 <code>require()</code> 和 Node.js 的核心模組。發布應用程式的時候就是把 <code>nw.exe</code> 和 Javascript 以及其他網頁 assets 打包給使用者。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="rpg-maker-mv">RPG Maker MV<a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#rpg-maker-mv" class="hash-link" aria-label="Direct link to RPG Maker MV" title="Direct link to RPG Maker MV">​</a></h2>
+<p>另我驚訝的是當輸出專案時，所有在編輯器完成的調整都會變成 JSON 組態，遊戲程式則是 Javascript 明碼，連混淆都沒有！我甚至可以直接看到它繪圖的基礎是使用 <a href="https://github.com/pixijs/pixijs" target="_blank" rel="noopener noreferrer">PixiJS</a> 完成的。雖然程式碼裡面充滿了 <code>prototype</code> 之類的古早味語法就是了。</p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-discussions-55d7ad">
+<p>[LINUX/MV 1.6.2] Fresh Install with new project and play test button doesn’t work :: RPG Maker MV Tech Support. Retrieved 2025-03-26 from <a href="https://steamcommunity.com/app/363890/discussions/1/2653116024334677568/#c2653116235598796183" target="_blank" rel="noopener noreferrer">https://steamcommunity.com/app/363890/discussions/1/2653116024334677568/#c2653116235598796183</a> <a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#user-content-fnref-discussions-55d7ad" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[RE:在加速崩塌的中國網際網路上，正在消失的集體記憶]]></title>
         <id>https://flyskypie.github.io/posts/2025-03-19_post</id>
@@ -396,20 +437,6 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content>
 <p>這幾天心血來潮把電源線跟變壓器接一接，開機才發現這東西居然被裝了 Windows 8.1</p>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-d248e271fd8260a7c3e01c593caa10f6.webp" width="1024" height="1103" class="img_RpFt"></p>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-105d595db1479224ff1ddb2e053f0016.webp" width="1024" height="817" class="img_RpFt"></p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[為梅茵獻上祝福]]></title>
-        <id>https://flyskypie.github.io/posts/2024-07-17_novel</id>
-        <link href="https://flyskypie.github.io/posts/2024-07-17_novel"/>
-        <updated>2024-07-17T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[上個禮拜訂的小說前幾天到貨啦～週末的時候應該可以一口氣喀完～]]></summary>
-        <content type="html"><![CDATA[
-<p>上個禮拜訂的小說前幾天到貨啦～週末的時候應該可以一口氣喀完～</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-052dff89980536ecb538ebe7eda80945.webp" width="1024" height="1241" class="img_RpFt"></p>]]></content>
         <author>
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
