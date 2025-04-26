@@ -53,6 +53,8 @@ Homelab 就是資訊工程師平常在公司管伺服器管得不夠爽，所以
 
 ## Pi Hole 與 DNS
 
+![](./img/03_pi-hole.svg)
+
 架設的服務一多，單靠埠號去分辨服務其實不理想，而為了實現這個需求就需要 DNS 和反向代理 (Reverse Proxy)，反向代理的部份稍後再回來談，我使用 [Pi-hole](https://github.com/pi-hole/pi-hole) 來擔任我的 DNS 伺服器。
 
 Pi-hole 除了 DNS 另外一個功能是封鎖黑名單內的域名，如此一來就可以在 DNS 層級封鎖掉一些廣告。
@@ -90,3 +92,59 @@ sudo service isc-dhcp-server restart
 ### 樹莓派上的 `isc-dhcp-server`
 
 剛好之前借給親戚當文書電腦的樹莓派被反還了，索性試著把 DHCP 伺服器轉移到樹莓派上，然後那個討厭的問題就再也沒有出現過了。
+
+DHCP 伺服器，結案。
+
+## Traefik 與反向代理
+
+![](./img/04_traefik.webp)
+
+用 [Apache](https://en.wikipedia.org/wiki/Apache_HTTP_Server) 或 [Nginx](https://nginx.org/) 做反向代理的組態檔我都寫過，因此當我第一次[接觸到 Traefik](/post/2024-07-27_traefik) 的時候是十分的驚豔，確實感受到來自開發團隊所謂的：
+
+> We forgot what was impossible so we could build it![^traefik]
+
+整個流程大概是這樣的，在 Docker 新增一個網路：
+
+```shell
+docker network create --driver=overlay --attachable traefik-public
+```
+
+開一個容器跑 Traefik 的服務然後接到剛剛開網路：
+
+```yaml
+---
+services:
+  proxy:
+    image: traefik:latest
+    command:
+      - --api.insecure=true
+      - --providers.docker
+      - --entrypoints.ep1.address=:80
+      - --entrypoints.ep2.address=:9090
+    ports:
+      - "80:80"
+      - "127.0.0.1:8080:8080"
+      - "9090:9090"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - traefik-public
+
+networks:
+  traefik-public:
+    external: true
+```
+
+對於想要反向代理的服務則是在它的組態上加上反向代理的資訊像這樣：
+
+```yaml
+app1:
+  image: docker.io/alpinelinux/darkhttpd:latest
+  labels:
+    - traefik.http.routers.app1.entrypoints=ep1
+    - traefik.http.routers.app1.rule=Host(`example.com`)
+```
+
+如此一來就不用每次更改規則的時候都要去修改或重新啟動反向代理的配置與伺服器，又或是目標服務因為某些原因掉線時候讓反向代理伺服器找不目標而出錯，使用上十分方便。
+
+[^traefik]: Traefik 2.0 - The Wait is Over! Retrieved 2025-04-26 from https://traefik.io/blog/traefik-2-0-6531ec5196c2/
