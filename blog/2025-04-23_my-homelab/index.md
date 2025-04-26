@@ -182,3 +182,32 @@ https://github.com/distribution/distribution
 
 [^docker-mirror]: Mirror | Docker Docs. Retrieved 2025-04-26 https://docs.docker.com/docker-hub/image-library/mirror/
 
+## NPM Registry
+
+![](./img/06_node-icon.svg)
+
+作為一個 (Web) 前端仔，自架一個私有 NPM 庫是再合理不過的事，跟 Docker 的情況相同，就算沒有要佈署東西，作為鏡像站依然有它的作用，並且同樣使用一個庫一個 Web UI 的搭配：
+
+- https://github.com/verdaccio/verdaccio
+  - 16.8k ⭐
+- https://github.com/filebrowser/filebrowser
+  - 28.8k ⭐
+
+Verdaccio 雖然有 Web UI 能夠管理私人 (private) 套件，卻不會顯示快取的套件。filebrowser 是一個簡單的服務，只要把 Volume 掛給它就能透過瀏覽器查看檔案系統的檔案以及簡單的管理，包含上傳、下載、新增資料夾、刪除、重新命名...等。
+
+在網路不穩定的情況 Verdaccio 有機會快取失敗留下損壞的組態檔，這時就能從瀏覽器刪除損壞的組態讓它重新下載。
+
+## S3 (Simple Storage Service) 物件儲存
+
+![](./img/07_aws-s3.svg)
+
+:::info
+S3 原本是 AWS 的雲端服務，更準確的用詞應該是 S3 兼容 (S3 compatible) 服務，只是因為它在雲端世界已經實質上是一種通用標準了，以下我直接簡稱 S3。
+:::
+
+對我而言輕量級的東西總是有特別的吸引力，因此一開始我試著使用 [Garage](https://git.deuxfleurs.fr/Deuxfleurs/garage)，但是也因為它的精簡，因此並沒有內建 Web UI，加上我對 S3 的使用也稱不上熟悉，相對複雜的安裝文件最後讓我卻步而改用比較普通的 MinIO:
+
+- https://github.com/minio/minio
+  - 52k ⭐
+
+正如我說的，我對 S3 的使用仍然缺乏經驗，自架一個 S3 實例就是為了長經驗，另一方面是目前不少網路服務會把儲存資料或檔案的部份抽象化並且把職責交給外部的 S3 服務，例如 [DVC](https://github.com/iterative/dvc) 是我預計想玩的東西；前端使用 Git 風格的 CLI、後端則是把版控的大型檔案儲存在 S3 （或其他支援的儲存形式）。
