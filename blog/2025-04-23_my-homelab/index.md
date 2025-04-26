@@ -148,3 +148,37 @@ app1:
 如此一來就不用每次更改規則的時候都要去修改或重新啟動反向代理的配置與伺服器，又或是目標服務因為某些原因掉線時候讓反向代理伺服器找不目標而出錯，使用上十分方便。
 
 [^traefik]: Traefik 2.0 - The Wait is Over! Retrieved 2025-04-26 from https://traefik.io/blog/traefik-2-0-6531ec5196c2/
+
+## OCI Registry
+
+![](./img/05_docker-icon.svg)
+
+OCI (Open Container Initiative) Registry，或是通俗的講 Docker 庫，用來存放 Docker 映像檔 (Image) 的地方。
+
+我使用一個庫搭配遺一個 Web UI 的方案：
+
+- https://github.com/distribution/distribution
+  - 9.5k ⭐
+- https://github.com/Joxit/docker-registry-ui
+  - 2.9k ⭐
+
+https://github.com/distribution/distribution
+
+即使短期內沒有自己的映像檔要佈署，當成鏡像站也很好用，在 client 端的 `/etc/docker/daemon.json` 加入[^docker-mirror]：
+
+```json
+{
+  "registry-mirrors": ["https://<my-docker-mirror-host>"]
+}
+```
+
+這樣 pull 的時候就會留一份副本在鏡像站，下次拉取一樣的東西就可以直接從 homelab 下載。
+
+這對我而言有用是因為一些條件：
+
+1. 我對外網路是無線網路，速度本來就十分有限，能夠快取映像檔，之後重複拉取可以節省我的時間。
+2. 我偶爾還會處理像 GitLab 或是 SideFX Houdini 那種一個 1 GB 起跳的映像檔。
+3. 我使用 Docker 的時候經常會接觸不同的映像檔，會不定期清理筆電上的映像檔，不然硬碟空間會被吃光。
+
+[^docker-mirror]: Mirror | Docker Docs. Retrieved 2025-04-26 https://docs.docker.com/docker-hub/image-library/mirror/
+
