@@ -51,7 +51,24 @@ Homelab 就是資訊工程師平常在公司管伺服器管得不夠爽，所以
 
 當自架的服務越來越多，一個簡單的入口網站來尋找需要的服務是十分必要的。目前我是使用 [Dashy](https://github.com/Lissy93/dashy)，關於其他最後沒使用的候選方案我補充在[另外一篇貼文](/post/2025-04-26_homelab-homepage)。
 
-## Pi Hole 與 DNS
+目前我把所有服務大致分成四類：
+
+- 數位基礎設施
+  - 一些情況不會直接面對終端使用者 (End User)，而是在背景默默工作的東西會放在這裡。
+- 專案 (Side Project) 基礎設施
+  - 「管理」相關的東西會放在這裡。
+- 生活
+  - 比較屬於個人會使用到的服務會放在這裡。
+- 開發工具
+  - 「研發工具」之類的東西會放在這裡。
+
+經濟學裡裡的生產要素被分成四類：自然資源、人力資源、資本、企業才能。如果用經濟學裡生產要素的概念來比喻，「數位基礎設施」就像是自然資源的陽光、空氣、水；「專案基礎設施」則是資本裡的機器、設備、廠房。
+
+「生活」是不直接涉及生產東西，比較像是個人消耗品。「開發工具」則是尺度比較小的工具，像是電鑽、板手...之類的。
+
+## 數位基礎設施
+
+### Pi Hole 與 DNS
 
 ![](./img/03_pi-hole.svg)
 
@@ -59,17 +76,17 @@ Homelab 就是資訊工程師平常在公司管伺服器管得不夠爽，所以
 
 Pi-hole 除了 DNS 另外一個功能是封鎖黑名單內的域名，如此一來就可以在 DNS 層級封鎖掉一些廣告。
 
-## DHCP
+### DHCP
 
 因為我會帶著主力筆電出門，如果每次都還要重新設定 DNS 同樣不夠理想，因此 DNS 能夠直接由 DHCP 發送完成設定是十分必要的，最後是成功完成了，然而過程中有遇到一些小阻礙，在此紀錄一下。
 
-### 容器內的 Pi-hole DHCP
+#### 容器內的 Pi-hole DHCP
 
 Pi-hole 本身就支援 DHCP，但是我是把它跑在 Docker 容器內，因此需要一些額外的處理[^pi-hole-dhcp]，然而在這方面我沒有成功讓容器內的 Pi-hole DHCP 正常運作。
 
 [^pi-hole-dhcp]: Docker DHCP and Network Modes - Pi-hole documentation. Retrieved 2025-04-26 from https://docs.pi-hole.net/docker/dhcp/
 
-### Host 上的 `isc-dhcp-server`
+#### Host 上的 `isc-dhcp-server`
 
 無奈之下我只好在主機 (Host) 上直接安裝 DHCP 伺服器，然而這讓我碰到另外一個問題：
 
@@ -89,13 +106,13 @@ sudo service isc-dhcp-server restart
 
 至於為什麼需要掛一個 USB 網路卡是因為擔任伺服器的筆電是薄型筆電，只有三個 USB Type-C。
 
-### 樹莓派上的 `isc-dhcp-server`
+#### 樹莓派上的 `isc-dhcp-server`
 
 剛好之前借給親戚當文書電腦的樹莓派被反還了，索性試著把 DHCP 伺服器轉移到樹莓派上，然後那個討厭的問題就再也沒有出現過了。
 
 DHCP 伺服器，結案。
 
-## Traefik 與反向代理
+### Traefik 與反向代理
 
 ![](./img/04_traefik.webp)
 
@@ -149,7 +166,7 @@ app1:
 
 [^traefik]: Traefik 2.0 - The Wait is Over! Retrieved 2025-04-26 from https://traefik.io/blog/traefik-2-0-6531ec5196c2/
 
-## OCI Registry
+### OCI Registry
 
 ![](./img/05_docker-icon.svg)
 
@@ -182,7 +199,7 @@ https://github.com/distribution/distribution
 
 [^docker-mirror]: Mirror | Docker Docs. Retrieved 2025-04-26 https://docs.docker.com/docker-hub/image-library/mirror/
 
-## NPM Registry
+### NPM Registry
 
 ![](./img/06_node-icon.svg)
 
@@ -197,7 +214,7 @@ Verdaccio 雖然有 Web UI 能夠管理私人 (private) 套件，卻不會顯示
 
 在網路不穩定的情況 Verdaccio 有機會快取失敗留下損壞的組態檔，這時就能從瀏覽器刪除損壞的組態讓它重新下載。
 
-## S3 (Simple Storage Service) 物件儲存
+### S3 (Simple Storage Service) 物件儲存
 
 ![](./img/07_aws-s3.svg)
 
@@ -211,3 +228,34 @@ S3 原本是 AWS 的雲端服務，更準確的用詞應該是 S3 兼容 (S3 com
   - 52k ⭐
 
 正如我說的，我對 S3 的使用仍然缺乏經驗，自架一個 S3 實例就是為了長經驗，另一方面是目前不少網路服務會把儲存資料或檔案的部份抽象化並且把職責交給外部的 S3 服務，例如 [DVC](https://github.com/iterative/dvc) 是我預計想玩的東西；前端使用 Git 風格的 CLI、後端則是把版控的大型檔案儲存在 S3 （或其他支援的儲存形式）。
+
+
+## 專案基礎設施
+
+### 專案管理
+
+專案管理的部份在[前一篇](/blog/2025-03-15_opensource-3d-workflow)文章有稍微提過。
+
+目前我選擇使用 [Vikunja](https://github.com/go-vikunja/vikunja)，雖然跟其他[候選](/post/2025-04-26_homelab-project-manage)相比星星少而且發展時間也比較短，但是算是一個後起之秀，兩個我很看中的功能都有支援，連續流水號：
+
+![](./img/09_vikunja.webp)
+
+卡片之間的關聯：
+
+![](./img/10_vikunja.webp)
+
+並且整體的 UI/UX 也更貼近現代的風格，更具體地說，跟我平時工作使用的 Jira 有一定程度的相似度：
+
+![](./img/08_vikunja.webp)
+
+曬一下目前在 Homelab 裡紀錄的 side project:
+
+![](./img/11_vikunja.webp)
+
+## 生活
+
+TBD
+
+## 開發工具
+
+TBD
