@@ -197,7 +197,7 @@ https://github.com/distribution/distribution
 2. 我偶爾還會處理像 GitLab 或是 SideFX Houdini 那種一個 1 GB 起跳的映像檔。
 3. 我使用 Docker 的時候經常會接觸不同的映像檔，會不定期清理筆電上的映像檔，不然硬碟空間會被吃光。
 
-[^docker-mirror]: Mirror | Docker Docs. Retrieved 2025-04-26 https://docs.docker.com/docker-hub/image-library/mirror/
+[^docker-mirror]: Mirror | Docker Docs. Retrieved 2025-04-26 from https://docs.docker.com/docker-hub/image-library/mirror/
 
 ### NPM Registry
 
@@ -274,7 +274,22 @@ S3 原本是 AWS 的雲端服務，更準確的用詞應該是 S3 兼容 (S3 com
 
 ## 生活
 
-TBD
+### 個人影音
+
+我使用 Jellyfin 搭配 Filebrowser 的方式：
+
+- https://github.com/jellyfin/jellyfin
+  - 39.1k ⭐
+- https://github.com/filebrowser/filebrowser
+  - 28.8k ⭐
+
+![](./img/15_jellyfin.webp)
+
+![](./img/16_web-fs.webp)
+
+其實這是我第一個使用 filebrowser 的組合，之後才套用到其他服務去的，這方法也不是我原創的，是在網路上找到的[^jellyfin-filebrowser]。
+
+[^jellyfin-filebrowser]: Upload file from the app or site · Jellyfin Feature Requests. Retrieved 2025-04-27 from https://features.jellyfin.org/posts/543/upload-file-from-the-app-or-site#comment-5160
 
 ## 開發工具
 
