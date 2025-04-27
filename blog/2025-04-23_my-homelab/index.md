@@ -234,7 +234,7 @@ S3 原本是 AWS 的雲端服務，更準確的用詞應該是 S3 兼容 (S3 com
 
 ### 專案管理
 
-專案管理的部份在[前一篇](/blog/2025-03-15_opensource-3d-workflow)文章有稍微提過。
+專案管理的部份在[前一篇](/blog/2025-03-15_opensource-3d-workflow)文章有稍微提過，那個時候使用 WeKan。
 
 目前我選擇使用 [Vikunja](https://github.com/go-vikunja/vikunja)，雖然跟其他[候選](/post/2025-04-26_homelab-project-manage)相比星星少而且發展時間也比較短，但是算是一個後起之秀，兩個我很看中的功能都有支援，連續流水號：
 
@@ -251,6 +251,26 @@ S3 原本是 AWS 的雲端服務，更準確的用詞應該是 S3 兼容 (S3 com
 曬一下目前在 Homelab 裡紀錄的 side project:
 
 ![](./img/11_vikunja.webp)
+
+### 版本控制
+
+![](./img/12_gitea.webp)
+
+我使用 [Gitea](https://github.com/go-gitea/gitea)，因為它比較簡單。另外一個常見的自架選擇是 GitLab，也是俗稱的全家桶，不過對我而言過於笨重了，我有接觸過它的 Docker Image 不論是[官方](https://hub.docker.com/r/gitlab/gitlab-ce)的還是[第三方](https://github.com/sameersbn/docker-gitlab)的，總而言之就是笨重。
+
+### 物料管理
+
+![](./img/13_partdb.webp)
+
+我使用 [Part-DB](https://github.com/Part-DB/Part-DB-server) 來管理我的零件與物品，在[前一篇](/blog/2025-03-15_opensource-3d-workflow)文章也有稍微提過。
+
+實際上運作起來的樣子我在 [FB](https://www.facebook.com/wei.ji.355/posts/pfbid0k6HBivjCg3AuTgmWdKr7T2GhEPQmxuWjCAWynBhM87VKmotJSFvcUowe2F8MU1nNl) 和 [Twitter](https://x.com/FlySkyPie/status/1890755061648630093) 都有貼文分享過。
+
+### Pinry
+
+![](./img/14_pinry.webp)
+
+[Pinry](https://github.com/pinry/pinry) 基本上是開源自架版本的 Pinterest。
 
 ## 生活
 
