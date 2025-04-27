@@ -2,11 +2,170 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-04-13T00:00:00.000Z</updated>
+    <updated>2025-04-27T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[RSS]]></title>
+        <id>https://flyskypie.github.io/posts/2025-04-27_homelab-rss</id>
+        <link href="https://flyskypie.github.io/posts/2025-04-27_homelab-rss"/>
+        <updated>2025-04-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近在自架 RSS 訂閱器，目前是使用 Tiny Tiny RSS，不過這裡還是把當時查資料時的其他候選方案簡單列一下。]]></summary>
+        <content type="html"><![CDATA[<p>最近在自架 RSS 訂閱器，目前是使用 Tiny Tiny RSS，不過這裡還是把當時查資料時的其他候選方案簡單列一下。</p>
+<ul>
+<li><a href="https://github.com/FreshRSS/FreshRSS" target="_blank" rel="noopener noreferrer">https://github.com/FreshRSS/FreshRSS</a>
+<ul>
+<li>11k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/miniflux/v2" target="_blank" rel="noopener noreferrer">https://github.com/miniflux/v2</a>
+<ul>
+<li>7.3k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/samuelclay/NewsBlur" target="_blank" rel="noopener noreferrer">https://github.com/samuelclay/NewsBlur</a>
+<ul>
+<li>7k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/ssddanbrown/rss" target="_blank" rel="noopener noreferrer">https://github.com/ssddanbrown/rss</a>
+<ul>
+<li>542 ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/torne/Tiny-Tiny-RSS" target="_blank" rel="noopener noreferrer">https://github.com/torne/Tiny-Tiny-RSS</a>
+<ul>
+<li>202 ⭐</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="參考">參考<a href="https://flyskypie.github.io/posts/2025-04-27_homelab-rss#%E5%8F%83%E8%80%83" class="hash-link" aria-label="Direct link to 參考" title="Direct link to 參考">​</a></h2>
+<ul>
+<li>What is your favorite selhosted rss reader ? : r/selfhosted<!-- -->
+<ul>
+<li><a href="https://www.reddit.com/r/selfhosted/comments/12jky97/what_is_your_favorite_selhosted_rss_reader/" target="_blank" rel="noopener noreferrer">https://www.reddit.com/r/selfhosted/comments/12jky97/what_is_your_favorite_selhosted_rss_reader/</a></li>
+</ul>
+</li>
+</ul>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Homelab 入口網站或 Dashboard]]></title>
+        <id>https://flyskypie.github.io/posts/2025-04-26_homelab-homepage</id>
+        <link href="https://flyskypie.github.io/posts/2025-04-26_homelab-homepage"/>
+        <updated>2025-04-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近在建置自己的 Homelab，入口網站或儀表板 (Dashboard) 的方案其實不少，我自己目前是使用 Dashy，不過這裡還是把當時查資料時的其他候選方案簡單列一下。]]></summary>
+        <content type="html"><![CDATA[<p>最近在建置自己的 Homelab，入口網站或儀表板 (Dashboard) 的方案其實不少，我自己目前是使用 Dashy，不過這裡還是把當時查資料時的其他候選方案簡單列一下。</p>
+<ul>
+<li><a href="https://github.com/Lissy93/dashy" target="_blank" rel="noopener noreferrer">https://github.com/Lissy93/dashy</a>
+<ul>
+<li>18.1k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/ajnart/homarr" target="_blank" rel="noopener noreferrer">https://github.com/ajnart/homarr</a>
+<ul>
+<li>6.2k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/gethomepage/homepage" target="_blank" rel="noopener noreferrer">https://github.com/gethomepage/homepage</a>
+<ul>
+<li>19.8k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/bastienwirtz/homer" target="_blank" rel="noopener noreferrer">https://github.com/bastienwirtz/homer</a>
+<ul>
+<li>9.3k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/MauriceNino/dashdot" target="_blank" rel="noopener noreferrer">https://github.com/MauriceNino/dashdot</a>
+<ul>
+<li>2.7k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/daledavies/jump" target="_blank" rel="noopener noreferrer">https://github.com/daledavies/jump</a>
+<ul>
+<li>535 ⭐</li>
+</ul>
+</li>
+</ul>
+<p>選擇 Dashy 沒有什麼特別的理由，就是星星數夠高、畫面簡單以及仍然保有擴充的潛力，這裡是它支援的<a href="https://dashy.to/docs/widgets" target="_blank" rel="noopener noreferrer">資訊欄 (Widget)</a>。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="其他參考資料">其他參考資料<a href="https://flyskypie.github.io/posts/2025-04-26_homelab-homepage#%E5%85%B6%E4%BB%96%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" class="hash-link" aria-label="Direct link to 其他參考資料" title="Direct link to 其他參考資料">​</a></h2>
+<ul>
+<li><a href="https://roadtohomelab.blog/homelab-homepage-guide/" target="_blank" rel="noopener noreferrer">The Ultimate Homelab Homepage Guide</a></li>
+</ul>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="homelabe" term="homelabe"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[自架專案管理軟體]]></title>
+        <id>https://flyskypie.github.io/posts/2025-04-26_homelab-project-manage</id>
+        <link href="https://flyskypie.github.io/posts/2025-04-26_homelab-project-manage"/>
+        <updated>2025-04-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近在自架專案管理的工具，目前是使用 Vikunja，不過這裡還是把當時查資料時的其他候選方案簡單列一下。]]></summary>
+        <content type="html"><![CDATA[<p>最近在自架專案管理的工具，目前是使用 Vikunja，不過這裡還是把當時查資料時的其他候選方案簡單列一下。</p>
+<ul>
+<li><a href="https://github.com/go-vikunja/vikunja" target="_blank" rel="noopener noreferrer">https://github.com/go-vikunja/vikunja</a>
+<ul>
+<li>1.4k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/mattermost-community/focalboard" target="_blank" rel="noopener noreferrer">https://github.com/mattermost-community/focalboard</a>
+<ul>
+<li>23.1k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/wekan/wekan" target="_blank" rel="noopener noreferrer">https://github.com/wekan/wekan</a>
+<ul>
+<li>19.6k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/opf/openproject" target="_blank" rel="noopener noreferrer">https://github.com/opf/openproject</a>
+<ul>
+<li>10.1k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/redmine/redmine" target="_blank" rel="noopener noreferrer">https://github.com/redmine/redmine</a>
+<ul>
+<li>5.4k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/Leantime/leantime" target="_blank" rel="noopener noreferrer">https://github.com/Leantime/leantime</a>
+<ul>
+<li>4.8k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/plankanban/planka" target="_blank" rel="noopener noreferrer">https://github.com/plankanban/planka</a>
+<ul>
+<li>7.8k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/JordanKnott/taskcafe" target="_blank" rel="noopener noreferrer">https://github.com/JordanKnott/taskcafe</a>
+<ul>
+<li>4.6k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/kanboard/kanboard" target="_blank" rel="noopener noreferrer">https://github.com/kanboard/kanboard</a>
+<ul>
+<li>8.7k ⭐</li>
+</ul>
+</li>
+</ul>
+<p>Planka 明眼人都看得出來它是衝著 <a href="https://en.wikipedia.org/wiki/Trello" target="_blank" rel="noopener noreferrer">Trello</a> 去的，因此作為一個「Kanban 本位主義」的專案管理軟體，使用案例著重在看板本身，對於卡片 (Ticket/Issue) 的管理就稍微薄弱，比如沒有人類友善的流水號可以辨別卡片。</p>
+<p>OpenProject 則是側重卡片管理，可以堆疊巢狀結構也可以建立關聯，但是 UI 顯得比較老氣一點。</p>
+<p>Wekan 和 Planka 一樣屬於「Kanban 本位主義」，可以從設定啟用人類友善流水號，不過對於卡片管理的功能比較缺乏，巢狀堆疊的設計不是很理想，而且沒辦法建立其他卡片關聯。</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[每次 Conf 都會多一條掛繩，所以我把它當成褲帶]]></title>
         <id>https://flyskypie.github.io/posts/2025-04-13_post</id>
@@ -399,52 +558,5 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content>
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
         </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[私以為颱風假是一種恥辱]]></title>
-        <id>https://flyskypie.github.io/posts/2024-07-23_typhoon</id>
-        <link href="https://flyskypie.github.io/posts/2024-07-23_typhoon"/>
-        <updated>2024-07-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[隨著科技與工業的進步，我們能在夜晚點起亮光照亮道路甚至讓產線三班制無視日夜、能在溫室栽種植物無視夏季...]]></summary>
-        <content type="html"><![CDATA[<p>隨著科技與工業的進步，我們能在夜晚點起亮光照亮道路甚至讓產線三班制無視日夜、能在溫室栽種植物無視夏季...
-科技的力量讓我們減少「看老天爺臉色」了機會了，但是我們依然必須向天災屈服，
-強大的工業文明應該可以丈著完善的基礎建設無視氣候繼續運作，
-甚至用某種手段直接把低氣壓瓦解，
-颱風假應該視為一種恥辱，是我們不夠強大的象徵。</p>
-<p>是的，我沒放假，要照常工作，我很自豪自己不用接受這種恥辱。（社畜發言）</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Server Dayo!]]></title>
-        <id>https://flyskypie.github.io/posts/2024-07-21_server</id>
-        <link href="https://flyskypie.github.io/posts/2024-07-21_server"/>
-        <updated>2024-07-21T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[雖然是 10 年前的小筆電，但是看起來是被人整頓過了，原本應該內裝 Windows XP 的換成 Windows 8.1、原本應該是 HDD 硬碟換成一顆 256GB 的 SSD。]]></summary>
-        <content type="html"><![CDATA[
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-4f3d303c352d282bdd625b50ac16599b.webp" width="656" height="287" class="img_RpFt"></p>
-<p>雖然是 10 年前的小筆電，但是看起來是被人整頓過了，原本應該內裝 Windows XP 的換成 Windows 8.1、原本應該是 HDD 硬碟換成一顆 256GB 的 SSD。</p>
-<p>話說回來安裝速度是各種慢，從裝系統、 <code>apt install</code> 一些工具還有編譯 Python 都覺得很花時間，拿來跑 X Window 應該會慢到想殺人。←_←</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[「隱藏著資本主義力量的二進制檔案啊，在我面前顯示你真正的內容，不打算遵守 EULA 的工程師命令你，封印解除」]]></title>
-        <id>https://flyskypie.github.io/posts/2024-07-20_strace</id>
-        <link href="https://flyskypie.github.io/posts/2024-07-20_strace"/>
-        <updated>2024-07-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[strace 和 tcpdump 真好玩～]]></summary>
-        <content type="html"><![CDATA[
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-2f63af3b53ef1d3673a5110251073356.webp" width="1354" height="211" class="img_RpFt"></p>
-<p><code>strace</code> 和 <code>tcpdump</code> 真好玩～</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="strace" term="strace"/>
     </entry>
 </feed>

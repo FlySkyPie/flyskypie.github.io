@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[9661],{56172:(e,s,r)=>{r.r(s),r.d(s,{default:()=>h});r(50959);var u=r(86259),i=r(78390),t=r(46226),a=r(10819),c=r(18645),l=r(11527);function h(e){return(0,l.jsx)(i.FG,{className:(0,u.Z)(t.k.wrapper.docsPages),children:(0,l.jsx)(c.Z,{children:(0,a.H)(e.route.routes)})})}}}]);
