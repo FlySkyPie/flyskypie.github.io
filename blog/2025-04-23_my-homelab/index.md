@@ -291,6 +291,30 @@ S3 原本是 AWS 的雲端服務，更準確的用詞應該是 S3 兼容 (S3 com
 
 [^jellyfin-filebrowser]: Upload file from the app or site · Jellyfin Feature Requests. Retrieved 2025-04-27 from https://features.jellyfin.org/posts/543/upload-file-from-the-app-or-site#comment-5160
 
+### 資訊訂閱器
+
+![](./img/17_rss.webp)
+
+RSS (Really Simple Syndication) 是一種把網站內容建立摘要的協定，像[這樣](/blog/rss.xml)，接著其他人就可以定期的去撈 (Creep) 這個文件，有更新的話就會知道，達到類似訂閱的效果，不過定期撈資料這個動作一般交由特定的軟體完成。
+
+我目前是使用 [Tiny Tiny RSS](https://tt-rss.org/)，關於其他沒使用到的候選我放在另外一個[貼文](2025-04-27_homelab-rss)。
+
+### 網頁備份器
+
+不知道你有沒有使用過 [Wayback Machine](https://web.archive.org/) 呢？這是一個快取網站，讓人可以調閱那些已經不存在的網頁的網站。[ArchiveBox](https://github.com/ArchiveBox/ArchiveBox) 就是它的自架版本。
+
+### 電子書
+
+其實我沒有看電子書的習慣，出於方便歸檔跟調閱的目的架架看的，目前使用 [Kavita](https://github.com/Kareadita/Kavita)。跟 Jellyfin 一樣我搭配了一個 [Filebrowser](https://github.com/filebrowser/filebrowser) 使用。
+
 ## 開發工具
 
-TBD
+目前就是放一些上網也能用的平台，但是還是自己架一個以防萬一。
+
+### 虛擬白板
+
+[Excalidraw](https://github.com/excalidraw/excalidraw)是一個開源的協作虛擬白板，包含讓遠端工作者進行線上腦力激盪 (Brainstorming) 之類的用例。
+
+### Open API/AsynAPI 編輯器
+
+[Swagger Editor](https://github.com/swagger-api/swagger-editor)
