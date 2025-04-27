@@ -6,6 +6,10 @@ tags: [homelab]
 
 # 我的 Homelab
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/blog/2025-04-23_my-homelab/img/00_cover.webp" />
+</head>
+
 ![](./img/00_cover.webp)
 
 從我開始計畫建一個 Homelab 至今已經超過半年了，如今它的規模也算是有點東西可以拿出來講了。
