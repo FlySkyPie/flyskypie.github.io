@@ -4,10 +4,40 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sun, 27 Apr 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 28 Apr 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[整理書籤]]></title>
+            <link>https://flyskypie.github.io/posts/2025-04-28_post</link>
+            <guid>https://flyskypie.github.io/posts/2025-04-28_post</guid>
+            <pubDate>Mon, 28 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近在清理我放在瀏覽器裡面的書籤，搭配最近架設的 Homelab ，以下是我的 SOP：]]></description>
+            <content:encoded><![CDATA[<p>最近在清理我放在瀏覽器裡面的書籤，搭配最近架設的 Homelab ，以下是我的 SOP：</p>
+<ol>
+<li>它是 GitHub 專案。<!-- -->
+<ol>
+<li>它超過兩個月沒更新：Clone 下來丟 <a href="https://github.com/go-gitea/gitea" target="_blank" rel="noopener noreferrer">Gitea</a>。</li>
+<li>否則：餵給 <a href="https://tt-rss.org/" target="_blank" rel="noopener noreferrer">Tiny Tiny RSS</a> 訂閱<sup><a href="https://flyskypie.github.io/posts/2025-04-28_post#user-content-fn-github-rss-86075f" id="user-content-fnref-github-rss-86075f" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>。</li>
+</ol>
+</li>
+<li>它是 PDF：丟 <a href="https://github.com/Kareadita/Kavita" target="_blank" rel="noopener noreferrer">Kavita</a>。</li>
+<li>它是圖片：丟 <a href="https://github.com/pinry/pinry" target="_blank" rel="noopener noreferrer">Pinry</a>。</li>
+<li>它是 YouTube 影片：丟 <a href="https://github.com/jellyfin/jellyfin" target="_blank" rel="noopener noreferrer">Jellyfin</a>。</li>
+<li>它的主要價值是平台價值：暫時保留。</li>
+<li>它是維基百科：暫時保留。</li>
+<li>其他不宜直接備份原因：暫時保留。</li>
+<li>否則：備份到 <a href="https://github.com/ArchiveBox/ArchiveBox" target="_blank" rel="noopener noreferrer">ArchiveBox</a></li>
+</ol>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-04-28_post#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-github-rss-86075f">
+<p>RSS feeds for your Github releases, tags and activity. Retrieved 2025-04-28 from <a href="https://medium.com/@vilcins/cbda2c51373" target="_blank" rel="noopener noreferrer">https://medium.com/@vilcins/cbda2c51373</a> <a href="https://flyskypie.github.io/posts/2025-04-28_post#user-content-fnref-github-rss-86075f" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[RSS]]></title>
             <link>https://flyskypie.github.io/posts/2025-04-27_homelab-rss</link>
@@ -471,14 +501,6 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content:encoded>
 </ul>
 <p>儼然這張梗圖：
 <img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-3d884e8392455ed6660f581e91079a8b.webp" width="500" height="509" class="img_RpFt"></p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Go 的 cross compile 能力讓我有點驚喜]]></title>
-            <link>https://flyskypie.github.io/posts/2024-07-23_golang</link>
-            <guid>https://flyskypie.github.io/posts/2024-07-23_golang</guid>
-            <pubDate>Tue, 23 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[最近在自編 K8s 的組件，Go 的 cross compile 能力讓我有點驚喜]]></description>
-            <content:encoded><![CDATA[<p>最近在自編 K8s 的組件，Go 的 cross compile 能力讓我有點驚喜</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
