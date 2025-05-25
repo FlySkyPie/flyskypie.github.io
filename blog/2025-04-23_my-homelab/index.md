@@ -53,7 +53,7 @@ Homelab 就是資訊工程師平常在公司管伺服器管得不夠爽，所以
 
 ![](./img/00_cover.webp)
 
-當自架的服務越來越多，一個簡單的入口網站來尋找需要的服務是十分必要的。目前我是使用 [Dashy](https://github.com/Lissy93/dashy)，關於其他最後沒使用的候選方案我補充在[另外一篇貼文](https://flyskypie.github.io/post/2025-04-26_homelab-homepage)。
+當自架的服務越來越多，一個簡單的入口網站來尋找需要的服務是十分必要的。目前我是使用 [Dashy](https://github.com/Lissy93/dashy)，關於其他最後沒使用的候選方案我補充在[另外一篇貼文](https://flyskypie.github.io/posts/2025-04-26_homelab-homepage)。
 
 目前我把所有服務大致分成四類：
 
@@ -120,7 +120,7 @@ DHCP 伺服器，結案。
 
 ![](./img/04_traefik.webp)
 
-用 [Apache](https://en.wikipedia.org/wiki/Apache_HTTP_Server) 或 [Nginx](https://nginx.org/) 做反向代理的組態檔我都寫過，因此當我第一次[接觸到 Traefik](https://flyskypie.github.io/post/2024-07-27_traefik) 的時候是十分的驚豔，確實感受到來自開發團隊所謂的：
+用 [Apache](https://en.wikipedia.org/wiki/Apache_HTTP_Server) 或 [Nginx](https://nginx.org/) 做反向代理的組態檔我都寫過，因此當我第一次[接觸到 Traefik](https://flyskypie.github.io/posts/2024-07-27_traefik) 的時候是十分的驚豔，確實感受到來自開發團隊所謂的：
 
 > We forgot what was impossible so we could build it![^traefik]
 
@@ -240,7 +240,7 @@ S3 原本是 AWS 的雲端服務，更準確的用詞應該是 S3 兼容 (S3 com
 
 專案管理的部份在[前一篇](/blog/2025-03-15_opensource-3d-workflow)文章有稍微提過，那個時候使用 WeKan。
 
-目前我選擇使用 [Vikunja](https://github.com/go-vikunja/vikunja)，雖然跟其他[候選](https://flyskypie.github.io/post/2025-04-26_homelab-project-manage)相比星星少而且發展時間也比較短，但是算是一個後起之秀，兩個我很看中的功能都有支援，連續流水號：
+目前我選擇使用 [Vikunja](https://github.com/go-vikunja/vikunja)，雖然跟其他[候選](https://flyskypie.github.io/posts/2025-04-26_homelab-project-manage)相比星星少而且發展時間也比較短，但是算是一個後起之秀，兩個我很看中的功能都有支援，連續流水號：
 
 ![](./img/09_vikunja.webp)
 
@@ -301,7 +301,7 @@ S3 原本是 AWS 的雲端服務，更準確的用詞應該是 S3 兼容 (S3 com
 
 RSS (Really Simple Syndication) 是一種把網站內容建立摘要的協定，像[這樣](https://flyskypie.github.io/blog/rss.xml)，接著其他人就可以定期的去撈 (Creep) 這個文件，有更新的話就會知道，達到類似訂閱的效果，不過定期撈資料這個動作一般交由特定的軟體完成。
 
-我目前是使用 [Tiny Tiny RSS](https://tt-rss.org/)，關於其他沒使用到的候選我放在另外一個[貼文](https://flyskypie.github.io/post/2025-04-27_homelab-rss)。
+我目前是使用 [Tiny Tiny RSS](https://tt-rss.org/)，關於其他沒使用到的候選我放在另外一個[貼文](https://flyskypie.github.io/posts/2025-04-27_homelab-rss)。
 
 ### 網頁備份器
 
