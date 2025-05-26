@@ -27,12 +27,36 @@ As Engineer, I want to know how to build Dyson Swarm, so that humanity can get u
 <p>目前人類文明尚未有建造戴森球的能力，它僅出現在科幻作品中；但是從比較務實的角度考慮，現代其實已經有相對類似的東西了，那就是 SpaceX 的
 <a href="https://zh.wikipedia.org/zh-tw/%E6%98%9F%E9%8F%88" target="_blank" rel="noopener noreferrer">星鏈 (Starlink)</a>：</p>
 <p><img decoding="async" loading="lazy" alt="https://www.reddit.com/r/StrangeEarth/comments/1cyigtd/there_are_over_6000_starlink_satellites_orbiting/" src="https://flyskypie.github.io/assets/images/01_starlink-30bccc5ca1ecce97f0ad604c01dd429b.webp" width="640" height="789" class="img_RpFt"></p>
-<p>兩者其實分享了一些共同點：</p>
+<p>兩者在技術層面其實分享了一些共同點：</p>
 <ul>
 <li>大規模生產</li>
 <li>大規模軌道佈署</li>
 <li>大規模軌道管理</li>
+<li>大規模軌道通訊</li>
 </ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Monitor inventory like Space Engineers]]></title>
+            <link>https://flyskypie.github.io/posts/2025-05-26_space-engineers</link>
+            <guid>https://flyskypie.github.io/posts/2025-05-26_space-engineers</guid>
+            <pubDate>Mon, 26 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[這是一個從我的專案管理系統 (Vikunja) 抽出的 Ticket，並附上一些補充。]]></description>
+            <content:encoded><![CDATA[
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>這是一個從我的專案管理系統 (Vikunja) 抽出的 Ticket，並附上一些補充。</p></div></div>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-91a90168e0488c694a1c8ab144857e1b.webp" width="1087" height="733" class="img_RpFt">
+As Space Engineer Player, I want to monitor inventory from physical world, so that I can feel part of Space Engineer in real life.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/posts/2025-05-26_space-engineers#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背景">​</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Space_Engineers" target="_blank" rel="noopener noreferrer">太空工程師 (Space Engineers)</a> 是一個太空生存建造遊戲，使用一種很有趣的建造機制，整體而言依然是基於方塊或網格化 (Gird) 的系統，但是每個方塊分成多個階段：</p>
+<p><img decoding="async" loading="lazy" alt="https://spaceengineers.fandom.com/wiki/Building" src="https://flyskypie.github.io/assets/images/01-3c5dc91f330047fc0c0b8f6949678aa5.webp" width="1655" height="413" class="img_RpFt"></p>
+<p>方塊放置後會得到一個骨架（上圖左一），需要經過玩家的焊接（修復）動作：</p>
+<p><img decoding="async" loading="lazy" alt="https://forum.keenswh.com/threads/1-184-200-ds-mp-massive-lag-and-sim-speed-drop-when-welding-grinding-placing-blocks.7397481/" src="https://flyskypie.github.io/assets/images/02_welding-9e7eabf5ecbe3ecb6176ef8b6d63cf7b.webp" width="1280" height="720" class="img_RpFt"></p>
+<p>方塊的耐久度與狀態才會漸趨完整，同時玩家身上的原料會隨之消耗，拆除方塊的作業則是整個流程反過來。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="討論">討論<a href="https://flyskypie.github.io/posts/2025-05-26_space-engineers#%E8%A8%8E%E8%AB%96" class="hash-link" aria-label="Direct link to 討論" title="Direct link to 討論">​</a></h2>
+<p>Minecraft 算是基於方塊的生存建造遊戲類型中最有名的，但是太空工程師的遊戲機制在設計上更貼近現實一點，目前我自架的倉儲管理系統也正朝著目標前進之中：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_partdb-c5c2f79cecda827b18c60ce4d408a404.webp" width="1440" height="836" class="img_RpFt"></p>
+<p>順帶一提，太空工程師的氣氛很接近我最喜歡的影集：<a href="https://zh.wikipedia.org/zh-tw/%E5%A4%AA%E7%A9%BA%E7%84%A1%E5%9E%A0" target="_blank" rel="noopener noreferrer">The Expanse (太空無垠)</a>。</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[整理書籤]]></title>
@@ -494,16 +518,6 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content:encoded>
             <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_irregular-e1eb48503080a7a480ec0ec0b6fe6d2b.webp" width="1071" height="600" class="img_RpFt"></p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Jojo 我不想再寫反向代理設定檔啦！]]></title>
-            <link>https://flyskypie.github.io/posts/2024-07-27_traefik</link>
-            <guid>https://flyskypie.github.io/posts/2024-07-27_traefik</guid>
-            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[這 Traefik 是什麼神奇的東西！？ Sevices 上 tag 就自己接上去了，太神奇啦～]]></description>
-            <content:encoded><![CDATA[
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/traefik-architecture-c0e3b030d71e6e9c53908519a78e5db0.webp" width="2875" height="1501" class="img_RpFt"></p>
-<p>這 Traefik 是什麼神奇的東西！？ Sevices 上 tag 就自己接上去了，太神奇啦～</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
