@@ -31,8 +31,9 @@ tags: []
 
 ![https://www.reddit.com/r/StrangeEarth/comments/1cyigtd/there_are_over_6000_starlink_satellites_orbiting/](./01_starlink.webp)
 
-兩者其實分享了一些共同點：
+兩者在技術層面其實分享了一些共同點：
 
 - 大規模生產
 - 大規模軌道佈署
 - 大規模軌道管理
+- 大規模軌道通訊
