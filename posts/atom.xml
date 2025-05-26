@@ -2,11 +2,41 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-04-28T00:00:00.000Z</updated>
+    <updated>2025-05-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Dyson Swarm is so cool]]></title>
+        <id>https://flyskypie.github.io/posts/2025-05-26_dyson-swarm</id>
+        <link href="https://flyskypie.github.io/posts/2025-05-26_dyson-swarm"/>
+        <updated>2025-05-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[這是一個從我的專案管理系統 (Vikunja) 抽出的 Ticket，並附上一些補充。]]></summary>
+        <content type="html"><![CDATA[
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>這是一個從我的專案管理系統 (Vikunja) 抽出的 Ticket，並附上一些補充。</p></div></div>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-afe01252cb596b31526fb9ba635dfc07.webp" width="1311" height="733" class="img_RpFt">
+As Engineer, I want to know how to build Dyson Swarm, so that humanity can get unlimited energy.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/posts/2025-05-26_dyson-swarm#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背景">​</a></h2>
+<p><a href="https://zh.wikipedia.org/zh-tw/%E6%88%B4%E6%A3%AE%E7%90%83" target="_blank" rel="noopener noreferrer">戴森球</a>的概念就是假設當文明發展到一個程度，為了最大限度的使用恆星的能源，就會建構一個包覆恆星非自然造物來使用所有能源，白話文來說就是造一堆太陽能板把太陽包起來。</p>
+<p>而在 <a href="https://www.youtube.com/watch?v=pP44EPBMb8A" target="_blank" rel="noopener noreferrer">Kurzgesagt 的影片</a>中，討論了一些戴森球模型，並從中挑出戴森雲 (Dyson swarm) 作為最有可能的方案。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="starlink">Starlink<a href="https://flyskypie.github.io/posts/2025-05-26_dyson-swarm#starlink" class="hash-link" aria-label="Direct link to Starlink" title="Direct link to Starlink">​</a></h2>
+<p>目前人類文明尚未有建造戴森球的能力，它僅出現在科幻作品中；但是從比較務實的角度考慮，現代其實已經有相對類似的東西了，那就是 SpaceX 的
+<a href="https://zh.wikipedia.org/zh-tw/%E6%98%9F%E9%8F%88" target="_blank" rel="noopener noreferrer">星鏈 (Starlink)</a>：</p>
+<p><img decoding="async" loading="lazy" alt="https://www.reddit.com/r/StrangeEarth/comments/1cyigtd/there_are_over_6000_starlink_satellites_orbiting/" src="https://flyskypie.github.io/assets/images/01_starlink-30bccc5ca1ecce97f0ad604c01dd429b.webp" width="640" height="789" class="img_RpFt"></p>
+<p>兩者其實分享了一些共同點：</p>
+<ul>
+<li>大規模生產</li>
+<li>大規模軌道佈署</li>
+<li>大規模軌道管理</li>
+</ul>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[整理書籤]]></title>
         <id>https://flyskypie.github.io/posts/2025-04-28_post</id>
@@ -549,33 +579,6 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content>
         <content type="html"><![CDATA[
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/traefik-architecture-c0e3b030d71e6e9c53908519a78e5db0.webp" width="2875" height="1501" class="img_RpFt"></p>
 <p>這 Traefik 是什麼神奇的東西！？ Sevices 上 tag 就自己接上去了，太神奇啦～</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[我把 Python 移除了，然後就嗚呼了]]></title>
-        <id>https://flyskypie.github.io/posts/2024-07-25_i-removed-python</id>
-        <link href="https://flyskypie.github.io/posts/2024-07-25_i-removed-python"/>
-        <updated>2024-07-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[最近在處理一些 Python 的專案，然後心想「既然我已經在虛擬環境 (Poetry) 裡處理好 Python 了，host 的應該就能移掉了吧？」，然後我的 Ubuntu 就嗚呼了：]]></summary>
-        <content type="html"><![CDATA[
-<p>最近在處理一些 Python 的專案，然後心想「既然我已經在虛擬環境 (Poetry) 裡處理好 Python 了，host 的應該就能移掉了吧？」，然後我的 Ubuntu 就嗚呼了：</p>
-<ul>
-<li>選擇使用者的程式不見了<!-- -->
-<ul>
-<li>原因： <code>lightdm-gtk-greeter</code> 被移除</li>
-</ul>
-</li>
-<li>有線網路不見了<!-- -->
-<ul>
-<li>原因： <code>netplan.io</code> 被移除</li>
-</ul>
-</li>
-</ul>
-<p>儼然這張梗圖：
-<img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-3d884e8392455ed6660f581e91079a8b.webp" width="500" height="509" class="img_RpFt"></p>]]></content>
         <author>
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
