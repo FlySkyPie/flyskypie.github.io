@@ -2,11 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-05-27T00:00:00.000Z</updated>
+    <updated>2025-05-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[來自 2017 年的 prototype]]></title>
+        <id>https://flyskypie.github.io/posts/2025-05-30_2017-prototype</id>
+        <link href="https://flyskypie.github.io/posts/2025-05-30_2017-prototype"/>
+        <updated>2025-05-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[中部創新自造教育基地 (2015~2023) 是一個座落於虎尾科技大學綜二館地下室的自造空間 (Maker space)。]]></summary>
+        <content type="html"><![CDATA[
+<p>中部創新自造教育基地 (2015~2023) 是一個座落於虎尾科技大學綜二館地下室的自造空間 (Maker space)。</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02-a9d98e048bec7905d588aba1ec571550.webp" width="1260" height="838" class="img_RpFt"></p>
+<p>因為空間寬廣、設備與零件種類繁多、管理人力有限，因此當時我有個構想：</p>
+<blockquote>
+<p>如果路過得人可以隨意對任意物件打卡，讓數位空間有一個實體空間的虛擬映射那就好了。</p>
+</blockquote>
+<p>於是當時用 HTML 和 jQuery 東拼西湊做了個 prototype：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-ca61cedb98b59fed650a9e85d243ac84.webp" width="718" height="504" class="img_RpFt"></p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Personal ASRS]]></title>
         <id>https://flyskypie.github.io/posts/2025-05-27_personal-asrs</id>
@@ -660,21 +680,6 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content>
 從我的眼光來看，疫情反而體現了現有秩序的穩固，只要一年的時間就讓大家滾回去當社畜，地球依然照常轉動。</p>
 <p>他眼中的世界比他想的還要脆弱，我眼中的世界比我想的還要堅固；
 他是渴望安逸不變得既得利益者，我是時代洪流中的紊流與噪音，不安定因子。</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[使用 GVM (Greenbone Vulnerability Manager) 的感覺]]></title>
-        <id>https://flyskypie.github.io/posts/2024-07-30_hacker</id>
-        <link href="https://flyskypie.github.io/posts/2024-07-30_hacker"/>
-        <updated>2024-07-30T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[上個禮拜，用 strace 偷看 system call 和用 tcpdump 偷看封包；]]></summary>
-        <content type="html"><![CDATA[
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_hacker-meme-a9f713d8b1439cb375ada35f903acc71.webp" width="1080" height="1080" class="img_RpFt"></p>
-<p>上個禮拜，用 <code>strace</code> 偷看 system call 和用 <code>tcpdump</code> 偷看封包；
-今天，用 GVM 掃描公司的伺服器。</p>]]></content>
         <author>
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
