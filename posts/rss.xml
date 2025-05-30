@@ -25,6 +25,52 @@
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-ca61cedb98b59fed650a9e85d243ac84.webp" width="718" height="504" class="img_RpFt"></p>]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[Using Sweet Home 3D Modeling Bedroom]]></title>
+            <link>https://flyskypie.github.io/posts/2025-05-30_sweethome3d</link>
+            <guid>https://flyskypie.github.io/posts/2025-05-30_sweethome3d</guid>
+            <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[這是一個從我的專案管理系統 (Vikunja) 抽出的 Ticket，並附上一些補充。]]></description>
+            <content:encoded><![CDATA[
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>這是一個從我的專案管理系統 (Vikunja) 抽出的 Ticket，並附上一些補充。</p></div></div>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-7af2efaae4125f5e999f52727956ec72.webp" width="926" height="733" class="img_RpFt">
+As Engineer, I want using Sweet Home 3D create a digital twin of my living room, so that I can more do planning more precisely on physical world.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/posts/2025-05-30_sweethome3d#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背景">​</a></h2>
+<p><a href="https://www.sweethome3d.com/" target="_blank" rel="noopener noreferrer">Sweet Home 3D</a> 是開源的室內設計軟體，它可以幫助使用者把傢俱放在2D平面圖上作業，同時顯示3D透視圖。我是在一次和其他人聊天的對話中得知這個專案的存在，並且在書籤內放上了幾個禮拜。直到最近才因為擴建 Homelab 的需求覺得應該先好好研究這個軟體。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="討論">討論<a href="https://flyskypie.github.io/posts/2025-05-30_sweethome3d#%E8%A8%8E%E8%AB%96" class="hash-link" aria-label="Direct link to 討論" title="Direct link to 討論">​</a></h2>
+<p>整個擴建計畫稱不上單純，內容包含：</p>
+<ul>
+<li>購置不斷電系統 (UPS)<!-- -->
+<ul>
+<li>伺服器跟 3D 列印機都是不太能承受斷電/跳電風險的設備。</li>
+</ul>
+</li>
+<li>移動 Homelab 伺服器<!-- -->
+<ul>
+<li>目前的配置算是臨時擺放，還沒有正式的鎖在架子上。</li>
+</ul>
+</li>
+<li>拘束閒置床墊自由度<!-- -->
+<ul>
+<li>前一陣子把房東的雙人床收起來改用單人床來節省空間，但是雙人床會自然傾倒，目前是先用重物（冰箱）抵著。</li>
+</ul>
+</li>
+<li>額外強制對流裝置（電風扇）<!-- -->
+<ul>
+<li>夏季將至，需要做好準備。</li>
+</ul>
+</li>
+<li>考慮建置熱泵系統（冷氣）<!-- -->
+<ul>
+<li>夏季將至，需要做好準備。</li>
+</ul>
+</li>
+</ul>
+<p>加上房間空間利用率的提高，施工的容錯空間就越來越低，事前計畫的審密程度必須提高。</p>
+<p>另外，我想搞數位孿生也不是一天兩天的事情了，早在 2017 年就有<a href="https://flyskypie.github.io/posts/2025-05-30_2017-prototype">類似的構想</a>，對我而言 Sweet Home 3D 作為開源軟體充滿了潛力，比如透過理解它的資料儲存格式，可以透過其他軟體自動更新並匯入。</p>]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[Personal ASRS]]></title>
             <link>https://flyskypie.github.io/posts/2025-05-27_personal-asrs</link>
             <guid>https://flyskypie.github.io/posts/2025-05-27_personal-asrs</guid>
@@ -592,19 +638,6 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content:encoded>
 <li>電子零件管理軟體 (<a href="https://github.com/Part-DB/Part-DB-server" target="_blank" rel="noopener noreferrer">Part-DB</a>)</li>
 </ul>
 <p>軟體本質上是針對特定問題而被開發出來的解答，換句話說這些問題都已經被其他人解決過了，但是缺乏相關背景的人沒辦法找到這些解，而軟體工程師就是一群能夠從網際網路這個圖書館中翻出書本（解答）的人。</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[他說世界的秩序何其脆弱，我不同意]]></title>
-            <link>https://flyskypie.github.io/posts/2024-08-16_the-order</link>
-            <guid>https://flyskypie.github.io/posts/2024-08-16_the-order</guid>
-            <pubDate>Fri, 16 Aug 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[疫情爆發後，有個人感受到了世界秩序何其脆弱，說崩壞就崩壞，於是他決定要享受人生做自己，刺青跟整形。]]></description>
-            <content:encoded><![CDATA[<p>疫情爆發後，有個人感受到了世界秩序何其脆弱，說崩壞就崩壞，於是他決定要享受人生做自己，刺青跟整形。</p>
-<p>他是誰不重要，重點是從別人的眼光看世界秩序是一件有趣的事情，從我對這個人的了解，可以合理推測他出生在中產階級以上相對安逸的環境之中。</p>
-<p>而我呢？一個相對不穩定的原生家庭，讓我曾經相信審判日的存在，夢想活在計有秩序崩壞的末世 (post-apocalyptic) 之中，
-從我的眼光來看，疫情反而體現了現有秩序的穩固，只要一年的時間就讓大家滾回去當社畜，地球依然照常轉動。</p>
-<p>他眼中的世界比他想的還要脆弱，我眼中的世界比我想的還要堅固；
-他是渴望安逸不變得既得利益者，我是時代洪流中的紊流與噪音，不安定因子。</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
