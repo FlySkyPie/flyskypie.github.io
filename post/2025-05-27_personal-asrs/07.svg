@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="155.17mm" height="81.034mm" version="1.1" viewBox="0 0 155.17 81.034" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-7.9897 -38.767)">
+  <rect x="8.0397" y="38.817" width="155.07" height="80.934" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" style="paint-order:fill markers stroke"/>
+  <rect x="37.658" y="50.133" width="18.366" height="59.315" fill="#ff8bf3" style="paint-order:fill markers stroke"/>
+  <g transform="rotate(-90 2.3638 132.29)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="rotate(-90 17.187 117.46)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="matrix(0 1 1 0 -129.67 24.891)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="matrix(0 1 1 0 -100.02 24.891)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <path d="m115.66 45.751v0.0638h-100.82v3.9718h0.11598v16.243h3.9718v-16.243h96.731v59.661h-96.879v-17.761h-3.9718v17.761h-0.02067v3.9718h100.87v0.0724h3.9718v-67.741z" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" style="paint-order:fill markers stroke"/>
+  <path d="m18.94 65.93 0.04934 26.663h23.883c-0.81198-13.972-9.1989-24.109-23.933-26.663z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" style="paint-order:fill markers stroke"/>
+  <g transform="matrix(0 1 1 0 -100.07 -11.976)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="matrix(0 1 1 0 -129.85 -11.901)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <rect x="123.76" y="108.93" width="4.4374" height="4.4374" fill="#ff8bf3" style="paint-order:fill markers stroke"/>
+  <g transform="matrix(.55468 0 0 .55468 47.709 -90.234)">
+   <rect x="137.1" y="323.45" width="8" height="8" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <text x="148.37866" y="331.50723" fill="#000000" font-family="Impact" font-size="11.289px" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="148.37866" y="331.50723" fill="#000000" stroke-width="2">儲藏空間</tspan></text>
+  </g>
+  <text x="129.23943" y="113.40325" fill="#000000" font-family="Impact" font-size="6.2617px" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1094" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="129.23943" y="113.40325" fill="#000000" stroke-width="1.1094">人-櫃界面</tspan></text>
+  <g transform="matrix(.55468 0 0 .55468 47.709 -89.306)">
+   <rect x="137.1" y="339.63" width="8" height="8" fill="#8b97ff" style="paint-order:fill markers stroke"/>
+   <text x="147.07819" y="347.6868" fill="#000000" font-family="Impact" font-size="11.289px" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="147.07819" y="347.6868" fill="#000000" stroke-width="2">自動化設備</tspan></text>
+  </g>
+  <g transform="matrix(.55468 0 0 .55468 47.709 -90.234)">
+   <rect x="137.1" y="359.07" width="8" height="8" fill="#ff8bf3" style="paint-order:fill markers stroke"/>
+   <text x="146.98643" y="367.12711" fill="#000000" font-family="Impact" font-size="11.289px" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="146.98643" y="367.12711" fill="#000000" stroke-width="2">人-櫃界面</tspan></text>
+  </g>
+  <g transform="translate(-24.967 -137.73)" stroke-linecap="round" stroke-linejoin="round">
+   <g transform="matrix(.45372 0 0 .45372 47.263 162.62)" fill="#fff" stroke="#000" stroke-width="2">
+    <path d="m53.922 66.183h0.34477c2.9904 0 5.3979 3.9493 5.3979 8.855v17.964c0 4.9057-2.4074 8.855-5.3979 8.855h-0.34477c-2.9904 0-5.3979-3.9493-5.3979-8.855v-17.964c0-4.9057 2.4074-8.855 5.3979-8.855z" style="paint-order:stroke markers fill"/>
+    <path d="m62.253 83.893a8.1579 8.1579 0 0 1-8.1579 8.1579 8.1579 8.1579 0 0 1-8.1579-8.1579 8.1579 8.1579 0 0 1 8.1579-8.1579 8.1579 8.1579 0 0 1 8.1579 8.1579z" style="paint-order:stroke markers fill"/>
+   </g>
+   <text x="69.329109" y="202.36775" fill="#000000" font-family="Impact" font-size="5.122px" stroke-width=".90744" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="69.329109" y="202.36775" fill="#000000" stroke-width=".90744">人</tspan></text>
+  </g>
+  <rect transform="rotate(-90)" x="-64.982" y="86.019" width="7.4177" height="29.229" fill="#8b97ff" style="paint-order:fill markers stroke"/>
+  <rect transform="rotate(-90)" x="-65.117" y="56.895" width="7.4177" height="29.229" fill="#8b97ff" style="paint-order:fill markers stroke"/>
+  <g transform="rotate(-90 13.672 143.39)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="rotate(-90 28.496 128.57)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="matrix(0 1 1 0 -99.865 10.435)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <g transform="matrix(0 1 1 0 -129.64 10.511)">
+   <rect x="77.101" y="186.04" width="7.4177" height="29.229" fill="#ffb98b" style="paint-order:fill markers stroke"/>
+   <path d="m77.404 185.95h7.1126v29.647h-7.1126" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".90744" style="paint-order:fill markers stroke"/>
+  </g>
+  <g fill="#8b97ff">
+   <rect transform="rotate(-90)" x="-87.393" y="86.224" width="7.4177" height="29.229" style="paint-order:fill markers stroke"/>
+   <rect transform="rotate(-90)" x="-87.529" y="57.1" width="7.4177" height="29.229" style="paint-order:fill markers stroke"/>
+   <rect transform="rotate(-90)" x="-102.45" y="56.395" width="7.4177" height="29.229" style="paint-order:fill markers stroke"/>
+   <rect transform="rotate(-90)" x="-102.45" y="85.624" width="7.4177" height="29.229" style="paint-order:fill markers stroke"/>
+  </g>
+ </g>
+</svg>
