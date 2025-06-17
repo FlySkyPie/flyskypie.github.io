@@ -4,10 +4,43 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Fri, 30 May 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 17 Jun 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[PyPI 快取、鏡像 - devpi]]></title>
+            <link>https://flyskypie.github.io/posts/2025-06-17_devpi</link>
+            <guid>https://flyskypie.github.io/posts/2025-06-17_devpi</guid>
+            <pubDate>Tue, 17 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近在 Homelab 架了一個 PyPI 快取伺服器，選擇使用 devpi：]]></description>
+            <content:encoded><![CDATA[<p>最近在 Homelab 架了一個 PyPI 快取伺服器，選擇使用 <code>devpi</code>：</p>
+<ul>
+<li><a href="https://github.com/devpi/devpi" target="_blank" rel="noopener noreferrer">https://github.com/devpi/devpi</a>
+<ul>
+<li>1k ⭐</li>
+</ul>
+</li>
+</ul>
+<p>Docker 映像檔則是使用：</p>
+<ul>
+<li><a href="https://github.com/JonasAlfredsson/docker-devpi" target="_blank" rel="noopener noreferrer">https://github.com/JonasAlfredsson/docker-devpi</a>
+<ul>
+<li>41 ⭐</li>
+</ul>
+</li>
+</ul>
+<p>然後遇到了一個怪問題，在這邊隨便紀錄一下：</p>
+<div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">INFO  [IDX] Committing 2500 new documents to search index.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[IDX] Error during indexing in /usr/local/lib/python3.13/site-packages/devpi_web/whoosh_index.py:401:handler whoosh.index.LockError</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>症狀就是服務長時間佔用 CPU 長達一、兩天，連進去容器下 <code>top</code> 看到一堆像是殭屍的 process（實際上暫用 CPU 的只有一個）。</p>
+<p>最後只保留 <code>/+files</code> 這個資料夾、把其他快取的檔案刪掉再啟動伺服器就正常了。看起來像是 <code>devpi</code> 會下載整個 PyPI 的索引資料，但是同步完成前有什麼錯誤造成檔案損壞後無法從錯誤中恢復過來，所以一直保持「下載與處理索引」的狀態佔用 CPU。</p>]]></content:encoded>
+            <category>homelab</category>
+            <category>pypi</category>
+            <category>python</category>
+            <category>mirror</category>
+            <category>proxy</category>
+            <category>cache</category>
+        </item>
         <item>
             <title><![CDATA[來自 2017 年的 prototype]]></title>
             <link>https://flyskypie.github.io/posts/2025-05-30_2017-prototype</link>
@@ -629,14 +662,6 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content:encoded>
 <p>委製商：亞第科技股份有限公司</p>
 <p>地址：新北市板橋區信義路一巷28號</p>
 </blockquote>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[屁股]]></title>
-            <link>https://flyskypie.github.io/posts/2024-09-29_ass</link>
-            <guid>https://flyskypie.github.io/posts/2024-09-29_ass</guid>
-            <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_butt-0e634e70a1c50542c6e624d2afadbbc3.webp" width="716" height="499" class="img_RpFt"></p>]]></content:encoded>
         </item>
     </channel>
 </rss>

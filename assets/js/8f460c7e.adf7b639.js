@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[2380],{71221:s=>{s.exports=JSON.parse('{"label":"pypi","permalink":"/posts/tags/pypi","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);
