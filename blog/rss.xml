@@ -4,11 +4,118 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/blog</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Wed, 23 Apr 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 05 Jul 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2025 FlyPie (Wei Ji)</copyright>
+        <item>
+            <title><![CDATA[OCI Image 本地鏡像站遷移之旅]]></title>
+            <link>https://flyskypie.github.io/blog/2025-07-05_harbor</link>
+            <guid>https://flyskypie.github.io/blog/2025-07-05_harbor</guid>
+            <pubDate>Sat, 05 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[OCI Image 實際上不是單一檔案，而是一層一層的 layer 構成的，但是為了簡化描述，本文使用 image 一詞時可能是在描述 layer(s)。]]></description>
+            <content:encoded><![CDATA[
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>OCI Image 實際上不是單一檔案，而是一層一層的 layer 構成的，但是為了簡化描述，本文使用 image 一詞時可能是在描述 layer(s)。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背景">​</a></h2>
+<p>我在 Homelab 中架設了簡易的 <a href="https://github.com/distribution/distribution" target="_blank" rel="noopener noreferrer">Docker Registry</a> 作為鏡像/代理，來節省我工作筆電的硬碟空間和下載時間，更具體的細節請見另外一篇文章：<a href="https://flyskypie.github.io/blog/2025-04-23_my-homelab/#oci-registry" target="_blank" rel="noopener noreferrer">我的 Homelab</a>。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="起因">起因<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#%E8%B5%B7%E5%9B%A0" class="hash-link" aria-label="Direct link to 起因" title="Direct link to 起因">​</a></h2>
+<p>一切都源自於上班的時候需要用到這個 image: <code>quay.io/keycloak/keycloak</code>，拉了幾次卻發現我的鏡像站沒有快取這個 image。</p>
+<p>下班之後在 homelab 開了另外一個 service：</p>
+<div class="language-yaml codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-yaml codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">registry-server-2</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">image</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> registry</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain">2.8.2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">environment</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> REGISTRY_PROXY_REMOTEURL="https</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain">//quay.io/v2"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">volumes</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> quay</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">data</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain">/var/lib/registry</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">networks</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> default</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> traefik</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">public</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">deploy</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">labels</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> traefik.enable=true</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> traefik.docker.network=traefik</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">public</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> traefik.http.routers.registry</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">quay</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">mirror.entrypoints=web</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> traefik.http.routers.registry</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">quay</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">mirror.rule=Host(`mirror.quay.oci</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">image.arachne`)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"traefik.http.services.registry-quay-mirror.loadbalancer.server.port=5000"</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>發現依然不會快取。</p>
+<blockquote>
+<p>No, this is a limitation of the docker engine, <code>registry-mirrors</code> is only for Docker Hub. You can follow <a href="https://github.com/moby/moby/issues/18818" target="_blank" rel="noopener noreferrer">issue 18818</a> for more details.<sup><a href="https://flyskypie.github.io/blog/2025-07-05_harbor#user-content-fn-docker-limit-1-c1c2c9" id="user-content-fnref-docker-limit-1-c1c2c9" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></p>
+</blockquote>
+<blockquote>
+<p>Unfortunately and infuriatingly, it is not possible.
+This is a most desired feature, by me, and by many others.
+However, Docker, on purpose, does not implement this feature.<sup><a href="https://flyskypie.github.io/blog/2025-07-05_harbor#user-content-fn-docker-limit-2-c1c2c9" id="user-content-fnref-docker-limit-2-c1c2c9" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup></p>
+</blockquote>
+<p>這似乎是 Docker 本身的設計所致，不過在我發現這個限制以前，以為是 <code>distribution/distribution</code> 的限制因此做了一些嘗試。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="sonatype-nexus-repository">Sonatype Nexus Repository<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#sonatype-nexus-repository" class="hash-link" aria-label="Direct link to Sonatype Nexus Repository" title="Direct link to Sonatype Nexus Repository">​</a></h2>
+<p>我先是嘗試 <code>sonatype/nexus3</code>，然後看到了這個：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_sonatype-e8317344f0c91366ef6aea0b2e1e40c0.webp" width="1440" height="828" class="img_RpFt"></p>
+<p>蛤？為什麼我用自架的開源軟體還要有額度限制？下一個。下一個。</p>
+<p>接著試了 <code>sonatype/nexus:oss</code>：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_sonatype-3de0dfbf9e6f77af18896ecb6e9f5a7c.webp" width="1440" height="834" class="img_RpFt"></p>
+<p>不支援 Docker？好吧。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="harbor">Harbor<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#harbor" class="hash-link" aria-label="Direct link to Harbor" title="Direct link to Harbor">​</a></h2>
+<p>當我在考慮自架 OCI Registry 時，Harbor 不在考慮範圍的原因是我在官方網站只找得到兩種安裝方式：</p>
+<ul>
+<li><a href="https://github.com/goharbor/harbor-helm" target="_blank" rel="noopener noreferrer">Helm Chart</a></li>
+<li><a href="https://goharbor.io/docs/2.13.0/install-config/download-installer/" target="_blank" rel="noopener noreferrer">安裝精靈</a></li>
+</ul>
+<p>我目前不是使用 K8s，Helm Chart 自然是不考慮。安裝精靈又可能導向裸機 (baremetal) 安裝，讓我沒辦法用 Docker 管理叢集。</p>
+<p>後來經過調查才發現安裝精靈最後是產生 Docker Compose 的組態來執行的，可以在原始碼中發現 Docker Compose YAML 的樣板：<code>harbor/make/photon/prepare/templates/docker_compose/docker-compose.yml.jinja</code>。</p>
+<p>不過很遺憾，我使用 Docker Swarm 來編排 homelab 的服務，Compose 的 YAML 沒辦法直接拿來使用。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="分而治之">分而治之<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B" class="hash-link" aria-label="Direct link to 分而治之" title="Direct link to 分而治之">​</a></h3>
+<p>Harbor 由八個微服務構成：</p>
+<ul>
+<li>proxy (<code>goharbor/nginx-photon:v2.13.1</code>)</li>
+<li>core (<code>goharbor/harbor-core:v2.13.1</code>)</li>
+<li>registry (<code>goharbor/registry-photon:v2.13.1</code>)</li>
+<li>redis (<code>goharbor/redis-photon:v2.13.1</code>)</li>
+<li>postgresql (<code>goharbor/harbor-db:v2.13.1</code>)</li>
+<li>portal (<code>goharbor/harbor-portal:v2.13.1</code>)</li>
+<li>jobservice (<code>goharbor/harbor-jobservice:v2.13.1</code>)</li>
+<li>registryctl (<code>goharbor/harbor-registryctl:v2.13.1</code>)</li>
+</ul>
+<p>我試著以最小仰賴的方式，一個一個服務跑起來試試看，然後用自己寫的腳本完成必要的配置，而不是使用 Harbor 安裝精靈。細節就不在本文贅述，最後建起來 Docker Compose YAML 在這裡：</p>
+<p><a href="https://github.com/FlySkyPie/harbor-docker-compose" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/harbor-docker-compose</a></p>
+<p>在 Harbor 官方的版本中，所有組態都是仰賴 <code>volumes</code> 或是 <code>env_file</code> 完成的，這在 Swarm 模式是行不通得。在 Compose 模式下可以用本地的相對路徑來組織檔案或是資料夾，而 Swarm 模式必須抱持著「一切都發生在遠端」的思路：機敏資訊由 <code>secrets</code> 實例儲存、設定檔以 <code>configs</code> 實例儲存...。完成 Compose 版本後再轉成 Swarm 的版本：</p>
+<p><a href="https://github.com/FlySkyPie/harbor-docker-swarm" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/harbor-docker-swarm</a></p>
+<p>最後有些密碼還是用 <code>environment</code> 傳遞，因為服務本身可能沒有設計支援 Secret File，我也不想花太多時間在這件事上折騰，就先這樣將就著用吧。</p>
+<p>另外，安裝精靈建立的當中其實還有一個 log 容器用來從其他微服務蒐集 log，我的版本並沒有包含它，一來是它不是執行服務必要的功能，二來是如果我有蒐集 log 的需求會再搭配 Promtail 和 Grafana Loki 之類專門用來做這檔事的工具。</p>
+<p>附上成果圖：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-c3a1686c2af8d1d987d2e7a9d6dd629c.webp" width="1440" height="877" class="img_RpFt"></p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="資料轉移">資料轉移<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#%E8%B3%87%E6%96%99%E8%BD%89%E7%A7%BB" class="hash-link" aria-label="Direct link to 資料轉移" title="Direct link to 資料轉移">​</a></h2>
+<p>為了把舊的鏡像資料遷移到 Harbor，我做了一些措施，雖然整體而言稱不上完美。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="建立-image-清單">建立 image 清單<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#%E5%BB%BA%E7%AB%8B-image-%E6%B8%85%E5%96%AE" class="hash-link" aria-label="Direct link to 建立 image 清單" title="Direct link to 建立 image 清單">​</a></h3>
+<p>首先要建立鏡像站快取過得清單：</p>
+<ol>
+<li><code>GET /v2/_catalog</code> 取得 N 個 repositories 的資料。</li>
+<li><code>GET/v2/${repository}/tags/list</code> 取得每一個 repository 的 tag 資料，要注意的是 <code>distribution/distribution</code> 鏡像站可能快取了 tag 但是還沒有快取映像檔本身。</li>
+<li><code>GET /v2/${repo}/manifests/${tag}</code> 取得 manifest 資訊</li>
+<li><code>HEAD /v2/${repository}/blobs/${digest}</code> 根據 manifest 判斷 layers 有沒有被快取。<!-- -->
+<ul>
+<li>這裡要注意，必須暫時關閉 <code>REGISTRY_PROXY_REMOTEURL</code> 的設定，不然會直接觸發代理鏡像機制，關閉代理之後，沒有被快取過得檔案會直接 404 作為判斷有沒有被快取過得機制。</li>
+</ul>
+</li>
+</ol>
+<p>關於更多 API 操作的細節可以閱讀官方的文件<sup><a href="https://flyskypie.github.io/blog/2025-07-05_harbor#user-content-fn-distribution-api-c1c2c9" id="user-content-fnref-distribution-api-c1c2c9" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>。</p>
+<p>整個過程完成會得到類似這樣的清單：</p>
+<div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">goharbor/nginx-photon:v2.13.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">goharbor/redis-photon:v2.11.0</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">goharbor/registry-photon:v2.13.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">grafana/loki:latest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">grafana/loki:2.7.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">...</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="設定-harbor">設定 Harbor<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#%E8%A8%AD%E5%AE%9A-harbor" class="hash-link" aria-label="Direct link to 設定 Harbor" title="Direct link to 設定 Harbor">​</a></h3>
+<p>接著在 Harbor 設定 <code>registries</code> 和 <code>projects</code> 指向舊的鏡像站。</p>
+<p><img decoding="async" loading="lazy" src="data:image/webp;base64,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" width="583" height="543" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/04_harbor-5806fc52a18aaf60e00f3dc3ccef0d48.webp" width="1195" height="773" class="img_RpFt"></p>
+<p>要注意的是，設定 Proxy Cache 之後既不能關閉也不能修改。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="從-harbor-鏡像本地鏡像站">從 Harbor 鏡像本地鏡像站<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#%E5%BE%9E-harbor-%E9%8F%A1%E5%83%8F%E6%9C%AC%E5%9C%B0%E9%8F%A1%E5%83%8F%E7%AB%99" class="hash-link" aria-label="Direct link to 從 Harbor 鏡像本地鏡像站" title="Direct link to 從 Harbor 鏡像本地鏡像站">​</a></h3>
+<p>接著使用腳本從 Harbor 新設定的 Project 依照清單拉取 image</p>
+<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">docker pull harbor.arachne/docker-hub-proxy/getpinry/pinry:latest</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>這樣就可以把一部分 image 從舊的鏡像站轉移到 Harbor 去了，雖然在其他 Project 不會顯示 image 的存在，但是 image 的檔案在 Harbor 是跨 Project 儲存的，之後如果從其他 Project 拉取 image 時有已經快取過的檔案，Harbor 會直接使用已經存在的檔案。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="限制">限制<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#%E9%99%90%E5%88%B6" class="hash-link" aria-label="Direct link to 限制" title="Direct link to 限制">​</a></h3>
+<p>我這個作法是 「不完美」而且只能遷移「一部分」的原因在於，像 <code>docker.io/library/mysql</code> 這種 image，因為安全性的問題，同一個 tag 其實會一直更新，因此有些 image 在我的鏡像站上是過期的，所以當腳本拿著最新的 <code>manifest</code> 去檢查快取的時候，是有可能全部 404 的。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="podman">Podman<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#podman" class="hash-link" aria-label="Direct link to Podman" title="Direct link to Podman">​</a></h2>
+<p>還記得我前面提到的「Docker 本身的設計就不允許設定 <code>docker.io</code> 以外的鏡像站」嗎？於是我試著使用 Podman，發現很輕易的就設定好本地鏡像站了（<code>/etc/containers/registries.conf</code>）：</p>
+<div class="language-toml codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-toml codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">[[registry]]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">location = "quay.io"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[[registry.mirror]]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">location = "harbor.arachne/quay-proxy"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">insecure = false</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[[registry]]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">location = "docker.io"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[[registry.mirror]]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">location = "harbor.arachne/docker-hub-proxy"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">insecure = false</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>當然，「使用 Podman 解決非 <code>docker.io</code> 本地鏡像站問題」與「使用 Harbor 取代 <code>distribution/distribution</code>」變成兩個獨立事件了，不過既然我都已經折騰完 Harbor 了，那就乾脆直接當作非預期的升級計畫換過去吧。</p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/blog/2025-07-05_harbor#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-docker-limit-1-c1c2c9">
+<p>mirroring - docker registry-mirrors is not used for fqdn images - Server Fault. Retrieved 2025-07-05 from <a href="https://serverfault.com/a/1125577" target="_blank" rel="noopener noreferrer">https://serverfault.com/a/1125577</a> <a href="https://flyskypie.github.io/blog/2025-07-05_harbor#user-content-fnref-docker-limit-1-c1c2c9" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-docker-limit-2-c1c2c9">
+<p>Configure dockerd to use a regsitry mirror for a private registry - General - Docker Community Forums. Retrieved 2025-07-05 from <a href="https://forums.docker.com/t/configure-dockerd-to-use-a-regsitry-mirror-for-a-private-registry/135180/2" target="_blank" rel="noopener noreferrer">https://forums.docker.com/t/configure-dockerd-to-use-a-regsitry-mirror-for-a-private-registry/135180/2</a> <a href="https://flyskypie.github.io/blog/2025-07-05_harbor#user-content-fnref-docker-limit-2-c1c2c9" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-distribution-api-c1c2c9">
+<p>HTTP API V2 | CNCF Distribution. Retrieved 2025-07-05 from <a href="https://distribution.github.io/distribution/spec/api/" target="_blank" rel="noopener noreferrer">https://distribution.github.io/distribution/spec/api/</a> <a href="https://flyskypie.github.io/blog/2025-07-05_harbor#user-content-fnref-distribution-api-c1c2c9" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content:encoded>
+            <category>homelab</category>
+        </item>
         <item>
             <title><![CDATA[我的 Homelab]]></title>
             <link>https://flyskypie.github.io/blog/2025-04-23_my-homelab</link>
@@ -1247,7 +1354,7 @@ Javascript::TypedArray → Python::Array (NumPy)</p></div></div>
 <li><a href="https://wiki.vg/Client_List" target="_blank" rel="noopener noreferrer">其他兼容 Minecraft 的開源 Client 端</a></li>
 <li><a href="https://wiki.vg/Server_List" target="_blank" rel="noopener noreferrer">其他兼容 Minecraft 的開源 Server 端</a></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="特修斯的-minecraft">特修斯的 Minecraft<a href="https://flyskypie.github.io/blog/2024-05-29_I-like-minecraft-but-its-might-no-the-way-you-think#%E7%89%B9%E4%BF%AE%E6%96%AF%E7%9A%84-minecraft" class="hash-link" aria-label="Direct link to 特修斯的 Minecraft" title="Direct link to 特修斯的 Minecraft">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="特修斯�的-minecraft">特修斯的 Minecraft<a href="https://flyskypie.github.io/blog/2024-05-29_I-like-minecraft-but-its-might-no-the-way-you-think#%E7%89%B9%E4%BF%AE%E6%96%AF%E7%9A%84-minecraft" class="hash-link" aria-label="Direct link to 特修斯的 Minecraft" title="Direct link to 特修斯的 Minecraft">​</a></h2>
 <p>當使用完全開源的 Client 端實做，例如：Mineflayer；
 搭配上完全開源的 Server 端實做，例如：Cuberite；
 Minecraft 就昇華成純粹的協定，整個過程不涉及原本的 Minecraft 了。</p>]]></content:encoded>
@@ -1957,205 +2064,6 @@ a non-linear personal web notebook</p>
             <category>javascript</category>
             <category>typescript</category>
             <category>WebRTC</category>
-        </item>
-        <item>
-            <title><![CDATA[Polis 專案研究進度]]></title>
-            <link>https://flyskypie.github.io/blog/2023-08-05_polis-progress</link>
-            <guid>https://flyskypie.github.io/blog/2023-08-05_polis-progress</guid>
-            <pubDate>Sat, 05 Aug 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[稍微把 Polis 挖坑至今 (2023-08-05) 累積的嘗試做個紀錄。]]></description>
-            <content:encoded><![CDATA[
-<p>稍微把 Polis 挖坑至今 (2023-08-05) 累積的嘗試做個紀錄。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="基本概念">基本概念<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5" class="hash-link" aria-label="Direct link to 基本概念" title="Direct link to 基本概念">​</a></h2>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_polis-concept-8e1d6be862b17dfeebc30b8d8cdd83ac.webp" width="1080" height="993" class="img_RpFt"></p>
-<p>整個開放世界會被拆分成不同的區域，每個區域由獨立的節點 (Polis Node) 負責運算，節點跟節點之間會構成 P2P 網路，形成一個可以橫向擴展的架構，而 Client 端則會在由 Polis Node 構成的 P2P 網路所運算的開放世界中進行漫遊 (Roaming)。其實這種分散式的架構在 ITUGV 的時宜就令我十分著迷，不過那就是另外一段故事了，在這裡稍微提及只是為了讓讀者理解筆者對分散式架構抱有特別的偏好，並且這種構想早就存在於早期的其他專案之中。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="poc-proof-of-concept">POC (Proof Of Concept)<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#poc-proof-of-concept" class="hash-link" aria-label="Direct link to POC (Proof Of Concept)" title="Direct link to POC (Proof Of Concept)">​</a></h2>
-<p>雖然 Polis 作為 Hakoniwa 的子專案，目的一樣是為了建造一個程序化生成 Voxel 開放世界，但是 Polis 將會把重點放在兩個目標上：</p>
-<ul>
-<li>建立 P2P 網路</li>
-<li>能夠透過 Client 程式連線</li>
-</ul>
-<p>因此在 Polis 的第一個原型中，達到這些條件就算成功完成了概念驗證：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_POC-c0c7aaf1dd8fb44ae4dcba0c3c5f130b.webp" width="1568" height="1195" class="img_RpFt"></p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="2023-05-13--2023-05-26">2023-05-13 ~ 2023-05-26<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#2023-05-13--2023-05-26" class="hash-link" aria-label="Direct link to 2023-05-13 ~ 2023-05-26" title="Direct link to 2023-05-13 ~ 2023-05-26">​</a></h2>
-<p>在這個階段我想用 Deno 作為實作 Polis Node 的手段，有幾個原因：</p>
-<ol>
-<li>Typescript 目前是我最熟練的語言。</li>
-<li>WebGPU 已經納入 Web API 中，而部份版本的 Deno 已經實作，因此我能使用 Typescript 解決 server side render 的需求，這麼部份是 Node.js 無法達成的。</li>
-<li>Deno 內建跨平台編譯 (Cross Compiling)，因此寫一次程式我就能把節點佈署到除了 Linux 以外的 Windows 或是 macOS 上。</li>
-</ol>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="網路連接技術">網路連接技術<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#%E7%B6%B2%E8%B7%AF%E9%80%A3%E6%8E%A5%E6%8A%80%E8%A1%93" class="hash-link" aria-label="Direct link to 網路連接技術" title="Direct link to 網路連接技術">​</a></h3>
-<p>在挖了坑並且對技術棧 (Technology Stack) 有了粗略的方向之後，首先我想先處理 Polis 中最關鍵的問題：</p>
-<blockquote>
-<p>如何建立 Polis 網路 （P2P 網路）？</p>
-</blockquote>
-<p>在 2020-03-22 的時候我就有使用 ZeroMQ 進行過傳輸相關的<a href="https://github.com/FlySkyPie/the-key-of-huanche-recipe/tree/main/src/core/gym/Test_of_Image_Transfer_with_Different_Decode" target="_blank" rel="noopener noreferrer">實驗</a>，也是我在 The Key of Huanche 中一直考慮投入使用的函式庫。直到我因為 Polis 的分散式架構回過頭去翻閱它的官方文件的時候，才發現了一件事：</p>
-<blockquote>
-<p>And this is the world we’re targeting with ZeroMQ. When we talk of “scale”, we don’t mean hundreds of computers, or even thousands. Think of clouds of tiny smart and perhaps self-replicating machines surrounding every person, filling every space, covering every wall, filling the cracks and eventually, becoming so much a part of us that we get them before birth and they follow us to death. <sup><a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fn-zeromq-8-ba688f" id="user-content-fnref-zeromq-8-ba688f" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></p>
-</blockquote>
-<p>ZeroMQ 在官方文件 <a href="https://zguide.zeromq.org/docs/chapter8/" target="_blank" rel="noopener noreferrer">Chapter 8 - A Framework for Distributed Computing</a> 中描述了他們那野心勃勃的願景，老實說這非常打動我。</p>
-<p>然而調查下來，發現 Deno 在這方面並沒有多少函式庫可以使用、專案的活躍度也都很低：</p>
-<ul>
-<li><a href="https://github.com/jjeffcaii/deno-zeromq" target="_blank" rel="noopener noreferrer">https://github.com/jjeffcaii/deno-zeromq</a></li>
-<li><a href="https://github.com/rracariu/deno-jszmq" target="_blank" rel="noopener noreferrer">https://github.com/rracariu/deno-jszmq</a></li>
-<li>似乎只有實作 WekSocket</li>
-<li><a href="https://github.com/trs/zmq" target="_blank" rel="noopener noreferrer">https://github.com/trs/zmq</a>
-<ul>
-<li>deno-jszmq 的 fork</li>
-</ul>
-</li>
-<li><a href="https://github.com/lenkan/deno-amqp" target="_blank" rel="noopener noreferrer">https://github.com/lenkan/deno-amqp</a></li>
-<li>兼容 RabbitMQ</li>
-<li>只支援 Server-Client 模式</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="資料傳輸載體">資料傳輸載體<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#%E8%B3%87%E6%96%99%E5%82%B3%E8%BC%B8%E8%BC%89%E9%AB%94" class="hash-link" aria-label="Direct link to 資料傳輸載體" title="Direct link to 資料傳輸載體">​</a></h3>
-<p>Protobuf (Protocol Buffers) 是另外一個我有意投入 The Key of Huanche 使用的 Technology Stack，第一次知道它的存在是工作上使用 Mapbox 的並因此接觸 <a href="https://github.com/mapbox/vector-tile-spec" target="_blank" rel="noopener noreferrer">Mapbox Vector Tile</a> 的時候發現它所使用的資料格式。簡言之就是一種預先定義資料結構後，把資料壓成密度比較高的格式進行傳輸，到達目的地之後再用預先定義的資料結構進行解碼，比起使用 JSON 傳輸可以省下很多頻寬。</p>
-<p>然而在 Deno 的生態戲中依然有類似的問題，能選用的函式庫很少、而且專案活躍路很低：</p>
-<ul>
-<li><a href="https://github.com/soootaleb/ddapps" target="_blank" rel="noopener noreferrer">https://github.com/soootaleb/ddapps</a>
-<ul>
-<li>Deno distributed applications framework</li>
-</ul>
-</li>
-<li><a href="https://deno.land/x/protobuf_ts@v1.2.2" target="_blank" rel="noopener noreferrer">https://deno.land/x/protobuf_ts@v1.2.2</a>
-<ul>
-<li><a href="https://github.com/dancrumb/protobuf.ts" target="_blank" rel="noopener noreferrer">https://github.com/dancrumb/protobuf.ts</a></li>
-</ul>
-</li>
-<li><a href="https://deno.land/x/deno_google_protobuf@4.0.0-rc.2" target="_blank" rel="noopener noreferrer">https://deno.land/x/deno_google_protobuf@4.0.0-rc.2</a>
-<ul>
-<li><a href="https://github.com/marcushultman/deno-google-protobuf" target="_blank" rel="noopener noreferrer">https://github.com/marcushultman/deno-google-protobuf</a></li>
-</ul>
-</li>
-<li><a href="https://pbkit.dev/" target="_blank" rel="noopener noreferrer">https://pbkit.dev/</a>
-<ul>
-<li><a href="https://deno.land/x/pbkit@v0.0.61" target="_blank" rel="noopener noreferrer">https://deno.land/x/pbkit@v0.0.61</a></li>
-<li><a href="https://github.com/pbkit/pbkit" target="_blank" rel="noopener noreferrer">https://github.com/pbkit/pbkit</a></li>
-</ul>
-</li>
-</ul>
-<h4 class="anchor anchorWithStickyNavbar_mpuI" id="如何分辨序列化資料-protobuf-的型別">如何分辨序列化資料 Protobuf 的型別？<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#%E5%A6%82%E4%BD%95%E5%88%86%E8%BE%A8%E5%BA%8F%E5%88%97%E5%8C%96%E8%B3%87%E6%96%99-protobuf-%E7%9A%84%E5%9E%8B%E5%88%A5" class="hash-link" aria-label="Direct link to 如何分辨序列化資料 Protobuf 的型別？" title="Direct link to 如何分辨序列化資料 Protobuf 的型別？">​</a></h4>
-<p>Polis Node 之間的通訊基本上是一個事件系統，而事件的種類千奇百怪，需要的資料結構當然也是五花八門，但是它們之間會使用同一個序列化的通道，接收端街收到一組序列化資料後要怎麼區分 Protobuf 的類型並使用不同的結構來解碼呢？</p>
-<p>沒有辦法直接區分，但是可以透過幾個方法解決這個問題<sup><a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fn-protobuf-type-detect-ba688f" id="user-content-fnref-protobuf-type-detect-ba688f" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup>：</p>
-<ul>
-<li>定義一個 Protobuf 封裝來夾帶型別資訊<!-- -->
-<ul>
-<li>用 oneof 封裝 (也被稱作 union)<!-- -->
-<ul>
-<li><a href="https://stackoverflow.com/a/40040658" target="_blank" rel="noopener noreferrer">https://stackoverflow.com/a/40040658</a></li>
-<li><a href="https://protobuf.dev/programming-guides/proto2/#oneof" target="_blank" rel="noopener noreferrer">https://protobuf.dev/programming-guides/proto2/#oneof</a></li>
-<li><a href="https://protobuf.dev/programming-guides/proto3/#oneof" target="_blank" rel="noopener noreferrer">https://protobuf.dev/programming-guides/proto3/#oneof</a></li>
-</ul>
-</li>
-<li>將另外一組 proto 封裝成 any 屬性<!-- -->
-<ul>
-<li><a href="https://protobuf.dev/programming-guides/techniques/#self-description" target="_blank" rel="noopener noreferrer">https://protobuf.dev/programming-guides/techniques/#self-description</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>在 buffer 加入幾個 bytes 的前輟作為辨識符</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="壓垮-deno-對我的專案而言的最後一根稻草">壓垮 Deno （對我的專案而言）的最後一根稻草<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#%E5%A3%93%E5%9E%AE-deno-%E5%B0%8D%E6%88%91%E7%9A%84%E5%B0%88%E6%A1%88%E8%80%8C%E8%A8%80%E7%9A%84%E6%9C%80%E5%BE%8C%E4%B8%80%E6%A0%B9%E7%A8%BB%E8%8D%89" class="hash-link" aria-label="Direct link to 壓垮 Deno （對我的專案而言）的最後一根稻草" title="Direct link to 壓垮 Deno （對我的專案而言）的最後一根稻草">​</a></h3>
-<p>我其實很難找到支援 WebGPU 或是活躍的 WebGL 的 Javascript 函式庫進行 "denolize"。</p>
-<p>WebGPU 在那個當下只有 0.04% 的覆蓋率，就算打開先行版 Chrome 的 WebGPU flag 也是充滿破圖，因此鮮少有函式庫有支援 WebGPU。</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_webgpu-usage-a72772a075cdcaf6b42490f78498faf1.webp" width="797" height="262" class="img_RpFt"></p>
-<p>活躍的 Javascript 3D 繪圖函式庫，諸如：Three.js, Babylon.js，即便當下是基於 WebGL 實作，在 WebGPU 逐漸普及下應該也會逐步支援 WebGPU 才對，但是它們多是基於 Canvas 的繪圖方式，而 Deno 環境下的 WebGPU 實作並不包含 Canvas 相關方法。</p>
-<p>加上 WebGPU 的 API 在 1.8 被加入 Deno 之後<sup><a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fn-deno-1.8-ba688f" id="user-content-fnref-deno-1.8-ba688f" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>，又在 1.32.0 中基於性能考量被移除了<sup><a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fn-deno-1.32.0-ba688f" id="user-content-fnref-deno-1.32.0-ba688f" data-footnote-ref="true" aria-describedby="footnote-label">4</a></sup>。</p>
-<p>也就是「在 Deno 中使用 WebGPU」這件是的前景並不樂觀，我可能必須要面對「使用舊版的 Deno 和相對底層的 WebGPU 手刻整個應用」的問題。</p>
-<p>Deno 的 Cross Compiling 的能力是真的很吸引我，但是在繪圖跟網路連線兩面不討好的情況下，加上 IDE 在寫 Deno 程式的時候開發體驗並不好，我決定放棄這條路。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="2023-05-27--2023-06-11">2023-05-27 ~ 2023-06-11<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#2023-05-27--2023-06-11" class="hash-link" aria-label="Direct link to 2023-05-27 ~ 2023-06-11" title="Direct link to 2023-05-27 ~ 2023-06-11">​</a></h2>
-<p>在 2022-10-06 的時候我就已經嘗試過把網頁上渲染的 Canvas 畫面壓成 Webp 並透過 WebSocket 傳送給伺服器播放了<sup><a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fn-simple-stream-ba688f" id="user-content-fnref-simple-stream-ba688f" data-footnote-ref="true" aria-describedby="footnote-label">5</a></sup>，但是當時只是寫了 POC 等級的程式，並不能很好的管理每次連線的 Session，因此良好的串流機制就成了我下一個研究目標。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="串流方案">串流方案<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#%E4%B8%B2%E6%B5%81%E6%96%B9%E6%A1%88" class="hash-link" aria-label="Direct link to 串流方案" title="Direct link to 串流方案">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="https://www.wowza.com/wp-content/uploads/latency-continuum-2021-with-protocols-700x300-1.png" src="https://flyskypie.github.io/assets/images/04_stream-latency-2d1415ec6bf572221ff968e2888a9f31.webp" width="700" height="380" class="img_RpFt"></p>
-<p>花了一點時間 (2023-05-27~2023-05-28) 查資料了解有哪些可能的方案能夠實現我的需求：</p>
-<ul>
-<li>Websocket<!-- -->
-<ul>
-<li>✅ Web API 十分普及</li>
-<li>❌ 需額外處理影像的解碼與渲染，消費更多的運算與延遲</li>
-</ul>
-</li>
-<li>WebRTC<!-- -->
-<ul>
-<li>✅ Web API 十分普及</li>
-<li>✅ 原生設計支援低延遲</li>
-<li>❌ 協定複雜</li>
-<li>❌ P2P 架構，雖然可能可以透過在伺服器實作底層來欺騙 client 端，但是需付出額外開發成本</li>
-</ul>
-</li>
-<li>WebTransport/QUIC<!-- -->
-<ul>
-<li>✅ 支援 UDP，可降低延遲</li>
-<li>✅ 次世代 API</li>
-<li>❌ Web API 尚未普及<!-- -->
-<ul>
-<li>瀏覽器支援覆蓋率低</li>
-<li>Nodejs 僅實驗性支援 QUIC</li>
-<li>Deno 尚不支援</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>HTML5 video tag<!-- -->
-<ul>
-<li>✅ Web API 十分普及</li>
-<li>❌ 高延遲</li>
-</ul>
-</li>
-<li>Video.js</li>
-<li>MPEG-DASH<!-- -->
-<ul>
-<li>✅ 開放的標準</li>
-<li>❌ 有點複雜</li>
-</ul>
-</li>
-<li>FLV<!-- -->
-<ul>
-<li>✅ 歷史性因素，仍有許多資源</li>
-<li>❌ 過時</li>
-</ul>
-</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="node-media-server">Node-Media-Server<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#node-media-server" class="hash-link" aria-label="Direct link to Node-Media-Server" title="Direct link to Node-Media-Server">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/05_Node-Media-Server-f6c9a6eaf1b0d27f12dc5399fe257ff0.webp" width="1223" height="762" class="img_RpFt"></p>
-<p>之後 (2023-06-04) 發現了 <a href="https://github.com/illuspas/Node-Media-Server" target="_blank" rel="noopener noreferrer">Node-Media-Server</a> 這個專案，透過 RTMP (Real-Time Messaging Protocol) 向 Node-Media-Server 串流影像，接著能夠使用 <a href="https://github.com/illuspas/Node-Media-Server-Admin" target="_blank" rel="noopener noreferrer">Node-Media-Server-Admin</a> 打開串流，而且能夠流暢的關閉與重新開啟串流，Session 的管理便是我在 POC 階段所缺失的，並且它能夠使用以 Javascript 撰寫的 code base 對外進行串流，那我只要有辦法用 Javascript 產生 RTMP 流，就能整合成符合我需求的程式。</p>
-<p>於是我便試著透過用 Typescript <a href="https://github.com/FlySkyPie/Node-Media-Server-ts" target="_blank" rel="noopener noreferrer">重構專案</a>的方式理解它是如何實現串流推流的。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="2023-06-11--2023-06-25">2023-06-11 ~ 2023-06-25<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#2023-06-11--2023-06-25" class="hash-link" aria-label="Direct link to 2023-06-11 ~ 2023-06-25" title="Direct link to 2023-06-11 ~ 2023-06-25">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="rtmp">RTMP<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#rtmp" class="hash-link" aria-label="Direct link to RTMP" title="Direct link to RTMP">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/06_RTMP-learning-note-db26060598ed37f00e25f95e196510ad.webp" width="5411" height="4079" class="img_RpFt"></p>
-<p>接著我發現單靠程式碼無法理解它解析 RTMP 封包的邏輯，於是我便打開 <a href="https://rtmp.veriskope.com/docs/spec" target="_blank" rel="noopener noreferrer">RTMP 的規範文件</a>並搭配一些教學文章試著理解它，不過大約只讀到 Header 的部份，我就意識到就算我能製造 RTMP 堆流，還是需要把影像做編碼，然而 Javascript 的生態系在做這件事情上有點貧弱，於是我把目光轉而投向 WebRTC。</p>
-<p>至於 RTMP 的學習筆記我應該會發到另外一篇獨立的文章去，雖然因為我其實沒有把 Spec 完整看完，發個不完整的筆記感覺怪彆扭的。=w="</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="2023-06-25--2023-08-05">2023-06-25 ~ 2023-08-05<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#2023-06-25--2023-08-05" class="hash-link" aria-label="Direct link to 2023-06-25 ~ 2023-08-05" title="Direct link to 2023-06-25 ~ 2023-08-05">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="webrtc">WebRTC<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#webrtc" class="hash-link" aria-label="Direct link to WebRTC" title="Direct link to WebRTC">​</a></h3>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/07_webrtc-demo-7de5ea33f86178327ce1788fadade79a.webp" width="1308" height="382" class="img_RpFt"></p>
-<p>7 月份因為工作上的壓力比較大，加上充滿了親戚過世、Steam 夏季特賣、COSUP...等等事件，所以學習 WebRTC 的進度可以說是其極緩慢，不過終於在昨天 (2023-08-05) 理解如何使用這個 Web API 並把<a href="https://github.com/FlySkyPie/canvas-webrtc-sample" target="_blank" rel="noopener noreferrer">範例</a>做出來了。</p>
-<p>同樣的，關於 WebRTC 的學習筆記我會放在另外一篇獨立的文章。</p>
-<hr>
-<p><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="創用 CC 授權條款" class="img_RpFt"></a><br>
-<!-- -->Wei Ji 以<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">創用CC 姓名標示-相同方式分享 4.0 國際 授權條款</a>釋出。</p>
-<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
-<ol>
-<li id="user-content-fn-zeromq-8-ba688f">
-<p>Chapter 8 - A Framework for Distributed Computing. Retrieved 2023-08-05, from <a href="https://zguide.zeromq.org/docs/chapter8" target="_blank" rel="noopener noreferrer">https://zguide.zeromq.org/docs/chapter8</a> <a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fnref-zeromq-8-ba688f" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
-</li>
-<li id="user-content-fn-protobuf-type-detect-ba688f">
-<p>c# - Protocol buffers detect type from raw message - Stack Overflow. Retrieved 2023-08-06, from <a href="https://stackoverflow.com/a/9125119" target="_blank" rel="noopener noreferrer">https://stackoverflow.com/a/9125119</a> <a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fnref-protobuf-type-detect-ba688f" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
-</li>
-<li id="user-content-fn-deno-1.8-ba688f">
-<p>Deno 1.8 Release Notes. Retrieved 2023-08-05, from <a href="https://deno.com/blog/v1.8" target="_blank" rel="noopener noreferrer">https://deno.com/blog/v1.8</a> <a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fnref-deno-1.8-ba688f" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
-</li>
-<li id="user-content-fn-deno-1.32.0-ba688f">
-<p>Release v1.32.0 · denoland/deno. Retrieved 2023-08-05, from <a href="https://github.com/denoland/deno/releases/tag/v1.32.0" target="_blank" rel="noopener noreferrer">https://github.com/denoland/deno/releases/tag/v1.32.0</a> <a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fnref-deno-1.32.0-ba688f" data-footnote-backref="" aria-label="Back to reference 4" class="data-footnote-backref">↩</a></p>
-</li>
-<li id="user-content-fn-simple-stream-ba688f">
-<p>Day 22 Streaming POC - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天. Retrieved 2023-08-05, from <a href="https://ithelp.ithome.com.tw/articles/10305097" target="_blank" rel="noopener noreferrer">https://ithelp.ithome.com.tw/articles/10305097</a> <a href="https://flyskypie.github.io/blog/2023-08-05_polis-progress#user-content-fnref-simple-stream-ba688f" data-footnote-backref="" aria-label="Back to reference 5" class="data-footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>]]></content:encoded>
-            <category>Polis</category>
-            <category>Hakoniwa</category>
-            <category>The Key of Huanche</category>
         </item>
     </channel>
 </rss>
