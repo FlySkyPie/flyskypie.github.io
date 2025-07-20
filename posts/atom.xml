@@ -2,11 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-06-17T00:00:00.000Z</updated>
+    <updated>2025-07-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[最近在學習 ACM (Access Control Model)]]></title>
+        <id>https://flyskypie.github.io/posts/2025-07-20_acm-learning</id>
+        <link href="https://flyskypie.github.io/posts/2025-07-20_acm-learning"/>
+        <updated>2025-07-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近在開發公司產品的 IAM，然後我覺得就像：]]></summary>
+        <content type="html"><![CDATA[
+<p>最近在開發公司產品的 IAM，然後我覺得就像：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-52fa5cc0f4761ab6ff6a9608f918f9c7.webp" width="736" height="917" class="img_RpFt"></p>
+<p>ReBAC 這個 ACM 似乎算是相對新興的模型，中文資料沒有很多。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="名詞解釋">名詞解釋<a href="https://flyskypie.github.io/posts/2025-07-20_acm-learning#%E5%90%8D%E8%A9%9E%E8%A7%A3%E9%87%8B" class="hash-link" aria-label="Direct link to 名詞解釋" title="Direct link to 名詞解釋">​</a></h2>
+<ul>
+<li>ACM (Access Control Model)</li>
+<li>RBAC (Role-Based Access Control)</li>
+<li>ABAC (Attribute-Based Access Control)</li>
+<li>PBAC (Policy-Based Access Control)</li>
+<li>ReBAC (Relationship-Based Access Control)</li>
+<li>ACL (Access Control List)</li>
+<li>IAM (Identity and Access Management)</li>
+</ul>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="AuthZ" term="AuthZ"/>
+        <category label="Authorization" term="Authorization"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[PyPI 快取、鏡像 - devpi]]></title>
         <id>https://flyskypie.github.io/posts/2025-06-17_devpi</id>
@@ -373,7 +400,7 @@ As Space Engineer Player, I want to monitor inventory from physical world, so th
 </ul>
 </li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="參考">參考<a href="https://flyskypie.github.io/posts/2025-04-27_homelab-rss#%EF%BF%BD%EF%BF%BD%E5%8F%83%E8%80%83" class="hash-link" aria-label="Direct link to 參考" title="Direct link to 參考">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="參考">參考<a href="https://flyskypie.github.io/posts/2025-04-27_homelab-rss#%E5%8F%83%E8%80%83" class="hash-link" aria-label="Direct link to 參考" title="Direct link to 參考">​</a></h2>
 <ul>
 <li>What is your favorite selhosted rss reader ? : r/selfhosted<!-- -->
 <ul>
@@ -707,36 +734,6 @@ P.S. 有些書籤是 10 年前左右加的</p>]]></content>
         <updated>2024-10-26T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[自動化的膛線穿過康莊大道，紅線是生物與死物的分界線。]]></summary>
         <content type="html"><![CDATA[<p>自動化的膛線穿過康莊大道，紅線是生物與死物的分界線。</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[YADI 的 PD 充電器]]></title>
-        <id>https://flyskypie.github.io/posts/2024-10-25_pd-charger</id>
-        <link href="https://flyskypie.github.io/posts/2024-10-25_pd-charger"/>
-        <updated>2024-10-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[別的不說，我買三顆就買到一個 Type-A 接反的。]]></summary>
-        <content type="html"><![CDATA[
-<p>別的不說，我買三顆就買到一個 Type-A 接反的。</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/YADI_01-915f86c17c67a1d58f9de0babf252864.webp" width="2154" height="782" class="img_RpFt"></p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/YADI_02-cfcc9e9c1487a1cb198d5a157493afdf.webp" width="3227" height="1479" class="img_RpFt"></p>
-<p>怒貼產品資訊</p>
-<blockquote>
-<p>YADI</p>
-<p>65W 氮化鎵快充</p>
-<p>GaN Fast Charger</p>
-<p>電源供應器</p>
-<p>認證型號：WB-20TW65GAN 型號：CG4GA-65W2C1A</p>
-<p>輸入/Input： 100<del>240V</del>50/60Hz</p>
-<p>輸出 Output：</p>
-<p>USB-C1 or C2: 3.3V<del>11V</del>5A (PPS)</p>
-<p>（省略）</p>
-<p>製造商：深圳市創世達實業股份有限公司</p>
-<p>委製商：亞第科技股份有限公司</p>
-<p>地址：新北市板橋區信義路一巷28號</p>
-</blockquote>]]></content>
         <author>
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
