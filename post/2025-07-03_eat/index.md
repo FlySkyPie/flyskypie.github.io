@@ -1,5 +1,5 @@
 ---
-slug: 2025-07-06_interaction-principle
+slug: 2025-07-03_eat
 authors: [weiji]
 tags: [Philosophy]
 ---

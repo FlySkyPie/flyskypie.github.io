@@ -1,5 +1,5 @@
 ---
-slug: 2022-02-21_word-right
+slug: 2022-01-16_super-computer-conquer
 authors: [weiji]
 tags: [Philosophy]
 ---
