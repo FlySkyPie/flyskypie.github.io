@@ -1,5 +1,5 @@
 ---
-slug: 2025-01-31_dead
+slug: 2024-12-08_ergonomics
 authors: [weiji]
 tags: [Philosophy]
 ---
