@@ -176,6 +176,24 @@
         <category label="LLM Observability" term="LLM Observability"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[台灣人與拖鞋]]></title>
+        <id>https://flyskypie.github.io/posts/2025-09-08_slippers</id>
+        <link href="https://flyskypie.github.io/posts/2025-09-08_slippers"/>
+        <updated>2025-09-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[拖鞋普遍給人的觀感都是隨便、不正式。我其實也這麼認為，不過我試著從反向的角度看這件事。]]></summary>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-ba2d8998e6985dc8d8bf4f977c144090.webp" width="1024" height="647" class="img_RpFt"></p>
+<p>拖鞋普遍給人的觀感都是隨便、不正式。我其實也這麼認為，不過我試著從反向的角度看這件事。</p>
+<p>台灣是四面環海的熱帶/副熱帶氣候，潮濕而且炎熱，硬要套上那種「西裝領帶」來自較為寒冷乾燥地區的文化似乎有點莫名其妙。</p>
+<p>有些動物會築巢，巢穴的本質是「溫暖的小窩」，相對於「險惡的自然環境」的淨土，而「家」就是人類的巢穴，更有「家是最後的堡壘」這麼一個概念，是美國人習以為常的概念。私以為台灣以治安良好而聞名，人與人相處的距離十分的近，「家以外是險惡的自然環境」的概念幾乎從台灣人的腦中消失，那麼在「自己的巢穴穿著不那麼有保護機能的拖鞋」似乎也顯得沒這麼奇怪了。</p>
+<p>※封面圖是 AI 生成的，沒有任何人類受到跟拍，<a href="https://flyskypie.github.io/assets/files/00_cover-0472616736adb0679ded5cb3f165596e.txt" target="_blank">提示詞在這裡</a>。</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="Philosophy" term="Philosophy"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[最近在學習 ACM (Access Control Model)]]></title>
         <id>https://flyskypie.github.io/posts/2025-07-20_acm-learning</id>
         <link href="https://flyskypie.github.io/posts/2025-07-20_acm-learning"/>
@@ -315,7 +333,7 @@
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-7af2efaae4125f5e999f52727956ec72.webp" width="926" height="733" class="img_RpFt">
 As Engineer, I want using Sweet Home 3D create a digital twin of my living room, so that I can more do planning more precisely on physical world.</p>
 </blockquote>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/posts/2025-05-30_sweethome3d#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背��景">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/posts/2025-05-30_sweethome3d#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背景">​</a></h2>
 <p><a href="https://www.sweethome3d.com/" target="_blank" rel="noopener noreferrer">Sweet Home 3D</a> 是開源的室內設計軟體，它可以幫助使用者把傢俱放在2D平面圖上作業，同時顯示3D透視圖。我是在一次和其他人聊天的對話中得知這個專案的存在，並且在書籤內放上了幾個禮拜。直到最近才因為擴建 Homelab 的需求覺得應該先好好研究這個軟體。</p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="討論">討論<a href="https://flyskypie.github.io/posts/2025-05-30_sweethome3d#%E8%A8%8E%E8%AB%96" class="hash-link" aria-label="Direct link to 討論" title="Direct link to 討論">​</a></h2>
 <p>整個擴建計畫稱不上單純，內容包含：</p>
@@ -773,46 +791,5 @@ As Space Engineer Player, I want to monitor inventory from physical world, so th
             <uri>https://github.com/FlySkyPie</uri>
         </author>
         <category label="Philosophy" term="Philosophy"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[RPG Maker MV 與 NW.js]]></title>
-        <id>https://flyskypie.github.io/posts/2025-03-26_rpg-maker</id>
-        <link href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker"/>
-        <updated>2025-03-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[週末買了 RPG Maker MV，然後不出意外的出意外了（Linux 使用者日常）：]]></summary>
-        <content type="html"><![CDATA[<p>週末買了 RPG Maker MV，然後不出意外的出意外了（Linux 使用者日常）：</p>
-<div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">Check failed: InitDefaultFont(). Could not find the default font</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>先講結論 RPG Maker MV 不管目標平台是什麼，都是輸出成 <a href="https://github.com/nwjs/nw.js" target="_blank" rel="noopener noreferrer">NW.js</a> 程式，而 RPG Maker MV 內建的 NW.js 樣板版本太舊：</p>
-<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">./nw --version</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">nwjs 65.0.3325.146</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>這個當下 (2025-03-26) 最新的 NW.js 是 <code>0.97.0</code>，照著網路上查到的資料<sup><a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#user-content-fn-discussions-55d7ad" id="user-content-fnref-discussions-55d7ad" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>，從 <a href="http://nwjs.io/" target="_blank" rel="noopener noreferrer">http://nwjs.io</a> 下載 Normal 和 SDK 並且放到 <code>~/.steam/steam/steamapps/common/RPG Maker MV/</code> 之類的路徑下就能解決了：</p>
-<ul>
-<li><code>/nwjs-lnx</code>
-<ul>
-<li>Normal NW.js</li>
-</ul>
-</li>
-<li><code>/nwjs-lnx-test</code>
-<ul>
-<li>SDK NW.js</li>
-</ul>
-</li>
-</ul>
-<p>兩者的差別是在編輯器按「測試」執行跟「發布」執行。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="nwjs">NW.js<a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#nwjs" class="hash-link" aria-label="Direct link to NW.js" title="Direct link to NW.js">​</a></h2>
-<p>NW.js 一個類似於 <a href="https://github.com/electron/electron" target="_blank" rel="noopener noreferrer">Electron</a> 用「寫網頁的方式製作桌面應用程式」的工具，不過兩者實做的方式不太一樣，我先不在這邊做比較。</p>
-<p>NW.js 專案提供了一個 <code>nw.exe</code> 執行檔（和一些動態函式庫），而這個執行檔就像是 Chromium 和 Node.js 的奇美拉，只是 Node.js 會去找 <code>app,js</code> 而 <code>nw</code> 會去找 <code>index.html</code> 來執行，看似跑在 Chromium 瀏覽器上卻又能解析 Commonjs 的 <code>require()</code> 和 Node.js 的核心模組。發布應用程式的時候就是把 <code>nw.exe</code> 和 Javascript 以及其他網頁 assets 打包給使用者。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="rpg-maker-mv">RPG Maker MV<a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#rpg-maker-mv" class="hash-link" aria-label="Direct link to RPG Maker MV" title="Direct link to RPG Maker MV">​</a></h2>
-<p>另我驚訝的是當輸出專案時，所有在編輯器完成的調整都會變成 JSON 組態，遊戲程式則是 Javascript 明碼，連混淆都沒有！我甚至可以直接看到它繪圖的基礎是使用 <a href="https://github.com/pixijs/pixijs" target="_blank" rel="noopener noreferrer">PixiJS</a> 完成的。雖然程式碼裡面充滿了 <code>prototype</code> 之類的古早味語法就是了。</p>
-<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
-<ol>
-<li id="user-content-fn-discussions-55d7ad">
-<p>[LINUX/MV 1.6.2] Fresh Install with new project and play test button doesn’t work :: RPG Maker MV Tech Support. Retrieved 2025-03-26 from <a href="https://steamcommunity.com/app/363890/discussions/1/2653116024334677568/#c2653116235598796183" target="_blank" rel="noopener noreferrer">https://steamcommunity.com/app/363890/discussions/1/2653116024334677568/#c2653116235598796183</a> <a href="https://flyskypie.github.io/posts/2025-03-26_rpg-maker#user-content-fnref-discussions-55d7ad" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
     </entry>
 </feed>
