@@ -2,11 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-10-05T00:00:00.000Z</updated>
+    <updated>2025-10-06T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[從賣油翁談「人寫程式」與「人寫提示詞讓 LLM 寫程式」的抉擇]]></title>
+        <id>https://flyskypie.github.io/posts/2025-10-06_oil-seller</id>
+        <link href="https://flyskypie.github.io/posts/2025-10-06_oil-seller"/>
+        <updated>2025-10-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[我不太記得孔子在國文課本裡說了什麼，但是我記得賣油翁的一句：]]></summary>
+        <content type="html"><![CDATA[
+<p>我不太記得孔子在國文課本裡說了什麼，但是我記得賣油翁的一句：</p>
+<blockquote>
+<p>「但手熟爾」，只是手藝熟練罷了</p>
+</blockquote>
+<p>真正和這句話發生共鳴來自於我高職在練習證照的學科與術科；以及我那算到幾乎快爛掉的基本電學習題的經歷，並且真正發酵是我開始使用 Linux 幾年之後，那幾個原本在學科考古題裡面的指令已經內化成我日常生活的一部分。</p>
+<p>程式語言是手段；不是目標，事實是軟體工程師其實經常需要根據需求學習新的語言，原因可能是為了維護舊專案或是針對特定問題的語言特性...等等。不過我認為依然需要選擇一門程式語言當作「母語」，必須是成為肌肉記憶最後帶進棺材的一部分，它可以成為學習其他語言時進行典範 (Paradigm) 參考的基準<sup><a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#user-content-fn-javscript-python-paradigm-79a662" id="user-content-fnref-javscript-python-paradigm-79a662" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>。</p>
+<p>Javascript/Typescript 是我選擇作為「母語」的語言，我會持續學習它的歷史、它的生態、它的語法，當我試著重構一些老專案的時候，我可以看到過去的開發者如何在 Promise 尚未納入規範就開始使用 Promise<sup><a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#user-content-fn-legacy-promise-79a662" id="user-content-fnref-legacy-promise-79a662" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup>；當我試著在 3DS 上建立 Javscript Runtime <sup><a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#user-content-fn-3ds-javscript-79a662" id="user-content-fnref-3ds-javscript-79a662" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>，我窺見了 Node.js 的工具鏈以及 Runtime 和 Engine 的差別...</p>
+<p>我決定向賣油翁學習，精練一門手藝這件事甚至早在 ChatGPT 橫空出世以前。前一陣子在公司的壓力之下我被迫嘗試使用 Cursor，然而實際上它非常的不好使，有一些特定的任務我要花大量的時間撰寫提示詞來約束它。</p>
+<p>「那是你提示詞下的不好」「你應該要多搭配一些規則」...有些人或許會這樣說，不過我想那些「有些人」的心中沒有賣油翁；它們或許本來就討厭寫程式，寫提示詞對它們而言是一種解放。不過對我而言，與其「節省時間」寫提示詞，「浪費時間」打磨我的手藝，反而才是我認為正確的道路 — 賣油翁的道路。</p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-javscript-python-paradigm-79a662">
+<p>從 Javascript 到 Python 的範式遷移 (Paradigm Migration) | 工程屍 FlyPie 的異想世界. Retrieved 2025-10-06 from <a href="https://flyskypie.github.io/blog/2024-06-09_from-javascript-to-python-paradigm-migration/" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/blog/2024-06-09_from-javascript-to-python-paradigm-migration/</a> <a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#user-content-fnref-javscript-python-paradigm-79a662" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-legacy-promise-79a662">
+<p>kriskowal/q: A promise library for JavaScript. Retrieved 2025-10-06 from <a href="https://github.com/kriskowal/q" target="_blank" rel="noopener noreferrer">https://github.com/kriskowal/q</a> <a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#user-content-fnref-legacy-promise-79a662" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-3ds-javscript-79a662">
+<p>3DS x Linux x Javascript x Bad Apple | 工程屍 FlyPie 的異想世界. Retrieved 2025-10-06 from <a href="https://flyskypie.github.io/blog/2022-12-03_3ds_linux_javascript_bad_apple/" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/blog/2022-12-03_3ds_linux_javascript_bad_apple/</a> <a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#user-content-fnref-3ds-javscript-79a662" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="LLM" term="LLM"/>
+        <category label="Philosophy" term="Philosophy"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[花式打 LLM]]></title>
         <id>https://flyskypie.github.io/posts/2025-10-05_llm-api-chain</id>
@@ -782,67 +818,5 @@ As Space Engineer Player, I want to monitor inventory from physical world, so th
             <uri>https://github.com/FlySkyPie</uri>
         </author>
         <category label="homelabe" term="homelabe"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[自架專案管理軟體]]></title>
-        <id>https://flyskypie.github.io/posts/2025-04-26_homelab-project-manage</id>
-        <link href="https://flyskypie.github.io/posts/2025-04-26_homelab-project-manage"/>
-        <updated>2025-04-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[最近在自架專案管理的工具，目前是使用 Vikunja，不過這裡還是把當時查資料時的其他候選方案簡單列一下。]]></summary>
-        <content type="html"><![CDATA[<p>最近在自架專案管理的工具，目前是使用 Vikunja，不過這裡還是把當時查資料時的其他候選方案簡單列一下。</p>
-<ul>
-<li><a href="https://github.com/go-vikunja/vikunja" target="_blank" rel="noopener noreferrer">https://github.com/go-vikunja/vikunja</a>
-<ul>
-<li>1.4k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/mattermost-community/focalboard" target="_blank" rel="noopener noreferrer">https://github.com/mattermost-community/focalboard</a>
-<ul>
-<li>23.1k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/wekan/wekan" target="_blank" rel="noopener noreferrer">https://github.com/wekan/wekan</a>
-<ul>
-<li>19.6k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/opf/openproject" target="_blank" rel="noopener noreferrer">https://github.com/opf/openproject</a>
-<ul>
-<li>10.1k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/redmine/redmine" target="_blank" rel="noopener noreferrer">https://github.com/redmine/redmine</a>
-<ul>
-<li>5.4k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/Leantime/leantime" target="_blank" rel="noopener noreferrer">https://github.com/Leantime/leantime</a>
-<ul>
-<li>4.8k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/plankanban/planka" target="_blank" rel="noopener noreferrer">https://github.com/plankanban/planka</a>
-<ul>
-<li>7.8k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/JordanKnott/taskcafe" target="_blank" rel="noopener noreferrer">https://github.com/JordanKnott/taskcafe</a>
-<ul>
-<li>4.6k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/kanboard/kanboard" target="_blank" rel="noopener noreferrer">https://github.com/kanboard/kanboard</a>
-<ul>
-<li>8.7k ⭐</li>
-</ul>
-</li>
-</ul>
-<p>Planka 明眼人都看得出來它是衝著 <a href="https://en.wikipedia.org/wiki/Trello" target="_blank" rel="noopener noreferrer">Trello</a> 去的，因此作為一個「Kanban 本位主義」的專案管理軟體，使用案例著重在看板本身，對於卡片 (Ticket/Issue) 的管理就稍微薄弱，比如沒有人類友善的流水號可以辨別卡片。</p>
-<p>OpenProject 則是側重卡片管理，可以堆疊巢狀結構也可以建立關聯，但是 UI 顯得比較老氣一點。</p>
-<p>Wekan 和 Planka 一樣屬於「Kanban 本位主義」，可以從設定啟用人類友善流水號，不過對於卡片管理的功能比較缺乏，巢狀堆疊的設計不是很理想，而且沒辦法建立其他卡片關聯。</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
     </entry>
 </feed>
