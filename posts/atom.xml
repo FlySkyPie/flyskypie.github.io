@@ -62,6 +62,95 @@
         <category label="Philosophy" term="Philosophy"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[回到一切的原點、LLM 系統的基石 - LLMs.txt、向量資料庫與 RAG]]></title>
+        <id>https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag</id>
+        <link href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag"/>
+        <updated>2025-10-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[標題主要是描述我的主觀體驗的時序，讀者不需要在意。]]></summary>
+        <content type="html"><![CDATA[
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>標題主要是描述我的主觀體驗的時序，讀者不需要在意。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="rag-retrieval-augmented-generation">RAG (Retrieval-augmented generation)<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#rag-retrieval-augmented-generation" class="hash-link" aria-label="Direct link to RAG (Retrieval-augmented generation)" title="Direct link to RAG (Retrieval-augmented generation)">​</a></h2>
+<p>LLM 除了「幻覺問題」以外，令一個毛病是：LLM 會過期，訓練完成後定型的權重無法包含訓練之後發生的事情或知識，它就像電影「我的失憶女友 (50 First Dates, 2004)」中的角色；一個順行性失憶症患者，時間被凝固並困在某個時間點的人。</p>
+<p>並且訓練與微調 LLM 模型的成本十分高昂，而 RAG 的架構是讓 LLM 真正進入實用化的推手，概念很簡單：把最新或正確的資訊跟使用者的疑問句一起放在輸入，經過 LLM 將文字揉捏之後就能得到最新或是正確的回答了。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="向量資料庫-vector-database">向量資料庫 (Vector Database)<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#%E5%90%91%E9%87%8F%E8%B3%87%E6%96%99%E5%BA%AB-vector-database" class="hash-link" aria-label="Direct link to 向量資料庫 (Vector Database)" title="Direct link to 向量資料庫 (Vector Database)">​</a></h3>
+<p>向量資料庫是 RAG 系統內很重要的一個組件，跟傳統資料庫不一樣的是，傳統資料庫通常仰賴 id 來索引資料，但是向量資料庫則是用一組向量（aka 一堆數字）來索引資料。透過嵌入這個動作（通常由一種不是 LLM 的類神經模型處理），我們可以把一團字變成一團數字，例如：</p>
+<p><code>[一團字]</code> → （嵌入） → <code>[1,2,3...](一團數字)</code></p>
+<p>接著我們可對另外一團字做一樣的事情：</p>
+<p><code>[另外一團字]</code> → （嵌入） → <code>[4,5,6...](另外一團數字)</code></p>
+<p>接著我們就可以計算兩團字的距離：</p>
+<p>$$
+距離 = F(一團數字, 另外一團數字)
+$$</p>
+<p>當向量資料庫儲存了一堆字團跟數字，我們拋出一個一團，就能用這團字找到另外一團「最接近」的字。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="agent-coding">Agent Coding<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#agent-coding" class="hash-link" aria-label="Direct link to Agent Coding" title="Direct link to Agent Coding">​</a></h2>
+<p>透過將 LLM 與 IDE (Integrated Development Environment)，人們透過聊天視窗的形式輸入描述，就能看到 LLM 作為「Agent」在 IDE 上揮灑出程式碼，後來甚至衍生出「Vibe Coding」一詞，並刮起了一陣席捲軟體開發產業的旋風。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="mcp-model-context-protocol">MCP (Model Context Protocol)<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#mcp-model-context-protocol" class="hash-link" aria-label="Direct link to MCP (Model Context Protocol)" title="Direct link to MCP (Model Context Protocol)">​</a></h2>
+<p>MCP 提供了一套更適合 LLM 呼叫的界面，很多人用「LLM 的 USB」來形容它，人們可以透過 MCP 提供一系列工具給 LLM 呼叫，包含讀取的：讀檔案、讀文件、讀網頁、讀 API...；包含寫入的：新增檔案、編輯檔案、操作 git、操作 SQL 資料庫...</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="ask-模式">Ask 模式<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#ask-%E6%A8%A1%E5%BC%8F" class="hash-link" aria-label="Direct link to Ask 模式" title="Direct link to Ask 模式">​</a></h2>
+<p>這些 Agent Tool 除了「Agent 模式」讓 LLM 能夠幫你寫程式以外，通常也有內建「Ask 模式」，也就是鎖定寫入相關的功能，讓人可以「問」關於專案下的問題，不過索引的效果並不是很理想而且容易滿出 LLM 的上下文窗口。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="context7-mcp">Context7 MCP<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#context7-mcp" class="hash-link" aria-label="Direct link to Context7 MCP" title="Direct link to Context7 MCP">​</a></h2>
+<p>最早我是因為公司內部推廣而得知這東西的存在，簡單來說它會告訴 Agent 「這裡有一個 MCP 可以查詢函式庫的用法，你不知道的話可以問我」，適合用來處理較新的軟體開發環境，比如在網頁前端領域尤其有效。</p>
+<p>它的運作方式是輸入一個 GitHub 程式庫的連結，它會去拉取、搜尋文件相關的檔案（如：<code>.md</code>,<code>.mdx</code>...）並且壓成一個像是這樣的純文字資料準備給 LLM 使用：</p>
+<div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">================</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">CODE SNIPPETS</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">================</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TITLE: Quickstart Cypress Setup with create-next-app</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">DESCRIPTION: Use `create-next-app` with the `with-cypress` example to bootstrap a new Next.js project with Cypress already configured. This is the fastest way to get started.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SOURCE: https://github.com/vercel/next.js/blob/canary/docs/01-app/02-guides/testing/cypress.mdx#_snippet_0</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LANGUAGE: bash</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">CODE:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">\```</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">npx create-next-app@latest --example with-cypress with-cypress-app</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">\```</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">--------------------------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TITLE: Example `create-next-app` Interactive Prompts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">DESCRIPTION: An example of the series of questions asked by the `create-next-app` CLI during the interactive setup process. It covers project naming, language choices, tooling, and directory structure.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SOURCE: https://github.com/vercel/next.js/blob/canary/docs/01-app/01-getting-started/01-installation.mdx#_snippet_2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LANGUAGE: text</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">...</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>而 MCP 的作用就是當它被 Agent 呼叫時，就從這份文件抽出一些資訊回傳給 Agent。</p>
+<p>我當時就有留意到這個工具並沒有開源而抱有警覺，不出所料，最近打開它的網站時發現已經不能匿名登記新的 Git 程式庫了，必須要登入。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="其他替代方案">其他替代方案<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#%E5%85%B6%E4%BB%96%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88" class="hash-link" aria-label="Direct link to 其他替代方案" title="Direct link to 其他替代方案">​</a></h2>
+<p>雖然我不喜歡用 LLM 寫程式<sup><a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#user-content-fn-oil-seller-c14b03" id="user-content-fnref-oil-seller-c14b03" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>，但是當進入專案時，透過某方式能夠快速掌握專案的情況對我而言確實是一個需求。於是我開始尋找一些類似的方案。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="嵌入體系">嵌入體系<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#%E5%B5%8C%E5%85%A5%E9%AB%94%E7%B3%BB" class="hash-link" aria-label="Direct link to 嵌入體系" title="Direct link to 嵌入體系">​</a></h3>
+<ul>
+<li><a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="noopener noreferrer">https://github.com/Mintplex-Labs/anything-llm</a>
+<ul>
+<li>49.7k ⭐</li>
+</ul>
+</li>
+</ul>
+<p>AnythingLLM 能夠「從 GitHub 匯入程式庫」，不過更接近：瀏覽一個程式庫然後選擇一些檔案進行嵌入（並儲存到向量資料庫），實際上它不像 Context7 有預處理能力。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="打包體系">打包體系<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#%E6%89%93%E5%8C%85%E9%AB%94%E7%B3%BB" class="hash-link" aria-label="Direct link to 打包體系" title="Direct link to 打包體系">​</a></h3>
+<ul>
+<li><a href="https://github.com/yamadashy/repomix" target="_blank" rel="noopener noreferrer">https://github.com/yamadashy/repomix</a>
+<ul>
+<li>19k ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/coderamp-labs/gitingest" target="_blank" rel="noopener noreferrer">https://github.com/coderamp-labs/gitingest</a>
+<ul>
+<li>12.2k ⭐</li>
+</ul>
+</li>
+</ul>
+<p>這些工具能夠將給定的 GitHub 程式庫「打包」成單一純文字檔，但是實際上就是黏貼所有程式碼，再加上一點 markdown meta 做修飾，老實說，這種事情 Grunt 或 Gulp 之類的工具也能做。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="llmstxt"><code>LLMs.txt</code><a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#llmstxt" class="hash-link" aria-label="Direct link to llmstxt" title="Direct link to llmstxt">​</a></h2>
+<p>狹義來講 <code>LLMs.txt</code> 是 <code>robots.txt</code> 的 LLM 版<sup><a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#user-content-fn-llms-txt-c14b03" id="user-content-fnref-llms-txt-c14b03" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup>，也就是介紹網站給 LLM 看的純文本文件。</p>
+<p>廣義來講 <code>LLMs.txt</code> 是指各種經過「純文本化」處理；為了要給 LLM 使用的文字檔<sup><a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#user-content-fn-langchain-llms-txt-c14b03" id="user-content-fnref-langchain-llms-txt-c14b03" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>，比如： Context7 對外可見的文本或是 Repomix/Gitingest 之類工具生成的檔案。</p>
+<p>如果直接使用 <code>LLMs.txt</code> 則很容易超出 LLM 的上下文窗口，要嵌入使用的話反而多了一道切塊 (chunking) 的步驟，可能製造更多問題。</p>
+<p>推測 Context7 背後的實作很有可能還是向量函式庫，才能在 MCP 進行檢索的時候抽出相關的資訊塊。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="回歸原本---rag">回歸原本 - RAG<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#%E5%9B%9E%E6%AD%B8%E5%8E%9F%E6%9C%AC---rag" class="hash-link" aria-label="Direct link to 回歸原本 - RAG" title="Direct link to 回歸原本 - RAG">​</a></h2>
+<p>反思 <code>LLMs.txt</code> 的問題之後，回過頭來看現在常見的開發架構：</p>
+<div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">LLM &lt;- Agent Tool -&gt; MCP -&gt; Context7 -&gt; Vector Database</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>唉，這不就還是 RAG 系統嗎？只是多了一些絢麗的詞彙包裝而已。</p>
+<p>2024 年初為了幫公司的專案進行規劃，開始學習 LLM 系統，當時因此認識了 RAG 系統。幾個月後 MCP 橫空出世、Vide Coding 成為顯學；</p>
+<p>「當時的寫的計畫已經過時了」老闆說道，</p>
+<p>但是問題的本質其實並沒有改變得太多。</p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-oil-seller-c14b03">
+<p>從賣油翁談「人寫程式」與「人寫提示詞讓 LLM 寫程式」的抉擇. Retrieved 2025-10-06 from <a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/posts/2025-10-06_oil-seller</a> <a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#user-content-fnref-oil-seller-c14b03" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-llms-txt-c14b03">
+<p>The /llms.txt file – llms-txt. Retrieved 2025-10-06 from <a href="https://llmstxt.org/" target="_blank" rel="noopener noreferrer">https://llmstxt.org/</a> <a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#user-content-fnref-llms-txt-c14b03" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-langchain-llms-txt-c14b03">
+<p>llms.txt. Retrieved 2025-10-06 from <a href="https://langchain-ai.github.io/langgraph/llms-txt-overview/" target="_blank" rel="noopener noreferrer">https://langchain-ai.github.io/langgraph/llms-txt-overview/</a> <a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag#user-content-fnref-langchain-llms-txt-c14b03" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="LLM" term="LLM"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[花式打 LLM]]></title>
         <id>https://flyskypie.github.io/posts/2025-10-05_llm-api-chain</id>
         <link href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain"/>
@@ -786,55 +875,5 @@ As Space Engineer Player, I want to monitor inventory from physical world, so th
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
         </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Homelab 入口網站或 Dashboard]]></title>
-        <id>https://flyskypie.github.io/posts/2025-04-26_homelab-homepage</id>
-        <link href="https://flyskypie.github.io/posts/2025-04-26_homelab-homepage"/>
-        <updated>2025-04-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[最近在建置自己的 Homelab，入口網站或儀表板 (Dashboard) 的方案其實不少，我自己目前是使用 Dashy，不過這裡還是把當時查資料時的其他候選方案簡單列一下。]]></summary>
-        <content type="html"><![CDATA[<p>最近在建置自己的 Homelab，入口網站或儀表板 (Dashboard) 的方案其實不少，我自己目前是使用 Dashy，不過這裡還是把當時查資料時的其他候選方案簡單列一下。</p>
-<ul>
-<li><a href="https://github.com/Lissy93/dashy" target="_blank" rel="noopener noreferrer">https://github.com/Lissy93/dashy</a>
-<ul>
-<li>18.1k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/ajnart/homarr" target="_blank" rel="noopener noreferrer">https://github.com/ajnart/homarr</a>
-<ul>
-<li>6.2k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/gethomepage/homepage" target="_blank" rel="noopener noreferrer">https://github.com/gethomepage/homepage</a>
-<ul>
-<li>19.8k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/bastienwirtz/homer" target="_blank" rel="noopener noreferrer">https://github.com/bastienwirtz/homer</a>
-<ul>
-<li>9.3k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/MauriceNino/dashdot" target="_blank" rel="noopener noreferrer">https://github.com/MauriceNino/dashdot</a>
-<ul>
-<li>2.7k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/daledavies/jump" target="_blank" rel="noopener noreferrer">https://github.com/daledavies/jump</a>
-<ul>
-<li>535 ⭐</li>
-</ul>
-</li>
-</ul>
-<p>選擇 Dashy 沒有什麼特別的理由，就是星星數夠高、畫面簡單以及仍然保有擴充的潛力，這裡是它支援的<a href="https://dashy.to/docs/widgets" target="_blank" rel="noopener noreferrer">資訊欄 (Widget)</a>。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="其他參考資料">其他參考資料<a href="https://flyskypie.github.io/posts/2025-04-26_homelab-homepage#%E5%85%B6%E4%BB%96%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" class="hash-link" aria-label="Direct link to 其他參考資料" title="Direct link to 其他參考資料">​</a></h2>
-<ul>
-<li><a href="https://roadtohomelab.blog/homelab-homepage-guide/" target="_blank" rel="noopener noreferrer">The Ultimate Homelab Homepage Guide</a></li>
-</ul>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="homelabe" term="homelabe"/>
     </entry>
 </feed>
