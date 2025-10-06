@@ -2,12 +2,103 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/blog</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-07-05T00:00:00.000Z</updated>
+    <updated>2025-10-06T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/blog"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
     <rights>Copyright © 2025 FlyPie (Wei Ji)</rights>
+    <entry>
+        <title type="html"><![CDATA[一種人類友善 llms.txt 構想]]></title>
+        <id>https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt</id>
+        <link href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt"/>
+        <updated>2025-10-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[前情提要]]></summary>
+        <content type="html"><![CDATA[
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>前情提要有點長，摘要如下：</p><ul>
+<li>我的開源專案口袋名單有很多專案等著我去探索，LLM (Large language model) 是一種潛在能協助我的工具。</li>
+<li>我不傾向使用 LLM 來寫程式。<sup><a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#user-content-fn-oil-seller-2f6184" id="user-content-fnref-oil-seller-2f6184" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></li>
+<li>就算使用 LLM 產生文件也應該處於某種程度的控制。<sup><a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#user-content-fn-llm-and-robot-arm-2f6184" id="user-content-fnref-llm-and-robot-arm-2f6184" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup></li>
+<li>文件本身應該是 RAG 體系兼容或是 RAG 體系友善的。<sup><a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#user-content-fn-the-cornerstone-of-llm-system-rag-2f6184" id="user-content-fnref-the-cornerstone-of-llm-system-rag-2f6184" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup></li>
+</ul></div></div>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="閃亮事物">閃亮事物<a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#%E9%96%83%E4%BA%AE%E4%BA%8B%E7%89%A9" class="hash-link" aria-label="Direct link to 閃亮事物" title="Direct link to 閃亮事物">​</a></h3>
+<p>作為一個重度閃亮事物症候群患者，我的口袋名單裡有一堆「我想理解、我想修改」的開源專案，諸如：</p>
+<ul>
+<li><a href="https://github.com/fogleman/Craft" target="_blank" rel="noopener noreferrer">https://github.com/fogleman/Craft</a>
+<ul>
+<li>10.8k ⭐</li>
+<li>一個優雅的純 C 「Classic Minecraft」實做</li>
+</ul>
+</li>
+<li><a href="https://github.com/swift502/Sketchbook" target="_blank" rel="noopener noreferrer">https://github.com/swift502/Sketchbook</a>
+<ul>
+<li>1.7k ⭐</li>
+<li>一個建構於 Three.js 之上的「迷你 GTA (Grand Theft Auto)」實做</li>
+</ul>
+</li>
+<li><a href="https://github.com/screeps/screeps" target="_blank" rel="noopener noreferrer">https://github.com/screeps/screeps</a>
+<ul>
+<li>3.2k ⭐</li>
+<li>一個用 Javscript 實做的「零玩家 RTS (Real-time strategy)」伺服器端實做</li>
+<li>客戶端是閉源的，並且在 Steam 上販售</li>
+</ul>
+</li>
+<li><a href="https://github.com/ill-inc/biomes-game" target="_blank" rel="noopener noreferrer">https://github.com/ill-inc/biomes-game</a>
+<ul>
+<li>2.6k ⭐</li>
+<li>一個（主要是） Typescript 實做的多人連線 Minecraft 風格遊戲</li>
+<li>該專案自從背後的開發商被 OpenAI 收購之後就被棄置了</li>
+</ul>
+</li>
+<li><a href="https://github.com/FlySkyPie/SweetHome3DTS" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/SweetHome3DTS</a>
+<ul>
+<li>我從 Sweet Home 3D 專案 fork 出來的版本</li>
+<li>從 「Java 佐 Javscript 實做」遷移到純 Typescript 實做</li>
+<li>大約還有七萬行的程序化生成程式碼需要重構、拆解。</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>「Classic Minecraft」是指非常早期的 Minecraft 版本，不包含血量、怪物...等生存要素，事實是網路上流傳很多工程師練手的開源「Minecraft Clone」 都是 Classic 版。</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="llm">LLM<a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#llm" class="hash-link" aria-label="Direct link to LLM" title="Direct link to LLM">​</a></h3>
+<p>LLM 橫空出世，衝擊了產業生態，甚至公司內也開始推廣使用 Agent Coding，具體地說是使用 Cursor 寫程式。親自使用一段時間之後，加上公司內其他人的使用情況，我認為這不是正確的 LLM 使用方式。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="用-llm-來寫文件">用 LLM 來「寫文件」<a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#%E7%94%A8-llm-%E4%BE%86%E5%AF%AB%E6%96%87%E4%BB%B6" class="hash-link" aria-label="Direct link to 用 LLM 來「寫文件」" title="Direct link to 用 LLM 來「寫文件」">​</a></h3>
+<p>同事使用 LLM 生成的數千行的垃圾文件讓我有感而發寫了一篇「<a href="https://flyskypie.github.io/posts/2025-09-09_llm-and-robot-arm" target="_blank" rel="noopener noreferrer">LLM 與機械手臂的類比</a>」，簡單來說：忽略「人類大腦處理資料的能力是有限的」而讓大量生成式資訊灌入專案反而是一種精神傷害而沒有任何幫助。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="用-llm-來寫程式">用 LLM 來「寫程式」<a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#%E7%94%A8-llm-%E4%BE%86%E5%AF%AB%E7%A8%8B%E5%BC%8F" class="hash-link" aria-label="Direct link to 用 LLM 來「寫程式」" title="Direct link to 用 LLM 來「寫程式」">​</a></h3>
+<p>LLM 用來產生「零到一」的範例程式碼確實方便，不過 LLM 有「自己造輪子」的傾向，在複雜的專案中它的表現不盡理想。從職涯規劃的角度，我也有感而發寫了一篇「<a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller" target="_blank" rel="noopener noreferrer">從賣油翁談『人寫程式』與『人寫提示詞讓 LLM 寫程式』的抉擇</a>」，簡單來說：手寫磨練自己的肌肉記憶或是用提示詞來逃避程式碼，我個人傾向選擇前者。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="llmstxt-的缺點"><code>llms.txt</code> 的缺點<a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#llmstxt-%E7%9A%84%E7%BC%BA%E9%BB%9E" class="hash-link" aria-label="Direct link to llmstxt-的缺點" title="Direct link to llmstxt-的缺點">​</a></h3>
+<p>為了將資訊傳遞給 LLM，出現了像是 <code>repomix</code> 或 <code>gitingest</code> 這樣的工具，用來將其他型態的資料轉換成一個巨大的純文字檔案。這種檔案不只不適合人類閱讀，而且很容易超出 LLM 的上下文窗口，實際上依然需要透過切塊 (Chunk)、嵌入 (Embedding)、向量資料庫...等流程建立的 RAG 系統才能有效的使用這些資訊。</p>
+<p>在嘗試使用了 AnythingLLM、Repomix 和 Gitingest 等工具之後，有感而發寫了一篇關於 <code>llms.txt</code> 的廢文「<a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag" target="_blank" rel="noopener noreferrer">回到一切的原點、LLM 系統的基石 - LLMs.txt、向量資料庫與 RAG</a>」。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="tiddlywiki---人類與機器通用的可攜格式">TiddlyWiki - 人類與機器通用的可攜格式<a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#tiddlywiki---%E4%BA%BA%E9%A1%9E%E8%88%87%E6%A9%9F%E5%99%A8%E9%80%9A%E7%94%A8%E7%9A%84%E5%8F%AF%E6%94%9C%E6%A0%BC%E5%BC%8F" class="hash-link" aria-label="Direct link to TiddlyWiki - 人類與機器通用的可攜格式" title="Direct link to TiddlyWiki - 人類與機器通用的可攜格式">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-ee6b47d84fe34487b5f7649d0fe45cb4.webp" width="1024" height="779" class="img_RpFt"></p>
+<p>TiddlyWiki 的幾個特點剛好可以用來解決上述問題，TiddlyWiki 有兩種儲存資料的型態：</p>
+<ul>
+<li>前端的 SPA 模式：單一 html 包含了資料以及 Tiddlywiki 本身的程式。</li>
+<li>後端的 server 模式：每個條目(Tiddlers)可以獨立以檔案的形式存在。</li>
+</ul>
+<p>在 SPA 模式下，它提供一種人類友善的可攜體驗，只要有網頁瀏覽器就能閱讀或編輯，無須安裝其他軟體。並且其「非線性閱讀」的特性可以大幅降低認知負荷，避免人類在上千行的文件穿梭。</p>
+<p>在 server 模式下，條目(Tiddlers) 可以放在個別的檔案內，提供一個版本控制 (git) 友善的環境。更可以透過 HTTP API 對條目進行新增、修改、移除。</p>
+<p>TiddlyWiki 的設計上，鼓勵不要在一個 Tiddler 放入過多的資訊，每個 Tiddler 都應該像便條紙一樣傳遞一個單一主題的資訊，如此設計除了有效的降低人類的認知負荷以外，更讓 Tiddler 成為 RAG 切塊絕佳的單元，大型單一文件進行切塊的風險就是可能切割在不理想的地方造成語意被破壞。</p>
+<p>因此 TiddlyWiki 提供了一種可攜、適合人類而且同時適合機械的資料型態。</p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-oil-seller-2f6184">
+<p>從賣油翁談「人寫程式」與「人寫提示詞讓 LLM 寫程式」的抉擇. Retrieved 2025-10-06 from <a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/posts/2025-10-06_oil-seller</a> <a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#user-content-fnref-oil-seller-2f6184" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-llm-and-robot-arm-2f6184">
+<p>LLM 與機械手臂的類比. Retrieved 2025-10-06 from <a href="https://flyskypie.github.io/posts/2025-09-09_llm-and-robot-arm" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/posts/2025-09-09_llm-and-robot-arm</a> <a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#user-content-fnref-llm-and-robot-arm-2f6184" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-the-cornerstone-of-llm-system-rag-2f6184">
+<p>回到一切的原點、LLM 系統的基石 - LLMs.txt、向量資料庫與 RAG. Retrieved 2025-10-06 from <a href="https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag</a> <a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt#user-content-fnref-the-cornerstone-of-llm-system-rag-2f6184" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="homelab" term="homelab"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[OCI Image 本地鏡像站遷移之旅]]></title>
         <id>https://flyskypie.github.io/blog/2025-07-05_harbor</id>
@@ -1381,7 +1472,7 @@ Javascript::TypedArray → Python::Array (NumPy)</p></div></div>
 <li><a href="https://wiki.vg/Client_List" target="_blank" rel="noopener noreferrer">其他兼容 Minecraft 的開源 Client 端</a></li>
 <li><a href="https://wiki.vg/Server_List" target="_blank" rel="noopener noreferrer">其他兼容 Minecraft 的開源 Server 端</a></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="特修斯�的-minecraft">特修斯的 Minecraft<a href="https://flyskypie.github.io/blog/2024-05-29_I-like-minecraft-but-its-might-no-the-way-you-think#%E7%89%B9%E4%BF%AE%E6%96%AF%E7%9A%84-minecraft" class="hash-link" aria-label="Direct link to 特修斯的 Minecraft" title="Direct link to 特修斯的 Minecraft">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="特修斯的-minecraft">特修斯的 Minecraft<a href="https://flyskypie.github.io/blog/2024-05-29_I-like-minecraft-but-its-might-no-the-way-you-think#%E7%89%B9%E4%BF%AE%E6%96%AF%E7%9A%84-minecraft" class="hash-link" aria-label="Direct link to 特修斯的 Minecraft" title="Direct link to 特修斯的 Minecraft">​</a></h2>
 <p>當使用完全開源的 Client 端實做，例如：Mineflayer；
 搭配上完全開源的 Server 端實做，例如：Cuberite；
 Minecraft 就昇華成純粹的協定，整個過程不涉及原本的 Minecraft 了。</p>]]></content>
@@ -2082,7 +2173,7 @@ a non-linear personal web notebook</p>
         <summary type="html"><![CDATA[行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 childprocess 模組的 spawn 或是使用過 Web API 的 Worker 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。]]></summary>
         <content type="html"><![CDATA[
 <p>行程間通訊 (IPC, Inter Process Communication) 是兩個行程（或以上）或執行緒間傳送資料或訊號的一些技術或方法。 如果有在 Node.js 玩過 <code>child_process</code> 模組的 <a href="https://nodejs.org/api/child_process.html#child_processspawncommand-args-options" target="_blank" rel="noopener noreferrer">spawn</a> 或是使用過 Web API 的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank" rel="noopener noreferrer">Worker</a> 的話，應該對如何在 Javascript 中使用複數行程 (process) 並不陌生。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="區塊之間的通訊方式一覽">區塊之間的通訊方式一覽<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%8D%80%E5%A1%8A%E4%B9%8B%E9%96%93%E7%9A%84%E9%80%9A%E8%A8%8A%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A6%BD" class="hash-link" aria-label="Direct link to 區塊之間的通訊方式一覽" title="Direct link to 區塊之間的通訊方式一覽">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="區塊之間的通訊方式一覽">區塊之間的通訊方式一覽<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%8D%80%E5%A1%8A%EF%BF%BD%E4%B9%8B%E9%96%93%E7%9A%84%E9%80%9A%E8%A8%8A%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A6%BD" class="hash-link" aria-label="Direct link to 區塊之間的通訊方式一覽" title="Direct link to 區塊之間的通訊方式一覽">​</a></h2>
 <p>在<a href="https://flyskypie.github.io/blog/2023-04-01_electron_learning_note_intro">前一篇文章</a>提到，在 Electron 中 Render 和 Main 彼此之間是獨立的，必須透過 Preload 和 API 來實現兩者之間的溝通。參考了官方的範例程式碼以及一篇文章<sup><a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#user-content-fn-electron-ipc-bef557" id="user-content-fnref-electron-ipc-bef557" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>之後，整理成一個圖表：</p>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_electron-ipc-api-2614c898ac2d7076cfc25d7ca88f52c4.webp" width="1377" height="1354" class="img_RpFt"></p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="後記">後記<a href="https://flyskypie.github.io/blog/2023-08-08_electron-learning-note#%E5%BE%8C%E8%A8%98" class="hash-link" aria-label="Direct link to 後記" title="Direct link to 後記">​</a></h2>
@@ -2104,44 +2195,5 @@ a non-linear personal web notebook</p>
         <category label="learning note" term="learning note"/>
         <category label="javascript" term="javascript"/>
         <category label="Electron" term="Electron"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[WebRTC 學習筆記]]></title>
-        <id>https://flyskypie.github.io/blog/2023-08-07_webrtc-learning-note</id>
-        <link href="https://flyskypie.github.io/blog/2023-08-07_webrtc-learning-note"/>
-        <updated>2023-08-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[本篇學習筆記以 Javascript 在應用上的實作為切入點，關於 WebRTC 背後的技術並不是本文的重點。]]></summary>
-        <content type="html"><![CDATA[
-<div class="theme-admonition theme-admonition-note admonition_a71W alert alert--secondary"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_fKWC"><p>本篇學習筆記以 Javascript 在應用上的實作為切入點，關於 WebRTC 背後的技術並不是本文的重點。</p></div></div>
-<p>看了幾篇教學仍然對 WebRTC Web API 的使用不是很理解，因為這些文章不是都著墨在 WebRTC 協定本身然後程式碼的實作就簡略帶過；就是跟使用 WebSocket 處理 SDP (Session Description Protocol) 的部份一起講，造成程式碼充滿了各種事件 callback，讓程式碼變得比較不好理解。</p>
-<p>後來看到了一個<a href="https://github.com/Tinywan/WebRTC-tutorial/tree/master/docs/demo-02" target="_blank" rel="noopener noreferrer">範例程式</a>，單純針對 <code>RTCPeerConnection</code> 如何建立連線，從而省略實務上會透過其他機制完成 SDP，讓程式碼變得稍微好理解一點。</p>
-<p>經過重構、Reivew 之後終於看懂使用 Javascript 建立 WebRTC 連線的流程，我把它整理成一張圖：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_create-webrtc-b478fce1aac1c446153b8f810dc9c964.webp" width="1024" height="1141" class="img_RpFt"></p>
-<p>大致有三個重點：</p>
-<ol>
-<li>兩邊的 Connection 都分別要從自己跟對方獲得 SessionDescription。</li>
-<li>成對的 ICE (Interactive Connectivity Establishment) 處理程式 (handler)。</li>
-<li><code>addTrack()</code> 與 <code>.on("track")</code> 用來發送/接收串流。</li>
-</ol>
-<hr>
-<p>另外我練習<a href="https://github.com/FlySkyPie/canvas-webrtc-sample" target="_blank" rel="noopener noreferrer">使用 WebRTC 的程式</a>試著用不同的界面分離職責：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_architecture-5e396c8f943429a3e6cc2bea1d560c1b.webp" width="886" height="958" class="img_RpFt"></p>
-<ul>
-<li><code>ITransmittable</code>: 發送端應用領域對傳輸領域的界面，專住於「對外串流」的職責。</li>
-<li><code>IReceivable</code>: 接收端應用領域對傳輸領域的界面，，專注於「接收串流」的職責。</li>
-<li><code>IRTCOfferable</code>: 發送端對連線建立領域的界面，專注於「發送方的 WebRTC 構成要件」的職責上。</li>
-<li><code>IRTCAnswerable</code>: 接收端對連線建立領域的界面，專注於「接收方的 WebRTC 構成要件」的職責上。</li>
-</ul>
-<hr>
-<p><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="創用 CC 授權條款" class="img_RpFt"></a><br>
-<!-- -->Wei Ji 以<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">創用CC 姓名標示-相同方式分享 4.0 國際 授權條款</a>釋出。</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="learning note" term="learning note"/>
-        <category label="javascript" term="javascript"/>
-        <category label="typescript" term="typescript"/>
-        <category label="WebRTC" term="WebRTC"/>
     </entry>
 </feed>
