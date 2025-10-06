@@ -24,6 +24,24 @@
 <p>Javascript/Typescript 是我選擇作為「母語」的語言，我會持續學習它的歷史、它的生態、它的語法，當我試著重構一些老專案的時候，我可以看到過去的開發者如何在 Promise 尚未納入規範就開始使用 Promise<sup><a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#user-content-fn-legacy-promise-79a662" id="user-content-fnref-legacy-promise-79a662" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup>；當我試著在 3DS 上建立 Javscript Runtime <sup><a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#user-content-fn-3ds-javscript-79a662" id="user-content-fnref-3ds-javscript-79a662" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>，我窺見了 Node.js 的工具鏈以及 Runtime 和 Engine 的差別...</p>
 <p>我決定向賣油翁學習，精練一門手藝這件事甚至早在 ChatGPT 橫空出世以前。前一陣子在公司的壓力之下我被迫嘗試使用 Cursor，然而實際上它非常的不好使，有一些特定的任務我要花大量的時間撰寫提示詞來約束它。</p>
 <p>「那是你提示詞下的不好」「你應該要多搭配一些規則」...有些人或許會這樣說，不過我想那些「有些人」的心中沒有賣油翁；它們或許本來就討厭寫程式，寫提示詞對它們而言是一種解放。不過對我而言，與其「節省時間」寫提示詞，「浪費時間」打磨我的手藝，反而才是我認為正確的道路 — 賣油翁的道路。</p>
+<p>也不是完全不能用 LLM 寫程式，但是老實說用例十分有限：</p>
+<ul>
+<li>如果我不熟悉語言、不熟悉當下的開發主題或領域<!-- -->
+<ul>
+<li>我無從驗證 LLM 生成內容的好壞或是有效與否，因此不宜用 LLM。</li>
+</ul>
+</li>
+<li>如果我熟悉語言、當下的開發主題或領域，但是 LLM 很難命中我的預期解法<!-- -->
+<ul>
+<li>需要花大量的時間琢磨提示詞，但是同樣的時間我自己寫更快，因此不宜用 LLM。</li>
+</ul>
+</li>
+<li>如果我熟悉語言、當下的開發主題或領域，並且 LLM 很來電，很快就命中我的預期解法。<!-- -->
+<ul>
+<li>節省手工開發時間，採用。</li>
+</ul>
+</li>
+</ul>
 <section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-10-06_oil-seller#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
 <ol>
 <li id="user-content-fn-javscript-python-paradigm-79a662">
