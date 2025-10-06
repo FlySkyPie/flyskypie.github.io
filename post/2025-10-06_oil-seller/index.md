@@ -24,6 +24,15 @@ Javascript/Typescript 是我選擇作為「母語」的語言，我會持續學�
 
 「那是你提示詞下的不好」「你應該要多搭配一些規則」...有些人或許會這樣說，不過我想那些「有些人」的心中沒有賣油翁；它們或許本來就討厭寫程式，寫提示詞對它們而言是一種解放。不過對我而言，與其「節省時間」寫提示詞，「浪費時間」打磨我的手藝，反而才是我認為正確的道路 — 賣油翁的道路。
 
+也不是完全不能用 LLM 寫程式，但是老實說用例十分有限：
+
+- 如果我不熟悉語言、不熟悉當下的開發主題或領域
+  - 我無從驗證 LLM 生成內容的好壞或是有效與否，因此不宜用 LLM。
+- 如果我熟悉語言、當下的開發主題或領域，但是 LLM 很難命中我的預期解法
+  - 需要花大量的時間琢磨提示詞，但是同樣的時間我自己寫更快，因此不宜用 LLM。
+- 如果我熟悉語言、當下的開發主題或領域，並且 LLM 很來電，很快就命中我的預期解法。
+  - 節省手工開發時間，採用。
+
 [^javscript-python-paradigm]: 從 Javascript 到 Python 的範式遷移 (Paradigm Migration) | 工程屍 FlyPie 的異想世界. Retrieved 2025-10-06 from https://flyskypie.github.io/blog/2024-06-09_from-javascript-to-python-paradigm-migration/
 [^legacy-promise]: kriskowal/q: A promise library for JavaScript. Retrieved 2025-10-06 from https://github.com/kriskowal/q
 [^3ds-javscript]: 3DS x Linux x Javascript x Bad Apple | 工程屍 FlyPie 的異想世界. Retrieved 2025-10-06 from https://flyskypie.github.io/blog/2022-12-03_3ds_linux_javascript_bad_apple/
