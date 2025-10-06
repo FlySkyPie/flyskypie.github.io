@@ -244,6 +244,17 @@ DeepSeek<!-- -->:DeepSeek<!-- --> V3.1 模型</p>
             <category>LLM Observability</category>
         </item>
         <item>
+            <title><![CDATA[LLM 與機械手臂的類比]]></title>
+            <link>https://flyskypie.github.io/posts/2025-09-09_llm-and-robot-arm</link>
+            <guid>https://flyskypie.github.io/posts/2025-09-09_llm-and-robot-arm</guid>
+            <pubDate>Tue, 09 Sep 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[LLM 生成文件的能力似乎被不少工程師視作「自動補全文件」的解方，畢竟很多工程師都很懶得寫文件，但是我認為「作為 LLM context input 的文件」跟「給人類閱讀的文件」應該嚴格區分，因為 LLM 能夠很輕易的產生或更新大量的文件，但是人類的認知負荷容量並不會因此提昇，每個人能夠處理的資訊量依然是固定的，大量的甚至可能灌水的生成式內容反而會大幅度的消耗人類的處理量能並且提高認知負荷。]]></description>
+            <content:encoded><![CDATA[
+<p>LLM 生成文件的能力似乎被不少工程師視作「自動補全文件」的解方，畢竟很多工程師都很懶得寫文件，但是我認為「作為 LLM context input 的文件」跟「給人類閱讀的文件」應該嚴格區分，因為 LLM 能夠很輕易的產生或更新大量的文件，但是人類的認知負荷容量並不會因此提昇，每個人能夠處理的資訊量依然是固定的，大量的甚至可能灌水的生成式內容反而會大幅度的消耗人類的處理量能並且提高認知負荷。</p>
+<p>即便機械手臂在製造業能夠造成產能的提昇，實際上工廠依然是嚴格分離機械手臂和人類的工作區以免發生事故，只有特殊處理的「協作型機械手臂」能夠和人類直接處於同一個空間工作，這些協作型機械手臂透過特別的反饋來避免傷害工作人員。我認為 LLM 應該也有相同的問題，只是由比較不明顯的「精神傷害」取代傳統的「物理傷害」，因此不應該讓 LLM 的生成式內容「直接侵害人類的工作空間」。</p>]]></content:encoded>
+            <category>Philosophy</category>
+        </item>
+        <item>
             <title><![CDATA[台灣人與拖鞋]]></title>
             <link>https://flyskypie.github.io/posts/2025-09-08_slippers</link>
             <guid>https://flyskypie.github.io/posts/2025-09-08_slippers</guid>
@@ -642,7 +653,7 @@ As Space Engineer Player, I want to monitor inventory from physical world, so th
 </ul>
 </li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="參�考">參考<a href="https://flyskypie.github.io/posts/2025-04-27_homelab-rss#%E5%8F%83%E8%80%83" class="hash-link" aria-label="Direct link to 參考" title="Direct link to 參考">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="參考">參考<a href="https://flyskypie.github.io/posts/2025-04-27_homelab-rss#%E5%8F%83%E8%80%83" class="hash-link" aria-label="Direct link to 參考" title="Direct link to 參考">​</a></h2>
 <ul>
 <li>What is your favorite selhosted rss reader ? : r/selfhosted<!-- -->
 <ul>
@@ -754,23 +765,6 @@ As Space Engineer Player, I want to monitor inventory from physical world, so th
 <p>Planka 明眼人都看得出來它是衝著 <a href="https://en.wikipedia.org/wiki/Trello" target="_blank" rel="noopener noreferrer">Trello</a> 去的，因此作為一個「Kanban 本位主義」的專案管理軟體，使用案例著重在看板本身，對於卡片 (Ticket/Issue) 的管理就稍微薄弱，比如沒有人類友善的流水號可以辨別卡片。</p>
 <p>OpenProject 則是側重卡片管理，可以堆疊巢狀結構也可以建立關聯，但是 UI 顯得比較老氣一點。</p>
 <p>Wekan 和 Planka 一樣屬於「Kanban 本位主義」，可以從設定啟用人類友善流水號，不過對於卡片管理的功能比較缺乏，巢狀堆疊的設計不是很理想，而且沒辦法建立其他卡片關聯。</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[每次 Conf 都會多一條掛繩，所以我把它當成褲帶]]></title>
-            <link>https://flyskypie.github.io/posts/2025-04-13_post</link>
-            <guid>https://flyskypie.github.io/posts/2025-04-13_post</guid>
-            <pubDate>Sun, 13 Apr 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[今年 SITCON 之後又多了兩條掛繩：]]></description>
-            <content:encoded><![CDATA[
-<p>今年 SITCON 之後又多了兩條掛繩：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01-9f375ac5955a3648eb653dcbfdfb1b8a.webp" width="1024" height="768" class="img_RpFt"></p>
-<p>突然想到我的睡褲前一陣子洗衣機幫我打死結只好剪掉，所以剛好少一條繩子，心動不如馬上行動。</p>
-<p>因為一條的長度不夠，只好把兩條接在一起當一條用：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02-aa897b48d0e7afee874bc096f4661aa3.webp" width="1024" height="768" class="img_RpFt"></p>
-<p>畢竟很少縫東西，縫得很爛：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03-c3d37f5bd0edf0d6b65c99a2cf8e682d.webp" width="1024" height="768" class="img_RpFt"></p>
-<p>噹啷～多出來的繩子困擾跟少一條繩子的需求互相湮滅了～</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/04-f9c5f6566ce7417b04db8e42f684664e.webp" width="1024" height="768" class="img_RpFt"></p>]]></content:encoded>
         </item>
     </channel>
 </rss>

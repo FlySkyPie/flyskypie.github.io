@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[3433],{69696:s=>{s.exports=JSON.parse('{"permalink":"/posts/tags/philosophy","page":1,"postsPerPage":10,"totalPages":3,"totalCount":23,"nextPage":"/posts/tags/philosophy/page/2","blogDescription":"Random post just like FB or Twitter.","blogTitle":"\u5ee2\u6587\u96dc\u8ac7"}')}}]);
