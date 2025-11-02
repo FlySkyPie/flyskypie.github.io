@@ -2,11 +2,44 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2025-10-06T00:00:00.000Z</updated>
+    <updated>2025-11-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[「演出」]]></title>
+        <id>https://flyskypie.github.io/posts/2025-11-02_perform</id>
+        <link href="https://flyskypie.github.io/posts/2025-11-02_perform"/>
+        <updated>2025-11-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[我曾經有一個同事，是動畫師之類的，雖然不同部門、不算熟、也沒什麼深入聊過，但是我認為我從他身上學到一個很重要的概念—「演出」。]]></summary>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-7ccf2a7910d8e6703903d1a923778cc1.webp" width="1024" height="725" class="img_RpFt"></p>
+<p>我曾經有一個同事，是動畫師之類的，雖然不同部門、不算熟、也沒什麼深入聊過，但是我認為我從他身上學到一個很重要的概念—「演出」。</p>
+<p>他經常會用「演出」來形容一段角色動畫，也經常在做動畫前先自己用肢體表現一次，呈現多種角色動作的形式。當下我其實沒有太多想法，直到後來我才隱約知道他說的「演出」是什麼意思。</p>
+<p>這是當下我知道的「演出」：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_Mixamo_character_animation_example_grid-92b6cb9d82dbffc5a67b2539721701c4.webp" width="810" height="556" class="img_RpFt"></p>
+<p>後來我看到了：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G9qzPEviH5g?si=5HmVPm6CXI_i7Stn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<p>這是透過動作捕捉器，直接將人類演員的肢體動作錄製成能在遊戲內使用的動畫影格，動作更自然也不用讓動畫師手工調整。</p>
+<p>接著我看到了：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SmTNegGiv9M?si=_fFgU8zTF6ZHHUVz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<p>很多短影音往往包含了有趣的上下文與故事，但是仔細觀察會發現這個影片中的角色的動作跟前一個動作捕捉演員有著接近的神韻：一些明顯且誇大的神情或肢體「演出」。</p>
+<hr>
+<p>岔開一下話題，這是一個我很享受的 Factorio 影片：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hYcAsNCH7Zc?si=nSgaZ0DnV3W7TsJh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<p>然後這是那個 Factorio 影片的幕後花絮：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HNocVPYDLo8?si=ZIgi2BAL160cWI8d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<p>可以發現影片的整體節奏並不像正片一樣緊湊，作者的情緒起伏也沒這麼浮誇。</p>
+<p>作者也表示，劇本是模仿 3Blue1Brown 的緒事風格「事情可能怎麼被發現」，而刻意營造出「他自己發現」的氛圍。</p>
+<hr>
+<p>簡單來說，「演出」一種精細設計的虛假呈現；是一種謊言，如果任何戲劇作品出現不現實的情節，那十之八九是一種「演出」。</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="Philosophy" term="Philosophy"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[從賣油翁談「人寫程式」與「人寫提示詞讓 LLM 寫程式」的抉擇]]></title>
         <id>https://flyskypie.github.io/posts/2025-10-06_oil-seller</id>
@@ -638,7 +671,7 @@ As Frontend Developer, I want using Javascript version of SweetHome, so that I c
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-47fba7c4185fbce082b7165be867634e.webp" width="1250" height="733" class="img_RpFt">
 As engineer I want a personal ASRS (Automated Storage Retrieval System), so that I can tracking my components and assets.</p>
 </blockquote>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/posts/2025-05-27_personal-asrs#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背景">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/posts/2025-05-27_personal-asrs#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背�景" title="Direct link to 背景">​</a></h2>
 <p>從我的一系列廢文中：</p>
 <ul>
 <li><a href="https://flyskypie.github.io/posts/2018-02-03_inventory">純粹喝零件櫃</a></li>
@@ -824,53 +857,6 @@ As Space Engineer Player, I want to monitor inventory from physical world, so th
 </li>
 </ol>
 </section>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[RSS]]></title>
-        <id>https://flyskypie.github.io/posts/2025-04-27_homelab-rss</id>
-        <link href="https://flyskypie.github.io/posts/2025-04-27_homelab-rss"/>
-        <updated>2025-04-27T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[最近在自架 RSS 訂閱器，目前是使用 Tiny Tiny RSS，不過這裡還是把當時查資料時的其他候選方案簡單列一下。]]></summary>
-        <content type="html"><![CDATA[<p>最近在自架 RSS 訂閱器，目前是使用 Tiny Tiny RSS，不過這裡還是把當時查資料時的其他候選方案簡單列一下。</p>
-<ul>
-<li><a href="https://github.com/FreshRSS/FreshRSS" target="_blank" rel="noopener noreferrer">https://github.com/FreshRSS/FreshRSS</a>
-<ul>
-<li>11k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/miniflux/v2" target="_blank" rel="noopener noreferrer">https://github.com/miniflux/v2</a>
-<ul>
-<li>7.3k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/samuelclay/NewsBlur" target="_blank" rel="noopener noreferrer">https://github.com/samuelclay/NewsBlur</a>
-<ul>
-<li>7k ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/ssddanbrown/rss" target="_blank" rel="noopener noreferrer">https://github.com/ssddanbrown/rss</a>
-<ul>
-<li>542 ⭐</li>
-</ul>
-</li>
-<li><a href="https://github.com/torne/Tiny-Tiny-RSS" target="_blank" rel="noopener noreferrer">https://github.com/torne/Tiny-Tiny-RSS</a>
-<ul>
-<li>202 ⭐</li>
-</ul>
-</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="參考">參考<a href="https://flyskypie.github.io/posts/2025-04-27_homelab-rss#%E5%8F%83%E8%80%83" class="hash-link" aria-label="Direct link to 參考" title="Direct link to 參考">​</a></h2>
-<ul>
-<li>What is your favorite selhosted rss reader ? : r/selfhosted<!-- -->
-<ul>
-<li><a href="https://www.reddit.com/r/selfhosted/comments/12jky97/what_is_your_favorite_selhosted_rss_reader/" target="_blank" rel="noopener noreferrer">https://www.reddit.com/r/selfhosted/comments/12jky97/what_is_your_favorite_selhosted_rss_reader/</a></li>
-</ul>
-</li>
-</ul>]]></content>
         <author>
             <name>Wei Ji</name>
             <uri>https://github.com/FlySkyPie</uri>
