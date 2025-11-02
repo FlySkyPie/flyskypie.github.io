@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[1611],{21584:s=>{s.exports=JSON.parse('{"label":"Philosophy","permalink":"/posts/tags/philosophy","allTagsPath":"/posts/tags","count":26,"unlisted":false}')}}]);
