@@ -120,7 +120,7 @@ https://github.com/FlySkyPie/biomes-docs
 
 在原本使用 Bazel 處理的仰賴鏈中，還包含了一些指向 GitHub 的外部函式庫，例如：`catch2`、`eigen`、`robin-hood-hashing`、`zstd`...。
 
-在這方面我使用 [CPM.cmake](github.com/cpm-cmake/CPM.cmake) 來處理仰賴關係，只要目標有撰寫良好的 `CMakeLists.txt`，就可以把 C++ 專案當成套件拉進專案使用。
+在這方面我使用 [CPM.cmake](https://github.com/cpm-cmake/CPM.cmake) 來處理仰賴關係，只要目標有撰寫良好的 `CMakeLists.txt`，就可以把 C++ 專案當成套件拉進專案使用。
 
 ### 第三方函式庫
 
