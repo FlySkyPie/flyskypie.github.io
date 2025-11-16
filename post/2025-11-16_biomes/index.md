@@ -1,5 +1,5 @@
 ---
-slug: 2025-11-02_biomes
+slug: 2025-11-16_biomes
 authors: [weiji]
 tags: [Biomes]
 ---
@@ -7,7 +7,7 @@ tags: [Biomes]
 # Biomes 研究筆記 2
 
 <head>
-  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2025-11-02_biomes/00_cover.webp" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2025-11-16_biomes/00_cover.webp" />
 </head>
 
 ## `voxeloo` WASM 綁定
