@@ -1,7 +1,7 @@
 ---
 slug: 2025-11-02_biomes
 authors: [weiji]
-tags: [Philosophy]
+tags: [Biomes]
 ---
 
 # Biomes 研究筆記 1
@@ -133,7 +133,7 @@ OpenSimplexNoise 原本的 Git Repo 沒有 `CMakeLists.txt`，所以我 fork 之
 
 `opttritri.h` 和 `tribox3.h` 這兩個檔案原本是直接放在專案內的，我就稍微朔源了一下然後一樣加上 `CMakeLists.txt`。
 
-## `voxeloo` Python 榜定
+## `voxeloo` Python 綁定
 
 ![](04-voxeloo-py.webp)
 
