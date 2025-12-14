@@ -4,10 +4,37 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sat, 13 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 14 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Biomes 研究筆記 6]]></title>
+            <link>https://flyskypie.github.io/posts/2025-12-14_biomes</link>
+            <guid>https://flyskypie.github.io/posts/2025-12-14_biomes</guid>
+            <pubDate>Sun, 14 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Galois]]></description>
+            <content:encoded><![CDATA[
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="galois">Galois<a href="https://flyskypie.github.io/posts/2025-12-14_biomes#galois" class="hash-link" aria-label="Direct link to Galois" title="Direct link to Galois">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_galois-c1545fd97f5c0327e6931c437207ca2e.webp" width="1679" height="804" class="img_RpFt"></p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/biomes-galois" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/biomes-galois</a></li>
+<li><a href="https://www.npmjs.com/package/@flyskypie/biomes-galois-core" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/@flyskypie/biomes-galois-core</a></li>
+</ul>
+<p>上一篇已經說明過 Viewer/Editor 是以 Electron 實做，並且和一個副程式透過 <code>stdio</code> 通訊。</p>
+<p>經過研究發現該副程式的工作依然是採取 request-response 模式，並沒有太複雜的非同步通訊行為，因此我把處理副程式的實做改到 Nest.js 建立的 API 伺服器內，並且把原本用 Electron 呈現的 Viewer/Editor 重構成單純的 Web 應用程式。</p>
+<p>呈現結果如下：</p>
+<p><img decoding="async" loading="lazy" alt="viewer" src="https://flyskypie.github.io/assets/images/02_viewer-ed3efca605176b4ae6e23c005c8ad040.webp" width="1431" height="833" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" alt="editor" src="https://flyskypie.github.io/assets/images/03_editor-15f3da5acf1413467a134204cc5060b8.webp" width="1440" height="834" class="img_RpFt"></p>
+<p>Editor 給我的感覺有點失望，因為它實際上並沒有編輯的能力，只是畫面更完整一點的 Viewer，並且 Block 類的素材是沒辦法讀取的，這方面的問題預計暫時先跳過，不過已知的資訊有：</p>
+<ul>
+<li>Trace 到 <code>voxeloo</code> 實做，看起來是單純的斷言失敗，而失敗的原因看起來是缺少 <code>texture</code> 參數。</li>
+<li>Viewer 那邊是可以渲染方塊的，只是兩邊的 query 不太一樣。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="循環仰賴">循環仰賴<a href="https://flyskypie.github.io/posts/2025-12-14_biomes#%E5%BE%AA%E7%92%B0%E4%BB%B0%E8%B3%B4" class="hash-link" aria-label="Direct link to 循環仰賴" title="Direct link to 循環仰賴">​</a></h2>
+<p>Galois 和 <code>shared</code> 之間原本有循環仰賴的問題，我試著移除一些看起來不是核心功能的東西，並且把真的消除不掉的仰賴直接從 <code>shared</code> 內抽出來直接放進 Galois 內。</p>]]></content:encoded>
+            <category>Biomes</category>
+        </item>
         <item>
             <title><![CDATA[ModuleNotFoundError: No module named 'numpy.core.multiarray']]></title>
             <link>https://flyskypie.github.io/posts/2025-12-13_numpy-issue</link>
@@ -914,39 +941,6 @@ DeepSeek<!-- -->:DeepSeek<!-- --> V3.1 模型</p>
             <content:encoded><![CDATA[<p>醫院的領藥等待區有一些桌椅，桌子上貼著「禁止飲食」。然後我剛剛看到有個人坐在那邊打開流質食物的罐頭倒進管子開始進食（？）</p>
 <p>問：他有違反「禁止飲食」嗎？</p>]]></content:encoded>
             <category>Philosophy</category>
-        </item>
-        <item>
-            <title><![CDATA[PyPI 快取、鏡像 - devpi]]></title>
-            <link>https://flyskypie.github.io/posts/2025-06-17_devpi</link>
-            <guid>https://flyskypie.github.io/posts/2025-06-17_devpi</guid>
-            <pubDate>Tue, 17 Jun 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[最近在 Homelab 架了一個 PyPI 快取伺服器，選擇使用 devpi：]]></description>
-            <content:encoded><![CDATA[<p>最近在 Homelab 架了一個 PyPI 快取伺服器，選擇使用 <code>devpi</code>：</p>
-<ul>
-<li><a href="https://github.com/devpi/devpi" target="_blank" rel="noopener noreferrer">https://github.com/devpi/devpi</a>
-<ul>
-<li>1k ⭐</li>
-</ul>
-</li>
-</ul>
-<p>Docker 映像檔則是使用：</p>
-<ul>
-<li><a href="https://github.com/JonasAlfredsson/docker-devpi" target="_blank" rel="noopener noreferrer">https://github.com/JonasAlfredsson/docker-devpi</a>
-<ul>
-<li>41 ⭐</li>
-</ul>
-</li>
-</ul>
-<p>然後遇到了一個怪問題，在這邊隨便紀錄一下：</p>
-<div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">INFO  [IDX] Committing 2500 new documents to search index.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[IDX] Error during indexing in /usr/local/lib/python3.13/site-packages/devpi_web/whoosh_index.py:401:handler whoosh.index.LockError</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>症狀就是服務長時間佔用 CPU 長達一、兩天，連進去容器下 <code>top</code> 看到一堆像是殭屍的 process（實際上暫用 CPU 的只有一個）。</p>
-<p>最後只保留 <code>/+files</code> 這個資料夾、把其他快取的檔案刪掉再啟動伺服器就正常了。看起來像是 <code>devpi</code> 會下載整個 PyPI 的索引資料，但是同步完成前有什麼錯誤造成檔案損壞後無法從錯誤中恢復過來，所以一直保持「下載與處理索引」的狀態佔用 CPU。</p>]]></content:encoded>
-            <category>homelab</category>
-            <category>pypi</category>
-            <category>python</category>
-            <category>mirror</category>
-            <category>proxy</category>
-            <category>cache</category>
         </item>
     </channel>
 </rss>
