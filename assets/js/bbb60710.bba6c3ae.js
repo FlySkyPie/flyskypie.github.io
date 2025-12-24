@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[3531],{35090:s=>{s.exports=JSON.parse('{"label":"Biomes","permalink":"/posts/tags/biomes","allTagsPath":"/posts/tags","count":8,"unlisted":false}')}}]);
