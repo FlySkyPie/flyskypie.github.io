@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[5921],{58621:e=>{e.exports=JSON.parse('{"permalink":"/posts/tags/voxel","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Random post just like FB or Twitter.","blogTitle":"\u5ee2\u6587\u96dc\u8ac7"}')}}]);

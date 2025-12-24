@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[8290],{28834:s=>{s.exports=JSON.parse('{"label":"voxel","permalink":"/posts/tags/voxel","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);
