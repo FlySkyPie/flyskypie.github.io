@@ -4,10 +4,73 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Fri, 26 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 28 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[教練我想學 K8s]]></title>
+            <link>https://flyskypie.github.io/posts/2025-12-28_learn-k8s</link>
+            <guid>https://flyskypie.github.io/posts/2025-12-28_learn-k8s</guid>
+            <pubDate>Sun, 28 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近想學 K8s 然後陸續把 Homelab 的服務從 Docker Swarm 移過去，不過一直靜不下心好好讀它，思緒糊成一團，於是想說先把一些已經知道的事情整理一下。]]></description>
+            <content:encoded><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-cad795c3aa51f3adfc9ccdba21a8cf5e.webp" width="1024" height="1024" class="img_RpFt"></p>
+<p>最近想學 K8s 然後陸續把 Homelab 的服務從 Docker Swarm 移過去，不過一直靜不下心好好讀它，思緒糊成一團，於是想說先把一些已經知道的事情整理一下。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="動機">動機<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#%E5%8B%95%E6%A9%9F" class="hash-link" aria-label="Direct link to 動機" title="Direct link to 動機">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>因為我實際上還未實際使用 K8s，所以以下可以當成「對 K8s 的美好幻想」。</p></div></div>
+<p>簡單紀錄一下幾個讓我想學 K8s 的動機。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="image-volume">Image Volume<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#image-volume" class="hash-link" aria-label="Direct link to Image Volume" title="Direct link to Image Volume">​</a></h3>
+<p>前一陣子在鼓搗 Keyclaok，並且外掛了兩個組件：</p>
+<ul>
+<li><a href="https://github.com/keycloakify/keycloakify" target="_blank" rel="noopener noreferrer">https://github.com/keycloakify/keycloakify</a></li>
+<li><a href="https://github.com/p2-inc/keycloak-magic-link" target="_blank" rel="noopener noreferrer">https://github.com/p2-inc/keycloak-magic-link</a></li>
+</ul>
+<p>Keycloak 的插件機制是將 <code>*.jar</code> 檔案放到 <code>/opt/keycloak/providers/</code> 下，待啟動時被載入。</p>
+<p>在 OCI (Open Container Initiative) 佈署下處理這種這整合有兩種方法：</p>
+<ul>
+<li>建置階段：直接在 Dockerfile 用 COPY 完成組裝。</li>
+<li>佈署階段：透過 Volume 將 jar 檔案掛載進容器。</li>
+</ul>
+<p>前者缺乏彈性；後者 Docker 不支援，但是 K8s 支援<sup><a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#user-content-fn-k8s-image-volume-135bb9" id="user-content-fnref-k8s-image-volume-135bb9" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>。</p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>話說回來這幾天在讀 Docker Compose 的 spec 看到這東西(<code>image</code>)：</p><div class="language-json codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-json codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">// service.volumes.type</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  "type": {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    "type": "string",</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    "enum": ["bind", "volume", "tmpfs", "cluster", "npipe", "image"],</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    "description": "The mount type: bind for mounting host directories, volume for named volumes, tmpfs for temporary filesystems, cluster for cluster volumes, npipe for named pipes, or image for mounting from an image."</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  },</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>也許 Docker 也支援了說不定。</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="depends_on"><code>depends_on</code><a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#depends_on" class="hash-link" aria-label="Direct link to depends_on" title="Direct link to depends_on">​</a></h3>
+<p>Docker Compose 使用 <code>depends_on</code> 來延遲一些容器的啟動，避免仰賴其他容器的服務過早的啟動，例如：後端嘗試對還沒準備完成的資料庫進行連線。</p>
+<p>Docker Swarm 則不支援這個功能，它的邏輯是透過 health check：反正有仰賴的容器連線失敗會 health check 失敗，直接重啟容器直到成功為止。但是這樣的設計無法運行相對複雜的服務，例如：我嘗試在 Swarm 模式下運行 GVM (OpenVas) 並沒有成功過。</p>
+<p>而 K8s 則是透過 <code>initContainers</code> 的機制來處理這類需求。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="serverless">Serverless<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#serverless" class="hash-link" aria-label="Direct link to Serverless" title="Direct link to Serverless">​</a></h3>
+<p>工作時使用雲端的 Serverless 的服務 (GCP Cloud Run)，因此我對於自架 (selfhosted) 方案很感興趣，也有找到一些開源方案，不過它們多基於 K8s，例如：</p>
+<ul>
+<li><a href="https://github.com/fission/fission" target="_blank" rel="noopener noreferrer">https://github.com/fission/fission</a></li>
+<li><a href="https://github.com/openfaas/faas" target="_blank" rel="noopener noreferrer">https://github.com/openfaas/faas</a></li>
+<li><a href="https://github.com/knative/serving" target="_blank" rel="noopener noreferrer">https://github.com/knative/serving</a></li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>我這裡是指基於 OCI 的 Serverless，非 OCI 的 "Function based" Serverless 方案通常都有緊支援特定程式語言的限制。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="k3s-與遠端訪問">K3s 與遠端訪問<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#k3s-%E8%88%87%E9%81%A0%E7%AB%AF%E8%A8%AA%E5%95%8F" class="hash-link" aria-label="Direct link to K3s 與遠端訪問" title="Direct link to K3s 與遠端訪問">​</a></h2>
+<p>前幾天 (2025-12-23) 安裝完 K3s 設定遠端訪問時看到這個：</p>
+<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">$ kubectl config view</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">apiVersion: v1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">clusters:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- cluster:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    certificate-authority-data: DATA+OMITTED</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    server: https://127.0.0.1:6443</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  name: default</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">contexts:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- context:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    cluster: default</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    user: default</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  name: default</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">current-context: default</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">kind: Config</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">preferences: {}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">users:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- name: default</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  user:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    client-certificate-data: DATA+OMITTED</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    client-key-data: DATA+OMITTED</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>雖然知道 <code>certificate-authority-data</code> 大概是為了 HTTPS 的加密機制而準備的，不過我其實不知所以然。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="k8s-架構圖">K8s 架構圖<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#k8s-%E6%9E%B6%E6%A7%8B%E5%9C%96" class="hash-link" aria-label="Direct link to K8s 架構圖" title="Direct link to K8s 架構圖">​</a></h2>
+<p>查資料的時候看到這張架構圖：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_k8s-eb9afbe14a7063a5e37bbb93a531086e.webp" width="1602" height="2010" class="img_RpFt"></p>
+<p>我注意到 K8s 的組件之間通訊都是加密的，這讓我想到之前透過「Kubernetes The Hard Way」學習 K8s 的經驗。</p>
+<p>以及某篇文章，有個老兄抱怨 K8s 難用，伺服器癱瘓的原因似乎是憑證過期，並且它們最後在 AWS 找到了歸屬。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="kubernetes-the-hard-way">Kubernetes The Hard Way<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#kubernetes-the-hard-way" class="hash-link" aria-label="Direct link to Kubernetes The Hard Way" title="Direct link to Kubernetes The Hard Way">​</a></h2>
+<p><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way" target="_blank" rel="noopener noreferrer">Kubernetes The Hard Way</a> 是一個架設 K8s 的教學，但是不使用現成的安裝精靈，而是手動安裝與配置每一個組件。</p>
+<p>去年（2024 年 1 月）我其實試著依照這份指南的步驟嘗試在一台 x86 32 位元筆電上建立 K8s，雖然最後沒有持續下去，但是我隱約記得過程中一直在生成金鑰跟簽署憑證。</p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>我當時有試著將執行過得步驟寫成 Make/Ansible 腳本：</p><p><a href="https://github.com/FlySkyPie/k8s-builder-and-installer-for-x86-single-node" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/k8s-builder-and-installer-for-x86-single-node</a></p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="正確打開-k8s-的方式難道是密碼學">正確打開 K8s 的方式...難道是密碼學？<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#%E6%AD%A3%E7%A2%BA%E6%89%93%E9%96%8B-k8s-%E7%9A%84%E6%96%B9%E5%BC%8F%E9%9B%A3%E9%81%93%E6%98%AF%E5%AF%86%E7%A2%BC%E5%AD%B8" class="hash-link" aria-label="Direct link to 正確打開 K8s 的方式...難道是密碼學？" title="Direct link to 正確打開 K8s 的方式...難道是密碼學？">​</a></h2>
+<p>作為一個以開發前端業務邏輯為重心的開發者，密碼學相關的基礎概念可以說是很容易被輕忽的部份。或許我該好好的梳理以下對於加密技術的基礎概念作為。</p>
+<p>當然，如果我只是要作為 K8s 的使用者，這些知識似乎沒有這麼重要，不過我同時還是要在 Homelab 架設 K8s 的維護者，我不認為紮紮時時的把基礎打好有什麼壞處。</p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-k8s-image-volume-135bb9">
+<p>Use an Image Volume With a Pod | Kubernetes. <a href="https://kubernetes.io/docs/tasks/configure-pod-container/image-volumes/" target="_blank" rel="noopener noreferrer">https://kubernetes.io/docs/tasks/configure-pod-container/image-volumes/</a> <a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#user-content-fnref-k8s-image-volume-135bb9" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content:encoded>
+            <category>k8s</category>
+        </item>
         <item>
             <title><![CDATA[知識邊界與我的專題式自學法]]></title>
             <link>https://flyskypie.github.io/posts/2025-12-26_knowledge-boundary-and-project-based-learning</link>
@@ -412,7 +475,7 @@
 <p>在 <code>build.py</code> 所在的專案改變 numpy 的版本：</p>
 <div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">// pyproject.toml</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-    "numpy&gt;=1.26.0",</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+    "numpy==1.26.4",</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>直後重新用 <code>pyinstaller</code> 打包一份新的執行檔。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="推論過程">推論過程<a href="https://flyskypie.github.io/posts/2025-12-13_numpy-issue#%E6%8E%A8%E8%AB%96%E9%81%8E%E7%A8%8B" class="hash-link" aria-label="Direct link to 推論過程" title="Direct link to 推論過程">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="推論過程">推論過程<a href="https://flyskypie.github.io/posts/2025-12-13_numpy-issue#%E6%8E%A8%E8%AB%96%E9%81%8E%EF%BF%BD%EF%BF%BD%E7%A8%8B" class="hash-link" aria-label="Direct link to 推論過程" title="Direct link to 推論過程">​</a></h2>
 <p>查資料的過程會發現常見的錯誤訊息跟我的有一點點不同，不是 <code>numpy.core.multiarray</code> 而是 <code>numpy._core.multiarray</code>：<sup><a href="https://flyskypie.github.io/posts/2025-12-13_numpy-issue#user-content-fn-multiarray-error-451c99" id="user-content-fnref-multiarray-error-451c99" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></p>
 <blockquote>
 <p>E   DeprecationWarning: numpy.core.multiarray is deprecated and has been renamed to numpy._core.multiarray. The numpy._core namespace contains private NumPy internals and its use is discouraged, as NumPy internals can change without warning in any release. In practice, most real-world usage of numpy.core is to access functionality in the public NumPy API. If that is the case, use the public NumPy API. If not, you are using NumPy internals. If you would still like to access an internal attribute, use numpy._core.multiarray._ARRAY_API.</p>
@@ -1244,29 +1307,6 @@ DeepSeek<!-- -->:DeepSeek<!-- --> V3.1 模型</p>
 <p>有些動物會築巢，巢穴的本質是「溫暖的小窩」，相對於「險惡的自然環境」的淨土，而「家」就是人類的巢穴，更有「家是最後的堡壘」這麼一個概念，是美國人習以為常的概念。私以為台灣以治安良好而聞名，人與人相處的距離十分的近，「家以外是險惡的自然環境」的概念幾乎從台灣人的腦中消失，那麼在「自己的巢穴穿著不那麼有保護機能的拖鞋」似乎也顯得沒這麼奇怪了。</p>
 <p>※封面圖是 AI 生成的，沒有任何人類受到跟拍，<a href="https://flyskypie.github.io/assets/files/00_cover-0472616736adb0679ded5cb3f165596e.txt" target="_blank">提示詞在這裡</a>。</p>]]></content:encoded>
             <category>Philosophy</category>
-        </item>
-        <item>
-            <title><![CDATA[最近在學習 ACM (Access Control Model)]]></title>
-            <link>https://flyskypie.github.io/posts/2025-07-20_acm-learning</link>
-            <guid>https://flyskypie.github.io/posts/2025-07-20_acm-learning</guid>
-            <pubDate>Sun, 20 Jul 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[最近在開發公司產品的 IAM，然後我覺得就像：]]></description>
-            <content:encoded><![CDATA[
-<p>最近在開發公司產品的 IAM，然後我覺得就像：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00-52fa5cc0f4761ab6ff6a9608f918f9c7.webp" width="736" height="917" class="img_RpFt"></p>
-<p>ReBAC 這個 ACM 似乎算是相對新興的模型，中文資料沒有很多。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="名詞解釋">名詞解釋<a href="https://flyskypie.github.io/posts/2025-07-20_acm-learning#%E5%90%8D%E8%A9%9E%E8%A7%A3%E9%87%8B" class="hash-link" aria-label="Direct link to 名詞解釋" title="Direct link to 名詞解釋">​</a></h2>
-<ul>
-<li>ACM (Access Control Model)</li>
-<li>RBAC (Role-Based Access Control)</li>
-<li>ABAC (Attribute-Based Access Control)</li>
-<li>PBAC (Policy-Based Access Control)</li>
-<li>ReBAC (Relationship-Based Access Control)</li>
-<li>ACL (Access Control List)</li>
-<li>IAM (Identity and Access Management)</li>
-</ul>]]></content:encoded>
-            <category>AuthZ</category>
-            <category>Authorization</category>
         </item>
     </channel>
 </rss>
