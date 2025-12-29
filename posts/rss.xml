@@ -4,10 +4,86 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Sun, 28 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[從 Docker 開始的 Systemd 小宇宙]]></title>
+            <link>https://flyskypie.github.io/posts/2025-12-29_systemd-ish</link>
+            <guid>https://flyskypie.github.io/posts/2025-12-29_systemd-ish</guid>
+            <pubDate>Mon, 29 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[作為一個網頁前端導向的開發者，接觸 Systemd 的角度較資深一輩的工程師（或正規 CS (Computer Science) 路線出生的人）不太一樣，當前輩們已經在進行「Systemd 大一統」跟「No Systemd」之間的宗教戰爭的時候，我才在 Docker 容器內接觸內接觸第一個行程的問題 (PID 1 Problem)。]]></description>
+            <content:encoded><![CDATA[
+<p>作為一個網頁前端導向的開發者，接觸 Systemd 的角度較資深一輩的工程師（或正規 CS (Computer Science) 路線出生的人）不太一樣，當前輩們已經在進行「Systemd 大一統」跟「No Systemd」之間的宗教戰爭的時候，我才在 Docker 容器內接觸內接觸第一個行程的問題 (PID 1 Problem)。</p>
+<p>這裡紀錄並整理一下自己在這條路上的一些經歷和觀察。</p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>正確的術語應該是 OCI (Open Container Initiative) 容器，不過為了方便溝通本文會視情況使用俗稱的 Docker。另一方面，筆者在學習過程確實是先使用 Docker，使用 Docker 以外的 Runtime 其實也只是不久之前的事。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="dockerfile-中的-entrypoint-與-cmd"><code>Dockerfile</code> 中的 <code>ENTRYPOINT</code> 與 <code>CMD</code><a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#dockerfile-%E4%B8%AD%E7%9A%84-entrypoint-%E8%88%87-cmd" class="hash-link" aria-label="Direct link to dockerfile-中的-entrypoint-與-cmd" title="Direct link to dockerfile-中的-entrypoint-與-cmd">​</a></h2>
+<p>實際上 <code>ENTRYPOINT</code> 才決定了第一個行程 (Process) 是誰，<code>CMD</code> 只是後面被帶進去的參數。</p>
+<p>有沒有經歷過 <code>docker compose down</code> 但是某個服務 (service) 卻遲遲沒有被關閉，整個過程停頓了一會兒才把整套服務簇釋放掉？</p>
+<p>這十之八九是因為 <code>ENTRYPOINT</code>  沒有處理 <code>SIGTERM</code> 的能力造成的，開發環境或許不打緊，但是在生產環境如果有請求 (request) 掛著還沒處理完，然而容器被更新強制關閉的話，帶來的問題是十分致命的。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="容器編排-container-orchestration">容器編排 (Container Orchestration)<a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#%E5%AE%B9%E5%99%A8%E7%B7%A8%E6%8E%92-container-orchestration" class="hash-link" aria-label="Direct link to 容器編排 (Container Orchestration)" title="Direct link to 容器編排 (Container Orchestration)">​</a></h2>
+<p>在 Docker Compose 允許用 YAML 將多個容器組織起來構成服務簇，並且使用 <code>depends_on</code> 來設定仰賴關係並控制容器的啟動順序、<code>restart</code> 來設定重啟策略、<code>healthcheck</code> 判斷容器狀態。</p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>一個 service 其實可以設定多個容器（透過 <code>replicas</code> 或是 <code>scale</code>），不過為了簡化描述我在上面並沒有直接指出。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="多個-process-的容器">多個 Process 的容器<a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#%E5%A4%9A%E5%80%8B-process-%E7%9A%84%E5%AE%B9%E5%99%A8" class="hash-link" aria-label="Direct link to 多個 Process 的容器" title="Direct link to 多個 Process 的容器">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>以下不少經驗來自工作上面對的問題，專案細節就不透漏了。</p></div></div>
+<p>第一次遇到這樣的需求來自業務上的要求：</p>
+<blockquote>
+<p>將調用 SideFX Houdini 的 Python 伺服器容器化</p>
+</blockquote>
+<p>它要求運行一個授權伺服器 (License Server)，透過 Python 載入的 SDK 和這個伺服器之間會定時檢查彼此的存在。當時簡單使用 <code>entrypoint.sh</code> 、<code>&amp;</code> 語法和 <code>sleep</code> 把兩個行程跑了起來。</p>
+<hr>
+<p>後來遇到另外一個需要解決的問題：</p>
+<blockquote>
+<p>LibreOffice 作為一個無頭 (headless) 伺服器運作。
+Python 程式使用 UNO (Universal Network Objects) 界面與之溝通。
+佈署在單一容器的 Serverless 雲環境，因此只能有一個容器。</p>
+</blockquote>
+<p>這次我使用了 Supervisor 來解決問題<sup><a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#user-content-fn-supervisor-23c52a" id="user-content-fnref-supervisor-23c52a" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>。</p>
+<hr>
+<p>接下來的案例是真正讓我將 「Docker 內的 PID 1 問題」與「主機上的 PID 1 問題」連在一起的關鍵：LinuxServer.io。</p>
+<p>Blender 是一個面向 3D 設計師的軟體，它是 Maya 或 3ds Max 這類軟體的開源競爭者。LinuxServer.io 使用了某種黑魔法允許 Blender 被運行在容器內，使用者則透過去網頁瀏覽器與之互動，並且 Blender 並不是唯一被這樣操作的軟體，除此之外 LinuxServer.io 還封裝了各種 GUI 軟體到 Dokcer 容器內。</p>
+<p>LinuxServer.io 使用已經存在的實作 (KasmVNC) 來達成這些目標，不過魔法的關鍵在於：</p>
+<blockquote>
+<p>使用 s6-overlay 運行與管理包含 X Server 在內的多個程式。</p>
+</blockquote>
+<p><a href="https://github.com/just-containers/s6-overlay" target="_blank" rel="noopener noreferrer">s6-overlay</a> 不只能夠啟動多個程式，還能聲明程式與程式之間的仰賴關係，來依序啟動，甚至區分了「執行一次」和「持續在背景運作」的程式。</p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>因為不是本文重點，所以我沒有細談整個過程，大致上就是根據那個 Blender 容器的文件與原始碼找到實作的方式，留下 repo 供參考：</p><ul>
+<li><a href="https://github.com/linuxserver/docker-blender" target="_blank" rel="noopener noreferrer">https://github.com/linuxserver/docker-blender</a></li>
+<li><a href="https://github.com/linuxserver/docker-baseimage-kasmvnc" target="_blank" rel="noopener noreferrer">https://github.com/linuxserver/docker-baseimage-kasmvnc</a></li>
+</ul></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="嵌入式-linux-中的-etcinitdrcs">嵌入式 Linux 中的 <code>/etc/init.d/rcS</code><a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#%E5%B5%8C%E5%85%A5%E5%BC%8F-linux-%E4%B8%AD%E7%9A%84-etcinitdrcs" class="hash-link" aria-label="Direct link to 嵌入式-linux-中的-etcinitdrcs" title="Direct link to 嵌入式-linux-中的-etcinitdrcs">​</a></h2>
+<p>我曾經在嵌入式 Linux 看到這樣的東西：</p>
+<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">$ ls /etc/init.d</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rcK  rcS  S01syslogd  S02klogd  S02sysctl</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>當時我也根據需求寫了一個簡單的 <code>S03sdmnt</code> 腳本來掛載 SD 卡。</p>
+<p>後來才知道這是根據 System V Init 簡化後的設計。</p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>完整的故事跟細節我有寫另外一篇文章描述：</p><p><a href="https://flyskypie.github.io/blog/2022-12-03_3ds_linux_javascript_bad_apple/" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/blog/2022-12-03_3ds_linux_javascript_bad_apple/</a></p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="systemd-口味的容器編排軟體">Systemd 口味的容器編排軟體<a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#systemd-%E5%8F%A3%E5%91%B3%E7%9A%84%E5%AE%B9%E5%99%A8%E7%B7%A8%E6%8E%92%E8%BB%9F%E9%AB%94" class="hash-link" aria-label="Direct link to Systemd 口味的容器編排軟體" title="Direct link to Systemd 口味的容器編排軟體">​</a></h2>
+<p>Quadlet 是我試著轉向使用 Podman 得知的東西，雖然最後我並沒有用過就了，而是使用 <a href="https://github.com/containers/podman-compose" target="_blank" rel="noopener noreferrer">Podman Compose</a>，省得還要另外維護一份語法不一樣的東西。</p>
+<p>下面是 Quadlet 聲明一個服務的例子<sup><a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#user-content-fn-podman-orchestration-23c52a" id="user-content-fnref-podman-orchestration-23c52a" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup>：</p>
+<div class="language-ini codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-ini codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">[Unit]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Description=A minimal container</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[Container]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Use the centos image</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Image=quay.io/centos/centos:latest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># In the container we just run sleep</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Exec=sleep 60</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[Service]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Restart service when sleep finishes</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Restart=always</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[Install]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Start by default on boot</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WantedBy=multi-user.target default.target</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="從領域驅動domain-driven的角度來看這件事">從領域驅動（Domain-driven）的角度來看這件事<a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#%E5%BE%9E%E9%A0%98%E5%9F%9F%E9%A9%85%E5%8B%95domain-driven%E7%9A%84%E8%A7%92%E5%BA%A6%E4%BE%86%E7%9C%8B%E9%80%99%E4%BB%B6%E4%BA%8B" class="hash-link" aria-label="Direct link to 從領域驅動（Domain-driven）的角度來看這件事" title="Direct link to 從領域驅動（Domain-driven）的角度來看這件事">​</a></h2>
+<p>不難發現上述不同的工具都在解決幾個類似的問題：</p>
+<ul>
+<li>系統初始化（啟動與關機），如：掛起背景程式。</li>
+<li>根據背景程式的仰賴關係依序掛起，如：應用程式仰賴資料庫。</li>
+<li>處理背景程式的異常狀態，如：崩潰重啟。</li>
+</ul>
+<p>這些問題構成的問題領域 (Problem Domain) 可以被定位為系統初始化 (<a href="https://en.wikipedia.org/wiki/Init" target="_blank" rel="noopener noreferrer">System Init</a>) 和行程管理 (<a href="https://en.wikipedia.org/wiki/Process_supervision" target="_blank" rel="noopener noreferrer">Process Supervision</a>)。</p>
+<p>而上述工具則是這個 Problem Domain 對應的解決方案領域 (Solution Domain)。</p>
+<p>Systemd 則是這個 Solution Domain 中最有名的工具之一。</p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-supervisor-23c52a">
+<p>使用 Supervisor 來管理程式 | 《Docker —— 從入門到實踐》正體中文版. Retrieved 2025-12-29, from <a href="https://philipzheng.gitbook.io/docker_practice/cases/supervisor" target="_blank" rel="noopener noreferrer">https://philipzheng.gitbook.io/docker_practice/cases/supervisor</a> <a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#user-content-fnref-supervisor-23c52a" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-podman-orchestration-23c52a">
+<p>在 Podman 管理多個 container • 鰭狀漏斗. Retrieved 2025-12-29, from <a href="https://vrabe.tw/blog/manage-multi-containers-in-podman/" target="_blank" rel="noopener noreferrer">https://vrabe.tw/blog/manage-multi-containers-in-podman/</a> <a href="https://flyskypie.github.io/posts/2025-12-29_systemd-ish#user-content-fnref-podman-orchestration-23c52a" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content:encoded>
+            <category>systemd</category>
+        </item>
         <item>
             <title><![CDATA[教練我想學 K8s]]></title>
             <link>https://flyskypie.github.io/posts/2025-12-28_learn-k8s</link>
@@ -475,7 +551,7 @@
 <p>在 <code>build.py</code> 所在的專案改變 numpy 的版本：</p>
 <div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">// pyproject.toml</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-    "numpy&gt;=1.26.0",</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+    "numpy==1.26.4",</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>直後重新用 <code>pyinstaller</code> 打包一份新的執行檔。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="推論過程">推論過程<a href="https://flyskypie.github.io/posts/2025-12-13_numpy-issue#%E6%8E%A8%E8%AB%96%E9%81%8E%EF%BF%BD%EF%BF%BD%E7%A8%8B" class="hash-link" aria-label="Direct link to 推論過程" title="Direct link to 推論過程">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="推論過程">推論過程<a href="https://flyskypie.github.io/posts/2025-12-13_numpy-issue#%E6%8E%A8%E8%AB%96%E9%81%8E%E7%A8%8B" class="hash-link" aria-label="Direct link to 推論過程" title="Direct link to 推論過程">​</a></h2>
 <p>查資料的過程會發現常見的錯誤訊息跟我的有一點點不同，不是 <code>numpy.core.multiarray</code> 而是 <code>numpy._core.multiarray</code>：<sup><a href="https://flyskypie.github.io/posts/2025-12-13_numpy-issue#user-content-fn-multiarray-error-451c99" id="user-content-fnref-multiarray-error-451c99" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></p>
 <blockquote>
 <p>E   DeprecationWarning: numpy.core.multiarray is deprecated and has been renamed to numpy._core.multiarray. The numpy._core namespace contains private NumPy internals and its use is discouraged, as NumPy internals can change without warning in any release. In practice, most real-world usage of numpy.core is to access functionality in the public NumPy API. If that is the case, use the public NumPy API. If not, you are using NumPy internals. If you would still like to access an internal attribute, use numpy._core.multiarray._ARRAY_API.</p>
@@ -1292,20 +1368,6 @@ DeepSeek<!-- -->:DeepSeek<!-- --> V3.1 模型</p>
             <content:encoded><![CDATA[
 <p>LLM 生成文件的能力似乎被不少工程師視作「自動補全文件」的解方，畢竟很多工程師都很懶得寫文件，但是我認為「作為 LLM context input 的文件」跟「給人類閱讀的文件」應該嚴格區分，因為 LLM 能夠很輕易的產生或更新大量的文件，但是人類的認知負荷容量並不會因此提昇，每個人能夠處理的資訊量依然是固定的，大量的甚至可能灌水的生成式內容反而會大幅度的消耗人類的處理量能並且提高認知負荷。</p>
 <p>即便機械手臂在製造業能夠造成產能的提昇，實際上工廠依然是嚴格分離機械手臂和人類的工作區以免發生事故，只有特殊處理的「協作型機械手臂」能夠和人類直接處於同一個空間工作，這些協作型機械手臂透過特別的反饋來避免傷害工作人員。我認為 LLM 應該也有相同的問題，只是由比較不明顯的「精神傷害」取代傳統的「物理傷害」，因此不應該讓 LLM 的生成式內容「直接侵害人類的工作空間」。</p>]]></content:encoded>
-            <category>Philosophy</category>
-        </item>
-        <item>
-            <title><![CDATA[台灣人與拖鞋]]></title>
-            <link>https://flyskypie.github.io/posts/2025-09-08_slippers</link>
-            <guid>https://flyskypie.github.io/posts/2025-09-08_slippers</guid>
-            <pubDate>Mon, 08 Sep 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[拖鞋普遍給人的觀感都是隨便、不正式。我其實也這麼認為，不過我試著從反向的角度看這件事。]]></description>
-            <content:encoded><![CDATA[
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-ba2d8998e6985dc8d8bf4f977c144090.webp" width="1024" height="647" class="img_RpFt"></p>
-<p>拖鞋普遍給人的觀感都是隨便、不正式。我其實也這麼認為，不過我試著從反向的角度看這件事。</p>
-<p>台灣是四面環海的熱帶/副熱帶氣候，潮濕而且炎熱，硬要套上那種「西裝領帶」來自較為寒冷乾燥地區的文化似乎有點莫名其妙。</p>
-<p>有些動物會築巢，巢穴的本質是「溫暖的小窩」，相對於「險惡的自然環境」的淨土，而「家」就是人類的巢穴，更有「家是最後的堡壘」這麼一個概念，是美國人習以為常的概念。私以為台灣以治安良好而聞名，人與人相處的距離十分的近，「家以外是險惡的自然環境」的概念幾乎從台灣人的腦中消失，那麼在「自己的巢穴穿著不那麼有保護機能的拖鞋」似乎也顯得沒這麼奇怪了。</p>
-<p>※封面圖是 AI 生成的，沒有任何人類受到跟拍，<a href="https://flyskypie.github.io/assets/files/00_cover-0472616736adb0679ded5cb3f165596e.txt" target="_blank">提示詞在這裡</a>。</p>]]></content:encoded>
             <category>Philosophy</category>
         </item>
     </channel>
