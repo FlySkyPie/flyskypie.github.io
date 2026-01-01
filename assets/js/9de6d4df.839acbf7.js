@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[9512],{89102:s=>{s.exports=JSON.parse('{"label":"homelab","permalink":"/posts/tags/homelab","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[1417],{89716:s=>{s.exports=JSON.parse('{"label":"Type-C","permalink":"/posts/tags/type-c","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);

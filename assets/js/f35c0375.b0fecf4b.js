@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[7903],{16004:s=>{s.exports=JSON.parse('{"label":"\u8a98\u9a19\u5668","permalink":"/posts/tags/\u8a98\u9a19\u5668","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);

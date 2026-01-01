@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[5592],{35039:s=>{s.exports=JSON.parse('{"label":"proxy","permalink":"/posts/tags/proxy","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);

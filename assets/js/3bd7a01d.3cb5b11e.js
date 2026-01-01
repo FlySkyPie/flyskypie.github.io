@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[3896],{78789:e=>{e.exports=JSON.parse('{"label":"goxel","permalink":"/blog/tags/goxel","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

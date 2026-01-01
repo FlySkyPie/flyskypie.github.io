@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[366],{31648:e=>{e.exports=JSON.parse('{"label":"opensource","permalink":"/blog/tags/opensource","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
