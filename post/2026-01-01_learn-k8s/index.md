@@ -40,7 +40,7 @@ kubectl create -f sample.yaml
 kubectl port-forward awesome-pod 3001:8080
 ```
 
-接著就可以透過這個連結訪問剛剛建立的 Pod 了： http://localhost:3001
+接著就可以透過這個連結訪問剛剛建立的 Pod 了： `http://localhost:3001`
 
 
 ![](./01_k8s-pod.webp)
@@ -119,7 +119,7 @@ kubectl create -f sample.yaml
 kubectl port-forward service/awesome-service 3002:3001
 ```
 
-只是這次我們連線的目標不是 Pod 而是 Service： http://localhost:3002
+只是這次我們連線的目標不是 Pod 而是 Service： `http://localhost:3002`
 
 ![](./03_k8s-service.webp)
 
@@ -166,7 +166,7 @@ spec:
 kubectl create -f sample.yaml
 ```
 
-這次從 Node 的 IP 訪問（例如： http://192.168.0.123:30390）
+這次從 Node 的 IP 訪問（例如： `http://192.168.0.123:30390`）
 
 ![](./05_k8s-nodeport.webp)
 
@@ -219,7 +219,7 @@ spec:
       nodePort: 30390
 ```
 
-你可以用瀏覽器打開它（例如： http://192.168.0.123:30390）， 不過你可能只會看到相同的 `os.hostname`，試試多執行幾次 `curl`：
+你可以用瀏覽器打開它（例如： `http://192.168.0.123:30390`）， 不過你可能只會看到相同的 `os.hostname`，試試多執行幾次 `curl`：
 
 ```shell
 curl http://192.168.0.123:30390/ | jq .os.hostname
