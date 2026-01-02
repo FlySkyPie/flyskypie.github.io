@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[55123],{39332:s=>{s.exports=JSON.parse('{"label":"k8s","permalink":"/posts/tags/k-8-s","allTagsPath":"/posts/tags","count":4,"unlisted":false}')}}]);

@@ -2,11 +2,40 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2026-01-01T00:00:00.000Z</updated>
+    <updated>2026-01-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[安裝 K3s 與遠端連線]]></title>
+        <id>https://flyskypie.github.io/posts/2026-01-02_learn-k8s</id>
+        <link href="https://flyskypie.github.io/posts/2026-01-02_learn-k8s"/>
+        <updated>2026-01-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[安裝]]></summary>
+        <content type="html"><![CDATA[
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="安裝">安裝<a href="https://flyskypie.github.io/posts/2026-01-02_learn-k8s#%E5%AE%89%E8%A3%9D" class="hash-link" aria-label="Direct link to 安裝" title="Direct link to 安裝">​</a></h2>
+<p>懶人安裝法：</p>
+<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">curl -sfL https://get.k3s.io | sh - </span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>檢查一下有沒有正常：</p>
+<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">sudo k3s kubectl get node </span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="設定">設定<a href="https://flyskypie.github.io/posts/2026-01-02_learn-k8s#%E8%A8%AD%E5%AE%9A" class="hash-link" aria-label="Direct link to 設定" title="Direct link to 設定">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_kubectl-f4117048f786e3eade61a1e20c3be2e3.webp" width="1571" height="1058" class="img_RpFt"></p>
+<p>從安裝 K3s 的機器複製 <code>/etc/rancher/k3s/k3s.yaml</code> 到想要遠端連線的機器（Client 端）的 <code>~/.kube/config</code>。<sup><a href="https://flyskypie.github.io/posts/2026-01-02_learn-k8s#user-content-fn-cluster-access-f0e5eb" id="user-content-fnref-cluster-access-f0e5eb" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>要留意 K8s 的憑證會過期這件事。</p></div></div>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2026-01-02_learn-k8s#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-cluster-access-f0e5eb">
+<p>Cluster Access | K3s. Retrieved 2026-01-02, from <a href="https://docs.k3s.io/cluster-access" target="_blank" rel="noopener noreferrer">https://docs.k3s.io/cluster-access</a> <a href="https://flyskypie.github.io/posts/2026-01-02_learn-k8s#user-content-fnref-cluster-access-f0e5eb" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="k8s" term="k8s"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[K8s 學習筆記 - Pod 和它快樂的小夥伴們]]></title>
         <id>https://flyskypie.github.io/posts/2026-01-01_learn-k8s</id>
@@ -241,7 +270,7 @@ Python 程式使用 UNO (Universal Network Objects) 界面與之溝通。
 <p><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way" target="_blank" rel="noopener noreferrer">Kubernetes The Hard Way</a> 是一個架設 K8s 的教學，但是不使用現成的安裝精靈，而是手動安裝與配置每一個組件。</p>
 <p>去年（2024 年 1 月）我其實試著依照這份指南的步驟嘗試在一台 x86 32 位元筆電上建立 K8s，雖然最後沒有持續下去，但是我隱約記得過程中一直在生成金鑰跟簽署憑證。</p>
 <div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>我當時有試著將執行過得步驟寫成 Make/Ansible 腳本：</p><p><a href="https://github.com/FlySkyPie/k8s-builder-and-installer-for-x86-single-node" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/k8s-builder-and-installer-for-x86-single-node</a></p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="正確打�開-k8s-的方式難道是密碼學">正確打開 K8s 的方式...難道是密碼學？<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#%E6%AD%A3%E7%A2%BA%E6%89%93%E9%96%8B-k8s-%E7%9A%84%E6%96%B9%E5%BC%8F%E9%9B%A3%E9%81%93%E6%98%AF%E5%AF%86%E7%A2%BC%E5%AD%B8" class="hash-link" aria-label="Direct link to 正確打開 K8s 的方式...難道是密碼學？" title="Direct link to 正確打開 K8s 的方式...難道是密碼學？">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="正確打開-k8s-的方式難道是密碼學">正確打開 K8s 的方式...難道是密碼學？<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#%E6%AD%A3%E7%A2%BA%E6%89%93%E9%96%8B-k8s-%E7%9A%84%E6%96%B9%E5%BC%8F%E9%9B%A3%E9%81%93%E6%98%AF%E5%AF%86%E7%A2%BC%E5%AD%B8" class="hash-link" aria-label="Direct link to 正確打開 K8s 的方式...難道是密碼學？" title="Direct link to 正確打開 K8s 的方式...難道是密碼學？">​</a></h2>
 <p>作為一個以開發前端業務邏輯為重心的開發者，密碼學相關的基礎概念可以說是很容易被輕忽的部份。或許我該好好的梳理以下對於加密技術的基礎概念作為。</p>
 <p>當然，如果我只是要作為 K8s 的使用者，這些知識似乎沒有這麼重要，不過我同時還是要在 Homelab 架設 K8s 的維護者，我不認為紮紮時時的把基礎打好有什麼壞處。</p>
 <section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-12-28_learn-k8s#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
@@ -1293,80 +1322,5 @@ $$</p>
             <uri>https://github.com/FlySkyPie</uri>
         </author>
         <category label="LLM" term="LLM"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[花式打 LLM]]></title>
-        <id>https://flyskypie.github.io/posts/2025-10-05_llm-api-chain</id>
-        <link href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain"/>
-        <updated>2025-10-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[前情提要]]></summary>
-        <content type="html"><![CDATA[
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
-<blockquote>
-<p>後來我才知道這是某種 bug，LiteLLM 以明碼將資料寫入資料庫後卻試圖用 salt 將資料解密<sup><a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#user-content-fn-litellm-bug-fb5197" id="user-content-fnref-litellm-bug-fb5197" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>，在這之前已經花了好幾個好時進行故障排除以及跟 LLM 對話的鬼打牆，十分高血壓。</p>
-</blockquote>
-<p>上週(2025-09-28)折騰了一番還是沒能把 LiteLLM 跟 LangFuse 整合在一起。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="本文">本文<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#%E6%9C%AC%E6%96%87" class="hash-link" aria-label="Direct link to 本文" title="Direct link to 本文">​</a></h2>
-<p>透過純參數的方式配置而不是在 GUI 設定 callback，我成功將 LiteLLM 和 LangFuse 整合在一起並且佈署到我的 Homelab 去，並且試著跑了一下 AnythingLLM 觀察一下攔截提示詞的效果，現在整個 LLM 的呼叫鏈如下：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_llm-api-chain-d5f1e8289d8655a31c5d834d1bb53942.webp" width="1741" height="539" class="img_RpFt"></p>
-<p>應用程式 →
-LiteLLM →
-LangFuse | OpenRouter →
-DeepInfra →
-DeepSeek<!-- -->:DeepSeek<!-- --> V3.1 模型</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="應用程式-application">應用程式 (Application)<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F-application" class="hash-link" aria-label="Direct link to 應用程式 (Application)" title="Direct link to 應用程式 (Application)">​</a></h3>
-<ul>
-<li><a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="noopener noreferrer">https://github.com/Mintplex-Labs/anything-llm</a>
-<ul>
-<li>48.7k ⭐</li>
-</ul>
-</li>
-</ul>
-<p>一般作為 Client 呼叫 OpenAI Compatibility API 的應用程式，雖然我使用 AnythingLLM 實驗，但是也可以是非常簡單的 HTTP Call，例如：</p>
-<div class="language-typescript codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-typescript codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">const</span><span class="token plain"> url </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"http://web.litellm.arachne/v1/chat/completions"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">const</span><span class="token plain"> headers </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token string-property property" style="color:#36acaa">"Authorization"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token template-string template-punctuation string" style="color:#e3116c">`</span><span class="token template-string string" style="color:#e3116c">Bearer </span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:#393A34">${</span><span class="token template-string interpolation">env</span><span class="token template-string interpolation punctuation" style="color:#393A34">.</span><span class="token template-string interpolation constant" style="color:#36acaa">LLM_GATEWAY_API_KEY</span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:#393A34">}</span><span class="token template-string template-punctuation string" style="color:#e3116c">`</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string-property property" style="color:#36acaa">"Content-Type"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"application/json"</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">const</span><span class="token plain"> payload </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token string-property property" style="color:#36acaa">"model"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"deepseek/deepseek-chat-v3.1:free"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token string-property property" style="color:#36acaa">"messages"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token string-property property" style="color:#36acaa">"role"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"system"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string-property property" style="color:#36acaa">"content"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"You are a helpful assistant."</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token string-property property" style="color:#36acaa">"role"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"user"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string-property property" style="color:#36acaa">"content"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Hello!"</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token string-property property" style="color:#36acaa">"modalities"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token string" style="color:#e3116c">"text"</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">const</span><span class="token plain"> response </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">await</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">fetch</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">url</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  method</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"POST"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  headers</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  body</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token constant" style="color:#36acaa">JSON</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">stringify</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">payload</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="llm-gateway">LLM Gateway<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#llm-gateway" class="hash-link" aria-label="Direct link to LLM Gateway" title="Direct link to LLM Gateway">​</a></h3>
-<ul>
-<li><a href="https://github.com/BerriAI/litellm" target="_blank" rel="noopener noreferrer">https://github.com/BerriAI/litellm</a>
-<ul>
-<li>28.6k ⭐</li>
-</ul>
-</li>
-</ul>
-<p>我使用 LiteLLM 作為 LLM Gateway 方案，它的作用是作為一個代理伺服器，隔在應用程式和真正的 LLM API 之間。</p>
-<p>有什麼作用？它可以儲存真實的、由第三方服務（例如：OpenAI、Google）提供的 API Key，然後對組織或團隊的其他人分發 Gateway 產生的 API Key，就能分別管理與控制每個人的流量與額度；還有將多個不同的 LLM 來源其中與統一到一個地方管理...等等的好處。</p>
-<p>不過就我的目的單純是為了側錄上下文與提示詞，用來分析到底是應用程式的提示詞工程有問題還是 LLM 本身的性能問題。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="llm-observability">LLM Observability<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#llm-observability" class="hash-link" aria-label="Direct link to LLM Observability" title="Direct link to LLM Observability">​</a></h3>
-<ul>
-<li><a href="https://github.com/langfuse/langfuse" target="_blank" rel="noopener noreferrer">https://github.com/langfuse/langfuse</a>
-<ul>
-<li>15.9k ⭐</li>
-</ul>
-</li>
-</ul>
-<p>就像 Grafana Loki 能夠儲存 Log 並提供可觀測性一樣，不過 LLM Observability 更注重 LLM API 的輸入和輸出，這些紀錄將作為調整 RAG 或微調參數的重要依據。那些「免費使用的 LLM」多數也是在幹這件事，讓哪些免費仔作為幫忙生產資料的工具，所以何不自己在本地就先存一份呢？</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="openrouter">OpenRouter<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#openrouter" class="hash-link" aria-label="Direct link to OpenRouter" title="Direct link to OpenRouter">​</a></h3>
-<p>OpenRouter 本身也有 Gateway 的作用，除了它能夠在多個 Provider 之間平衡負載來提高可用性之外，作為一個 LLM API 代理，隔在你和 Provider 之間，發揮類似 VPN 的作用，讓 Provider 更難對使用者進行鎖定。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="llm-provider">LLM Provider<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#llm-provider" class="hash-link" aria-label="Direct link to LLM Provider" title="Direct link to LLM Provider">​</a></h3>
-<p>OpenAI、Google、Claude 都是所謂的 LLM 供應商，也就是你可以付錢給它們，它們給你 LLM 服務。</p>
-<p>DeepInfra 比較不一樣的地方是它只把自己定位在「LLM 基礎設施」。舉例來說，DeepSeek<!-- -->:DeepSeek<!-- --> V3.1 是一個有開放權重的 LLM，你有設備的話大可以下載模型後自己讓 GPU 運行 LLM，只是這樣做的成本可能太高，於是你選擇外包，DeepInfra 就是這樣的存在。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="結論">結論<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#%E7%B5%90%E8%AB%96" class="hash-link" aria-label="Direct link to 結論" title="Direct link to 結論">​</a></h2>
-<p>一個 LLM Provider 背後可能有很多模型，而一個 Gateway 背後也可以代理很多 LLM Provider，
-模型不應該閉源成為不可取代的存在；LLM Provider 也不應該是獨一無二不可取代的存在，這樣的話會產生供應商鎖定，
-多樣性是生命的出路，更是自由的道路，即便這可能是一個花式砸自己腳的道路。</p>
-<p>至於那些閉源工具？只要它支援第三方 LLM API，我就用可觀測工具把它的提示詞挖出來瞧瞧。</p>
-<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
-<ol>
-<li id="user-content-fn-litellm-bug-fb5197">
-<p>[Bug]: LangFuse callback failed to config in the LiteLLM Proxy Admin UI Panel · Issue #14854 · BerriAI/litellm. Retrieved 2025-10-01, from <a href="https://github.com/BerriAI/litellm/issues/14854" target="_blank" rel="noopener noreferrer">https://github.com/BerriAI/litellm/issues/14854</a> <a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain#user-content-fnref-litellm-bug-fb5197" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="LLM Proxy" term="LLM Proxy"/>
-        <category label="LLM Gateway" term="LLM Gateway"/>
-        <category label="LLM Observability" term="LLM Observability"/>
     </entry>
 </feed>
