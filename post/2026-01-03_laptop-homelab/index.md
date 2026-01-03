@@ -6,6 +6,10 @@ tags: [homelab]
 
 # 筆記型 Homelab 飼養注意事項
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-01-03_laptop-homelab/00_cover.webp" />
+</head>
+
 ![](./00_cover.webp)
 
 ## 背景
