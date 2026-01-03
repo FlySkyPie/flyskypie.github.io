@@ -79,9 +79,8 @@ spec:
       targetPort: 8080
 ```
 
-完整的檔案如下：
-
-:::spoiler sample.yaml
+<details>
+<summary>完整的檔案如下： sample.yaml</summary>
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -109,7 +108,7 @@ spec:
       port: 3001
       targetPort: 8080
 ```
-:::
+</details>
 
 ```shell
 # 用一樣的指令把服務帶起來：
