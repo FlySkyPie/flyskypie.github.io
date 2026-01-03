@@ -27,7 +27,8 @@
             <guid>https://flyskypie.github.io/posts/2026-01-03_laptop-homelab</guid>
             <pubDate>Sat, 03 Jan 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[背景]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-ea0a7e8308dd3ceda73995b20ee0532a.webp" width="1110" height="537" class="img_RpFt"></p>
+            <content:encoded><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-ea0a7e8308dd3ceda73995b20ee0532a.webp" width="1110" height="537" class="img_RpFt"></p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="背景">背景<a href="https://flyskypie.github.io/posts/2026-01-03_laptop-homelab#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背景">​</a></h2>
 <p>我的 Homelab 是透過筆電和 USB 外接 DAS (Direct Attached Storage) 建構的，並且採過一些小坑。最近在建置新的節點時，發現我把相關的資訊分散在不同的筆記和 IaC (Infrastructure as Code) 裡面，於是想說趁這個機會整理一下資訊。</p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="電池充電上限">電池充電上限<a href="https://flyskypie.github.io/posts/2026-01-03_laptop-homelab#%E9%9B%BB%E6%B1%A0%E5%85%85%E9%9B%BB%E4%B8%8A%E9%99%90" class="hash-link" aria-label="Direct link to 電池充電上限" title="Direct link to 電池充電上限">​</a></h2>
