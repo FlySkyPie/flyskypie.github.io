@@ -2,11 +2,49 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2026-01-03T00:00:00.000Z</updated>
+    <updated>2026-01-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[K8s 學習筆記 - K8s 只是框架]]></title>
+        <id>https://flyskypie.github.io/posts/2026-01-05_k8s-is-framework</id>
+        <link href="https://flyskypie.github.io/posts/2026-01-05_k8s-is-framework"/>
+        <updated>2026-01-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[K8s 不是一個完整解決方案，K8s 只是框架。]]></summary>
+        <content type="html"><![CDATA[
+<blockquote>
+<p>K8s 不是一個完整解決方案，K8s 只是框架。</p>
+</blockquote>
+<p>驚不驚喜？意不意外？</p>
+<p>當你安裝了 Docker 之後就可以開始打包 image 並運行程式，甚至可以使用 Dokcer Compose 指令開始進行容器編排 (Orchestration)。</p>
+<p>反觀，對於一個 K8s 使用者而言，生態系內有很多「口味」供你選擇：Minikube、MicroK8s、K3s、GKE、EKS...但是當你選擇原味 (Vanilla)時，你可能會發現歷經一番波折安裝完成之後，你還是什麼都不能幹：不能正常建立網路連線、不能正常的掛載持久化實體 (Volume)...</p>
+<p>為什麼？因為 K8s 本身不是開箱即用解決方案，它只是一種框架。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="不是開箱即用的網路">不是開箱即用的網路<a href="https://flyskypie.github.io/posts/2026-01-05_k8s-is-framework#%E4%B8%8D%E6%98%AF%E9%96%8B%E7%AE%B1%E5%8D%B3%E7%94%A8%E7%9A%84%E7%B6%B2%E8%B7%AF" class="hash-link" aria-label="Direct link to 不是開箱即用的網路" title="Direct link to 不是開箱即用的網路">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>這個段落會多次提及 OSI 的 L4 和 L7，對兩者差異不清楚的讀者建議先去查點資料，不然閱讀起來可能會有點吃力。</p></div></div>
+<p>我在<a href="https://flyskypie.github.io/posts/2026-01-01_learn-k8s/" target="_blank" rel="noopener noreferrer">前一篇文章</a>中介紹了 Service，以及內網模式 ClusterIP 與節點開埠 NodePort，即便是 NodePort 也不像是標準佈署使用的模式，因為它只能開奇怪的埠號。這是因為 Service 其實還有兩個生產環境在使用的模式：LoadBalancer 模式或是加掛一個 Ingress。</p>
+<p>以 ServiceLB (LoadBalancer) 為例，K8s 只提供一個 L4 的抽象層，具體的實做依然需要別人來完成：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_lb-controller-9a70bb19a4e58307ba30e54f7e361770.webp" width="917" height="458" class="img_RpFt"></p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>LB (LoadBalancer) Controller 是一個方便讀者理解的稱呼，實際情況比較複雜，有其他專門的術語用來稱呼這個東西。</p></div></div>
+<p>在雲端環境（如 Google, AWS）這是由雲端供應商實作的，可能是一團閉源商業軟體和硬體級 LB 整合而成；在 K3s 中這是由 <a href="https://github.com/k3s-io/klipper-lb" target="_blank" rel="noopener noreferrer">klipper-lb</a> 透過 <code>hostPort</code> 實作的。</p>
+<p>Ingress 也是相同的狀況，K8s 只提供一個 L7 的抽象層，具體的實做依然需要別人來完成：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_ingress-controller-b0104efe4f8fed322b5ed08be65ff649.webp" width="1224" height="447" class="img_RpFt"></p>
+<p>實作可以是 Nginx 也可以是 Traefik。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="不是開箱即用的持久化儲存">不是開箱即用的持久化儲存<a href="https://flyskypie.github.io/posts/2026-01-05_k8s-is-framework#%E4%B8%8D%E6%98%AF%E9%96%8B%E7%AE%B1%E5%8D%B3%E7%94%A8%E7%9A%84%E6%8C%81%E4%B9%85%E5%8C%96%E5%84%B2%E5%AD%98" class="hash-link" aria-label="Direct link to 不是開箱即用的持久化儲存" title="Direct link to 不是開箱即用的持久化儲存">​</a></h2>
+<p>K8s 在設計上就是一個分散式運行的框架，當 Pod 可能分散在多個不同的主機（節點）時，我們就不能像 Docker 那樣直接用某個路徑當作持久化實體。</p>
+<p>在 K8s 的世界中，Volume 通常是一個 SDS (Software-defined storage)；
+在 K8s 的世界中，網路線就是 SATA 線。</p>
+<p>細節我不在此解釋，簡單來說在 K8s 要幫 Container 掛載 Volume 需要經過層層抽象，並且最後實際的儲存實體並不在 K8s 內實作：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_storage-backend-e7a9cba39ddcedd48bddc96779f8936b.webp" width="1089" height="715" class="img_RpFt"></p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>你也可以在 K8s 設定 <code>storageClassName: local-storage</code> 的 Volume，但是這樣你可能需要額外配置讓 Pod 只能佈署在特定的 Node 上。</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>Storage Backend 同樣是一個方便讀者理解的稱呼，並不是 K8s 內的標準術語。</p></div></div>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="k8s" term="k8s"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[老兄，你真的找錯人推銷桌面照明了]]></title>
         <id>https://flyskypie.github.io/posts/2026-01-03_desktop-lighting</id>
@@ -1215,38 +1253,5 @@ Python 程式使用 UNO (Universal Network Objects) 界面與之溝通。
             <uri>https://github.com/FlySkyPie</uri>
         </author>
         <category label="Biomes" term="Biomes"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[「演出」]]></title>
-        <id>https://flyskypie.github.io/posts/2025-11-02_perform</id>
-        <link href="https://flyskypie.github.io/posts/2025-11-02_perform"/>
-        <updated>2025-11-02T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[我曾經有一個同事，是動畫師之類的，雖然不同部門、不算熟、也沒什麼深入聊過，但是我認為我從他身上學到一個很重要的概念—「演出」。]]></summary>
-        <content type="html"><![CDATA[
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/00_cover-7ccf2a7910d8e6703903d1a923778cc1.webp" width="1024" height="725" class="img_RpFt"></p>
-<p>我曾經有一個同事，是動畫師之類的，雖然不同部門、不算熟、也沒什麼深入聊過，但是我認為我從他身上學到一個很重要的概念—「演出」。</p>
-<p>他經常會用「演出」來形容一段角色動畫，也經常在做動畫前先自己用肢體表現一次，呈現多種角色動作的形式。當下我其實沒有太多想法，直到後來我才隱約知道他說的「演出」是什麼意思。</p>
-<p>這是當下我知道的「演出」：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_Mixamo_character_animation_example_grid-92b6cb9d82dbffc5a67b2539721701c4.webp" width="810" height="556" class="img_RpFt"></p>
-<p>後來我看到了：</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G9qzPEviH5g?si=5HmVPm6CXI_i7Stn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-<p>這是透過動作捕捉器，直接將人類演員的肢體動作錄製成能在遊戲內使用的動畫影格，動作更自然也不用讓動畫師手工調整。</p>
-<p>接著我看到了：</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SmTNegGiv9M?si=_fFgU8zTF6ZHHUVz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-<p>很多短影音往往包含了有趣的上下文與故事，但是仔細觀察會發現這個影片中的角色的動作跟前一個動作捕捉演員有著接近的神韻：一些明顯且誇大的神情或肢體「演出」。</p>
-<hr>
-<p>岔開一下話題，這是一個我很享受的 Factorio 影片：</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hYcAsNCH7Zc?si=nSgaZ0DnV3W7TsJh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-<p>然後這是那個 Factorio 影片的幕後花絮：</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HNocVPYDLo8?si=ZIgi2BAL160cWI8d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-<p>可以發現影片的整體節奏並不像正片一樣緊湊，作者的情緒起伏也沒這麼浮誇。</p>
-<p>作者也表示，劇本是模仿 3Blue1Brown 的緒事風格「事情可能怎麼被發現」，而刻意營造出「他自己發現」的氛圍。</p>
-<hr>
-<p>簡單來說，「演出」一種精細設計的虛假呈現；是一種謊言，如果任何戲劇作品出現不現實的情節，那十之八九是一種「演出」。</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="Philosophy" term="Philosophy"/>
     </entry>
 </feed>
