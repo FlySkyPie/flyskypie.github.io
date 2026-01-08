@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="blog-wrapper blog-post-page plugin-blog plugin-id-post" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.1">
+<title data-rh="true">LLM 可觀測筆記 | 工程屍 FlyPie 的異想世界</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://flyskypie.github.io/posts/2026-01-08_llm-observability"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:locale" content="zh_tw"><meta data-rh="true" property="og:title" content="LLM 可觀測筆記 | 工程屍 FlyPie 的異想世界"><meta data-rh="true" name="description" content="其實自我架設 LLM 可觀測工具 (2025-10-05) 以後，陸續嘗試幾款 LLM 工具有獲得一些觀察，不過當時因為覺得缺乏嚴謹考證所以沒有發文，不過現在我可以說是往下一個階段前進了（？），大概也沒有做嚴謹實驗的計畫，就把當時的紀錄發出來水一篇廢文好了。"><meta data-rh="true" property="og:description" content="其實自我架設 LLM 可觀測工具 (2025-10-05) 以後，陸續嘗試幾款 LLM 工具有獲得一些觀察，不過當時因為覺得缺乏嚴謹考證所以沒有發文，不過現在我可以說是往下一個階段前進了（？），大概也沒有做嚴謹實驗的計畫，就把當時的紀錄發出來水一篇廢文好了。"><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2026-01-08T00:00:00.000Z"><meta data-rh="true" property="article:author" content="https://github.com/FlySkyPie"><meta data-rh="true" property="article:tag" content="LLM Proxy,LLM Gateway,LLM Observability"><meta data-rh="true" property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-01-08_llm-observability/00_cover.webp"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://flyskypie.github.io/posts/2026-01-08_llm-observability"><link data-rh="true" rel="alternate" href="https://flyskypie.github.io/posts/2026-01-08_llm-observability" hreflang="en"><link data-rh="true" rel="alternate" href="https://flyskypie.github.io/posts/2026-01-08_llm-observability" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="工程屍 FlyPie 的異想世界 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="工程屍 FlyPie 的異想世界 Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="工程屍 FlyPie 的異想世界 JSON Feed">
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/posts/rss.xml" title="工程屍 FlyPie 的異想世界 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/posts/atom.xml" title="工程屍 FlyPie 的異想世界 Atom Feed">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.4a9022c6.css">
+<script src="/assets/js/runtime~main.fc84cfdd.js" defer="defer"></script>
+<script src="/assets/js/main.b17f438a.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_LBgp" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_RjML themedComponent--light_RyNI"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_RjML themedComponent--dark_ntqO"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/docs/the-key-of-huanche/">專案文件</a><a class="navbar__item navbar__link" href="/blogs">數位手記</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/posts">廢文雜談</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_s2nU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_DonJ colorModeToggle_KBLq"><button class="clean-btn toggleButton_qwn5 toggleButtonDisabled_tRn_" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_bYdl"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_D9Q4"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Cbrq"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_GUBX"><div class="container margin-vert--lg"><div class="row"><aside class="col col--3"><nav class="sidebar_UgN6 thin-scrollbar" aria-label="Blog recent posts navigation"><div class="sidebarItemTitle_PkUw margin-bottom--md">Recent posts</div><ul class="sidebarItemList_HFnO clean-list"><li class="sidebarItem_NmoJ"><a aria-current="page" class="sidebarItemLink_GF4N sidebarItemLinkActive_abzQ" href="/posts/2026-01-08_llm-observability">LLM 可觀測筆記</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/posts/2026-01-07_emoji">工作哲學 - 已讀 Emoji</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/posts/2026-01-07_observability-outage">Homelab 可觀測重建進度</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/posts/2026-01-05_k8s-is-framework">K8s 學習筆記 - K8s 只是框架</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/posts/2026-01-05_k8s-longhorn-install-and-helm">K8s 學習筆記 - Longhorn 安裝與 Helm</a></li></ul></nav></aside><main class="col col--7" itemscope="" itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting"><meta itemprop="description" content="其實自我架設 LLM 可觀測工具 (2025-10-05) 以後，陸續  嘗試幾款 LLM 工具有獲得一些觀察，不過當時因為覺得缺乏嚴謹考證所以沒有發文，不過現在我可以說是往下一個階段前進了（？），大概也沒有做嚴謹實驗的計畫，就把當時的紀錄發出來水一篇廢文好了。"><header><h1 class="title_BVkY" itemprop="headline">LLM 可觀測筆記</h1><div class="container_sDB1 margin-vert--md"><time datetime="2026-01-08T00:00:00.000Z" itemprop="datePublished">January 8, 2026</time></div><div class="margin-top--md margin-bottom--sm row"><div class="col col--6 authorCol_SrKl"><div class="avatar margin-bottom--sm"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="avatar__photo-link"><img class="avatar__photo" src="https://avatars.githubusercontent.com/u/9475660" alt="Wei Ji" itemprop="image"></a><div class="avatar__intro" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><div class="avatar__name"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" itemprop="url"><span itemprop="name">Wei Ji</span></a></div><small class="avatar__subtitle" itemprop="description">閃亮症候群工程屍</small></div></div></div></div></header><div id="__blog-post-container" class="markdown" itemprop="articleBody">
+<p><img decoding="async" loading="lazy" src="/assets/images/00_cover-14435b79b73ad7d429eb4e7f1d68b5ff.webp" width="620" height="382" class="img_RpFt"></p>
+<p>其實自<a href="https://flyskypie.github.io/posts/2025-10-05_llm-api-chain/" target="_blank" rel="noopener noreferrer">我架設 LLM 可觀測工具</a> (2025-10-05) 以後，陸續嘗試幾款 LLM 工具有獲得一些觀察，不過當時因為覺得缺乏嚴謹考證所以沒有發文，不過現在我可以說是往下一個階段前進了（？），大概也沒有做嚴謹實驗的計畫，就把當時的紀錄發出來水一篇廢文好了。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="llm-可觀測">LLM 可觀測<a href="#llm-可觀測" class="hash-link" aria-label="Direct link to LLM 可觀測" title="Direct link to LLM 可觀測">​</a></h2>
+<p>這邊簡單跟不知道發生什麼事情的讀者解釋一下「LLM 可觀測」是什麼。以下容我重複使用以前做的圖卡：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/01_llm-observability-feb98d9f322cf06d99b2d63e51d3c6ff.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/02_llm-observability-967a0eaae4abe131c4d041952e44682b.webp" width="1080" height="1080" class="img_RpFt"></p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>「角色卡」是一種角色扮演類 LLM 應用軟體的資料包，本質上是包含一堆人物設定、世界觀設定、台詞樣板...的文字。</p></div></div>
+<p><img decoding="async" loading="lazy" src="/assets/images/03_llm-observability-b6e151ba46fe9c05d4c17e0ac4b51592.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/04_llm-observability-9ac0c0eb44cc9b353fc5d9b84298da1d.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/05_llm-observability-0270b312ce9069c13e10e693304c4d10.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/06_llm-observability-12a537091b2b21eda7b56f3339555a30.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/07_llm-observability-f076524508fda25e403f6af549fc8336.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/08_llm-observability-a335d0a7f8fc4516572664588aa45f47.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/09_llm-observability-12fb6d23d84f4f46622a36dd51e4220a.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/10_llm-observability-6098d55e33ffed32118f540217ee4c78.webp" width="1080" height="1080" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/11_llm-observability-bcf1a07fcccc5e234565accb11007c87.webp" width="1080" height="1080" class="img_RpFt"></p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="anythingllm">AnythingLLM<a href="#anythingllm" class="hash-link" aria-label="Direct link to AnythingLLM" title="Direct link to AnythingLLM">​</a></h2>
+<p><a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="noopener noreferrer">AnythingLLM</a> 是一個很熱門的 LLM 應用軟體。不過正如我前面所說的，LLM 只是一個組件，要讓它發揮效用，關鍵在於應用程式是否擷取正確資料或資訊餵給 LLM 處理，因此「應用程式的外部連線能力」是我測試的重點。</p>
+<p>這是我的測試題目；我知道正確答案，而我也知道這個題目不簡單，我只是想觀察這些 LLM 應用軟體會怎麼處理這個任務：</p>
+<blockquote>
+<p>幫我搜尋這個專案的歷史</p>
+<p><a href="https://github.com/ill-inc/biomes-game" target="_blank" rel="noopener noreferrer">https://github.com/ill-inc/biomes-game</a></p>
+</blockquote>
+<p>最後得到的結果當然不符合我的預期，於是我開啟我的可觀測工具檢查剛剛發生了什麼事情。</p>
+<p>我們可以觀察到，AnythingLLM 根據我的輸入觸發了一個「網頁爬蟲工具」：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/12_anythingllm-322c94904b094a6a20209ef1a36a2a11.webp" width="1440" height="827" class="img_RpFt"></p>
+<p>然後我們可以看到它單純從 GitHub 爬了一堆垃圾就開始唬爛我試著回答剛剛那個問題。</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/13_anythingllm-06d1af67f4f6aa77e5df805f042a64c7.webp" width="1440" height="831" class="img_RpFt"></p>
+<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>正確答案是要用 <code>ill-inc</code> 找到 Global Illumination, Inc. 這間公司，接著找到 OpenAI 在 2023 年收購它們的新聞。
+並且在專案的<a href="https://docs.biomes.gg/roadmap" target="_blank" rel="noopener noreferrer">文件網站</a>找到：「被收購之後，專案被團隊釋出後不再維護」的資訊。
+我知道這個題目很難，所以後來我也沒有用這個題目測試了，加上我後來找到一些其他對於 LLM 軟體更重要的特性。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="perplexica">Perplexica<a href="#perplexica" class="hash-link" aria-label="Direct link to Perplexica" title="Direct link to Perplexica">​</a></h2>
+<p><a href="https://github.com/ItzCrazyKns/Perplexica" target="_blank" rel="noopener noreferrer">Perplexica</a> 是一個自稱作為 Perplexity AI 開源替代方案的 LLM 軟體，Perplexity AI 則是一個以真實性為賣點的 SaaS (Software as a service)。</p>
+<p>同一個題目，表現的跟 AnythingLLM 一樣差勁，不過除了外部連線的機制問題以外，我觀察到另外一個更可疑的行為：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/14_Perplexica-73d2856463931b9abbad70c26c2b97cf.webp" width="1440" height="833" class="img_RpFt"></p>
+<p>它把對話紀錄的所有角色 (role) 都設定成 <code>assistant</code>！在 OpenAI API 的設計，role 至少有三種：<code>user</code>、<code>assistant</code>、<code>system</code>。</p>
+<p>因此 LLM 實際上無法分辨歷史紀錄中誰說了什麼，因為全部都是 <code>assistant</code> 在自言自語。</p>
+<p>實際上我在使用 google Gemini 的時候，很常發生：LLM 自己產生的某種結論 OOXX，在後續對話又說「正如你說的，OOXX」，把話塞到我嘴裡。我嚴重懷疑這是由類似的角色不分的提示詞工程造成的。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="local-deep-research">Local Deep Research<a href="#local-deep-research" class="hash-link" aria-label="Direct link to Local Deep Research" title="Direct link to Local Deep Research">​</a></h2>
+<p><a href="https://github.com/LearningCircuit/local-deep-research" target="_blank" rel="noopener noreferrer">Local Deep Research</a> 是一個只有 3.8k 星星的專案（截至 2026-01-08），但是它嚴謹的特性深得我喜愛。</p>
+<p>觀察到這個特性其實源自於一個意外，我搞錯搜尋引擎的設定，因此它當下無法使用搜尋引擎：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/15-local-deep-research-35d692bdd9e082eac8e0400538b08aed.webp" width="1440" height="835" class="img_RpFt"></p>
+<p>但是我們看看它是怎麼回答使用者的：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/16-local-deep-research-69a309d7a0b0a1eeb0ff843113c53842.webp" width="1440" height="831" class="img_RpFt"></p>
+<ul>
+<li>它懂得回報使用者當下沒有對外連線、額外可供參考的資料，而不是直接試圖唬爛使用者。</li>
+<li>這甚至是「光速是多少？」這種大部分 LLM 都可以應對的簡單問題。它也懂得自我檢討這個回答沒有參考資料佐證。</li>
+<li>我使用的是普通的繼承 GPT 幹話王血統的 <code>openai/gpt-oss-20b</code>，並不是什麼特別調整的 LLM 。</li>
+</ul>
+<p>我們可以看到它不像是其他 LLM 軟體直接把使用者輸入跟自己產生的資料填進去 OpenAI API 定義的對話紀錄裡面，而是紮紮實實的把任務切成多個 request 來處理：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/17-local-deep-research-1e77d5b7b569f49ee0decc5b7ff487c8.webp" width="1440" height="835" class="img_RpFt"></p>
+<p>另外一個我在學習 VR 生態系時的例子，比對多個資料來源矛盾的敘述：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/18-local-deep-research-c54806eb5a9f2f27c973dac770ffed24.webp" width="1440" height="832" class="img_RpFt"></p>
+<p>因此我可以簡單的把一些需要確認的主題丟給它研究，真正意義上的降低認知負荷，而不是時時要擔心 LLM 在唬爛我：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/19-local-deep-research-d0c49f8deecfd6456b839347120308b8.webp" width="1440" height="833" class="img_RpFt"></p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="結論">結論<a href="#結論" class="hash-link" aria-label="Direct link to 結論" title="Direct link to 結論">​</a></h2>
+<p>實際上提示詞工程跟正確的軟體架構可以有效處理 LLM 的「幻覺問題」，但是當今市場上的 LLM 軟體發展方向卻完全背道而馳：</p>
+<ul>
+<li>基於聊天形式的頁面設計，本質上是一個上下文極度不受控的環境，很容易讓 LLM 產生垃圾資料。</li>
+<li>明明可以透過嚴謹的提示詞讓 LLM 做出更客觀的回應，但是大部分軟體都傾向取悅消費者，不斷的恭維跟唬爛使用者。</li>
+<li>明明可以使用 one shot 的軟體形式提供更穩定的服務，但是就是要做成聊天機器人來欺騙投資人與使用者。</li>
+</ul>
+<p>就算不提閉源的 SaaS 方案（ChatGPT, Gemini...），AnythingLLM 或 Perplexica 這類譁眾取寵的實作反而贏得更多喝采（星星），而老實解決問題的 Local Deep Research 卻倍受冷落。</p>
+<p>我用 LLM 可觀測性工具看見的不是邪惡的 LLM，更多的是整個產業帶有惡意的商業決策與人們的集體瘋狂。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="後記">後記<a href="#後記" class="hash-link" aria-label="Direct link to 後記" title="Direct link to 後記">​</a></h2>
+<p>曾經有工程師問我，既然我想觀察提示詞工程，為什麼不乾脆看程式碼？畢竟那些自架軟體都有開源。</p>
+<p>這是因為比起在可能不熟悉的程式語言裡探索、還要理解原始碼結構、最後早到提示詞模板跟相關實作，直接觀察界面簡單的多：</p>
+<ul>
+<li>當我送出一個指令，應用程式呼叫了幾次 LLM 來處理？<!-- -->
+<ul>
+<li>複雜問題但是只有一次呼叫，代表著實作的架構有問題。</li>
+</ul>
+</li>
+<li>每次呼叫給了什麼輸入？<!-- -->
+<ul>
+<li>「Garbage in, garbage out」，如果 LLM 給了什麼糟糕的答案，十之八九來自應用程式給了糟糕的輸入。</li>
+</ul>
+</li>
+</ul></div><footer class="row docusaurus-mt-lg blogPostFooterDetailsFull_Dvxa"><div class="col"><b>Tags:</b><ul class="tags_Wp5O padding--none margin-left--sm"><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/posts/tags/llm-proxy">LLM Proxy</a></li><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/posts/tags/llm-gateway">LLM Gateway</a></li><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/posts/tags/llm-observability">LLM Observability</a></li></ul></div></footer></article><div id="disqus_thread"></div><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--next" href="/posts/2026-01-07_emoji"><div class="pagination-nav__sublabel">Older Post</div><div class="pagination-nav__label">工作哲學 - 已讀 Emoji</div></a></nav></main><div class="col col--2"><div class="tableOfContents_OfXd thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#llm-可觀測" class="table-of-contents__link toc-highlight">LLM 可觀測</a></li><li><a href="#anythingllm" class="table-of-contents__link toc-highlight">AnythingLLM</a></li><li><a href="#perplexica" class="table-of-contents__link toc-highlight">Perplexica</a></li><li><a href="#local-deep-research" class="table-of-contents__link toc-highlight">Local Deep Research</a></li><li><a href="#結論" class="table-of-contents__link toc-highlight">結論</a></li><li><a href="#後記" class="table-of-contents__link toc-highlight">後記</a></li></ul></div></div></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 FlyPie (Wei Ji)</div></div></div></footer></div>
+</body>
+</html>
