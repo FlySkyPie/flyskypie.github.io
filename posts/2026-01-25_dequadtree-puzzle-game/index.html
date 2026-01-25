@@ -13,7 +13,7 @@
 <link rel="alternate" type="application/rss+xml" href="/posts/rss.xml" title="工程屍 FlyPie 的異想世界 RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/posts/atom.xml" title="工程屍 FlyPie 的異想世界 Atom Feed">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.4a9022c6.css">
-<script src="/assets/js/runtime~main.ddcc1513.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.2a48a96f.js" defer="defer"></script>
 <script src="/assets/js/main.71b1cbb9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -53,10 +53,10 @@
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_mpuI" id="高頻下毒">高頻下毒<a href="#高頻下毒" class="hash-link" aria-label="Direct link to 高頻下毒" title="Direct link to 高頻下毒">​</a></h3>
 <p><img decoding="async" loading="lazy" src="/assets/images/06_cnn-attack-b2fd1b7d38a142131f93936d1a3c3fc6.webp" width="3000" height="1687" class="img_RpFt"></p>
-<p>攻擊者可以在影像內參入人類肉眼不可見的資訊，讓圖片無法被 CNN 正確的識別。</p>
+<p>攻擊者可以在影像內參入人類肉眼不可見的資訊，讓圖片無法被 CNN 正確的識別<sup><a href="#user-content-fn-cnn-attack-1a8114" id="user-content-fnref-cnn-attack-1a8114" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup>。</p>
 <h3 class="anchor anchorWithStickyNavbar_mpuI" id="重組可辨識性">重組可辨識性<a href="#重組可辨識性" class="hash-link" aria-label="Direct link to 重組可辨識性" title="Direct link to 重組可辨識性">​</a></h3>
 <p><img decoding="async" loading="lazy" src="/assets/images/07_cnn-52e62f2f9c658af5485505cc4d3d23b7.webp" width="1100" height="203" class="img_RpFt"></p>
-<p>當圖片被重組打亂，人類將會難以辨識，但是 CNN 仍然能夠維持辨識能力。</p>
+<p>當圖片被重組打亂，人類將會難以辨識，但是 CNN 仍然能夠維持辨識能力<sup><a href="#user-content-fn-cnn-puzzlingly-1a8114" id="user-content-fnref-cnn-puzzlingly-1a8114" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>。</p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="模擬注意力">模擬注意力<a href="#模擬注意力" class="hash-link" aria-label="Direct link to 模擬注意力" title="Direct link to 模擬注意力">​</a></h2>
 <p>人類的視覺成像其實並不是均勻的，受到視網膜視錐細胞分佈的影響，實際上只有中間的區域具有比較多的成像資訊。另一方面任意瞬間視網膜接受的資訊其實是模糊的，是透過大腦在時間序上累積的資訊腦補成一個比較清晰的影像。</p>
 <p>前面的謎題就是為了模擬這種特性而設計的，人類會將注意力放在最可疑、最有價值的區域去提高解析度，其他地方就算不管也沒關係。經過探索圖片本質上是一個四元樹 (Quadtree) 結構。</p>
@@ -64,6 +64,12 @@
 <ol>
 <li id="user-content-fn-cnn-explained-1a8114">
 <p>Convolutional Neural Networks Explained. Retrieved 2026-01-25, from <a href="https://tvirdi.github.io/2017-10-29/cnn/" target="_blank" rel="noopener noreferrer">https://tvirdi.github.io/2017-10-29/cnn/</a> <a href="#user-content-fnref-cnn-explained-1a8114" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-cnn-attack-1a8114">
+<p>How we might protect ourselves from malicious AI | MIT Technology Review. Retrieved 2026-01-25, from <a href="https://www.technologyreview.com/2019/05/19/135299/how-we-might-protect-ourselves-from-malicious-ai/" target="_blank" rel="noopener noreferrer">https://www.technologyreview.com/2019/05/19/135299/how-we-might-protect-ourselves-from-malicious-ai/</a> <a href="#user-content-fnref-cnn-attack-1a8114" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-cnn-puzzlingly-1a8114">
+<p>Neural Networks seem to follow a puzzlingly simple strategy to classify images | by Wieland Brendel | Bethgelab | Medium. Retrieved 2026-01-25, from <a href="https://medium.com/bethgelab/neural-networks-seem-to-follow-a-puzzlingly-simple-strategy-to-classify-images-f4229317261f" target="_blank" rel="noopener noreferrer">https://medium.com/bethgelab/neural-networks-seem-to-follow-a-puzzlingly-simple-strategy-to-classify-images-f4229317261f</a> <a href="#user-content-fnref-cnn-puzzlingly-1a8114" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
 </li>
 </ol>
 </section></div></article><div id="disqus_thread"></div><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--next" href="/posts/2026-01-22_tensorzero"><div class="pagination-nav__sublabel">Older Post</div><div class="pagination-nav__label">TensorZero 筆記</div></a></nav></main><div class="col col--2"><div class="tableOfContents_OfXd thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#前情提要" class="table-of-contents__link toc-highlight">前情提要</a></li><li><a href="#有限像素影像辨識謎題" class="table-of-contents__link toc-highlight">有限像素影像辨識謎題</a></li><li><a href="#cnn-問題" class="table-of-contents__link toc-highlight">CNN 問題</a><ul><li><a href="#高頻下毒" class="table-of-contents__link toc-highlight">高頻下毒</a></li><li><a href="#重組可辨識性" class="table-of-contents__link toc-highlight">重組可辨識性</a></li></ul></li><li><a href="#模擬注意力" class="table-of-contents__link toc-highlight">模擬注意力</a></li></ul></div></div></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 FlyPie (Wei Ji)</div></div></div></footer></div>

@@ -50,10 +50,10 @@
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_mpuI" id="高頻下毒">高頻下毒<a href="https://flyskypie.github.io/posts/2026-01-25_dequadtree-puzzle-game#%E9%AB%98%E9%A0%BB%E4%B8%8B%E6%AF%92" class="hash-link" aria-label="Direct link to 高頻下毒" title="Direct link to 高頻下毒">​</a></h3>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/06_cnn-attack-b2fd1b7d38a142131f93936d1a3c3fc6.webp" width="3000" height="1687" class="img_RpFt"></p>
-<p>攻擊者可以在影像內參入人類肉眼不可見的資訊，讓圖片無法被 CNN 正確的識別。</p>
+<p>攻擊者可以在影像內參入人類肉眼不可見的資訊，讓圖片無法被 CNN 正確的識別<sup><a href="https://flyskypie.github.io/posts/2026-01-25_dequadtree-puzzle-game#user-content-fn-cnn-attack-1a8114" id="user-content-fnref-cnn-attack-1a8114" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup>。</p>
 <h3 class="anchor anchorWithStickyNavbar_mpuI" id="重組可辨識性">重組可辨識性<a href="https://flyskypie.github.io/posts/2026-01-25_dequadtree-puzzle-game#%E9%87%8D%E7%B5%84%E5%8F%AF%E8%BE%A8%E8%AD%98%E6%80%A7" class="hash-link" aria-label="Direct link to 重組可辨識性" title="Direct link to 重組可辨識性">​</a></h3>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/07_cnn-52e62f2f9c658af5485505cc4d3d23b7.webp" width="1100" height="203" class="img_RpFt"></p>
-<p>當圖片被重組打亂，人類將會難以辨識，但是 CNN 仍然能夠維持辨識能力。</p>
+<p>當圖片被重組打亂，人類將會難以辨識，但是 CNN 仍然能夠維持辨識能力<sup><a href="https://flyskypie.github.io/posts/2026-01-25_dequadtree-puzzle-game#user-content-fn-cnn-puzzlingly-1a8114" id="user-content-fnref-cnn-puzzlingly-1a8114" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>。</p>
 <h2 class="anchor anchorWithStickyNavbar_mpuI" id="模擬注意力">模擬注意力<a href="https://flyskypie.github.io/posts/2026-01-25_dequadtree-puzzle-game#%E6%A8%A1%E6%93%AC%E6%B3%A8%E6%84%8F%E5%8A%9B" class="hash-link" aria-label="Direct link to 模擬注意力" title="Direct link to 模擬注意力">​</a></h2>
 <p>人類的視覺成像其實並不是均勻的，受到視網膜視錐細胞分佈的影響，實際上只有中間的區域具有比較多的成像資訊。另一方面任意瞬間視網膜接受的資訊其實是模糊的，是透過大腦在時間序上累積的資訊腦補成一個比較清晰的影像。</p>
 <p>前面的謎題就是為了模擬這種特性而設計的，人類會將注意力放在最可疑、最有價值的區域去提高解析度，其他地方就算不管也沒關係。經過探索圖片本質上是一個四元樹 (Quadtree) 結構。</p>
@@ -61,6 +61,12 @@
 <ol>
 <li id="user-content-fn-cnn-explained-1a8114">
 <p>Convolutional Neural Networks Explained. Retrieved 2026-01-25, from <a href="https://tvirdi.github.io/2017-10-29/cnn/" target="_blank" rel="noopener noreferrer">https://tvirdi.github.io/2017-10-29/cnn/</a> <a href="https://flyskypie.github.io/posts/2026-01-25_dequadtree-puzzle-game#user-content-fnref-cnn-explained-1a8114" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-cnn-attack-1a8114">
+<p>How we might protect ourselves from malicious AI | MIT Technology Review. Retrieved 2026-01-25, from <a href="https://www.technologyreview.com/2019/05/19/135299/how-we-might-protect-ourselves-from-malicious-ai/" target="_blank" rel="noopener noreferrer">https://www.technologyreview.com/2019/05/19/135299/how-we-might-protect-ourselves-from-malicious-ai/</a> <a href="https://flyskypie.github.io/posts/2026-01-25_dequadtree-puzzle-game#user-content-fnref-cnn-attack-1a8114" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-cnn-puzzlingly-1a8114">
+<p>Neural Networks seem to follow a puzzlingly simple strategy to classify images | by Wieland Brendel | Bethgelab | Medium. Retrieved 2026-01-25, from <a href="https://medium.com/bethgelab/neural-networks-seem-to-follow-a-puzzlingly-simple-strategy-to-classify-images-f4229317261f" target="_blank" rel="noopener noreferrer">https://medium.com/bethgelab/neural-networks-seem-to-follow-a-puzzlingly-simple-strategy-to-classify-images-f4229317261f</a> <a href="https://flyskypie.github.io/posts/2026-01-25_dequadtree-puzzle-game#user-content-fnref-cnn-puzzlingly-1a8114" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>]]></content:encoded>
