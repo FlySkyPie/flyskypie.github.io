@@ -69,13 +69,17 @@ CNN 會掃描整張圖片，並且偵測諸如邊界之類的微小特徵[^cnn-e
 
 ![](./06_cnn-attack.webp)
 
-攻擊者可以在影像內參入人類肉眼不可見的資訊，讓圖片無法被 CNN 正確的識別。
+攻擊者可以在影像內參入人類肉眼不可見的資訊，讓圖片無法被 CNN 正確的識別[^cnn-attack]。
+
+[^cnn-attack]: How we might protect ourselves from malicious AI | MIT Technology Review. Retrieved 2026-01-25, from https://www.technologyreview.com/2019/05/19/135299/how-we-might-protect-ourselves-from-malicious-ai/
 
 ### 重組可辨識性
 
 ![](./07_cnn.webp)
 
-當圖片被重組打亂，人類將會難以辨識，但是 CNN 仍然能夠維持辨識能力。
+當圖片被重組打亂，人類將會難以辨識，但是 CNN 仍然能夠維持辨識能力[^cnn-puzzlingly]。
+
+[^cnn-puzzlingly]: Neural Networks seem to follow a puzzlingly simple strategy to classify images | by Wieland Brendel | Bethgelab | Medium. Retrieved 2026-01-25, from https://medium.com/bethgelab/neural-networks-seem-to-follow-a-puzzlingly-simple-strategy-to-classify-images-f4229317261f
 
 ## 模擬注意力
 
