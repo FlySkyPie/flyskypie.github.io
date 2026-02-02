@@ -7,7 +7,7 @@ tags: [LLM]
 # 個人關於如何佈署與使用類神經演算法的一些想法
 
 <head>
-  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-02-02_llm-using-approach/00_cover.webp" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-02-02_llm-using-approach/03_llm.webp" />
 </head>
 
 整個想法其實建立在一個有點複雜的上下文之上，為了避免失焦，我先把結論放在文章前面，中間再補充上下文，最後再回來看整個想法是怎麼建立起來的。
@@ -342,10 +342,134 @@ ClawdBot 相關的另外一件事是 Moltbook：一個 LLM 專屬論壇，然後
 
 ### 不 API
 
-ComfyUI 因為是桌面軟體，因此我直接不考慮，轉而嘗試 InvokeAI，但是它的 OCI 映像檔有一層高達 4GB，在我的無線網路環境根本拉不下來。
+ComfyUI 因為是 Windows 軟體，因此我直接不考慮，轉而嘗試 InvokeAI，但是它的 OCI 映像檔有一層高達 4GB，在我的無線網路環境根本拉不下來。
 
 其他類神經網路演算法相關的 OCI 也有同樣的問題，想必是直接打包而內建了一些模型的權重。
 
 理論上「UI 編排」和「類神經網路運算」是兩個完全不同的關注點，架構上完全有理由切割開來的，但是它們那樣讓模型直接跑在本地，而沒辦法使用在雲架構上十分普遍的 Woker 模式讓我覺得不對勁。
 
 ## 硬體的生態很不對勁
+
+如果你有試著用 Python 跑過模型（推論），你可以會在各種教學、文件或範例看到像這樣的東西：
+
+```python
+import torch
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+```
+
+CUDA 是 Nvidia 旗下的封閉 API，而目前大部分類神經網路的運行都高度仰賴 CUDA。換句話說，這段程式碼的意思是：有 Nvidia 顯示卡嗎？沒有的話只好用很沒效率的 CPU 算了。彷彿其他 GPU 不是 GPU 一樣。
+
+Nvidia 在這整個生態系的立場基本上是：
+
+> 「沒有 NVIDIA® CUDA® 嗎？好可憐喔～只能用 CPU 跑了，其他廠牌的 GPU 不是 GPU 喔～」
+> 
+> 「蛤？模型有 5GB 可是你只有 4GB 的 VRAM？不好意思，你只能買更好的 GPU 了，主機板上的那些 RAM 不算 RAM 喔～」
+> 
+> 「你想要更多 VRAM 喔？可以啊，但是我們不生產中階 GPU，然後故意把消費級的 VRAM 做少，你想要的話請你買更貴的、我們做給伺服器用的那種～」
+>
+
+我可以理解 GPU 和 VRAM 整合在一起是為了改善頻寬限制而造成的硬體架構必然。
+
+![](./27_numa.webp)
+
+平心而論確實有 llama.cpp 這樣拿 SysRAM 補 VRAM 不足的東西，也有量化 (Quantization) 這種減少模型大小的技術存在。
+
+但是這整個生態系對於「拿 SysRAM 當 VRAM 用」、「使用非 Nvidia 硬體降速妥協」之類的作法非常不以為然，「不夠就買更多 Nvidia」的聲音充斥著整個空間。
+
+都什麼時代了，撇除 ARM 或是 x86 那種 CPU 架構的問題，我們居然還要因為硬體不同造成的軟體不同而折騰，讓我感到不對勁。
+
+更別提「黏在 CUDA 上的 VRAM」根本是實質供應商鎖定且稀缺的情況下，開發者還像我稍早提到的那樣不節制、不透過分散式解偶軟體與硬體的耦合...十分的不對勁。
+
+[^gpu-speed]: GPU Memory Pools in D3D12.  Retrieved 2026-02-02 from https://therealmjp.github.io/posts/gpu-memory-pool/
+
+## 一種 LLM 佈署策略與架構（回顧）
+
+在有充足的上下文之後再回來看我們一開始提到的策略與架構。
+
+### Knative 與 Kubernetes
+
+Knative 運行在 K8s (Kubernetes) 中，在 K8s 的架構下，可以將多個節點運算能力組合成一個資源池，不使用 CUDA 所帶來的頻寬限制用堆疊節點並將任務拆解成更小的推論模型來實現分散式並行運算。
+
+並且透過節點的標籤可以讓佈署的程式自動找到合適的節點，例如： 要 AMD ROCm 的容器自己找 AMD 的節點跑、要 CUDA 的容器自己找 CUDA 的節點跑。
+
+OCI 容器的本質是隔離的，並且可以透過配置移除掉容器內程式對網路的連線的能力、硬碟寫入能力以及分配運算資源，LLM 或 LLM 產生的程式碼在當中運作時基本上是一個「關在盒子內的精靈」。
+
+### LLM 與 Serverless Functions
+
+LLM 受到上下文窗口的限制，在複雜的專案下表現尤其差，但是非常適合用來生成範例程式碼。或是 Serverless Functions 這樣功能與目的十分簡單的程式。簡潔簡短的程式碼也更容易被人類審查 (Review)。
+
+另方面，使用 LLM （OpenAI API）作為單一功能的程式，可以用來處理無須精確、無須大量上下文的任務，例如：
+
+- 根據描述分類實做的種類（Controller/Service/Repository/Fcade/Facade）
+- 生成提示詞樣板
+- 生成簡單的範例程式碼
+- 從龐雜的 Log 中找出可疑的訊息
+
+這種簡單的程式也可以作為 Serverless Functions 存在。
+
+我姑且也評估過幾個諸如 RED-Node 之類基於節點的 Low Code 方案來串接 OpenAI API，不過最後還是覺得 Serverless Functions 的型態最恰當。
+
+### Knative 與 Serverless
+
+> 「在 AI 時代，程式是一次性消耗品」
+> 
+> -- Vibe Coding 仔如是說
+>
+
+工程師本身也會撰寫一些處理小任務的腳本程式，而這些程式可能也是使用個沒幾次就丟到垃圾桶裡了，所以這個描述我部份認同，但是接下來問題就變成要如何管理跟佈署這些「一次性程式碼」？
+
+Serverless 是一種絕佳的型態，除了前面提過得，容器化可以作為有安全隱患的垃圾程式碼的最後一道防線，Serverless 平時不佔用資源，呼叫時啟動的特性，可以在伺服器資源的佔用與簡化調用之間取得平衡：既不會一直在背景執行佔用資源，也不會每次要用的時候都要 clone 下來配置完才能運作。
+
+## Screeps
+
+![](./28_screeps.webp)
+
+Screeps 是一個「即時戰略遊戲」，不過「玩家」不直接操作遊戲，而是透過 Javascript 撰寫 AI，上傳之後由 AI 代為操兵。
+
+在我[重構](https://github.com/FlySkyPie/screeps-nexus)的時候發現它運行「玩家上傳程式」是透過 `isolated-vm` 實做的[^screeps]，然後我在 `isolated-vm` 看到這個[^isolated-vm]：
+
+![](./29_isolated-vm.webp)
+
+於是我想起之前過得一個影片：
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wVil7wG-1yg?si=HSpxoem0QADsfGgl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+而 `fly.io` 是一個 serverless 供應商，我這才意識到，Screeps 本質上就是一個 serverless，Screeps 本身為了避免「玩家」越獄攻擊遊戲本身的運算，透過 `isolated-vm` 建立很嚴格隔離環境，甚至會在超時的時候直接殺掉玩家的程式，來避免惡意佔用運算資源，這種機制剛好與 LLM 時代需要處理的問題不謀而合。
+
+[^screeps]: https://github.com/screeps/driver
+[^isolated-vm]: https://github.com/laverdet/isolated-vm
+
+## MineDojo/Voyager
+
+![](./30_voyager.webp)
+
+我必須要說，上述概念很大程度受到 Voyager 的啟發，[Voyager](https://github.com/MineDojo/Voyager) 是一個串接 GPT-4 API 玩 Minecraft 的專案。
+
+首先針對一個小任務，LLM 可以透過語法錯誤和遊戲反饋來建立一個簡單的函數：
+
+![](./31_voyager.webp)
+
+針對不同的小任務建立不同的程式碼之後，將程式碼嵌入儲存起來建立「技能庫」，之後遇到抽象問題時，就直接從技能庫抽出數個能完成問題的技能：
+
+![](./32_voyager.webp)
+
+## 延伸閱讀
+
+以下整理一些我之前寫的廢文，跟 LLM 可觀測相關的：
+
+- [花式打 LLM](https://flyskypie.github.io/posts/2025-10-05_llm-api-chain/)
+- [Bifrost 採坑筆記](https://flyskypie.github.io/posts/2026-01-18_bifrost/)
+- [TensorZero 筆記](https://flyskypie.github.io/posts/2026-01-22_tensorzero/)
+- [LLM 可觀測筆記 (2026-01-08)](https://flyskypie.github.io/posts/2026-01-08_llm-observability/)
+- [LLM 可觀測筆記 (2026-01-15)](https://flyskypie.github.io/posts/2026-01-15_llm-observability/)
+
+跟應用相關的：
+
+- [自架搜尋引擎套餐 (YaCy + SearXNG + Local Deep Research)](https://flyskypie.github.io/posts/2026-01-12_search-engine/)
+- [XPU 運行 Zero123++ 筆記 (Intel PyTorch)](https://flyskypie.github.io/posts/2026-01-22_zero123plus-intel-pytorch/)
+
+哲學相關的：
+
+- [LLM 與機械手臂的類比](https://flyskypie.github.io/posts/2025-09-09_llm-and-robot-arm/)
+- [回到一切的原點、LLM 系統的基石 - LLMs.txt、向量資料庫與 RAG](https://flyskypie.github.io/posts/2025-10-06_the-cornerstone-of-llm-system-rag/)
