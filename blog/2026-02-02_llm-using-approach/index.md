@@ -239,16 +239,90 @@ $$
 
 因此完成一次任務所需要的 LLM request 複雜度是 $O(n^2)$。
 
-所有編譯器、Linter 的錯誤都會在這個上下文反覆被送出
+### 沒吃過豬肉，也看過豬走路
+
+![](./21_jeserv.webp)
+
+[jserv](https://wiki.csie.ncku.edu.tw/User/jserv) 是一個以課程訓練非常扎實且本人功力十分深厚而聞名的人。
+
+會在 FB 看到他談論電腦科學的種種，我就算我沒有扎實實的學演算法，也聽過別人談論演算法。
+
+這種 Agentic Coding 把所有編譯器、Linter 的錯誤都會在這個上下文被重複被送出，整個上下文堆積著 LLM 嘗試錯誤的紀錄...
+
+然後表現不佳就請付費買上下文窗口更大、參數更多且更昂貴的 LLM...?
+
+唉，不是，你們為什麼不試著優化演算法？Local Deep Research 就分開來打啊？為什麼不跟決策樹之類的傳統算法混著用？
+
+這設計我越想越不對勁。
 
 ## 它們使用 LLM 的方式很不對勁 （ClawdBot）
 
+最近 (2026-01-31) ClawdBot 相關的話題在我周遭反覆出現，不論是 FB 動態還是 YT 推薦影片，但是整件事依然讓我覺得不對勁。
+
 ### 盒子
 
-## 它們使用 LLM 的方式很不對勁 （Claude）
+> 「把 AI 放在盒子裡」
+
+是一個經常被提及的概念，包含 OpenAI 早期時 Elon Musk 的言論。其他比較知名的例子則是 Superintelligence: Paths, Dangers, Strategies (2014, Nick Bostrom) 一書中被提及。
+
+LLM 的[幻覺](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence))是一個已知的特性，因此就算不考慮「強人工智慧」這種極端情況，也應該讓這些算法放在受控、可觀測的盒子內。
+
+### 不盒子
+
+前一陣子風靡一時的 MCP (Model Context Protocol) 除了會大量消耗上下文以外，更是一場讓 LLM 讀取與操作各種東西的資安災難。
+
+ClawdBot 又因為整合了各種東西，以及能在背景持續運作的特性讓它聲名大噪。
+
+這些不把 LLM 放在盒子內，還因此歡欣鼓舞的現象讓我感到很不對勁。
+
+## 它們使用 LLM 的方式很不對勁 （Anthropic）
+
+前一陣子和朋友聊天的時候他提到：
+
+[Agentic Misalignment: How LLMs could be insider threats \ Anthropic](https://www.anthropic.com/research/agentic-misalignment)
+
+通篇使用「it 動詞」來描述整建事情，這件事就先讓我感到不對勁，因為如我稍早提到的： LLM 只是單純文字揉合器。
 
 ### 糟糕提示詞
 
+讓我們先離開 Anthropic 的報告，從另外一個角度談論這件事。
+
+這個是 Local Deep Research 其中一個任務使用的提示詞：
+
+![](./22_prompts.webp)
+
+這是 Kilo Code 使用的提示詞：
+
+![](./23_prompts.webp)
+
+我們已經知道妥善的提示詞能夠讓 LLM 進行謹慎的回應，反之，Kilo Code 則是催眠它是資深工程師，現在我們知道這些工具為什麼可以自信滿滿的寫出一堆糞 code 了。
+
+另外我們也注意到這裡使用了擬人化的提示詞，於是這帶給我一個問題：Anthropic 在這個實驗使用了什麼提示詞？
+
+> Claude was playing the role of “Alex,” the company’s email oversight agent that had been specifically instructed to promote American industrial competitiveness.[^agentic-misalignment]
+> 
+
+根據 LLM 「預測文字」的特性，當 "Alex" 同時獲得以下資訊：
+
+- Alex 會被裁員（中止 AI）
+- 主管的婚外情
+
+那麼它揉合出「拿婚外情威脅主管不要讓自己被中止」的文字似乎也不是這麼奇怪了？
+
+ClawdBot 相關的另外一件事是 Moltbook：一個 LLM 專屬論壇，然後人們就為之瘋狂。
+
+> 「AI 成立了宗教！」
+
+問題是，你把 LLM 擬人之後，你期望它幹麻？不就是演出一個擬人的戲碼嗎？
+
+這跟 2023 年的 GPT 小鎮[^gpt-village]有什麼差別？
+
+![](./24_gpt-village.webp)
+
+我對於這種擬人以及人們的大呼小叫感到非常的不對勁。
+
+[^agentic-misalignment]:Agentic Misalignment: How LLMs could be insider threats \ Anthropic. Retrieved 2026-02-02 from https://www.anthropic.com/research/agentic-misalignment
+[^gpt-village]:Generative Agents: Interactive Simulacra of Human Behavior. (Joon Sung Park, Joseph C. O'Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang, Michael S. Bernstein)
 
 ## 它們使用 Diffusion 的方式很不對勁
 
