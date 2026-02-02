@@ -7,7 +7,7 @@ tags: [LLM]
 # 個人關於如何佈署與使用類神經演算法的一些想法
 
 <head>
-  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-02-02_llm-using-approach/03_llm.webp" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/blog/2026-02-02_llm-using-approach/03_llm.webp" />
 </head>
 
 整個想法其實建立在一個有點複雜的上下文之上，為了避免失焦，我先把結論放在文章前面，中間再補充上下文，最後再回來看整個想法是怎麼建立起來的。
