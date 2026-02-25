@@ -126,3 +126,14 @@ mc: <ERROR> Unable to list comparison retrying.. context canceled
 [^rustfs-comment-2]: What is the Best MiniO Alternative Right Now, RustFS, Garage or SeaweedFS ? : r/selfhosted. Retrieved 2026-02-25, from https://www.reddit.com/r/selfhosted/comments/1qcm5r5/comment/nzo0ez8/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 
 ## MinIO
+
+不幸的是即便我使用 `mc` 進行 MinIO 到 MinIO 的遷移依然遇到諸如以下的錯誤：
+
+```
+mc: <ERROR> Failed to copy `http://s3.minio.arachne/os-image/lubuntu-24.04.4-desktop-amd64.iso`. You did not provide the number of bytes specified by the Content-Length HTTP header.
+mc: <ERROR> Failed to copy `http://s3.minio.arachne/os-image/2018-11-13-raspbian-stretch-full.img`. Resource requested is unreadable, please reduce your request rate
+```
+
+最後是使用 [Rclone](https://github.com/rclone/rclone) 解決。
+
+![](./05_rclone.webp)
