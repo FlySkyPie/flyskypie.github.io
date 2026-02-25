@@ -91,7 +91,8 @@
         <link href="https://flyskypie.github.io/posts/2026-02-25_s3-migration"/>
         <updated>2026-02-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[在 Homelab 的 S3 中我有幾個 Bucket：]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_minio-25b88229937db48a8be3ecfd40f0fd3b.webp" width="1400" height="777" class="img_RpFt"></p>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_minio-25b88229937db48a8be3ecfd40f0fd3b.webp" width="1400" height="777" class="img_RpFt"></p>
 <p>在 Homelab 的 S3 中我有幾個 Bucket：</p>
 <p><strong>3D 模型</strong></p>
 <p>理想上我是希望有一個「開源自架的 Sketchfab」，來儲存這類檔案，不過目前還沒找到合適的方案因此就先放在 S3 內，具體是哪種檔案呢？例如：</p>

@@ -13,7 +13,7 @@
 <link rel="alternate" type="application/rss+xml" href="/posts/rss.xml" title="工程屍 FlyPie 的異想世界 RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/posts/atom.xml" title="工程屍 FlyPie 的異想世界 Atom Feed">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.4a9022c6.css">
-<script src="/assets/js/runtime~main.61667580.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.18f1810f.js" defer="defer"></script>
 <script src="/assets/js/main.e55d3db6.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -82,7 +82,8 @@
 <p>MinIO 已死，MinIO 復生 - 知乎. Retrieved 2026-02-25, from <a href="https://zhuanlan.zhihu.com/p/2008215929461445776" target="_blank" rel="noopener noreferrer">https://zhuanlan.zhihu.com/p/2008215929461445776</a> <a href="#user-content-fnref-minio-dead-bd911c" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
 </li>
 </ol>
-</section></div><footer class="row docusaurus-mt-lg"><div class="col"><b>Tags:</b><ul class="tags_Wp5O padding--none margin-left--sm"><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/posts/tags/homelab">homelab</a></li></ul></div></footer></article><article class="margin-bottom--xl" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting"><meta itemprop="description" content="在 Homelab 的 S3 中我有幾個 Bucket："><header><h2 class="title_BVkY" itemprop="headline"><a itemprop="url" href="/posts/2026-02-25_s3-migration">S3 遷移筆記</a></h2><div class="container_sDB1 margin-vert--md"><time datetime="2026-02-25T00:00:00.000Z" itemprop="datePublished">February 25, 2026</time></div><div class="margin-top--md margin-bottom--sm row"><div class="col col--6 authorCol_SrKl"><div class="avatar margin-bottom--sm"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="avatar__photo-link"><img class="avatar__photo" src="https://avatars.githubusercontent.com/u/9475660" alt="Wei Ji" itemprop="image"></a><div class="avatar__intro" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><div class="avatar__name"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" itemprop="url"><span itemprop="name">Wei Ji</span></a></div><small class="avatar__subtitle" itemprop="description">閃亮症候群工程屍</small></div></div></div></div></header><div class="markdown" itemprop="articleBody"><p><img decoding="async" loading="lazy" src="/assets/images/01_minio-25b88229937db48a8be3ecfd40f0fd3b.webp" width="1400" height="777" class="img_RpFt"></p>
+</section></div><footer class="row docusaurus-mt-lg"><div class="col"><b>Tags:</b><ul class="tags_Wp5O padding--none margin-left--sm"><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/posts/tags/homelab">homelab</a></li></ul></div></footer></article><article class="margin-bottom--xl" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting"><meta itemprop="description" content="在 Homelab 的 S3 中我有幾個 Bucket："><header><h2 class="title_BVkY" itemprop="headline"><a itemprop="url" href="/posts/2026-02-25_s3-migration">S3 遷移筆記</a></h2><div class="container_sDB1 margin-vert--md"><time datetime="2026-02-25T00:00:00.000Z" itemprop="datePublished">February 25, 2026</time></div><div class="margin-top--md margin-bottom--sm row"><div class="col col--6 authorCol_SrKl"><div class="avatar margin-bottom--sm"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="avatar__photo-link"><img class="avatar__photo" src="https://avatars.githubusercontent.com/u/9475660" alt="Wei Ji" itemprop="image"></a><div class="avatar__intro" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><div class="avatar__name"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" itemprop="url"><span itemprop="name">Wei Ji</span></a></div><small class="avatar__subtitle" itemprop="description">閃亮症候群工程屍</small></div></div></div></div></header><div class="markdown" itemprop="articleBody">
+<p><img decoding="async" loading="lazy" src="/assets/images/01_minio-25b88229937db48a8be3ecfd40f0fd3b.webp" width="1400" height="777" class="img_RpFt"></p>
 <p>在 Homelab 的 S3 中我有幾個 Bucket：</p>
 <p><strong>3D 模型</strong></p>
 <p>理想上我是希望有一個「開源自架的 Sketchfab」，來儲存這類檔案，不過目前還沒找到合適的方案因此就先放在 S3 內，具體是哪種檔案呢？例如：</p>
@@ -94,7 +95,7 @@
 <p><strong>等距長方投影 (Equirectangular)</strong></p>
 <p>之前經手過處理 Equirectangular 相關的專案，跟資料集的情況差不多，8K 影片的話動輒數 GB，手邊存幾份樣本方便日後處理類似題目的時候有檔案可以用。</p>
 <p><strong>機器學習模型</strong></p>
-<p>之前隨手開的 Bucket，目前已經有 Huggingface 的鏡像站 (Olah)了，之後用途可能不大了。或許可以用來儲存那種沒有被上傳到 Huggingface 的野雞模型。</p>
+<p>之前隨手開的 Bucket，目前已經有 Huggingface 的  鏡像站 (Olah)了，之後用途可能不大了。或許可以用來儲存那種沒有被上傳到 Huggingface 的野雞模型。</p>
 <p><strong>作業系統映像檔</strong></p>
 <p>這應該不用解釋吧...？安裝 Linux 的時候手邊存一份備著。</p>
 <p><strong>SDK</strong></p>
@@ -205,7 +206,7 @@
 <p><a href="https://github.com/longhorn/longhorn" target="_blank" rel="noopener noreferrer">Longhorn</a> 是基於 K8s 的分散式儲存，它可以和 K8s 以類似共生的關係運作在一起：透過 K8s 的叢集架構 Longhorn 可以運作在每一個節點上實現多節點冗餘，而當 K8s 內佈署的服務請求儲存區 (Persistent Volumes) 時，則由 Longhorn 直接向應用程式提供儲存空間。</p>
 <p>因此一顆硬碟只要掛上一個堪用的電腦（比如一塊樹莓派），丟進 K8s 內就能讓它成為儲存資源池的一部分，多餘的運算能力則可以「順便」運行一些服務分攤叢集的負載。</p>
 <h3 class="anchor anchorWithStickyNavbar_mpuI" id="基於筆電的-k8s-叢集">基於筆電的 K8s 叢集<a href="#基於筆電的-k8s-叢集" class="hash-link" aria-label="Direct link to 基於筆電的 K8s 叢集" title="Direct link to 基於筆電的 K8s 叢集">​</a></h3>
-<p>筆 電有一些工程特性是一般桌機以及伺服器運算不會考量的：省電，即能源效率以及體積和輕量化，為了方便攜帶，可靠性也不會做得太脆弱。我認為這在台灣這種地狹人綢以及寸土寸金的都市中是十分重要的因素，我最為租屋族不太可能負擔得起充足的空間建設伺服器機櫃，遷移的頻率也遠比居住在大陸上的歐美人士來得高。</p>
+<p> 筆電有一些工程特性是一般桌機以及伺服器運算不會考量的：省電，即能源效率以及體積和輕量化，為了方便攜帶，可靠性也不會做得太脆弱。我認為這在台灣這種地狹人綢以及寸土寸金的都市中是十分重要的因素，我最為租屋族不太可能負擔得起充足的空間建設伺服器機櫃，遷移的頻率也遠比居住在大陸上的歐美人士來得高。</p>
 <p>並且根據我的主觀體驗，很容易低成本獲得二手筆電，加上 K8s 和 Longhorn 的架構下，數個無須十分強大的節點就能提供儲存冗餘，從而解決基於筆電的設備無法使用硬碟陣列卡的問題；又或是避免管理軟體陣列帶來額外的麻煩，只要是能夠安裝並運行 K8s 節點的設備都能對這個叢集進行水平拓展。拓展叢集的關鍵零件，交換器本身又不會太昂貴。</p>
 <p>筆電或是單板電腦的尺寸較小，比起機架伺服器或是一般的桌機來得更有空間彈性，必要時甚至可以把叢集拆成數個不同大小的單元分散在空間之中。</p>
 <p>當然，要把二手筆電當作一個儲存節點，可能需要透過 USB 外掛硬碟，二手筆電低階的 CPU、低階的 USB 埠口、低階的乙太網路埠口都會成為系統的瓶頸。不過這種事情等遇到再說吧，瓶頸就是用來感受的，畢竟我都經歷過直接把 OS 灌在 DAS (Direct-attached storage) 外部儲存、最後 I/O await 高到會讓 Docker 不穩定才把系統裝回 SSD 了。</p>
@@ -263,7 +264,7 @@
 <p>另外一台 Lenovo 的筆電則是靠這個設定：</p>
 <p><a href="https://github.com/makifdb/lenopow" target="_blank" rel="noopener noreferrer">https://github.com/makifdb/lenopow</a></p>
 <p>我會把把充電上限設在 80% 避免筆電作為伺服器長時間插著充電造成電池膨脹。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="筆電螢幕  問題">筆電螢幕問題<a href="#筆電螢幕問題" class="hash-link" aria-label="Direct link to 筆電螢幕問題" title="Direct link to 筆電螢幕問題">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="筆電螢  幕問題">筆電螢幕問題<a href="#筆電螢幕問題" class="hash-link" aria-label="Direct link to 筆電螢幕問題" title="Direct link to 筆電螢幕問題">​</a></h2>
 <p>讓筆電不會因為螢幕蓋上而進入休眠模式，編輯 <code>/etc/systemd/logind.conf</code>：</p>
 <div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">HandleLidSwitch=ignore</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>執行指令重啟服務：</p>
