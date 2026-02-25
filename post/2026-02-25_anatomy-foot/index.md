@@ -64,7 +64,7 @@ talus 在拉丁文中有腳踝之意。
 
 ![](./05_Navicular-Bone.webp)
 
-## 楔形骨 (Cuneiform)
+### 楔形骨 (Cuneiform)
 
 楔形骨從腳掌剖面看過去很像三角形的楔子：
 
@@ -72,15 +72,15 @@ talus 在拉丁文中有腳踝之意。
 
 ![](./10_Cuneiform.webp)
 
-### Medial Cuneiform
+#### Medial Cuneiform
 
 ![](./06_Medial-Cuneiform.webp)
 
-### Intermediate Cuneiform
+#### Intermediate Cuneiform
 
 ![](./07_Intermediate-Cuneiform.webp)
 
-### Lateral Cuneiform
+#### Lateral Cuneiform
 
 ![](./08_Lateral-Cuneiform.webp)
 
@@ -105,3 +105,52 @@ talus 在拉丁文中有腳踝之意。
 ### Metatarsal 5
 
 ![](./15_Metatarsal-5.webp)
+
+## 近節趾骨 (Proximal phalanx)
+
+### Proximal Phalange 1
+
+![](./17_Proximal-Phalange-1.webp)
+
+### Proximal Phalange 2
+
+![](./18_Proximal-Phalange-2.webp)
+
+### Proximal Phalange 3
+
+![](./19_Proximal-Phalange-3.webp)
+
+### Proximal Phalange 4
+
+![](./20_Proximal-Phalange-4.webp)
+
+### Proximal Phalange 5
+
+![](./21_Proximal-Phalange-5.webp)
+
+### Phalanx
+
+有趣的是，英文 Phalanx 有方陣之意，趾骨排列的方式是不是很像方陣呢？
+
+![](./16_Phalanx.webp)
+
+
+## Middle phalanx (Intermediate phalanx)
+
+拇指沒有中節趾骨，手指也是一樣的情況。
+
+### Intermediate Phalange 2
+
+![](./22_Intermediate-Phalange-2.webp)
+
+### Intermediate Phalange 3
+
+![](./23_Intermediate-Phalange-3.webp)
+
+### Intermediate Phalange 4
+
+![](./24_Intermediate-Phalange-4.webp)
+
+### Intermediate Phalange 5
+
+![](./25_Intermediate-Phalange-5.webp)
