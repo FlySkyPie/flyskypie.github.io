@@ -26,6 +26,15 @@ tags: [anatomy]
 - 蹠骨骨群 (Metatarsus)
 - 跗骨骨群 (Tarsus)
 
+:::info
+留意用詞區分了兩種概念：
+
+- 某個骨群（單數）
+- 某骨頭們（複數）
+
+例如：Tarsus 是指「腳跟那個骨群」和 Tarsals 是指「腳跟那些骨頭」。
+:::
+
 [^Ospied]: File:Ospied-en.svg - Wikipedia. Mario modesto. Retrieved 2026-02-25, from https://en.wikipedia.org/wiki/File:Ospied-en.svg
 
 ## 跗骨 (Tarsals)
@@ -83,6 +92,14 @@ talus 在拉丁文中有腳踝之意。
 #### Lateral Cuneiform
 
 ![](./08_Lateral-Cuneiform.webp)
+
+### 骰骨 (Cuboid Bone)
+
+![](./31_Cuboid-Bone.webp)
+
+跟其他骨頭比起來，它的確蠻方的：
+
+![](./32_Cuboid-Bone.webp)
 
 ## 蹠骨（Metatarsus）
 
@@ -154,3 +171,25 @@ talus 在拉丁文中有腳踝之意。
 ### Intermediate Phalange 5
 
 ![](./25_Intermediate-Phalange-5.webp)
+
+## Distal phalanx
+
+### Distal Phalange 1
+
+![](./26_Distal-Phalange-1.webp)
+
+### Distal Phalange 2
+
+![](./27_Distal-Phalange-2.webp)
+
+### Distal Phalange 3
+
+![](./28_Distal-Phalange-3.webp)
+
+### Distal Phalange 4
+
+![](./29_Distal-Phalange-4.webp)
+
+### Distal Phalange 5
+
+![](./30_Distal-Phalange-5.webp)
