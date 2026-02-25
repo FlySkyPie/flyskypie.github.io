@@ -6,6 +6,10 @@ tags: [anatomy]
 
 # 解剖學 - 人體骨骼 - 學習筆記 - 足部
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-02-25_anatomy-foot/03_Talus.webp" />
+</head>
+
 這篇筆記已經放在我的 CodiMD 很久了 (2024-11-02)，想說整理一下發一篇廢文。
 
 :::info
