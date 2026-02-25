@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[63365],{33774:s=>{s.exports=JSON.parse('{"label":"anatomy","permalink":"/posts/tags/anatomy","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);
