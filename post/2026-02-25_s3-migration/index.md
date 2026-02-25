@@ -6,6 +6,10 @@ tags: [homelab, S3]
 
 # S3 遷移筆記
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-02-25_s3-migration/01_minio.webp" />
+</head>
+
 ![](./01_minio.webp)
 
 在 Homelab 的 S3 中我有幾個 Bucket：
