@@ -4,11 +4,11 @@ authors: [weiji]
 tags: []
 ---
 
+# 儲存等級
+
 <head>
   <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-02-26_storage-levels/00_covert.webp" />
 </head>
-
-# 儲存等級
 
 最近在整理腦中對於儲存的觀念，試著用「如果儲存是 RPG 等級制」的概念寫了一段虛構的過程，不完全嚴謹，但是應該有助於初學者建立觀念。
 
