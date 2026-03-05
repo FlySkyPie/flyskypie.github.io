@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="228.68mm" height="161.2mm" version="1.1" viewBox="0 0 228.68 161.2" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="TriangleStart" overflow="visible" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 5.3244081 6.1553851">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <g transform="translate(67.775 -17.56)">
+  <g transform="translate(-92.478 2.994)">
+   <g fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="24.753" y="14.616" width="228.58" height="161.1" stroke-width=".1" style="paint-order:fill markers stroke"/>
+    <rect x="33.966" y="37.961" width="79.977" height="51.333" style="paint-order:fill markers stroke"/>
+    <rect x="163.61" y="37.961" width="79.977" height="51.333" style="paint-order:fill markers stroke"/>
+   </g>
+   <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="34.265259" y="33.02887" fill="#000000" font-family="'Noto Sans'" font-size="11.289px" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="34.265259" y="33.02887" fill="#000000">Source</tspan></text>
+    <rect x="33.966" y="117.64" width="79.977" height="51.333" fill="#fff" stroke="#000" style="paint-order:fill markers stroke"/>
+    <text x="33.744514" y="112.937" fill="#000000" font-family="'Noto Sans'" font-size="11.289px" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="33.744514" y="112.937" fill="#000000">Client</tspan></text>
+    <text x="163.08086" y="33.102249" fill="#000000" font-family="'Noto Sans'" font-size="11.289px" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="163.08086" y="33.102249" fill="#000000">Destination</tspan></text>
+   </g>
+   <g transform="translate(28.079 -60.256)" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="129.22" y="126.61" width="39.602" height="16.856" fill="#fff" stroke="#000" style="paint-order:fill markers stroke"/>
+    <text x="132.91614" y="139.06436" fill="#000000" font-family="'Noto Sans'" font-size="11.289px" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="132.91614" y="139.06436" fill="#000000">32222</tspan></text>
+   </g>
+   <g transform="translate(-47.14 -82.693)" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="129.22" y="126.61" width="39.602" height="16.856" fill="#fff" stroke="#000" style="paint-order:fill markers stroke"/>
+    <text x="136.02623" y="139.07001" fill="#000000" font-family="'Noto Sans'" font-size="11.289px" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="136.02623" y="139.07001" fill="#000000">5000</tspan></text>
+   </g>
+   <path d="m81.458 52.982h-14.779v21.79h65.236v52.751h-38.053v32.459h49.576v-85.21h8.0165" fill="none" marker-end="url(#TriangleStart)" stroke="#0f0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" style="paint-order:fill markers stroke"/>
+   <g transform="translate(11.839 -63.654)" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="69.551" y="130" width="39.602" height="16.856" fill="#fff" stroke="#000" style="paint-order:fill markers stroke"/>
+    <text x="82.917023" y="142.51878" fill="#000000" font-family="'Noto Sans'" font-size="11.289px" style="paint-order:fill markers stroke" xml:space="preserve"><tspan x="82.917023" y="142.51878" fill="#000000">22</tspan></text>
+   </g>
+   <path d="m52.568 129.01a5.0511 5.0511 0 0 0-8.3759 5.1363l-3.4865 3.4865a1.0014 1.0014 0 0 0-0.29612 0.71409v1.8114a1.0102 1.0102 0 0 0 1.0102 1.0102h2.0204a0.50511 0.50511 0 0 0 0.50511-0.5051v-1.0102h1.0102a0.50511 0.50511 0 0 0 0.50511-0.5051v-1.0102h1.0102a0.50511 0.50511 0 0 0 0.35736-0.14774l0.6036-0.60423a5.0321 5.0321 0 0 0 1.5646 0.24687h0.0063a5.0511 5.0511 0 0 0 3.5654-8.6228m-2.309 3.3192a1.0102 1.0102 0 1 1 1.0102-1.0102 1.0102 1.0102 0 0 1-1.0102 1.0102" fill="#55f" stroke-width=".063138"/>
+   <path d="m49.701 71.429a5.0511 5.0511 0 0 0-8.3759 5.1363l-3.4865 3.4865a1.0014 1.0014 0 0 0-0.29612 0.71409v1.8114a1.0102 1.0102 0 0 0 1.0102 1.0102h2.0204a0.50511 0.50511 0 0 0 0.50511-0.5051v-1.0102h1.0102a0.50511 0.50511 0 0 0 0.50511-0.5051v-1.0102h1.0102a0.50511 0.50511 0 0 0 0.35736-0.14774l0.6036-0.60423a5.0321 5.0321 0 0 0 1.5646 0.24687h0.0063a5.0511 5.0511 0 0 0 3.5654-8.6228m-2.309 3.3192a1.0102 1.0102 0 1 1 1.0102-1.0102 1.0102 1.0102 0 0 1-1.0102 1.0102" fill="none" stroke="#55f"/>
+   <path d="m236.94 69.901a5.0511 5.0511 0 0 0-8.3759 5.1363l-3.4865 3.4865a1.0014 1.0014 0 0 0-0.29612 0.71409v1.8114a1.0102 1.0102 0 0 0 1.0102 1.0102h2.0204a0.50511 0.50511 0 0 0 0.50511-0.5051v-1.0102h1.0102a0.50511 0.50511 0 0 0 0.50511-0.5051v-1.0102h1.0102a0.50511 0.50511 0 0 0 0.35736-0.14774l0.60361-0.60423a5.0321 5.0321 0 0 0 1.5646 0.24687h6e-3a5.0511 5.0511 0 0 0 3.5654-8.6228m-2.309 3.3192a1.0102 1.0102 0 1 1 1.0102-1.0102 1.0102 1.0102 0 0 1-1.0102 1.0102" fill="none" stroke="#ff9b58"/>
+   <path d="m52.082 148.38a5.0511 5.0511 0 0 0-8.3759 5.1363l-3.4865 3.4865a1.0014 1.0014 0 0 0-0.29612 0.71409v1.8114a1.0102 1.0102 0 0 0 1.0102 1.0102h2.0204a0.50511 0.50511 0 0 0 0.50511-0.5051v-1.0102h1.0102a0.50511 0.50511 0 0 0 0.50511-0.5051v-1.0102h1.0102a0.50511 0.50511 0 0 0 0.35736-0.14774l0.6036-0.60423a5.0321 5.0321 0 0 0 1.5646 0.24687h0.0063a5.0511 5.0511 0 0 0 3.5654-8.6228m-2.309 3.3192a1.0102 1.0102 0 1 1 1.0102-1.0102 1.0102 1.0102 0 0 1-1.0102 1.0102" fill="#ff9b58" stroke-width=".063138"/>
+  </g>
+ </g>
+</svg>
