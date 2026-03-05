@@ -8,7 +8,7 @@ tags: [homelab]
 
 ## 前情提要
 
-我正在把 Homelab 的服務從一台機器的 Docker Swarm 遷移到另外一台機器的 kubernetes，其中比較棘手的服務之一是 Jellyfin，因為這個服務包含了 1.3TB 的資料。
+我正在把 Homelab 的服務從一台機器的 Docker Swarm 遷移到另外一台機器的 Kubernetes，其中比較棘手的服務之一是 Jellyfin，因為這個服務包含了 1.3TB 的資料。
 
 為什麼 1.3TB 是個問題？可以見前一篇文章：
 
@@ -170,6 +170,74 @@ spec:
 
 - 使用 `ssh-add` 把要用來訪問 OpenSSH 伺服器的 private key 放進 SSH Agent 內。
 
+## 方案的選擇
+
+一開始其實有考慮過另外一個方案：掛載 SDS (Software-defined storage)。
+
+Kubernetes 本身就支援將外部的 NFS 或是 iSCSI 之類的東西掛載成 Volume，或是 StorageClass 把網路上的各種實例當成 Volume 使用。因此理論上只要在 Beta 節點上套一層 SDS，就能讓 Pod 掛載它的 Volume，接著就能在 Pod 內進行資料資料轉移。
+
+不過這個方案代表需要讓 Beta 節點暴露給網路做讀寫，在 LAN 內問題不大，但是考量「生產條件」的話這似乎不是一個標準的解決方式。所以最後選擇走基於 SSH 的方案，至少在正確使用方式下它是足夠安全的。
+
 ## 歷程
 
-接著來談過程中遇到的挫折
+接著來談過程中遇到的挫折，反覆嘗試了幾種方式：
+
+- Rclone 傳輸，兩端為 SFTP 對 SFTP。
+- Rclone 傳輸，其中一端為 SSHFS 掛載本地，另外一端為 SFTP。
+- Rclone 傳輸，兩端皆為 SSHFS 掛載本地。
+- rsync 傳輸，兩端皆為 SSHFS 掛載本地。
+- rsync 傳輸，其中一端 SSHFS 掛載本地。
+
+:::info
+rsync 不支援兩端同時為 remote。
+:::
+
+過程中都會突然停止傳輸（網路流量歸零），我原本以為是花式傳輸造成的某種鎖，或是 SSH 死掉之類的，但是就算用上 Port Forwarding 這個理應最穩定的方式還是會出現，而且它有很明顯的間歇性。雖然放著不管應該最後還是可以傳輸完畢，但是總覺得還是應該要試著解決它一下。
+
+過程中用 LLM 做故障排除，最後試著把 `iostat` 資訊餵給 LLM 得到的階段性結論是硬碟的 I/O 瓶頸，加上個 `--bwlimit=20m` 限制傳輸流量之後，那個間歇性停止的問題就消失了，掛著跑了幾個小時終於把資料傳完了。
+
+### Node 回顧
+
+:::info
+這個回顧使用的 Dashboard 可以在這裡找到：
+
+https://github.com/rfmoz/grafana-dashboards
+:::
+
+前段不穩定的部份就是我嘗試各種方案，並且傳輸時觀察到間歇性停止的部份。
+
+![](./node-01.webp)
+
+![](./node-02.webp)
+
+![](./node-03.webp)
+
+![](./node-04.webp)
+
+![](./node-05.webp)
+
+在這張圖很明顯看到硬碟的 I/O 已經吃滿了：
+
+![](./node-06.webp)
+
+因此傳輸過程的間歇性停止其實是硬碟瓶頸，網路傳輸很快的把資料填進去 Buffer，Buffer 滿了硬碟來不及消化就讓網路傳輸暫停，寫入等待時間最高甚至超過一分半：
+
+![](./node-07.webp)
+
+![](./node-08.webp)
+
+![](./node-09.webp)
+
+![](./node-10.webp)
+
+這裡也可以看到很多 I/O Wait：
+
+![](./node-11.webp)
+
+![](./node-12.webp)
+
+### Cluster 回顧
+
+:::info
+這個回顧使用的 Dashboard 是 [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) 這個 Helm 的一部分。
+:::
