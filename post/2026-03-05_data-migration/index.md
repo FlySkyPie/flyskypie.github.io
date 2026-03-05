@@ -6,6 +6,10 @@ tags: [homelab]
 
 # Homelab 資料遷移筆記
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-03-05_data-migration/node-01.webp" />
+</head>
+
 ## 前情提要
 
 我正在把 Homelab 的服務從一台機器的 Docker Swarm 遷移到另外一台機器的 Kubernetes，其中比較棘手的服務之一是 Jellyfin，因為這個服務包含了 1.3TB 的資料。
@@ -241,3 +245,15 @@ https://github.com/rfmoz/grafana-dashboards
 :::info
 這個回顧使用的 Dashboard 是 [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) 這個 Helm 的一部分。
 :::
+
+可以觀察到相同的模式，沒什麼特別的資訊，不過機會難得（？）順便曬一下從 Kubernetes 的角度看過去的 Dashboard 長怎樣。
+
+![](./cluster-01.webp)
+
+![](./cluster-02.webp)
+
+![](./cluster-03.webp)
+
+![](./cluster-04.webp)
+
+![](./cluster-05.webp)
