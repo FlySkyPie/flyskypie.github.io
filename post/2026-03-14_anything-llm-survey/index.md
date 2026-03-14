@@ -268,7 +268,197 @@ Given the following conversation, relevant context, and a follow up question, re
 ```
 </details>
 
+### 嵌入文件
+
+為了開箱即用，AnythingLLM 內建了向量資料庫跟嵌入模型（檔案依然需要從 Hugging Face 下載）的功能。
+
+![](./09_vector-db.webp)
+
+![](./10_embedding.webp)
+
+嵌入相關的 UI 非常簡陋，甚至連自己的分頁都沒有，只有彈出視窗，可見 AnythingLLM 是一款十分 Chat 本位的應用程式：
+
+![](./13_embedding-document.webp)
+
+![](./14_embedding-document.webp)
+
+![](./15_embedding-document.webp)
+
+只有觸發向量索引才會顯示部份的切塊：
+
+![](./11_document-in-chat.webp)
+
+![](./12_document-in-chat.webp)
+
+沒有找到界面可以瀏覽或編輯已經被嵌入的資料。
+
+<details>
+  <summary>系統提示詞</summary>
+
+```
+Given the following conversation, relevant context, and a follow up question, reply with an answer to the current question the user is asking. Return only your response to the question given the above information following the users instructions as needed.
+Context:
+[CONTEXT 0]:
+<document_metadata>
+sourceDocument: Manual.pdf
+published: 3/14/2026, 8:13:12 AM
+</document_metadata>
+
+Chapter 3
+The Console...........................................32
+Chapter 4
+Component Reference..............................46
+Weapon Statistics.................................61
+Chapter 5
+Credits..................................................62Chapter 1
+4
+Chapter 1
+Introduction
+MindRover: The Europa Project
+Welcome to Europa, land of ice and more ice. With 
+Jupiter constantly hovering on the horizon, we've 
+found that homesickness among new arrivals is 
+common, so let's just get started.
+Your time here will present you with a new type of 
+challenge -- one that matches the excitement of an 
+action game, the planning of a strategy game and 
+the intense thinking required in a puzzle game.
+Your goal is to create robotic vehicles using a wide 
+array of different components, program their 
+behavior, then set them free to compete with each 
+other. Your progress through the levels will depend 
+on cleverness, innovation, and even deception as
+[END CONTEXT 0]
+
+[CONTEXT 1]:
+<document_metadata>
+sourceDocument: Manual.pdf
+published: 3/14/2026, 8:13:12 AM
+</document_metadata>
+
+Some scenarios may ask you to build a vehicle to 
+complete a series of simple tasks. Others might ask 
+you to program a set of vehicles that work together 
+to defeat another team. 
+You can equip your vehicles with everything from 
+rocket launchers to radars to speakers. You can 
+program them to do anything from following a 
+track, to finding a path through a maze, to seeking 
+and destroying other vehicles. The behaviors you 
+can create are limitless -- and the game will grow 
+with your abilities.
+There are five basic steps in playing MindRover.Chapter 2
+8
+Choose a
+Scenario
+First, choose a scenario or challenge. Each one has 
+a different task or competition, and MindRover 
+supports several different styles of scenario. 
+Choose a
+Vehicle
+Next, you choose a chassis on which you will place 
+the components for your vehicle. There are 
+wheeled, treaded and hovercraft type chassis in 
+varying sizes. 
+Add
+Components
+Next you load up your vehicle with the components
+[END CONTEXT 1]
+
+[CONTEXT 2]:
+<document_metadata>
+sourceDocument: Manual.pdf
+published: 3/14/2026, 8:13:12 AM
+</document_metadata>
+
+you tackle some of the more challenging scenarios. 
+Share your successes, get advice, download new 
+challenges and compete with others by visiting the 
+MindRover website at www.mindrover.com.
+MindRover probably isn't quite like anything you've 
+seen before, so please give yourself a chance to 
+learn it. Go through the in game tutorials and use 
+the F1 key for help along the way.
+Ready? Free your mind, grab your mouse, and 
+enter into the world of MindRover!Introduction
+5
+Quick Start
+For the fastest introduction to MindRover, follow 
+these steps:
+Create a new user name and log in. Your user 
+name will be used to help identify the vehicles 
+you build.
+Go through the first 2 or 3 tutorials in the game 
+following the tutorial prompts.
+Click on Sports category, and try Sumo Hover. 
+There is a tutorial vehicle (half-built) available 
+to get you started or you can start with an 
+empty chassis. 
+After that you should have a pretty good idea of 
+how to go off and build your own rovers.
+[END CONTEXT 2]
+
+[CONTEXT 3]:
+<document_metadata>
+sourceDocument: Manual.pdf
+published: 3/14/2026, 8:13:12 AM
+</document_metadata>
+
+Don’t forget to visit www.mindrover.com for hints, 
+tips, and competitors. You’ll find an active and 
+growing MindRover community.Chapter 1
+6
+Using This Manual
+ConceptsThe Concepts section describes essential MindRover 
+concepts in some detail. You will learn about 
+scenarios, vehicles, components, wiring, and 
+competitions. You can read this chapter before you 
+play to get a good feel for all aspects of the game. 
+But if you like to jump right in and get started, just 
+go to the first tutorial and come back to this chapter 
+later. 
+ConsoleThe Console section goes into detail on each of the 
+user interface screens. You can read it before you 
+start, or just use it as a reference after you have 
+started playing the game. 
+ComponentsThis chapter gives you specific information on each 
+component in the game, listed alphabetically. 
+Within the game, click on a component and press 
+F1 to get more details and examples.
+Start with the
+tutorials
+[END CONTEXT 3]
+```
+</details>
+
 ### 編排與構成
+
+<details>
+  <summary>`docker-compose.yaml`</summary>
+
+```yaml
+services:
+  anythingllm:
+    image: docker.io/mintplexlabs/anythingllm:1.11.0
+    ports:
+      - 3001:3001
+    volumes:
+      - anythingllm-data:/app/server/storage
+    environment:
+      - SERVER_PORT=3001
+      - STORAGE_DIR=/app/server/storage
+      - UID=1000
+      - GID=1000
+      - LLM_PROVIDER=generic-openai
+      - GENERIC_OPEN_AI_BASE_PATH=http://tensorzero.api.gas.arachne/openai/v1
+      - GENERIC_OPEN_AI_MODEL_PREF=tensorzero::model_name::openrouter::qwen/qwen3.5-35b-a3b
+      - GENERIC_OPEN_AI_MODEL_TOKEN_LIMIT=4096
+      - GENERIC_OPEN_AI_API_KEY=ANY
+
+volumes:
+  anythingllm-data:
+```
+</details>
 
 
 
