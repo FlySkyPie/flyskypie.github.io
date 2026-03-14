@@ -6,6 +6,10 @@ tags: [LLM]
 
 # 不正經 LLM APP 調查：AnythingLLM
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-03-14_anything-llm-survey/13_embedding-document.webp" />
+</head>
+
 ## 前情提要
 
 作為一個閃亮事物症候群工程屍，挖坑從來不手軟，[TiddlyRAG](https://github.com/FlySkyPie/tiddlyrag-planning) 是一個新坑，主要是關於 RAG (Retrieval-augmented generation)，於是我想先調查一下市面上的開源專案怎麼呈現 RAG 的。
@@ -433,6 +437,8 @@ tutorials
 
 ### 編排與構成
 
+這個是開箱即用的單服務模式：
+
 <details>
   <summary>`docker-compose.yaml`</summary>
 
@@ -460,7 +466,178 @@ volumes:
 ```
 </details>
 
+接著是把嵌入跟向量資料庫打散的微服務模式：
 
+<details>
+  <summary>`docker-compose.yaml`</summary>
+
+```yaml
+services:
+  anythingllm:
+    image: docker.io/mintplexlabs/anythingllm:1.11.0
+    restart: always
+    ports:
+      - 3001:3001
+    volumes:
+      - anythingllm-data:/app/server/storage
+    environment:
+      - SERVER_PORT=3001
+      - STORAGE_DIR=/app/server/storage
+      - UID=1000
+      - GID=1000
+      - LLM_PROVIDER=generic-openai
+      - GENERIC_OPEN_AI_BASE_PATH=http://tensorzero.api.gas.arachne/openai/v1
+      - GENERIC_OPEN_AI_MODEL_PREF=tensorzero::model_name::openrouter::qwen/qwen3.5-35b-a3b
+      - GENERIC_OPEN_AI_MODEL_TOKEN_LIMIT=4096
+      - GENERIC_OPEN_AI_API_KEY=ANY
+
+      - EMBEDDING_ENGINE=generic-openai
+      - EMBEDDING_MODEL_PREF=ANY
+      - EMBEDDING_MODEL_MAX_CHUNK_LENGTH=1024
+      - EMBEDDING_BASE_PATH=http://llama-cpp:8080/v1
+      - GENERIC_OPEN_AI_EMBEDDING_API_KEY='ANY'
+      - GENERIC_OPEN_AI_EMBEDDING_MAX_CONCURRENT_CHUNKS=4
+      - GENERIC_OPEN_AI_EMBEDDING_API_DELAY_MS=100
+
+      - VECTOR_DB=milvus
+      - MILVUS_ADDRESS=http://milvus:19530
+    depends_on:
+      - llama-cpp
+      - milvus
+
+  llama-cpp:
+    image: ghcr.io/ggml-org/llama.cpp:server-vulkan
+    restart: always
+    devices:
+      - /dev/dri/:/dev/dri/
+    ports:
+      - 8080:8080
+    entrypoint: /app/llama-server
+    environment:
+      - HF_ENDPOINT=http://huggingface.mirrors.solid.arachne
+    volumes:
+      - llama-cpp-cache:/root/.cache/llama.cpp
+    command:
+      - --hf-repo 
+      - Qwen/Qwen3-Embedding-8B-GGUF
+      - --hf-file 
+      - Qwen3-Embedding-8B-Q6_K.gguf
+      - --embeddings 
+      - --pooling 
+      - mean
+      - --ctx-size
+      - "2048" 
+      - --batch-size
+      - "1024"
+      - --ubatch-size
+      - "2048" 
+      - --gpu-layers
+      - "999" 
+      # - --no-mmap 
+      - --flash-attn
+      - on 
+      - --no-webui
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 20s
+      retries: 3
+
+  etcd:
+    container_name: milvus-etcd
+    image: quay.io/coreos/etcd:v3.5.25
+    restart: always
+    environment:
+      - ETCD_AUTO_COMPACTION_MODE=revision
+      - ETCD_AUTO_COMPACTION_RETENTION=1000
+      - ETCD_QUOTA_BACKEND_BYTES=4294967296
+      - ETCD_SNAPSHOT_COUNT=50000
+    volumes:
+      - etcd-data:/etcd
+    command: etcd -advertise-client-urls=http://etcd:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  minio:
+    container_name: milvus-minio
+    image: docker.io/minio/minio:RELEASE.2024-12-18T13-15-44Z
+    restart: always
+    environment:
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+    ports:
+      - "9001:9001"
+      - "9000:9000"
+    volumes:
+      - minio-data:/minio_data
+    command: minio server /minio_data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  milvus:
+    container_name: milvus-standalone
+    image: docker.io/milvusdb/milvus:v2.6.11
+    command: ["milvus", "run", "standalone"]
+    restart: always
+    security_opt:
+    - seccomp:unconfined
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      MINIO_ADDRESS: minio:9000
+      MQ_TYPE: woodpecker
+    volumes:
+      - milvus-data:/var/lib/milvus
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      start_period: 90s
+      timeout: 20s
+      retries: 3
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    depends_on:
+      - "etcd"
+      - "minio"
+
+  attu:
+    image: docker.io/zilliz/attu:v2.6
+    restart: always
+    environment:
+      - MILVUS_URL=http://milvus:19530
+    ports:
+      - 8090:3000
+    depends_on:
+      - milvus
+
+volumes:
+  anythingllm-data:
+  llama-cpp-cache:
+  minio-data:
+  milvus-data:
+  etcd-data:
+```
+</details>
+
+使用 llama.cpp 和 `Qwen/Qwen3-Embedding-8B-GGUF` 嵌入模型，並且用 Milvus 作為向量資料庫，順手測了一下雙語索引：
+
+![](./16_rag-query.webp)
+
+![](./17_rag-query.webp)
+
+透過 [Attu](https://github.com/zilliztech/attu) 就能瀏覽 Milvus 內儲存的資料了：
+
+![](./18_vector-db.webp)
+
+可以發現 AnythingLLM 是直接嵌入一個 JSON 資料：
+
+![](./19_vector-db.webp)
 
 ### 實作程序關閉
 
@@ -479,3 +656,5 @@ WARN[0010] StopSignal SIGTERM failed to stop container anythingllm_anythingllm_1
 本來標題是想起個「評測」之類的，只是感覺這代表覆蓋的面向要足夠多，還要有可以量化的指標 (benchmark) 之類的，但是我只是想根據自己自己的需求「簡單翻閱一下」。
 
 加上我在意的面向通常也不是一般使用者會在意的部份，如果看到「OOXX 評測」開開心心的點進來文章卻發現跟想像的不一樣這樣失望的話，那會有一點對不起讀者，所以最後給了一個「不正經」的標題，畢竟以一般 LLM 使用者的角度，我調查的點的確蠻不正經的。
+
+另外，評測應該要給個總結，不過我這邊先不這樣做，因為沒有其他參照對象，也不知道 AnythingLLM 的表現是好是壞，大概等我手邊累積多一點資訊才會對各個應用程式做評分之類的總結。
