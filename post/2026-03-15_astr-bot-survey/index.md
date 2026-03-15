@@ -6,6 +6,10 @@ tags: [LLM]
 
 # 不正經 LLM APP 調查：AstrBot
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-03-15_astr-bot-survey/09_embedding.webp" />
+</head>
+
 今天要調查的對象是 AstrBot，它是中國本位的應用程式，例如：
 
 - 搜尋引擎僅支援百度...等中國服務。
@@ -139,3 +143,95 @@ User，除了使用者的請求還會額外帶上一些資訊：
 
 ## 檢索知識
 
+嵌入完資料，在設定啟用後就能進行 RAG 了。
+
+![](./10_rag.webp)
+
+![](./11_rag.webp)
+
+UI 本身就會顯示剛剛檢索了什麼：
+
+![](./13_rag.webp)
+
+![](./12_rag.webp)
+
+同樣測了雙語檢索，雖然內容看起來很多不過大部份都是幻覺（兩個語言都一樣）：
+
+![](./14_rag.webp)
+
+![](./15_rag.webp)
+
+可能是切塊太細（每個知識塊太小）跟最終檢索塊數量太少有關，不過我只是來這裡大概把 RAG 功能跑一遍，不是來優化它的，所以預設值簡單跑過一遍我就要閃人了。
+
+似乎有實做一些比較複雜的 RAG 檢索機制，不過我這邊就不深入探究了。
+
+## 編排與構成
+
+大部分設定都需要透過 GUI 完成，無法 Infrastructure as Code 組態。
+
+<details>
+  <summary>`docker-compose.yaml`</summary>
+
+```yaml
+services:
+  astrbot:
+    image: docker.io/soulter/astrbot:v4.20.0
+    container_name: astrbot
+    restart: always
+    ports:
+      - "6185:6185"
+    environment:
+      - TZ=Asia/Taipei
+    volumes:
+      - astrbot-data:/AstrBot/data
+    depends_on:
+      - llama-cpp
+
+  llama-cpp:
+    image: ghcr.io/ggml-org/llama.cpp:server-vulkan
+    restart: always
+    devices:
+      - /dev/dri/:/dev/dri/
+    ports:
+      - 8080:8080
+    entrypoint: /app/llama-server
+    environment:
+      - HF_ENDPOINT=http://huggingface.mirrors.solid.arachne
+    volumes:
+      - llama-cpp-cache:/root/.cache/llama.cpp
+    command:
+      - --hf-repo 
+      - Qwen/Qwen3-Embedding-8B-GGUF
+      - --hf-file 
+      - Qwen3-Embedding-8B-Q6_K.gguf
+      - --embeddings 
+      - --pooling 
+      - mean
+      - --ctx-size
+      - "2048" 
+      - --batch-size
+      - "1024"
+      - --ubatch-size
+      - "2048" 
+      - --gpu-layers
+      - "999" 
+      # - --no-mmap 
+      - --flash-attn
+      - on 
+      - --no-webui
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 20s
+      retries: 3
+
+volumes:
+  astrbot-data:
+  llama-cpp-cache:
+
+```
+</details>
+
+### 實作程序關閉
+
+是否有實作 Graceful Shutdown？ 否。
