@@ -170,7 +170,8 @@
             <guid>https://flyskypie.github.io/posts/2026-03-16_open-webui</guid>
             <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[前情提要]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/posts/2026-03-16_open-webui#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
+            <content:encoded><![CDATA[
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/posts/2026-03-16_open-webui#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
 <p>想著調查一些 LLM 應用程式的 RAG 功能，關於調查的方向跟基準請見前一篇文章，不在此贅述：</p>
 <p><a href="https://flyskypie.github.io/posts/2026-03-14_anything-llm-survey/" target="_blank" rel="noopener noreferrer">不正經 LLM APP 調查：AnythingLLM</a></p>
 <p>同系列其他調查文：</p>
