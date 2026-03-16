@@ -6,6 +6,10 @@ tags: [LLM]
 
 # 不正經 LLM APP 調查：kotaemon
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-03-16_kotaemon/14_rag.webp" />
+</head>
+
 ## 前情提要
 
 想著調查一些 LLM 應用程式的 RAG 功能，關於調查的方向跟基準請見前一篇文章，不在此贅述：
@@ -71,18 +75,6 @@ Image Layers
 
 ![](./04_setting.webp)
 
-## 模型設定
-
-雖然不是這一系列評測的重點，不過我覺得這個設計值得提一下，我認為 kotaemon 蠻優雅的處理不同的 AI 來源，它直接暴露 YAML 以及所有有效參數的說明：
-
-![](./05_setting.webp)
-
-![](./06_setting.webp)
-
-看起來是直接使用 LangChain 的實例：
-
-![](./07_setting.webp)
-
 ## 嵌入文件
 
 ![](./08_upload-file.webp)
@@ -99,9 +91,106 @@ UI 雖然很簡陋，但是可以看到所有切割的字串塊：
 
 ## 檢索知識
 
+右邊會顯示參考資料：
+
+![](./13_rag.webp)
+
+被提示詞「Give answer in English.」約束，輸入中文還是回答英文：
+
+![](./14_rag.webp)
+
+翻了一下 LLM 紀錄，一次 RAG 有 13 次 LLM 請求，一個是標題摘要：
+
+![](./15_rag-request.webp)
+
+其中 10 次是針對每一個資料塊進行評分：
+
+![](./16_rag-request.webp)
+
+其中一次是呼叫工具：
+
+![](./17_rag-request.webp)
+
+![](./19_rag-request.webp)
+
+最後是總結：
+
+![](./18_rag-request.webp)
 
 ## 編排與構成
 
+<details>
+  <summary>`docker-compose.yaml`</summary>
+
+```yaml
+services:
+  kotaemon:
+    image: ghcr.io/cinnamon/kotaemon:0.11.0-full 
+    environment:
+      - GRADIO_SERVER_NAME=0.0.0.0
+      - GRADIO_SERVER_PORT=7860
+    volumes:
+      - kotaemon-data:/app/ktem_app_data
+    ports:
+      - 7860:7860
+
+  llama-cpp:
+    image: ghcr.io/ggml-org/llama.cpp:server-vulkan
+    restart: always
+    devices:
+      - /dev/dri/:/dev/dri/
+    ports:
+      - 8080:8080
+    entrypoint: /app/llama-server
+    environment:
+      - HF_ENDPOINT=http://huggingface.mirrors.solid.arachne
+    volumes:
+      - llama-cpp-cache:/root/.cache/llama.cpp
+    command:
+      - --hf-repo 
+      - Qwen/Qwen3-Embedding-8B-GGUF
+      - --hf-file 
+      - Qwen3-Embedding-8B-Q6_K.gguf
+      - --embeddings 
+      - --pooling 
+      - mean
+      - --ctx-size
+      - "2048" 
+      - --batch-size
+      - "1024"
+      - --ubatch-size
+      - "2048" 
+      - --gpu-layers
+      - "999" 
+      - --flash-attn
+      - on 
+      - --no-webui
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 20s
+      retries: 3
+
+volumes:
+  kotaemon-data:
+  llama-cpp-cache:
+```
+</details>
+
+雖然不是這一系列評測的重點，不過我覺得這個設計值得提一下，我認為 kotaemon 蠻優雅的處理不同的 AI 來源，它直接暴露 YAML 以及所有有效參數的說明：
+
+![](./05_setting.webp)
+
+![](./06_setting.webp)
+
+看起來是直接使用 LangChain 的實例：
+
+![](./07_setting.webp)
 
 ## 實作程序關閉
 
+是否有實作 Graceful Shutdown？ 否。
+
+```
+kotaemon-1 exited with code 137
+```
