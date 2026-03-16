@@ -92,6 +92,75 @@ PDF 上傳後會經過純文字處理，可以編輯，不過不會觸發重新�
 
 ## 編排與構成
 
+<details>
+  <summary>`docker-compose.yaml`</summary>
+
+```yaml
+services:
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:0.7.1-slim
+    ports:
+      - "8080:8080"
+    environment:
+      - WEBUI_AUTH=False
+      - HF_ENDPOINT=http://huggingface.mirrors.solid.arachne
+      - OFFLINE_MODE=true
+    volumes:
+      - open-webui:/app/backend/data
+
+  llama-cpp:
+    image: ghcr.io/ggml-org/llama.cpp:server-vulkan
+    restart: always
+    devices:
+      - /dev/dri/:/dev/dri/
+    entrypoint: /app/llama-server
+    environment:
+      - HF_ENDPOINT=http://huggingface.mirrors.solid.arachne
+    volumes:
+      - llama-cpp-cache:/root/.cache/llama.cpp
+    command:
+      - --hf-repo
+      - Qwen/Qwen3-Embedding-8B-GGUF
+      - --hf-file
+      - Qwen3-Embedding-8B-Q6_K.gguf
+      - --embeddings
+      - --pooling
+      - mean
+      - --ctx-size
+      - "2048"
+      - --batch-size
+      - "1024"
+      - --ubatch-size
+      - "2048"
+      - --gpu-layers
+      - "999"
+      - --flash-attn
+      - on
+      - --no-webui
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 20s
+      retries: 3
+
+volumes:
+  open-webui:
+  llama-cpp-cache:
+```
+</details>
+
+如果沒有設定 `OFFLINE_MODE`，Open WebUI 啟動就會嘗試嘗試下載各種模型：
+
+![](./10_download_model.webp)
+
+如果把相關實作和向量資料庫拿掉想必映像檔可以小上許多。
+
+話雖如此，Open WebUI 本身也被移植作為 llama.cpp 的內建 GUI。
 
 ## 實作程序關閉
 
+是否有實作 Graceful Shutdown？ 是。
+
+```
+openwebui-1 exited with code 0
+```
