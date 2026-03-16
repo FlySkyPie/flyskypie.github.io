@@ -6,6 +6,10 @@ tags: [LLM]
 
 # 不正經 LLM APP 調查：LobeHub
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-03-16_lobehub/04_setting.webp" />
+</head>
+
 ## 前情提要
 
 想著調查一些 LLM 應用程式的 RAG 功能，關於調查的方向跟基準請見前一篇文章，不在此贅述：
