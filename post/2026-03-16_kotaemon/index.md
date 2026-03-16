@@ -71,8 +71,31 @@ Image Layers
 
 ![](./04_setting.webp)
 
+## 模型設定
+
+雖然不是這一系列評測的重點，不過我覺得這個設計值得提一下，我認為 kotaemon 蠻優雅的處理不同的 AI 來源，它直接暴露 YAML 以及所有有效參數的說明：
+
+![](./05_setting.webp)
+
+![](./06_setting.webp)
+
+看起來是直接使用 LangChain 的實例：
+
+![](./07_setting.webp)
+
 ## 嵌入文件
 
+![](./08_upload-file.webp)
+
+![](./09_upload-file.webp)
+
+![](./10_upload-file.webp)
+
+UI 雖然很簡陋，但是可以看到所有切割的字串塊：
+
+![](./12_upload-file.webp)
+
+![](./11_upload-file.webp)
 
 ## 檢索知識
 
