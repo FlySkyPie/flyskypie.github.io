@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="125.13mm" height="81.859mm" version="1.1" viewBox="0 0 125.13 81.859" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-58.251 -78.626)">
+  <g transform="translate(-57.149 -682.92)">
+   <rect x="115.45" y="761.59" width="125.03" height="81.759" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" style="paint-order:markers stroke fill"/>
+   <g transform="matrix(.34372 0 0 .34372 137.42 788.95)" fill="none">
+    <path d="m29.054 17.271a25.228 25.228 0 1 1 21.892 45.459 25.227 25.227 0 0 1-21.892-45.458" fill="#f2c94c"/>
+    <g stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+     <path d="m50.607 50.607a15 15 0 0 1-21.214 0" stroke="#333"/>
+     <circle cx="31" cy="34" r="2" stroke="#4f4f4f"/>
+     <circle cx="49" cy="34" r="2" stroke="#4f4f4f"/>
+    </g>
+   </g>
+   <g transform="matrix(2.0207 0 0 2.0207 -223.44 -821.25)" stroke-width=".26458">
+    <ellipse cx="213.44" cy="802.76" rx=".66146" ry=".92604" fill="#f4900c"/>
+    <ellipse cx="205.24" cy="802.76" rx=".66146" ry=".92604" fill="#f4900c"/>
+    <path d="m213.58 803.95a0.26458 0.26458 0 0 1-0.26458 0.26458h-0.79375a0.26458 0.26458 0 0 1-0.26459-0.26458v-2.3812a0.26458 0.26458 0 0 1 0.26459-0.26458h0.79375a0.26458 0.26458 0 0 1 0.26458 0.26458zm-7.1438 0a0.26458 0.26458 0 0 1-0.26458 0.26458h-0.79375a0.26458 0.26458 0 0 1-0.26459-0.26458v-2.3812a0.26458 0.26458 0 0 1 0.26459-0.26458h0.79375a0.26458 0.26458 0 0 1 0.26458 0.26458z" fill="#ffac33"/>
+    <path d="m211.99 800.25c0 0.73052-1.1848 1.0583-2.6458 1.0583s-2.6458-0.32782-2.6458-1.0583c0-0.73051 1.1845-1.3229 2.6458-1.3229 1.4613 0 2.6458 0.5924 2.6458 1.3229" fill="#ffcc4d"/>
+    <path d="m211.2 800.01c0 0.42624-0.82947 0.77179-1.8521 0.77179-1.0226 0-1.8521-0.34555-1.8521-0.77179s0.82921-0.77179 1.8521-0.77179 1.8521 0.34555 1.8521 0.77179" fill="#f4900c"/>
+    <path d="m212.52 800.38c0 0.36539-0.29607 0.39688-0.66146 0.39688h-5.0271c-0.36539 0-0.66146-0.0315-0.66146-0.39688s0.29607-0.66145 0.66146-0.66145h5.0271a0.66146 0.66146 0 0 1 0.66146 0.66145" fill="#269"/>
+    <path d="m212.52 800.52h-6.35a0.52917 0.52917 0 0 0-0.52917 0.52916v6.8792h7.4083v-6.8792a0.52917 0.52917 0 0 0-0.52916-0.52916" fill="#55acee"/>
+    <path d="m213.84 807.66v-0.26459a0.52917 0.52917 0 0 0-0.52916-0.52916h-2.8916l-0.89006 0.89005a0.26458 0.26458 0 0 1-0.37412 0l-0.89006-0.89005h-2.8916a0.52917 0.52917 0 0 0-0.52917 0.52916v0.26459c0 0.2921-0.0275 0.52916 0.26458 0.52916h8.4667c0.2921 0 0.26458-0.23706 0.26458-0.52916" fill="#3b88c3"/>
+    <circle cx="211.06" cy="802.76" r="1.1906" fill="#fff"/>
+    <circle cx="211.06" cy="802.76" r=".71993" fill="#dd2e44"/>
+    <circle cx="207.62" cy="802.76" r="1.1906" fill="#fff"/>
+    <path d="m212.25 805.67a0.66146 0.66146 0 0 1-0.66145 0.66146h-4.4979a0.66146 0.66146 0 1 1 0-1.3229h4.4979a0.66146 0.66146 0 0 1 0.66145 0.66146" fill="#f5f8fa"/>
+    <path d="m209.08 805.01h0.52917v1.3229h-0.52917zm-1.3229 0h0.52916v1.3229h-0.52916zm2.6458 0h0.52917v1.3229h-0.52917zm-3.9688 0.66146a0.66146 0.66146 0 0 0 0.52917 0.64823v-1.2965a0.66146 0.66146 0 0 0-0.52917 0.64823m5.2917-0.64823v1.2962a0.66146 0.66146 0 0 0 0-1.2962" fill="#ccd6dd"/>
+    <circle cx="207.62" cy="802.76" r=".71993" fill="#dd2e44"/>
+   </g>
+   <g fill="#000000" font-family="'Noto Sans Mono CJK TC'" font-size="11.289px" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" text-anchor="middle">
+    <text x="151.05762" y="790.03033" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="151.05762" y="790.03033" fill="#000000" font-family="'Noto Sans Mono CJK TC'" stroke-width="8">User</tspan></text>
+    <text x="156.10553" y="823.17371" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="156.10553" y="823.17371" fill="#000000" font-family="'Noto Sans Mono CJK TC'" stroke-width="8">問：</tspan></text>
+    <text x="204.38194" y="823.85632" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="204.38194" y="823.85632" fill="#000000" font-family="'Noto Sans Mono CJK TC'" stroke-width="8">答：</tspan></text>
+    <text x="199.31468" y="790.1037" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="199.31468" y="790.1037" fill="#000000" font-family="'Noto Sans Mono CJK TC'" stroke-width="8">LLM</tspan></text>
+   </g>
+  </g>
+ </g>
+</svg>
