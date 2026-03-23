@@ -4,10 +4,46 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Tue, 17 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 23 Mar 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[從定性描述與定量描述看教育中的倒因為果]]></title>
+            <link>https://flyskypie.github.io/posts/2026-03-23_qualitative</link>
+            <guid>https://flyskypie.github.io/posts/2026-03-23_qualitative</guid>
+            <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[我認為教育的目的應該是提高知識的廣度，因此對學生的要求應該以「知道定性描述」為重點。]]></description>
+            <content:encoded><![CDATA[<p>我認為教育的目的應該是提高知識的廣度，因此對學生的要求應該以「知道定性描述」為重點。</p>
+<p>我以理想氣體狀態方程式作為例子，理想氣體狀態方程式在歷史的發展上其實是由多個定律構成的：</p>
+<ul>
+<li>波以耳定律<!-- -->
+<ul>
+<li>氣體壓力與氣體體積成反比。</li>
+</ul>
+</li>
+<li>定壓查理定律<!-- -->
+<ul>
+<li>壓力恆定時，一定量氣體的體積與其溫度成正比。</li>
+</ul>
+</li>
+<li>定容查理定律<!-- -->
+<ul>
+<li>定量定容的理想氣體，壓力與絕對溫度成正比。</li>
+</ul>
+</li>
+</ul>
+<p>我們可以發現它們都是定性描述，當然當你把理想氣體方程式這個定量描述背起來之後能夠回答所有定性描述。</p>
+<p>問題是人應該是對多個事物有定性描述的基本理解，必要的時候再根據定性描述去找到定量描述才對。但是我們的教育體系卻總是將定量描述當成驗收標準。</p>
+<p>以上是沈澱在我思緒中已久的想法，直到最近在學習 RAG (Retrieval-Augmented Generation) 系統時才對這件事有更深的體悟。</p>
+<p>「把一個知識塊嵌入到高維向量空間，檢索的時候先對問題嵌入，在透過向量把知識檢索出來」這個過程不就是人類運作的方式嗎？</p>
+<ul>
+<li>嵌入向量本身不自帶知識，而是一種「感覺」。</li>
+<li>對問題進行嵌入本質上就是一種透過定性描述找資料，「感覺這個問題屬於這個空間這區域的東西」。</li>
+<li>檢索知識塊，即是找到定量描述。</li>
+</ul>]]></content:encoded>
+            <category>philosophy</category>
+        </item>
         <item>
             <title><![CDATA[Agent! Agent! Agent! 所以 Agent 到底是什麼？]]></title>
             <link>https://flyskypie.github.io/posts/2026-03-17_llm-agent</link>
@@ -67,6 +103,7 @@
 <p>程式碼本身並不蘊含來自現實世界的領域模型或領域知識，又或是蘊含甚少，因為 LLM 的上下文可能缺少了關鍵的領域知識，程式碼是根據表象的需求實做的，如此建立的軟體模型很有可能會跟現實問題脫句。</p>
 <p>開發者成長遭到削弱，當工作流程一謂的關注堆砌程式碼，開發者不再學習領域知識，而是專注於建構虛有其表的程式碼，這不論是對開發者個個人生涯還是專案擁有者都十分不利，開發者的成長停滯；開發者缺乏對領域知識的理解更不可能撰寫出對應的交接文件。</p>
 <p>表象上軟體的程式碼成長了，但是實際上軟體專案本身的成長是受阻的。</p>]]></content:encoded>
+            <category>philosophy</category>
         </item>
         <item>
             <title><![CDATA[不正經 LLM APP 調查：kotaemon]]></title>
@@ -1329,7 +1366,7 @@
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/07_how-longhorn-works-ce2d8662288fcfd69a7a58148d703030.svg" width="1366" height="820" class="img_RpFt"></p>
 <p><a href="https://github.com/longhorn/longhorn" target="_blank" rel="noopener noreferrer">Longhorn</a> 是基於 K8s 的分散式儲存，它可以和 K8s 以類似共生的關係運作在一起：透過 K8s 的叢集架構 Longhorn 可以運作在每一個節點上實現多節點冗餘，而當 K8s 內佈署的服務請求儲存區 (Persistent Volumes) 時，則由 Longhorn 直接向應用程式提供儲存空間。</p>
 <p>因此一顆硬碟只要掛上一個堪用的電腦（比如一塊樹莓派），丟進 K8s 內就能讓它成為儲存資源池的一部分，多餘的運算能力則可以「順便」運行一些服務分攤叢集的負載。</p>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="基於筆電的-k8s-叢集">基於筆電的 K8s 叢集<a href="https://flyskypie.github.io/posts/2026-02-04_homelab-hardware-strategy#%E5%9F%BA%E6%96%BC%E7%AD%86%E9%9B%BB%E7%9A%84-k8s-%E5%8F%A2%E9%9B%86" class="hash-link" aria-label="Direct link to 基於筆電的 K8s 叢集" title="Direct link to 基於筆電的 K8s 叢集">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="基於筆電的-k8s-叢集">基於筆電的 K8s 叢集<a href="https://flyskypie.github.io/posts/2026-02-04_homelab-hardware-strategy#%E5%9F%BA%E6%96%BC%E7%AD%86%E9%9B%BB%E7%9A%84-k8s-%EF%BF%BD%E5%8F%A2%E9%9B%86" class="hash-link" aria-label="Direct link to 基於筆電的 K8s 叢集" title="Direct link to 基於筆電的 K8s 叢集">​</a></h3>
 <p>筆電有一些工程特性是一般桌機以及伺服器運算不會考量的：省電，即能源效率以及體積和輕量化，為了方便攜帶，可靠性也不會做得太脆弱。我認為這在台灣這種地狹人綢以及寸土寸金的都市中是十分重要的因素，我最為租屋族不太可能負擔得起充足的空間建設伺服器機櫃，遷移的頻率也遠比居住在大陸上的歐美人士來得高。</p>
 <p>並且根據我的主觀體驗，很容易低成本獲得二手筆電，加上 K8s 和 Longhorn 的架構下，數個無須十分強大的節點就能提供儲存冗餘，從而解決基於筆電的設備無法使用硬碟陣列卡的問題；又或是避免管理軟體陣列帶來額外的麻煩，只要是能夠安裝並運行 K8s 節點的設備都能對這個叢集進行水平拓展。拓展叢集的關鍵零件，交換器本身又不會太昂貴。</p>
 <p>筆電或是單板電腦的尺寸較小，比起機架伺服器或是一般的桌機來得更有空間彈性，必要時甚至可以把叢集拆成數個不同大小的單元分散在空間之中。</p>
@@ -1345,31 +1382,6 @@
 </ol>
 </section>]]></content:encoded>
             <category>homelab</category>
-        </item>
-        <item>
-            <title><![CDATA[股東 x 金融性產品 x 資本主義]]></title>
-            <link>https://flyskypie.github.io/posts/2026-01-29_evil-of-financial</link>
-            <guid>https://flyskypie.github.io/posts/2026-01-29_evil-of-financial</guid>
-            <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[G 胖]]></description>
-            <content:encoded><![CDATA[
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="g-胖">G 胖<a href="https://flyskypie.github.io/posts/2026-01-29_evil-of-financial#g-%E8%83%96" class="hash-link" aria-label="Direct link to G 胖" title="Direct link to G 胖">​</a></h2>
-<p>G 胖 (Gabe Newell) 並且是 Valve 公司的擁有者，Valve 則是 Steam 這個最大的遊戲平台背後的開發與維護者。G 胖在玩家圈中有著很高的聲望，這裡挑幾個論點或例子。</p>
-<p>G 胖曾經表達他對於盜版遊戲的看法：盜版源自於缺乏服務，玩家都會花錢買電腦，他們不會單純為了省那一點遊戲的錢而刻意去使用盜版軟體，盜版通常猖獗在遊戲軟體的服務觸及不到的地區，你只要把服務做好，盜版就會自然消失。那些針對盜版機制努力的公司根本搞錯重點，他們這樣做反而在降低玩家的消費體驗。</p>
-<p>G 胖稱呼玩家為客戶 (Our Client) 而不是消費者 (Consumer)。</p>
-<p>Valve 不是上市公司的特性，讓它能夠在 G 胖的領導下真正提高產品的品質，而無須迎合股東。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="資本主義下的王者">資本主義下的王者<a href="https://flyskypie.github.io/posts/2026-01-29_evil-of-financial#%E8%B3%87%E6%9C%AC%E4%B8%BB%E7%BE%A9%E4%B8%8B%E7%9A%84%E7%8E%8B%E8%80%85" class="hash-link" aria-label="Direct link to 資本主義下的王者" title="Direct link to 資本主義下的王者">​</a></h2>
-<p>關於上市公司與私人公司的比較我認為是一個很有趣的切入點，這也是很多人詬病的問題。在股份公司的架構下，權力集中在董事會上，但是股東通常不具備公司業務相關的知識背景，只是單純的出資者，並且要求金錢收益作為回報。結果就是造成「外行人領導內行人」的問題，經常讓公司推出一些「理論上有利於股東，但是不利於消費者」的策略。</p>
-<p>反之，Valve 與 G 胖之間的關係是私人公司與唯一的資本持有者，G 胖本身又是具有遊戲相關背景的人，因此公司前進的方向通常是為了解決玩家（即消費者）的問題，而不是為了迎合股東的利益。</p>
-<p>有趣的是，從權力結構上去觀察兩者，董事會反而是有分權的體系，私人公司則是完全獨裁的體系，G 胖的例子剛好成為「民主優於獨裁」的反向案例。不過有一點概念的人都知道，民主並沒有比獨裁才好，只是多了一些分散風險的機制，避免昏君帶領群體走向毀滅，而 G 胖剛好是「獨裁體制下的明君」。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="權利與義務的失衡">權利與義務的失衡<a href="https://flyskypie.github.io/posts/2026-01-29_evil-of-financial#%E6%AC%8A%E5%88%A9%E8%88%87%E7%BE%A9%E5%8B%99%E7%9A%84%E5%A4%B1%E8%A1%A1" class="hash-link" aria-label="Direct link to 權利與義務的失衡" title="Direct link to 權利與義務的失衡">​</a></h2>
-<p>一個權利背後往往伴隨著對應的義務，這是社會契約運作的基本原理。上市公司的結構反而呈現微妙的權責分配方式：股東有獲得公司收益的權利，卻沒有理解公司業務邏輯的義務。</p>
-<p>我認為這個權利義務的不對稱、失衡正是造成上市公司在資本主義的遊戲規則下變成一種罪惡之源的根本性原因。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="巨靈尺度下的集體惡意">巨靈尺度下的集體惡意<a href="https://flyskypie.github.io/posts/2026-01-29_evil-of-financial#%E5%B7%A8%E9%9D%88%E5%B0%BA%E5%BA%A6%E4%B8%8B%E7%9A%84%E9%9B%86%E9%AB%94%E6%83%A1%E6%84%8F" class="hash-link" aria-label="Direct link to 巨靈尺度下的集體惡意" title="Direct link to 巨靈尺度下的集體惡意">​</a></h2>
-<p>霍布斯的巨靈論主要是一個論述透過匯集人民的權利義務到君主身上而構成君權合理性的理論，一個建立在人本上君權理論；而不是基於神學的君權神授。</p>
-<p>我認為巨靈論可以描述一種集體惡意的狀態，例如：第一世界的公民購買巧克力這件事本身是非常中性的消費行為，但是無數的消費行為累積在巨靈尺度很有可能變成壓榨第三世界巧克力勞工的一種集體惡意，就像是一個第一世界巨靈在欺壓另外一個第三世界巨靈。</p>
-<p>當我們用相同的概念來看帶「買股票、買基金」這種購買金融性產品的行為，會發現它在巨靈尺度同樣構成了一種惡意：無數人持有獲利的權利卻沒有理解基本底層邏輯（公司業務邏輯）的義務，其結果就是資本的代理人往往會做出很多傷害終端消費者的決策，完全有違資本運作最原始的目的：一個人幫助另外一個人，並用金錢衡量這個幫助。</p>]]></content:encoded>
-            <category>Philosophy</category>
         </item>
     </channel>
 </rss>
