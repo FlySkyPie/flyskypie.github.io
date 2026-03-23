@@ -1,7 +1,7 @@
 ---
 slug: 2026-03-17_software-growing-trap
 authors: [weiji]
-tags: []
+tags: [philosophy]
 ---
 
 # 軟體成長陷阱
