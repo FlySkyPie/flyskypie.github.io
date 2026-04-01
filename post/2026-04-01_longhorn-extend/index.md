@@ -6,6 +6,10 @@ tags: [homelab, k8s, longhorn]
 
 # Longhorn PVC 擴展筆記
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-04-01_longhorn-extend/03_minio.webp" />
+</head>
+
 ## 前情提要
 
 我在 Homelab 使用 [Longhorn](https://github.com/longhorn/longhorn) 作為儲存後端，並且其實已經經歷過幾次調整 PVC (Persistent Volume Claim) 容量了，分別是 PyPi 和 Hugging Face 本地鏡像。
@@ -64,11 +68,11 @@ for: ".": error when patching ".": admission webhook "validator.longhorn.io" den
 
 ### 故障排除
 
-這次過程蠻順利的，但是之前擴展的時候其實遇過 PVC 改大小是卡住的，但是那個時候沒截圖。故障排除的方式是需要把有使用 PVC 的 Pod (StatefulSet) 暫時移除並且 Detach PVC：
+這次過程蠻順利的，但是之前擴展的時候其實遇過 PVC 改大小是卡住的，但是那個時候沒截圖。故障排除的方式是需要把有使用 PVC 的 Pod (StatefulSet) 暫時移除並且 Detach PVC[^pvc-detach]：
 
 ![](./05_pvc-detach.webp)
 
-[^pvc-]: How can I resize the longhorn volume? The new size should be shown in both rancher&longhorn UI · Issue #2263 · longhorn/longhorn.  Retrieved 2026-04-01 from https://github.com/longhorn/longhorn/issues/2263#issuecomment-935739738
+[^pvc-detach]: How can I resize the longhorn volume? The new size should be shown in both rancher&longhorn UI · Issue #2263 · longhorn/longhorn.  Retrieved 2026-04-01 from https://github.com/longhorn/longhorn/issues/2263#issuecomment-935739738
 
 ## 後記
 
