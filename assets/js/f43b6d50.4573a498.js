@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[36736],{18711:s=>{s.exports=JSON.parse('{"label":"tts","permalink":"/posts/tags/tts","allTagsPath":"/posts/tags","count":2,"unlisted":false}')}}]);
