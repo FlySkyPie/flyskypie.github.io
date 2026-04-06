@@ -2,11 +2,67 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2026-04-01T00:00:00.000Z</updated>
+    <updated>2026-04-06T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Qwen3 TTS 之旅：序]]></title>
+        <id>https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue</id>
+        <link href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue"/>
+        <updated>2026-04-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[從我踏入 Qwen3 TTS 這個兔子洞到現在也已經兩個多禮拜了 (2026-03-20~2026-04-06)，即便還沒徹底完成一開始設定的目標也該設定一個存檔點；把歷程做個紀錄，然後回去忙其他事情了。然而因為整個過程並不是一個線性的故事，很難結構化的描述，因此本文會先概述整個事件的全面以及這個兔子洞是怎麼發生的，細節將由其他文章補充。]]></summary>
+        <content type="html"><![CDATA[
+<p>從我踏入 Qwen3 TTS 這個兔子洞到現在也已經兩個多禮拜了 (2026-03-20~2026-04-06)，即便還沒徹底完成一開始設定的目標也該設定一個存檔點；把歷程做個紀錄，然後回去忙其他事情了。然而因為整個過程並不是一個線性的故事，很難結構化的描述，因此本文會先概述整個事件的全面以及這個兔子洞是怎麼發生的，細節將由其他文章補充。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="火種">火種<a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue#%E7%81%AB%E7%A8%AE" class="hash-link" aria-label="Direct link to 火種" title="Direct link to 火種">​</a></h2>
+<p>這個旅途說是因為一張圖而起的也不違過：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_Voice-Embedding-985c0f4da9c2edce17280bfbb30c69e4.webp" width="1151" height="726" class="img_RpFt"></p>
+<p><a href="https://github.com/QwenLM/Qwen3-TTS" target="_blank" rel="noopener noreferrer">Qwen3-TTS</a> 是 2026 年一月釋出極為先進的 TTS 開放權重模型，而有個老兄將該模型前段一區用於進行語音嵌入的類神經網路抽出做成可獨立運行的模型<sup><a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue#user-content-fn-qwen3-embedding-05d66b" id="user-content-fnref-qwen3-embedding-05d66b" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>，這裡要稍微解釋一下這件事為什麼了不起，從嵌入的角度來說：</p>
+<ol>
+<li>OpenAI-Compatible API 中的 <code>/embeddings</code> 端點僅覆蓋了「文字嵌入」，語音嵌入在工程應用領域依然相對稀疏。（細節我會在文章後面的內容詳談）</li>
+<li>它是開箱即用的開放權重模型，不像一些語音嵌入模型僅有論文。</li>
+<li>該模型產出的嵌入向量可作為後端聲音複製 (Voice Clone) 模型的輸入，因此該嵌入向量是有額外工程用途的，而不是單純比較餘弦距離來判斷語音音色的相似度。</li>
+</ol>
+<p>從語音的角度：</p>
+<ol>
+<li>基於文字的 TTS 其輸出並不穩定，因為「一個沈重的男子聲音」可以存在無限多種解。</li>
+<li>大部分基於語音複製的 TTS 需要仰賴原音樣本的存在。</li>
+<li>大部分基於語音複製模型須提供語音的內文標籤，往往會鎖定特定語言。（原音樣本鎖定特定語言）</li>
+</ol>
+<p>因此只要能調控嵌入空間，就能產生一個穩定的 TTS 客製化流水線。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="構想">構想<a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue#%E6%A7%8B%E6%83%B3" class="hash-link" aria-label="Direct link to 構想" title="Direct link to 構想">​</a></h2>
+<p>於是一個構想油然而生：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_tts-pipeline-e1b465b6fdff6f4630d159a765df1cce.webp" width="1363" height="599" class="img_RpFt"></p>
+<p>透過資料降維的技術將一個已知資料集的嵌入向量視覺化，使用者在三維的的空間中可以選定某個資料點試聽，同時也可以也可以選定空間中不存在資料點的空間，透過降維的反函數生成嵌入向量，將開嵌入向量傳遞給 TTS 進行生成。</p>
+<p>在三維空間中透過已知資料集的標籤與特徵讓使用者理解某個區域具有某些語音特徵，例如：男性特徵、女性特徵、年長者特徵...。</p>
+<p>簡單來說這是一個能夠客製化聲音的 TTS 工作流程。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="旅程概覽">旅程概覽<a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue#%E6%97%85%E7%A8%8B%E6%A6%82%E8%A6%BD" class="hash-link" aria-label="Direct link to 旅程概覽" title="Direct link to 旅程概覽">​</a></h2>
+<p><img decoding="async" loading="lazy" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBDcmVhdGVkIHdpdGggSW5rc2NhcGUgKGh0dHA6Ly93d3cuaW5rc2NhcGUub3JnLykgLS0+Cjxzdmcgd2lkdGg9IjQ1Ni44bW0iIGhlaWdodD0iMzg3LjE1bW0iIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQ1Ni44IDM4Ny4xNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI1Ny4zNSAxMzUuNjkpIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjc5LjY1IC0xNjEuOCkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgIDxyZWN0IHg9IjIyLjM1NCIgeT0iMjYuMTY5IiB3aWR0aD0iNDU2LjciIGhlaWdodD0iMzg3LjA1IiBmaWxsPSIjZmZmIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iLjEiIHN0eWxlPSJwYWludC1vcmRlcjpmaWxsIG1hcmtlcnMgc3Ryb2tlIi8+CiAgIDxnIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBmb250LXNpemU9IjExLjI4OXB4IiBzdHJva2Utd2lkdGg9Ii4xIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4KICAgIDx0ZXh0IHg9Ijc2Ljk0OTAwNSIgeT0iMTM2LjIwMTEiIHRleHQtYWxpZ249ImNlbnRlciIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSI3Ni45NDkwMDUiIHk9IjEzNi4yMDExIiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wMy0yNDwvdHNwYW4+PC90ZXh0PgogICAgPHRleHQgeD0iNzcuMDk1NzU3IiB5PSIxNjcuMjciIHRleHQtYWxpZ249ImNlbnRlciIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSI3Ny4wOTU3NTciIHk9IjE2Ny4yNyIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIHN0cm9rZS13aWR0aD0iLjEiPjIwMjYtMDMtMjU8L3RzcGFuPjwvdGV4dD4KICAgIDx0ZXh0IHg9Ijc3LjE0NjU2MSIgeT0iMjI5LjQwNzgyIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iNzcuMTQ2NTYxIiB5PSIyMjkuNDA3ODIiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBzdHJva2Utd2lkdGg9Ii4xIj4yMDI2LTAzLTMxPC90c3Bhbj48L3RleHQ+CiAgICA8dGV4dCB4PSI3Ny4xNDY1NjEiIHk9IjI2MC40NzY3MiIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9Ijc3LjE0NjU2MSIgeT0iMjYwLjQ3NjcyIiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wNC0wMTwvdHNwYW4+PC90ZXh0PgogICAgPHRleHQgeD0iNzcuMTAxNDAyIiB5PSIyOTEuNTQ1NjIiIHRleHQtYWxpZ249ImNlbnRlciIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSI3Ny4xMDE0MDIiIHk9IjI5MS41NDU2MiIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIHN0cm9rZS13aWR0aD0iLjEiPjIwMjYtMDQtMDI8L3RzcGFuPjwvdGV4dD4KICAgIDx0ZXh0IHg9Ijc2Ljk0OTAwNSIgeT0iMzUzLjY4MzQ0IiB0ZXh0LWFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iNzYuOTQ5MDA1IiB5PSIzNTMuNjgzNDQiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBzdHJva2Utd2lkdGg9Ii4xIj4yMDI2LTA0LTA0PC90c3Bhbj48L3RleHQ+CiAgICA8dGV4dCB4PSI3Ny4wNTA1OTgiIHk9IjM4NC43NTIzNSIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9Ijc3LjA1MDU5OCIgeT0iMzg0Ljc1MjM1IiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wNC0wNjwvdHNwYW4+PC90ZXh0PgogICAgPHRleHQgeD0iMTU2Ljg5ODE5IiB5PSI2NS42NTY2OTMiIHRleHQtYWxpZ249ImNlbnRlciIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSIxNTYuODk4MTkiIHk9IjY1LjY1NjY5MyI+Vm9pY2U8L3RzcGFuPjx0c3BhbiB4PSIxNTYuODk4MTkiIHk9Ijc5Ljc2NzgxNSI+RW1iZWRkaW5nPC90c3Bhbj48L3RleHQ+CiAgICA8dGV4dCB4PSIyMDcuNDY4NTIiIHk9IjQ3LjAxMDU0OCIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9IjIwNy40Njg1MiIgeT0iNDcuMDEwNTQ4IiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+QXVkaW8gRVRMPC90c3Bhbj48L3RleHQ+CiAgICA8dGV4dCB4PSIyNTUuNzM0ODUiIHk9IjY1Ljg2Mjc2MiIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9IjI1NS43MzQ4NSIgeT0iNjUuODYyNzYyIj5FbWJlZGRpbmc8L3RzcGFuPjx0c3BhbiB4PSIyNTUuNzM0ODUiIHk9Ijc5Ljk3Mzg4NSI+RVRMPC90c3Bhbj48L3RleHQ+CiAgICA8dGV4dCB4PSIyOTguMzc1MjQiIHk9IjQ2LjYxNTQzNyIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9IjI5OC4zNzUyNCIgeT0iNDYuNjE1NDM3IiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+UENBIEVUTDwvdHNwYW4+PC90ZXh0PgogICA8L2c+CiAgIDxnIHN0cm9rZT0iIzAwMCI+CiAgICA8cGF0aCBkPSJtMTU3LjA2IDg2Ljk1OHYzMTUuNzYiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgICA8cGF0aCBkPSJtMjA3LjI3IDUxLjU0NnYzNTEuMTciIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgICA8cGF0aCBkPSJtMjU1Ljg5IDg0Ljk1OHYzMTcuNzYiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgICA8cGF0aCBkPSJtMjk4LjgyIDUwLjQxNnYzNTIuMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPC9nPgogICA8dGV4dCB4PSIzODUuMTQxMDgiIHk9IjQxLjc4NTIyOSIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIGZvbnQtc2l6ZT0iMTEuMjg5cHgiIHN0cm9rZS13aWR0aD0iLjEiIHRleHQtYWxpZ249ImNlbnRlciIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSIzODUuMTQxMDgiIHk9IjQxLjc4NTIyOSI+Q29udGludWl0eTwvdHNwYW4+PHRzcGFuIHg9IjM4NS4xNDEwOCIgeT0iNTUuODk2MzU1Ij5UZXN0PC90c3Bhbj48L3RleHQ+CiAgIDxnIHN0cm9rZT0iIzAwMCI+CiAgICA8cGF0aCBkPSJtMzg1LjIgNjEuMTY1djM0MC4zMSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgIDxwYXRoIGQ9Im0xMTYuMjggMTMyLjI4aDMzNy4wMyIgc3Ryb2tlLWRhc2hhcnJheT0iNCwgOCIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgIDxwYXRoIGQ9Im0xMTYuMjggMTYzLjM1aDMzNy4wMyIgc3Ryb2tlLWRhc2hhcnJheT0iNCwgOCIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPC9nPgogICA8dGV4dCB4PSI3Ny4wNTA1OTgiIHk9IjE5OC4zMzg5MSIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIGZvbnQtc2l6ZT0iMTEuMjg5cHgiIHN0cm9rZS13aWR0aD0iLjEiIHRleHQtYWxpZ249ImNlbnRlciIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSI3Ny4wNTA1OTgiIHk9IjE5OC4zMzg5MSIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIHN0cm9rZS13aWR0aD0iLjEiPjIwMjYtMDMtMjY8L3RzcGFuPjwvdGV4dD4KICAgPGcgc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0LCA4Ij4KICAgIDxwYXRoIGQ9Im0xMTYuMjggMTk0LjQyaDMzNy4wMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgIDxwYXRoIGQ9Im0xMTYuMjggMjI1LjQ5aDMzNy4wMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgIDxwYXRoIGQ9Im0xMTYuMjggMjU2LjU2aDMzNy4wMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPC9nPgogICA8dGV4dCB4PSI3Ny4wMzM2NjkiIHk9IjEwNS4xMzIxOSIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIGZvbnQtc2l6ZT0iMTEuMjg5cHgiIHN0cm9rZS13aWR0aD0iLjEiIHRleHQtYWxpZ249ImNlbnRlciIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSI3Ny4wMzM2NjkiIHk9IjEwNS4xMzIxOSIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIHN0cm9rZS13aWR0aD0iLjEiPjIwMjYtMDMtMjA8L3RzcGFuPjwvdGV4dD4KICAgPGcgc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0LCA4Ij4KICAgIDxwYXRoIGQ9Im0xMTYuMjggMTAxLjIxaDMzNy4wMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgIDxwYXRoIGQ9Im0xMTYuMjggMjg3LjYzaDMzNy4wMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgIDxwYXRoIGQ9Im0xMTYuMjggMzQ5Ljc3aDMzNy4wMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPC9nPgogICA8dGV4dCB4PSI3Ny4xMDE0MDIiIHk9IjMyMi42MTQ1MyIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIGZvbnQtc2l6ZT0iMTEuMjg5cHgiIHN0cm9rZS13aWR0aD0iLjEiIHRleHQtYWxpZ249ImNlbnRlciIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSI3Ny4xMDE0MDIiIHk9IjMyMi42MTQ1MyIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIHN0cm9rZS13aWR0aD0iLjEiPjIwMjYtMDQtMDM8L3RzcGFuPjwvdGV4dD4KICAgPHBhdGggZD0ibTExNi4yOCAzMTguN2gzMzcuMDMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWRhc2hhcnJheT0iNCwgOCIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPHBhdGggZD0ibTExNi4yOCAzODAuODRoMzM3LjAzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1kYXNoYXJyYXk9IjQsIDgiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgIDxnIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCI+CiAgICA8cmVjdCB4PSIyMDAuNzIiIHk9Ijk1LjI5NCIgd2lkdGg9IjEzLjEwOCIgaGVpZ2h0PSI3NC4wNTUiIHJ4PSI2LjU1NDIiIHJ5PSI2LjQ1MDMiIHN0eWxlPSJwYWludC1vcmRlcjpmaWxsIG1hcmtlcnMgc3Ryb2tlIi8+CiAgICA8cmVjdCB4PSIyNDkuMzQiIHk9IjIxNy43NCIgd2lkdGg9IjEzLjEwOCIgaGVpZ2h0PSI0NC40NTMiIHJ4PSI2LjU1NDIiIHJ5PSI2LjQ1MDMiIHN0eWxlPSJwYWludC1vcmRlcjpmaWxsIG1hcmtlcnMgc3Ryb2tlIi8+CiAgICA8cmVjdCB4PSIyOTIuMjciIHk9IjIxOC41MiIgd2lkdGg9IjEzLjEwOCIgaGVpZ2h0PSI3NC45NTEiIHJ4PSI2LjU1NDIiIHJ5PSI2LjQ1MDMiIHN0eWxlPSJwYWludC1vcmRlcjpmaWxsIG1hcmtlcnMgc3Ryb2tlIi8+CiAgIDwvZz4KICAgPHRleHQgeD0iMzM2Ljg0MDY3IiB5PSI2Ni40MTE1MyIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIGZvbnQtc2l6ZT0iMTEuMjg5cHgiIHN0cm9rZS13aWR0aD0iLjEiIHRleHQtYWxpZ249ImNlbnRlciIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSIzMzYuODQwNjciIHk9IjY2LjQxMTUzIj5Rd2VuMyBUVFM8L3RzcGFuPjx0c3BhbiB4PSIzMzYuODQwNjciIHk9IjgwLjUyMjY1MiI+T05OWDwvdHNwYW4+PC90ZXh0PgogICA8cGF0aCBkPSJtMzM2LjY1IDgzLjE1NXYzMTkuNTYiIHN0cm9rZT0iIzAwMCIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPHRleHQgeD0iNDI4LjY5MTI4IiB5PSI2Ni41MzM2MDciIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBmb250LXNpemU9IjExLjI4OXB4IiBzdHJva2Utd2lkdGg9Ii4xIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iNDI4LjY5MTI4IiB5PSI2Ni41MzM2MDciPk1hbmlmb2xkPC90c3Bhbj48dHNwYW4geD0iNDI4LjY5MTI4IiB5PSI4MC42NDQ3MyI+TGVhcm5pbmc8L3RzcGFuPjwvdGV4dD4KICAgPHBhdGggZD0ibTQyOC41IDgzLjI3N3YzMTkuNTYiIHN0cm9rZT0iIzAwMCIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPGcgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMDAwIj4KICAgIDxyZWN0IHg9IjMzMC4wOSIgeT0iMzQyLjY0IiB3aWR0aD0iMTMuMTA4IiBoZWlnaHQ9IjQ0Ljc0NiIgcng9IjYuNTU0MiIgcnk9IjYuNDUwMyIgc3R5bGU9InBhaW50LW9yZGVyOmZpbGwgbWFya2VycyBzdHJva2UiLz4KICAgIDxyZWN0IHg9IjM3OS4yNiIgeT0iMTg3LjA4IiB3aWR0aD0iMTMuMTA4IiBoZWlnaHQ9IjEzOC4wNSIgcng9IjYuNTU0MiIgcnk9IjYuNDUwMyIgc3R5bGU9InBhaW50LW9yZGVyOmZpbGwgbWFya2VycyBzdHJva2UiLz4KICAgIDxyZWN0IHg9IjE1MC41IiB5PSIxMjUuNzIiIHdpZHRoPSIxMi40MTciIGhlaWdodD0iMTY2LjQ4IiByeD0iNi4yMDg0IiByeT0iNi40NTAzIiBzdHlsZT0icGFpbnQtb3JkZXI6ZmlsbCBtYXJrZXJzIHN0cm9rZSIvPgogICAgPHJlY3QgeD0iNDIxLjYxIiB5PSIxNTUuOCIgd2lkdGg9IjEyLjk1NiIgaGVpZ2h0PSIxMDUuNDgiIHJ4PSI2LjQwNjEiIHJ5PSI2LjQ1MDMiIHN0eWxlPSJwYWludC1vcmRlcjpmaWxsIG1hcmtlcnMgc3Ryb2tlIi8+CiAgIDwvZz4KICA8L2c+CiA8L2c+Cjwvc3ZnPgo=" width="1726" height="1463" class="img_RpFt"></p>
+<p>整個旅途到目前為止大概可以分成幾個主題：</p>
+<ul>
+<li>Voice Embedding： 我把玩 Qwen3 Voice Embedding 以及進行一些模組化的過程。</li>
+<li>Audio ETL (Extract, Transform, Load)：對 cv-corpus-25.0-2026-03-09 (Mozilla Common Voice 25.0) 進行一些預處理的過程。</li>
+<li>Embedding ETL：對資料集進行嵌入的過程。</li>
+<li>PCA ETL：對嵌入向量的資料集進行主成份分析 (Principal components analysis) 的過程。</li>
+<li>Qwen3 TTS ONNX：我把玩 Qwen3 TTS ONNX 以及試圖進行一些模組化的過程。</li>
+<li>Continuity Test：嵌入空間連續性測試。</li>
+<li>Manifold Learning：對「資料降維」這一領域進行學習的過程。</li>
+</ul>
+<p>並且上述主題並沒有明確的嵌後順序，而且事件相互交錯，在後續的文章我會試著僅以一個主題為主軸、相關事件為輔的方式描述，讓整個敘述比較不會太混亂。</p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-qwen3-embedding-05d66b">
+<p>Qwen3's most underrated feature: Voice embeddings : r/LocalLLaMA. Retrieved 2026-04-02, from <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rc59ze/qwen3s_most_underrated_feature_voice_embeddings/" target="_blank" rel="noopener noreferrer">https://www.reddit.com/r/LocalLLaMA/comments/1rc59ze/qwen3s_most_underrated_feature_voice_embeddings/</a> <a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue#user-content-fnref-qwen3-embedding-05d66b" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="tts" term="tts"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Longhorn PVC 擴展筆記]]></title>
         <id>https://flyskypie.github.io/posts/2026-04-01_longhorn-extend</id>
@@ -1429,23 +1485,5 @@
         </author>
         <category label="homelab" term="homelab"/>
         <category label="S3" term="S3"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[不對稱的紀律]]></title>
-        <id>https://flyskypie.github.io/posts/2026-02-23_superman</id>
-        <link href="https://flyskypie.github.io/posts/2026-02-23_superman"/>
-        <updated>2026-02-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[家庭、公司、政府...是常見構成國家的「最小協作單元」，當政府要買東西的時，往往受到預算法、採購法...等等法律的約制，以及制度構成的嚴謹紀錄；公司（大型企業）要買東西時的情況也差不多，受到內部的採購制度約束，以及透過 ERP、POS 等資通訊系統追蹤。]]></summary>
-        <content type="html"><![CDATA[
-<p>家庭、公司、政府...是常見構成國家的「最小協作單元」，當政府要買東西的時，往往受到預算法、採購法...等等法律的約制，以及制度構成的嚴謹紀錄；公司（大型企業）要買東西時的情況也差不多，受到內部的採購制度約束，以及透過 ERP、POS 等資通訊系統追蹤。</p>
-<p>家庭或個人在「消費行為」這件事情上相較之下就顯得缺乏紀律，可能隨意購買路邊攤的小吃、短期承租店面的「出清小店」，缺乏審計制度。如果買了一個不合用的拖把，可能也不會特意去紀錄品牌跟製造商，避免下一次再購買它。換言之，企業會極力的紀錄、分析消費者，但是消費者往往不會追蹤企業的供應鍊、仔細比對不同廠商之間的差異。</p>
-<p>這種不對稱性使得自然人在面對巨靈時，往往處於弱勢的地位。</p>
-<hr>
-<p>「舉證之所在，敗訴之所在」是一句法律圈的俗語，這點出了一個奇怪的現象，法律似乎假設了一種「超人」的存在，這個超人無所不知（不會出現記憶模糊）、無所不能（總是有證據），政府或企業透過嚴謹的制度與完善的基礎建設，能夠調閱報表、單據、POS、ERP 紀錄...作為證據，使其代表的法人能夠無限逼近這個「超人」，反觀憑感覺生活的家庭或個人在法律活動中往往處於弱勢。</p>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="Philosophy" term="Philosophy"/>
     </entry>
 </feed>
