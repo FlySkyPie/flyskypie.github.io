@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="456.8mm" height="387.15mm" version="1.1" viewBox="0 0 456.8 387.15" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(257.35 135.69)">
+  <g transform="translate(-279.65 -161.8)" stroke-linecap="round" stroke-linejoin="round">
+   <rect x="22.354" y="26.169" width="456.7" height="387.05" fill="#fff" stroke="#000" stroke-width=".1" style="paint-order:fill markers stroke"/>
+   <g fill="#000000" font-family="'Ubuntu Mono'" font-size="11.289px" stroke-width=".1" text-anchor="middle">
+    <text x="76.949005" y="136.2011" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="76.949005" y="136.2011" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-03-24</tspan></text>
+    <text x="77.095757" y="167.27" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="77.095757" y="167.27" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-03-25</tspan></text>
+    <text x="77.146561" y="229.40782" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="77.146561" y="229.40782" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-03-31</tspan></text>
+    <text x="77.146561" y="260.47672" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="77.146561" y="260.47672" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-04-01</tspan></text>
+    <text x="77.101402" y="291.54562" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="77.101402" y="291.54562" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-04-02</tspan></text>
+    <text x="76.949005" y="353.68344" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="76.949005" y="353.68344" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-04-04</tspan></text>
+    <text x="77.050598" y="384.75235" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="77.050598" y="384.75235" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-04-06</tspan></text>
+    <text x="156.89819" y="65.656693" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="156.89819" y="65.656693">Voice</tspan><tspan x="156.89819" y="79.767815">Embedding</tspan></text>
+    <text x="207.46852" y="47.010548" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="207.46852" y="47.010548" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">Audio ETL</tspan></text>
+    <text x="255.73485" y="65.862762" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="255.73485" y="65.862762">Embedding</tspan><tspan x="255.73485" y="79.973885">ETL</tspan></text>
+    <text x="298.37524" y="46.615437" text-align="center" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="298.37524" y="46.615437" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">PCA ETL</tspan></text>
+   </g>
+   <g stroke="#000">
+    <path d="m157.06 86.958v315.76" style="paint-order:markers stroke fill"/>
+    <path d="m207.27 51.546v351.17" style="paint-order:markers stroke fill"/>
+    <path d="m255.89 84.958v317.76" style="paint-order:markers stroke fill"/>
+    <path d="m298.82 50.416v352.3" style="paint-order:markers stroke fill"/>
+   </g>
+   <text x="385.14108" y="41.785229" fill="#000000" font-family="'Ubuntu Mono'" font-size="11.289px" stroke-width=".1" text-align="center" text-anchor="middle" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="385.14108" y="41.785229">Continuity</tspan><tspan x="385.14108" y="55.896355">Test</tspan></text>
+   <g stroke="#000">
+    <path d="m385.2 61.165v340.31" style="paint-order:markers stroke fill"/>
+    <path d="m116.28 132.28h337.03" stroke-dasharray="4, 8" style="paint-order:markers stroke fill"/>
+    <path d="m116.28 163.35h337.03" stroke-dasharray="4, 8" style="paint-order:markers stroke fill"/>
+   </g>
+   <text x="77.050598" y="198.33891" fill="#000000" font-family="'Ubuntu Mono'" font-size="11.289px" stroke-width=".1" text-align="center" text-anchor="middle" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="77.050598" y="198.33891" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-03-26</tspan></text>
+   <g stroke="#000" stroke-dasharray="4, 8">
+    <path d="m116.28 194.42h337.03" style="paint-order:markers stroke fill"/>
+    <path d="m116.28 225.49h337.03" style="paint-order:markers stroke fill"/>
+    <path d="m116.28 256.56h337.03" style="paint-order:markers stroke fill"/>
+   </g>
+   <text x="77.033669" y="105.13219" fill="#000000" font-family="'Ubuntu Mono'" font-size="11.289px" stroke-width=".1" text-align="center" text-anchor="middle" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="77.033669" y="105.13219" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-03-20</tspan></text>
+   <g stroke="#000" stroke-dasharray="4, 8">
+    <path d="m116.28 101.21h337.03" style="paint-order:markers stroke fill"/>
+    <path d="m116.28 287.63h337.03" style="paint-order:markers stroke fill"/>
+    <path d="m116.28 349.77h337.03" style="paint-order:markers stroke fill"/>
+   </g>
+   <text x="77.101402" y="322.61453" fill="#000000" font-family="'Ubuntu Mono'" font-size="11.289px" stroke-width=".1" text-align="center" text-anchor="middle" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="77.101402" y="322.61453" fill="#000000" font-family="'Ubuntu Mono'" stroke-width=".1">2026-04-03</tspan></text>
+   <path d="m116.28 318.7h337.03" stroke="#000" stroke-dasharray="4, 8" style="paint-order:markers stroke fill"/>
+   <path d="m116.28 380.84h337.03" stroke="#000" stroke-dasharray="4, 8" style="paint-order:markers stroke fill"/>
+   <g fill="#fff" stroke="#000">
+    <rect x="200.72" y="95.294" width="13.108" height="74.055" rx="6.5542" ry="6.4503" style="paint-order:fill markers stroke"/>
+    <rect x="249.34" y="217.74" width="13.108" height="44.453" rx="6.5542" ry="6.4503" style="paint-order:fill markers stroke"/>
+    <rect x="292.27" y="218.52" width="13.108" height="74.951" rx="6.5542" ry="6.4503" style="paint-order:fill markers stroke"/>
+   </g>
+   <text x="336.84067" y="66.41153" fill="#000000" font-family="'Ubuntu Mono'" font-size="11.289px" stroke-width=".1" text-align="center" text-anchor="middle" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="336.84067" y="66.41153">Qwen3 TTS</tspan><tspan x="336.84067" y="80.522652">ONNX</tspan></text>
+   <path d="m336.65 83.155v319.56" stroke="#000" style="paint-order:markers stroke fill"/>
+   <text x="428.69128" y="66.533607" fill="#000000" font-family="'Ubuntu Mono'" font-size="11.289px" stroke-width=".1" text-align="center" text-anchor="middle" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="428.69128" y="66.533607">Manifold</tspan><tspan x="428.69128" y="80.64473">Learning</tspan></text>
+   <path d="m428.5 83.277v319.56" stroke="#000" style="paint-order:markers stroke fill"/>
+   <g fill="#fff" stroke="#000">
+    <rect x="330.09" y="342.64" width="13.108" height="44.746" rx="6.5542" ry="6.4503" style="paint-order:fill markers stroke"/>
+    <rect x="379.26" y="187.08" width="13.108" height="138.05" rx="6.5542" ry="6.4503" style="paint-order:fill markers stroke"/>
+    <rect x="150.5" y="125.72" width="12.417" height="166.48" rx="6.2084" ry="6.4503" style="paint-order:fill markers stroke"/>
+    <rect x="421.61" y="155.8" width="12.956" height="105.48" rx="6.4061" ry="6.4503" style="paint-order:fill markers stroke"/>
+   </g>
+  </g>
+ </g>
+</svg>
