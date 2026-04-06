@@ -37,6 +37,8 @@ const config = {
         showReadingTime: false,
         blogTitle: '廢文雜談',
         blogDescription: 'Random post just like FB or Twitter.',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
   ],
