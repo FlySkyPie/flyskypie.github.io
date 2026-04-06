@@ -6,6 +6,10 @@ tags: [tts]
 
 # Qwen3 TTS 之旅：流形學習
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-04-06_qwen3-tts-journey-manifold-learning/02_manifold-learning.webp" />
+</head>
+
 這個文章是「Qwen3 TTS 之旅」系列的一部分，關於旅程的起因與整體概覽請見：
 
 - [Qwen3 TTS 之旅：序](https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue/)
