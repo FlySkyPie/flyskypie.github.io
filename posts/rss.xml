@@ -4,10 +4,53 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Mon, 06 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Apr 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Qwen3 TTS 之旅：資料視覺化]]></title>
+            <link>https://flyskypie.github.io/posts/2026-04-07_qwen3-tts-journey-pca</link>
+            <guid>https://flyskypie.github.io/posts/2026-04-07_qwen3-tts-journey-pca</guid>
+            <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[這個文章是「Qwen3 TTS 之旅」系列的一部分，關於旅程的起因與整體概覽請見：]]></description>
+            <content:encoded><![CDATA[
+<p>這個文章是「Qwen3 TTS 之旅」系列的一部分，關於旅程的起因與整體概覽請見：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-prologue/" target="_blank" rel="noopener noreferrer">Qwen3 TTS 之旅：序</a></li>
+</ul>
+<p>資料處理的幾個前置作業請見：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-audio-etl/" target="_blank" rel="noopener noreferrer">Qwen3 TTS 之旅：資料集預處理</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-embedding-etl/" target="_blank" rel="noopener noreferrer">Qwen3 TTS 之旅：資料集嵌入</a></li>
+</ul>
+<p>本文僅覆蓋「使用主成份分析進行資料視覺化」相關的主題。</p>
+<p><img decoding="async" loading="lazy" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBDcmVhdGVkIHdpdGggSW5rc2NhcGUgKGh0dHA6Ly93d3cuaW5rc2NhcGUub3JnLykgLS0+Cjxzdmcgd2lkdGg9IjQ1Ni44bW0iIGhlaWdodD0iMzg3LjE1bW0iIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQ1Ni44IDM4Ny4xNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMi4zMDQgLTI2LjExOSkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgPHJlY3QgeD0iMjIuMzU0IiB5PSIyNi4xNjkiIHdpZHRoPSI0NTYuNyIgaGVpZ2h0PSIzODcuMDUiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIuMSIgc3R5bGU9InBhaW50LW9yZGVyOmZpbGwgbWFya2VycyBzdHJva2UiLz4KICA8ZyBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgZm9udC1zaXplPSIxMS4yODlweCIgc3Ryb2tlLXdpZHRoPSIuMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+CiAgIDx0ZXh0IHg9Ijc2Ljk0OTAwNSIgeT0iMTM2LjIwMTEiIHRleHQtYWxpZ249ImNlbnRlciIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSI3Ni45NDkwMDUiIHk9IjEzNi4yMDExIiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wMy0yNDwvdHNwYW4+PC90ZXh0PgogICA8dGV4dCB4PSI3Ny4wOTU3NTciIHk9IjE2Ny4yNyIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9Ijc3LjA5NTc1NyIgeT0iMTY3LjI3IiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wMy0yNTwvdHNwYW4+PC90ZXh0PgogICA8dGV4dCB4PSI3Ny4xNDY1NjEiIHk9IjIyOS40MDc4MiIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9Ijc3LjE0NjU2MSIgeT0iMjI5LjQwNzgyIiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wMy0zMTwvdHNwYW4+PC90ZXh0PgogICA8dGV4dCB4PSI3Ny4xNDY1NjEiIHk9IjI2MC40NzY3MiIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9Ijc3LjE0NjU2MSIgeT0iMjYwLjQ3NjcyIiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wNC0wMTwvdHNwYW4+PC90ZXh0PgogICA8dGV4dCB4PSI3Ny4xMDE0MDIiIHk9IjI5MS41NDU2MiIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9Ijc3LjEwMTQwMiIgeT0iMjkxLjU0NTYyIiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wNC0wMjwvdHNwYW4+PC90ZXh0PgogICA8dGV4dCB4PSI3Ni45NDkwMDUiIHk9IjM1My42ODM0NCIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9Ijc2Ljk0OTAwNSIgeT0iMzUzLjY4MzQ0IiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wNC0wNDwvdHNwYW4+PC90ZXh0PgogICA8dGV4dCB4PSI3Ny4wNTA1OTgiIHk9IjM4NC43NTIzNSIgdGV4dC1hbGlnbj0iY2VudGVyIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9Ijc3LjA1MDU5OCIgeT0iMzg0Ljc1MjM1IiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgc3Ryb2tlLXdpZHRoPSIuMSI+MjAyNi0wNC0wNjwvdHNwYW4+PC90ZXh0PgogICA8ZyBmaWxsPSIjMDAwMDAwIj4KICAgIDx0ZXh0IHg9IjE1Ni44OTgxOSIgeT0iNjUuNjU2NjkzIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iMTU2Ljg5ODE5IiB5PSI2NS42NTY2OTMiPlZvaWNlPC90c3Bhbj48dHNwYW4geD0iMTU2Ljg5ODE5IiB5PSI3OS43Njc4MTUiPkVtYmVkZGluZzwvdHNwYW4+PC90ZXh0PgogICAgPHRleHQgeD0iMjA3LjQ2ODUyIiB5PSI0Ny4wMTA1NDgiIHRleHQtYWxpZ249ImNlbnRlciIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSIyMDcuNDY4NTIiIHk9IjQ3LjAxMDU0OCIgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9IidVYnVudHUgTW9ubyciIHN0cm9rZS13aWR0aD0iLjEiPkF1ZGlvIEVUTDwvdHNwYW4+PC90ZXh0PgogICAgPHRleHQgeD0iMjU1LjczNDg1IiB5PSI2NS44NjI3NjIiIHRleHQtYWxpZ249ImNlbnRlciIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSIyNTUuNzM0ODUiIHk9IjY1Ljg2Mjc2MiI+RW1iZWRkaW5nPC90c3Bhbj48dHNwYW4geD0iMjU1LjczNDg1IiB5PSI3OS45NzM4ODUiPkVUTDwvdHNwYW4+PC90ZXh0PgogICA8L2c+CiAgIDx0ZXh0IHg9IjI5OC4zNzUyNCIgeT0iNDYuNjE1NDM3IiBmaWxsPSIjZmYwMDAwIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iMjk4LjM3NTI0IiB5PSI0Ni42MTU0MzciIGZpbGw9IiNmZjAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBzdHJva2Utd2lkdGg9Ii4xIj5QQ0EgRVRMPC90c3Bhbj48L3RleHQ+CiAgPC9nPgogIDxwYXRoIGQ9Im0xNTcuMDYgODYuOTU4djMxNS43NiIgc3Ryb2tlPSIjMDAwIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogIDxwYXRoIGQ9Im0yMDcuMjcgNTEuNTQ2djM1MS4xNyIgc3Ryb2tlPSIjMDAwIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogIDxwYXRoIGQ9Im0yNTUuODkgODQuOTU4djMxNy43NiIgc3Ryb2tlPSIjMDAwIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogIDxwYXRoIGQ9Im0yOTguODIgNTAuNDE2djM1Mi4zIiBzdHJva2U9IiNmMDAiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgPHRleHQgeD0iMzg1LjE0MTA4IiB5PSI0MS43ODUyMjkiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBmb250LXNpemU9IjExLjI4OXB4IiBzdHJva2Utd2lkdGg9Ii4xIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iMzg1LjE0MTA4IiB5PSI0MS43ODUyMjkiPkNvbnRpbnVpdHk8L3RzcGFuPjx0c3BhbiB4PSIzODUuMTQxMDgiIHk9IjU1Ljg5NjM1NSI+VGVzdDwvdHNwYW4+PC90ZXh0PgogIDxnIHN0cm9rZT0iIzAwMCI+CiAgIDxwYXRoIGQ9Im0zODUuMiA2MS4xNjV2MzQwLjMxIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTE2LjI4IDEzMi4yOGgzMzcuMDMiIHN0cm9rZS1kYXNoYXJyYXk9IjQsIDgiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgIDxwYXRoIGQ9Im0xMTYuMjggMTYzLjM1aDMzNy4wMyIgc3Ryb2tlLWRhc2hhcnJheT0iNCwgOCIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICA8L2c+CiAgPHRleHQgeD0iNzcuMDUwNTk4IiB5PSIxOTguMzM4OTEiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBmb250LXNpemU9IjExLjI4OXB4IiBzdHJva2Utd2lkdGg9Ii4xIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iNzcuMDUwNTk4IiB5PSIxOTguMzM4OTEiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBzdHJva2Utd2lkdGg9Ii4xIj4yMDI2LTAzLTI2PC90c3Bhbj48L3RleHQ+CiAgPGcgc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0LCA4Ij4KICAgPHBhdGggZD0ibTExNi4yOCAxOTQuNDJoMzM3LjAzIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTE2LjI4IDIyNS40OWgzMzcuMDMiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgIDxwYXRoIGQ9Im0xMTYuMjggMjU2LjU2aDMzNy4wMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICA8L2c+CiAgPHRleHQgeD0iNzcuMDMzNjY5IiB5PSIxMDUuMTMyMTkiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBmb250LXNpemU9IjExLjI4OXB4IiBzdHJva2Utd2lkdGg9Ii4xIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iNzcuMDMzNjY5IiB5PSIxMDUuMTMyMTkiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBzdHJva2Utd2lkdGg9Ii4xIj4yMDI2LTAzLTIwPC90c3Bhbj48L3RleHQ+CiAgPGcgc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0LCA4Ij4KICAgPHBhdGggZD0ibTExNi4yOCAxMDEuMjFoMzM3LjAzIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTE2LjI4IDI4Ny42M2gzMzcuMDMiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgIDxwYXRoIGQ9Im0xMTYuMjggMzQ5Ljc3aDMzNy4wMyIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICA8L2c+CiAgPHRleHQgeD0iNzcuMTAxNDAyIiB5PSIzMjIuNjE0NTMiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBmb250LXNpemU9IjExLjI4OXB4IiBzdHJva2Utd2lkdGg9Ii4xIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iNzcuMTAxNDAyIiB5PSIzMjIuNjE0NTMiIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBzdHJva2Utd2lkdGg9Ii4xIj4yMDI2LTA0LTAzPC90c3Bhbj48L3RleHQ+CiAgPGcgc3Ryb2tlPSIjMDAwIj4KICAgPHBhdGggZD0ibTExNi4yOCAzMTguN2gzMzcuMDMiIHN0cm9rZS1kYXNoYXJyYXk9IjQsIDgiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgIDxwYXRoIGQ9Im0xMTYuMjggMzgwLjg0aDMzNy4wMyIgc3Ryb2tlLWRhc2hhcnJheT0iNCwgOCIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPGcgZmlsbD0iI2ZmZiI+CiAgICA8cmVjdCB4PSIyMDAuNzIiIHk9Ijk1LjI5NCIgd2lkdGg9IjEzLjEwOCIgaGVpZ2h0PSI3NC4wNTUiIHJ4PSI2LjU1NDIiIHJ5PSI2LjQ1MDMiIHN0cm9rZT0iIzAwMCIgc3R5bGU9InBhaW50LW9yZGVyOmZpbGwgbWFya2VycyBzdHJva2UiLz4KICAgIDxyZWN0IHg9IjI0OS4zNCIgeT0iMjE3Ljc0IiB3aWR0aD0iMTMuMTA4IiBoZWlnaHQ9IjQ0LjQ1MyIgcng9IjYuNTU0MiIgcnk9IjYuNDUwMyIgc3Ryb2tlPSIjMDAwIiBzdHlsZT0icGFpbnQtb3JkZXI6ZmlsbCBtYXJrZXJzIHN0cm9rZSIvPgogICAgPHJlY3QgeD0iMjkyLjI3IiB5PSIyMTguNTIiIHdpZHRoPSIxMy4xMDgiIGhlaWdodD0iMTM2LjI5IiByeD0iNi41NTQiIHJ5PSI2LjQ1MDMiIHN0cm9rZT0iI2YwMCIgc3R5bGU9InBhaW50LW9yZGVyOmZpbGwgbWFya2VycyBzdHJva2UiLz4KICAgPC9nPgogIDwvZz4KICA8dGV4dCB4PSIzMzYuODQwNjciIHk9IjY2LjQxMTUzIiBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0iJ1VidW50dSBNb25vJyIgZm9udC1zaXplPSIxMS4yODlweCIgc3Ryb2tlLXdpZHRoPSIuMSIgdGV4dC1hbGlnbj0iY2VudGVyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRzcGFuIHg9IjMzNi44NDA2NyIgeT0iNjYuNDExNTMiPlF3ZW4zIFRUUzwvdHNwYW4+PHRzcGFuIHg9IjMzNi44NDA2NyIgeT0iODAuNTIyNjUyIj5PTk5YPC90c3Bhbj48L3RleHQ+CiAgPHBhdGggZD0ibTMzNi42NSA4My4xNTV2MzE5LjU2IiBzdHJva2U9IiMwMDAiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgPHRleHQgeD0iNDI4LjY5MTI4IiB5PSI2Ni41MzM2MDciIGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSInVWJ1bnR1IE1vbm8nIiBmb250LXNpemU9IjExLjI4OXB4IiBzdHJva2Utd2lkdGg9Ii4xIiB0ZXh0LWFsaWduPSJjZW50ZXIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIiB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4geD0iNDI4LjY5MTI4IiB5PSI2Ni41MzM2MDciPk1hbmlmb2xkPC90c3Bhbj48dHNwYW4geD0iNDI4LjY5MTI4IiB5PSI4MC42NDQ3MyI+TGVhcm5pbmc8L3RzcGFuPjwvdGV4dD4KICA8cGF0aCBkPSJtNDI4LjUgODMuMjc3djMxOS41NiIgc3Ryb2tlPSIjMDAwIiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogIDxnIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCI+CiAgIDxyZWN0IHg9IjMzMC4wOSIgeT0iMzQyLjY0IiB3aWR0aD0iMTMuMTA4IiBoZWlnaHQ9IjQ0Ljc0NiIgcng9IjYuNTU0MiIgcnk9IjYuNDUwMyIgc3R5bGU9InBhaW50LW9yZGVyOmZpbGwgbWFya2VycyBzdHJva2UiLz4KICAgPHJlY3QgeD0iMzc5LjI2IiB5PSIxODcuMDgiIHdpZHRoPSIxMy4xMDgiIGhlaWdodD0iMTM4LjA1IiByeD0iNi41NTQyIiByeT0iNi40NTAzIiBzdHlsZT0icGFpbnQtb3JkZXI6ZmlsbCBtYXJrZXJzIHN0cm9rZSIvPgogICA8cmVjdCB4PSIxNTAuNSIgeT0iMTI1LjcyIiB3aWR0aD0iMTIuNDE3IiBoZWlnaHQ9IjIyOC45NiIgcng9IjYuMjA4NCIgcnk9IjYuNDUwMyIgc3R5bGU9InBhaW50LW9yZGVyOmZpbGwgbWFya2VycyBzdHJva2UiLz4KICAgPHJlY3QgeD0iNDIxLjYxIiB5PSIxNTUuOCIgd2lkdGg9IjEyLjk1NiIgaGVpZ2h0PSIxMDUuNDgiIHJ4PSI2LjQwNjEiIHJ5PSI2LjQ1MDMiIHN0eWxlPSJwYWludC1vcmRlcjpmaWxsIG1hcmtlcnMgc3Ryb2tlIi8+CiAgPC9nPgogPC9nPgo8L3N2Zz4K" width="1726" height="1463" class="img_RpFt"></p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="pca">PCA<a href="https://flyskypie.github.io/posts/2026-04-07_qwen3-tts-journey-pca#pca" class="hash-link" aria-label="Direct link to PCA" title="Direct link to PCA">​</a></h2>
+<p>主成份分析 (PCA, Principal component analysis) 簡單來說是一種對資料進行線性降維的技巧。</p>
+<p>在開始寫程式之前我有稍微學習一下相關理論，學習筆記放在其他文章，細節我就不再此贅述：</p>
+<p><a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-manifold-learning/" target="_blank" rel="noopener noreferrer">Qwen3 TTS 之旅：流形學習</a></p>
+<p>如果知道 PCA 原理的話大概可以直觀的發覺它不適合直接套用在 140k 筆 2048 維資料上，實際上可能需要使用增量 PCA (Incremental PCA)，並搭配 <a href="https://github.com/joblib/joblib" target="_blank" rel="noopener noreferrer">joblib</a> 實現持久化與斷點續傳之類的機制。</p>
+<p>不過為了驗證整個流程的可行性，在正式跑以前，我先抽比較小的樣本直接跑 PCA，或是搭配其他非線性算法。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="抽樣失敗">抽樣失敗<a href="https://flyskypie.github.io/posts/2026-04-07_qwen3-tts-journey-pca#%E6%8A%BD%E6%A8%A3%E5%A4%B1%E6%95%97" class="hash-link" aria-label="Direct link to 抽樣失敗" title="Direct link to 抽樣失敗">​</a></h2>
+<p>以下是我第一次嘗試，抽樣 1000 個資料跑 PCA 的結果：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_PCA_Figure-6813235edcf88c9293f92f7cfaded95a.webp" width="678" height="685" class="img_RpFt"></p>
+<p>我原本以為是資料原本特性的關係，所以試著跑 PCA 降到 50 維，再跑幾個非線性的降維：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_TSEN_Figure-819db63497987921a790e72da501f3f1.webp" width="684" height="636" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/04_UMAP_Figure-6331c04a2ef92ee3d839f1e677ac6717.webp" width="643" height="640" class="img_RpFt"></p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/05_ISOMAP_Figure-1bca8caffdba10a1975a745ac549d71d.webp" width="688" height="678" class="img_RpFt"></p>
+<p>不過結果都不太理想。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="累積解釋變異圖">累積解釋變異圖<a href="https://flyskypie.github.io/posts/2026-04-07_qwen3-tts-journey-pca#%E7%B4%AF%E7%A9%8D%E8%A7%A3%E9%87%8B%E8%AE%8A%E7%95%B0%E5%9C%96" class="hash-link" aria-label="Direct link to 累積解釋變異圖" title="Direct link to 累積解釋變異圖">​</a></h2>
+<p>累積解釋變異圖 (Cumulative Explained Variance) 是根據特徵值大小推論不同維度主成份的「資訊量」（或理解為「影響力」）：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/06_cumulative-explained-variance-ac82d013bf81546aa757bd54a92fd524.webp" width="1000" height="600" class="img_RpFt"></p>
+<p>綠色是每一個主成份的資訊量佔比，紅色曲線是把前 N 個主成份的佔比累計，上述的「取 50 維」是根據這個圖表中佔比 75% 對應的主成份數得來的。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="抽樣成功">抽樣成功<a href="https://flyskypie.github.io/posts/2026-04-07_qwen3-tts-journey-pca#%E6%8A%BD%E6%A8%A3%E6%88%90%E5%8A%9F" class="hash-link" aria-label="Direct link to 抽樣成功" title="Direct link to 抽樣成功">​</a></h2>
+<p>後來在做連續性測試的時候才發現嵌入伺服器實作有問題，簡單來說就是 Garbage in, garbage out 的具體例子，細節不在此贅述，請見其他文章：</p>
+<p><a href="https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-voice-embedding/" target="_blank" rel="noopener noreferrer">Qwen3 TTS 之旅：語音嵌入</a></p>
+<p>修復後重新跑一遍終於正常了，男聲和女聲的差異在三個主成份以內就能分離：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/07_PCA-12ed1441e8280a64bc3f462f3102c4b5.webp" width="708" height="706" class="img_RpFt"></p>]]></content:encoded>
+            <category>tts</category>
+        </item>
         <item>
             <title><![CDATA[Qwen3 TTS 之旅：資料集預處理]]></title>
             <link>https://flyskypie.github.io/posts/2026-04-06_qwen3-tts-journey-audio-etl</link>
@@ -1206,99 +1249,6 @@ M1001 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlis
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/cluster-04-1c078c5cb6c166b1226384afdf39473c.webp" width="1400" height="311" class="img_RpFt"></p>
 <p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/cluster-05-606a22eaec564bbba78fae712b733c11.webp" width="1400" height="301" class="img_RpFt"></p>]]></content:encoded>
             <category>homelab</category>
-        </item>
-        <item>
-            <title><![CDATA[軟體工程層級]]></title>
-            <link>https://flyskypie.github.io/posts/2026-03-01_programming-paradigm</link>
-            <guid>https://flyskypie.github.io/posts/2026-03-01_programming-paradigm</guid>
-            <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[我發現網路上一些對於軟體工程範式 (Paradigm) 的討論，對於上下文邊界的設定十分模糊，於是稍微整理一下我看待這個問題的模型。]]></description>
-            <content:encoded><![CDATA[
-<p>我發現網路上一些對於軟體工程範式 (Paradigm) 的討論，對於上下文邊界的設定十分模糊，於是稍微整理一下我看待這個問題的模型。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="如何撰寫程式語言">如何撰寫程式語言?<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E5%A6%82%E4%BD%95%E6%92%B0%E5%AF%AB%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80" class="hash-link" aria-label="Direct link to 如何撰寫程式語言?" title="Direct link to 如何撰寫程式語言?">​</a></h2>
-<p>了解如何撰寫程式碼語法，例如以下是「如何撰寫 C++？」</p>
-<div class="language-cpp codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-cpp codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token macro property directive-hash" style="color:#36acaa">#</span><span class="token macro property directive keyword" style="color:#00009f">include</span><span class="token macro property" style="color:#36acaa"> </span><span class="token macro property string" style="color:#e3116c">&lt;iostream&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">int</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">main</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    std</span><span class="token double-colon punctuation" style="color:#393A34">::</span><span class="token plain">cout </span><span class="token operator" style="color:#393A34">&lt;&lt;</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Hello, world!\n"</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="如何使用程式語言">如何使用程式語言?<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80" class="hash-link" aria-label="Direct link to 如何使用程式語言?" title="Direct link to 如何使用程式語言?">​</a></h2>
-<p>了解特定程式語言的工具鏈，例如以下是「如何使用 Javascript？」</p>
-<div class="language-md codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-md codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token list punctuation" style="color:#393A34">1.</span><span class="token plain"> Javascript 有至少兩種 runtime：Node.js 和 Web</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">2.</span><span class="token plain"> 想要使用套件必須透過 npm, pnpm, yarn 從 </span><span class="token code-snippet code keyword" style="color:#00009f">`registry.npmjs.org`</span><span class="token plain"> 下載。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">3.</span><span class="token plain"> 使用 nvm 管理不同的 Node.js。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">4.</span><span class="token plain"> 使用諸如 vite 或 webpack 之類的工具打包專案。</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="如何組織-organize-程式語言">如何組織 (organize) 程式語言?<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E5%A6%82%E4%BD%95%E7%B5%84%E7%B9%94-organize-%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80" class="hash-link" aria-label="Direct link to 如何組織 (organize) 程式語言?" title="Direct link to 如何組織 (organize) 程式語言?">​</a></h2>
-<p>了解如何切割程式碼，例如：</p>
-<ul>
-<li>設計模式<!-- -->
-<ul>
-<li>工廠模式</li>
-<li>管線模式</li>
-<li>Facade 模式</li>
-<li>Adapter 模式</li>
-<li>etc</li>
-</ul>
-</li>
-<li>OOP (Object-oriented programming)</li>
-<li>ECS (Entity component system)</li>
-<li>Rich Domain Model</li>
-<li>Anemic Domain Model</li>
-<li>ORM (Object-Relational Mapping)</li>
-</ul>
-<p>即處理「程式碼等級的架構問題」。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="如何編排-orchestration-軟體">如何編排 (orchestration) 軟體?<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E5%A6%82%E4%BD%95%E7%B7%A8%E6%8E%92-orchestration-%E8%BB%9F%E9%AB%94" class="hash-link" aria-label="Direct link to 如何編排 (orchestration) 軟體?" title="Direct link to 如何編排 (orchestration) 軟體?">​</a></h2>
-<p>了解如何切割軟體模組，例如：</p>
-<ul>
-<li>前後端分離</li>
-<li>職責分離成多個函式庫</li>
-<li>Server-Client 架構</li>
-<li>Controller-Worker 架構</li>
-</ul>
-<p>即處理「軟體如何被使用、佈署、運行的架構問題」。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="如何驅動軟體開發">如何驅動軟體開發？<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E5%A6%82%E4%BD%95%E9%A9%85%E5%8B%95%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC" class="hash-link" aria-label="Direct link to 如何驅動軟體開發？" title="Direct link to 如何驅動軟體開發？">​</a></h2>
-<p>了解「產生程式碼」其實處於軟體工程的下游，並且決定要用什麼東西當作上游的「單一事實來源」來驅動軟體開發，例如：</p>
-<ul>
-<li>TDD (Test-Driven Development)</li>
-<li>BDD (Behavior-Driven Development)</li>
-<li>DDD (domain-driven design)</li>
-<li>SDD (Specification-Driven Development)</li>
-</ul>
-<hr>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="這個軟體需求是否存在已知供給">這個軟體需求是否存在已知供給？<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E9%80%99%E5%80%8B%E8%BB%9F%E9%AB%94%E9%9C%80%E6%B1%82%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E5%B7%B2%E7%9F%A5%E4%BE%9B%E7%B5%A6" class="hash-link" aria-label="Direct link to 這個軟體需求是否存在已知供給？" title="Direct link to 這個軟體需求是否存在已知供給？">​</a></h2>
-<p>了解到解決問題最好的方法可能不是寫程式（開發軟體），面對需求時先問一個問題：</p>
-<blockquote>
-<p>這個需求是否已經被解決過了？</p>
-</blockquote>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="e2e-解決方案">E2E 解決方案<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#e2e-%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%A1%88" class="hash-link" aria-label="Direct link to E2E 解決方案" title="Direct link to E2E 解決方案">​</a></h3>
-<p>市場或生態系上是否已經存在完整的 E2E 解決方案？例如：</p>
-<ul>
-<li>電子商務 -&gt; Shopify 或其他類似方案。</li>
-<li>CMS (content management system) -&gt; WordPress 或其他類似方案。</li>
-<li>試算表軟體 -&gt; LibreOffice 或其他類似方案。</li>
-<li>專案管理 -&gt; OpenProject 或其他類似方案。</li>
-<li>etc.</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="軟體解決方案">軟體解決方案<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E8%BB%9F%E9%AB%94%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%A1%88" class="hash-link" aria-label="Direct link to 軟體解決方案" title="Direct link to 軟體解決方案">​</a></h3>
-<p>市場或生態系上是否已經存在解決部份問題的軟體（E2E 以下；函式庫以上）？例如：</p>
-<ul>
-<li>RDBMS (relational database management system) -&gt; MySQL 或其他類似軟體。</li>
-<li>NoSQL 資料庫 -&gt; MongoDB 或其他類似軟體。</li>
-<li>Authentication -&gt; Keyclock 或其他類似軟體。</li>
-<li>Authorization -&gt; OpenFGA 或其他類似軟體。</li>
-<li>影音編解碼 -&gt; FFmpeg 或其他類似軟體。</li>
-<li>etc.</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="函式庫解決方案">函式庫解決方案<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E5%87%BD%E5%BC%8F%E5%BA%AB%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%A1%88" class="hash-link" aria-label="Direct link to 函式庫解決方案" title="Direct link to 函式庫解決方案">​</a></h3>
-<p>市場或生態系上是否已經存在程式碼實作？例如：</p>
-<ul>
-<li>Material Design -&gt; <code>mui/material-ui</code> 或其他類似函式庫。</li>
-<li>影音編解碼 -&gt; GStreamer</li>
-<li>WebGL 抽象化 -&gt; Three.js</li>
-<li>etc.</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_mpuI" id="部份引用">部份引用<a href="https://flyskypie.github.io/posts/2026-03-01_programming-paradigm#%E9%83%A8%E4%BB%BD%E5%BC%95%E7%94%A8" class="hash-link" aria-label="Direct link to 部份引用" title="Direct link to 部份引用">​</a></h3>
-<p>即便不直接使用上述解決方案，依然可以參考該解決方案的已經存在的：</p>
-<ul>
-<li>領域模型</li>
-<li>程式碼</li>
-<li>界面設計</li>
-<li>軟體架構</li>
-<li>程式碼架構</li>
-</ul>]]></content:encoded>
         </item>
     </channel>
 </rss>
