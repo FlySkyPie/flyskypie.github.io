@@ -6,6 +6,10 @@ tags: []
 
 # 大學專題：移動熔爐（重發）
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/blog/2026-04-07_mobile-furnace/img/00_cover.webp" />
+</head>
+
 :::info
 這篇是 2019 年我在大學時做的畢業專題，原本發在網際網路上[奇怪的地方](https://www.erepublik.com/en/article/-flypie-s-school-time--2688865)做封閉測試（？），簡單整理之後重新發一次。沒有做太多修改，保留整體結構跟圖文。
 :::
