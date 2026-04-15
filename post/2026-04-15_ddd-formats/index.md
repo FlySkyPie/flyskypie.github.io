@@ -102,7 +102,7 @@ https://github.khronos.org/glTF-Sample-Viewer-Release/ （較新）
 - https://www.steptools.com/docs/stpfiles/ap214/index.html
 - https://www.nist.gov/ctl/smart-connected-systems-division/smart-connected-manufacturing-systems-group/mbe-pmi-0
 
-可以打開 STEP 的線上工具也不少：[Online3DViewer](github.com/kovacsv/Online3DViewer)、Autodesk Viewer、Onshape。本機軟體則有像 FreeCAD 這樣的軟體可以用來打開 STEP 檔案。
+可以打開 STEP 的線上工具也不少：[Online3DViewer](https://github.com/kovacsv/Online3DViewer)、Autodesk Viewer、Onshape。本機軟體則有像 FreeCAD 這樣的軟體可以用來打開 STEP 檔案。
 
 不過 STEP 是一個難搞檔案格式，它有很多細部的規範：
 
