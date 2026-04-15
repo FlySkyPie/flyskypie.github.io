@@ -6,6 +6,10 @@ tags: []
 
 # 新的坑：Scan to BIM
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-04-14_scan-to-bim/04_blender.webp" />
+</head>
+
 :::info
 實際上花了一兩天摸索之後，這個坑大概是填不完了，但是姑且還是紀錄一下。
 :::
