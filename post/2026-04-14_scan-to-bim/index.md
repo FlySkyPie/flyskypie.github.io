@@ -75,7 +75,7 @@ OK，所以接下來就是要研究 Scan to BIM 的方案了對吧？
 
 ## SFM
 
-SFM 的經典工具是 [colmap](github.com/colmap/colmap)，比較遺憾是它在 GitHub 的 release 中預編譯的 release 只有 Windows 的，並且計算過程仰賴 CUDA，2024 年使用它的時候可是稍微折騰了一番。
+SFM 的經典工具是 [colmap](https://github.com/colmap/colmap)，比較遺憾是它在 GitHub 的 release 中預編譯的 release 只有 Windows 的，並且計算過程仰賴 CUDA，2024 年使用它的時候可是稍微折騰了一番。
 
 不過「去 CUDA」是我目前的主要原則，姑且還是在沒有 CUDA 的環境硬著頭皮編譯跟跑下去了，讓我有點意外是，無 CUDA 版本依然會使用 GPU 加速：
 
