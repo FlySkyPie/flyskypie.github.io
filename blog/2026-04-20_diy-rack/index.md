@@ -6,6 +6,11 @@ tags: []
 
 # DIY 機架的嘗試與我的模組化家具
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/blog/2026-04-20_diy-rack/20_rack-diy.webp" />
+</head>
+
+
 ## 前情提要
 
 這裡有兩個前提，其中一個是我計畫使用二手筆電建構 Kubernetes 叢集，這個部份在我之前的文章已經提及：
