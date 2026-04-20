@@ -14,7 +14,8 @@
         <link href="https://flyskypie.github.io/blog/2026-04-20_diy-rack"/>
         <updated>2026-04-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[前情提要]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/blog/2026-04-20_diy-rack#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
+        <content type="html"><![CDATA[
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/blog/2026-04-20_diy-rack#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
 <p>這裡有兩個前提，其中一個是我計畫使用二手筆電建構 Kubernetes 叢集，這個部份在我之前的文章已經提及：</p>
 <p><a href="https://flyskypie.github.io/posts/2026-02-04_homelab-hardware-strategy/" target="_blank" rel="noopener noreferrer">仰望群星 (Satellites) - 我的 Homelab 戰略</a></p>
 <p>自農曆過年後，我陸續入手了三台 DDR2、DDR3 時期的雙核筆電，已經構成了分散式 Control Plan 的基本要求（三個節點），是時候把它們組裝起來了。</p>
