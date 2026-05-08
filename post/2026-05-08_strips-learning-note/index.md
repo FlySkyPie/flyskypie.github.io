@@ -6,6 +6,9 @@ tags: [ai]
 
 # STRIPS 學習筆記
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-05-08_strips-learning-note/04_i-dont-know.webp" />
+</head>
 
 ## 背景
 
