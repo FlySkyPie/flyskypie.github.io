@@ -4,10 +4,192 @@
         <title>工程屍 FlyPie 的異想世界 Blog</title>
         <link>https://flyskypie.github.io/posts</link>
         <description>工程屍 FlyPie 的異想世界 Blog</description>
-        <lastBuildDate>Fri, 08 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 May 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[TiddlyRAG Dev Log]]></title>
+            <link>https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log</link>
+            <guid>https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log</guid>
+            <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[前情提要]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
+<p>TiddlyRAG 的概念最早我在這篇文章就已經提出：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt/" target="_blank" rel="noopener noreferrer">2025-10-06 一種人類友善 llms.txt 構想</a></li>
+</ul>
+<p>試著在本地運行嵌入模型：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-03-12_llama-cpp/" target="_blank" rel="noopener noreferrer">2026-03-12 llama.cpp 本地嵌入伺服器初體驗</a></li>
+</ul>
+<p>調查幾個開源 LLM 應用程式在處理 RAG 相關的功能：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-03-14_anything-llm-survey/" target="_blank" rel="noopener noreferrer">2026-03-14 不正經 LLM APP 調查：AnythingLLM</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-15_bionic-gpt/" target="_blank" rel="noopener noreferrer">2026-03-15 不正經 LLM APP 調查：Bionic</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-15_astr-bot-survey/" target="_blank" rel="noopener noreferrer">2026-03-15 不正經 LLM APP 調查：AstrBot</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-16_open-webui/" target="_blank" rel="noopener noreferrer">2026-03-16 不正經 LLM APP 調查：Open WebUI</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-16_lobehub/" target="_blank" rel="noopener noreferrer">2026-03-16 不正經 LLM APP 調查：LobeHub</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-16_libre-chat/" target="_blank" rel="noopener noreferrer">2026-03-16 不正經 LLM APP 調查：LibreChat</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-16_kotaemon/" target="_blank" rel="noopener noreferrer">2026-03-16 不正經 LLM APP 調查：kotaemon</a></li>
+</ul>
+<p>完成 POC Type-A，能夠匯入 TiddlyRAG 進行嵌入；並透過 MCP 進行檢索：</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/tiddlyrag-poc/tree/poc/type-a" target="_blank" rel="noopener noreferrer">2026-04-28 POC Type-A</a></li>
+</ul>
+<p>研究卡片化 (Zettelize) 的其中用例，將 Git Repo 轉換成文件，調查已經存在的實作，沒想到卻十分差勁：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-05-01_code-review/" target="_blank" rel="noopener noreferrer">2026-05-01 從 Zettelize 到糞坑：評點 deepwiki-open 程式碼</a></li>
+</ul>
+<p>完成 POC Type-B，試著從 <code>deepwiki-open</code> 抽出部份邏輯重新實做：</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/tiddlyrag-poc/tree/poc/type-b" target="_blank" rel="noopener noreferrer">2026-05-06 POC Type-B</a></li>
+</ul>
+<p>接著回到本文的重點。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="僵化的資料探勘策略">僵化的資料探勘策略<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E5%83%B5%E5%8C%96%E7%9A%84%E8%B3%87%E6%96%99%E6%8E%A2%E5%8B%98%E7%AD%96%E7%95%A5" class="hash-link" aria-label="Direct link to 僵化的資料探勘策略" title="Direct link to 僵化的資料探勘策略">​</a></h2>
+<p><code>deepwiki-open</code> 的實作方式是採取兩步驟：</p>
+<ol>
+<li>建立大綱（8~12頁）。</li>
+<li>根據大綱對每一頁生成內容。</li>
+</ol>
+<p>並且輸入是從事先把所有文件嵌入的資料中檢索 20 個檔案出來，但是我實際實驗發現在特定情況會有問題。</p>
+<p>以 <code>deepwiki-open</code> 自己的 Repo 為例，它包含了 10 個不同語言的 README，因此使用 README 進行向量檢索的時候，會得到一堆不同語言的 README 跟一些 i18n 的檔案，完全不能作為有效的參考資訊。</p>
+<p>所以我完成 POC Type-B 到一個程度後沒打算繼續深入，因為這明顯是一條死路。</p>
+<p>根本性的原因是僵化的資料探勘策略，Git Repo 的不確定性很高：</p>
+<ul>
+<li>這是一個後端/後端/嵌入式系統/函式庫/UI 庫...專案？</li>
+<li>這是一個程式專案？</li>
+<li>這是一個文件專案？</li>
+<li>這是一個 Monorepo？</li>
+<li>這是很多 Microservice？</li>
+<li>...</li>
+</ul>
+<p>需要一種非固定流水線 (Pipeline) 的機制才有可能處理這種不確定性。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="決策算法">決策算法<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E6%B1%BA%E7%AD%96%E7%AE%97%E6%B3%95" class="hash-link" aria-label="Direct link to 決策算法" title="Direct link to 決策算法">​</a></h2>
+<p>我的直覺是透過行為樹 (Behavior Tree) 建立兼富彈性與可控性的資料探勘策略，不過在正式使用以前，我需要調查一下同樣在遊戲界常用的演算法，因此有了以下幾篇文章：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-05-08_strips-learning-note/" target="_blank" rel="noopener noreferrer">2026-05-08 STRIPS 學習筆記</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-05-08_goap-htn-learning/" target="_blank" rel="noopener noreferrer">2026-05-08 GOAP 和 HTN 學習筆記</a></li>
+</ul>
+<p>GOAP 和 HTN 建立在 STRIPS 模型之上，而 STRIPS 模型要求建模者必須對環境有一定程度的理解與掌控，用在遊戲環境沒問題（環境是遊戲開發者自己設定的），但是在 Git Repo 這種不確定性高的環境就顯得不合適。</p>
+<p>Utility AI 是另外一個遊戲常用的古典 AI，它的行為比較簡單我就沒有特別深入研究寫文章了，基本上運作機制很接近感知機 (Perceptron) 配上可客製化的激勵函數，所以它的可預測性與可解釋性比 BT (Behavior Tree) 來得差。</p>
+<p>所以最後還是選擇行為樹。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="行為樹生態">行為樹生態<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E8%A1%8C%E7%82%BA%E6%A8%B9%E7%94%9F%E6%85%8B" class="hash-link" aria-label="Direct link to 行為樹生態" title="Direct link to 行為樹生態">​</a></h2>
+<p>下一步是了解行為樹的生態，一個完整的行為樹解決方案應該包含以下條件：</p>
+<ul>
+<li>Runtime SDK：用來運行 BT 的函式庫。</li>
+<li>序列化與反序列化：BT 能夠以檔案形式存在，而不是硬編碼在程式內。</li>
+<li>日誌：運行時紀錄下 BT 的狀態，用於事後除錯。</li>
+<li>靜態視覺化：能夠以 GUI 瀏覽 BT 檔案。</li>
+<li>動態視覺化：能夠以 GUI 遙測或模擬 BT。</li>
+<li>視覺化編輯器：能夠以 GUI 編輯行為樹。</li>
+</ul>
+<p>話雖如此，但是不考慮遊戲引擎生態的，因為它們的 BT 通常和遊戲引擎高度整合。因此條件變得更嚴苛了，要滿足上述條件還要有解偶與高內聚的特性。</p>
+<p><a href="https://github.com/BehaviorTree/BehaviorTree.CPP" target="_blank" rel="noopener noreferrer">BehaviorTree.CPP</a> 是唯一一個我找到滿足上述條件的，另外一個發現是看來 BT 不只是用在遊戲產業，（實體）機器人產業似乎也有使用。</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_BehaviorTree-CPP-9136b15745f4e572b1d8cc73f72b8be3.webp" width="1400" height="772" class="img_RpFt"></p>
+<p>BehaviorTree.CPP 生態系內一款名為 <a href="https://github.com/BehaviorTree/Groot" target="_blank" rel="noopener noreferrer">Groot</a> 的視覺化工具，包含了編輯、遙測與回放功能，乍看之下似乎很完美。就算我另外用 Javascript 做，只要照著 Spec 刻就能對接 BehaviorTree.CPP 的生態系直接使用 Groot。</p>
+<p>然而隨著深入調查卻發現不盡人意的事實，Groot 1 不再維護，且僅支援到 BehaviorTree.CPP 3.X （最新版為 4.9），Groot 2 則採取閉源訂閱制付費的方案。</p>
+<p>接著我一邊看著 Mistreevous 的行為與文件，並和 BehaviorTree.CPP 的文件比較，我發現我無法理解「正宗行為樹」的邏輯應該為何。BehaviorTree.CPP 的文件經常使用反應式 (Reactive)、非同步 (Async)、觸發 (Trigger)、中斷 (Interrupt)...等詞彙，但是根據描述我又無法跟我平時開發 Javascript 的經驗做連結。</p>
+<p>於是我花了一、兩天整理了行為樹的一些先備知識：</p>
+<p><a href="https://flyskypie.github.io/microproject-wikis/behavior-tree.html" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/microproject-wikis/behavior-tree.html</a></p>
+<p>簡單來說：</p>
+<blockquote>
+<p>BT 最早是無狀態的，但是因為這樣每個 Cycle 都需要重新遍歷，這在大型或複雜的樹中會造成效能方面的問題。</p>
+<p>於是狀態被引入了，讓下一個 Cycle 可以根據情況從特定的節點開始檢查，減少重複運算。但是這造成另外一個問題，當環境發生變化時，行為樹無法適應這些變化，因為一些檢查被跳過去了。</p>
+<p>於是反應式 (Reactive)、非同步 (Async)、觸發 (Trigger)、中斷 (Interrupt) ...之類概念又被引入，用於抵銷狀態帶來的行為；可以在有狀態的 Scope 下條件性的觸發重新遍歷。</p>
+<p>這個歷史過程造成了一些概念上的混淆，然而大部分 BT 教學並沒有提及這個過程。</p>
+</blockquote>
+<p>如果不把一些觀念釐清（Cycle vs Tick, 有狀態 vs 無狀態），跟 LLM 討論會陷入雞同鴨講的情況。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="javascript-行為樹技術選型">Javascript 行為樹技術選型<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#javascript-%E8%A1%8C%E7%82%BA%E6%A8%B9%E6%8A%80%E8%A1%93%E9%81%B8%E5%9E%8B" class="hash-link" aria-label="Direct link to Javascript 行為樹技術選型" title="Direct link to Javascript 行為樹技術選型">​</a></h2>
+<p>調查了一下列一個清單：</p>
+<ul>
+<li><a href="https://github.com/behavior3/behavior3js" target="_blank" rel="noopener noreferrer">https://github.com/behavior3/behavior3js</a>
+<ul>
+<li>428 ⭐</li>
+<li><a href="https://github.com/behavior3/behavior3editor" target="_blank" rel="noopener noreferrer">https://github.com/behavior3/behavior3editor</a>
+<ul>
+<li>701 ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/renatopp/behavior3js" target="_blank" rel="noopener noreferrer">https://github.com/renatopp/behavior3js</a>
+<ul>
+<li>145 ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/renatopp/behavior3js/wiki/JSON" target="_blank" rel="noopener noreferrer">https://github.com/renatopp/behavior3js/wiki/JSON</a></li>
+<li><a href="https://github.com/mybios/behavior3-typescript" target="_blank" rel="noopener noreferrer">https://github.com/mybios/behavior3-typescript</a>
+<ul>
+<li>Typescript Fork</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/Calamari/BehaviorTree.js" target="_blank" rel="noopener noreferrer">https://github.com/Calamari/BehaviorTree.js</a>
+<ul>
+<li>339 ⭐</li>
+<li><a href="https://github.com/Calamari/BehaviorTree.js-Examples" target="_blank" rel="noopener noreferrer">https://github.com/Calamari/BehaviorTree.js-Examples</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/yantra-core/Sutra.js" target="_blank" rel="noopener noreferrer">https://github.com/yantra-core/Sutra.js</a>
+<ul>
+<li>188 ⭐</li>
+<li>作者大概非常不喜歡 Typescript<sup><a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#user-content-fn-sutra-js-f9bf5f" id="user-content-fnref-sutra-js-f9bf5f" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></li>
+</ul>
+</li>
+<li><a href="https://github.com/nikkorn/mistreevous" target="_blank" rel="noopener noreferrer">https://github.com/nikkorn/mistreevous</a>
+<ul>
+<li>132 ⭐</li>
+<li>作者大概很喜歡 Typescript</li>
+<li><a href="https://github.com/nikkorn/mistreevous-visualiser" target="_blank" rel="noopener noreferrer">https://github.com/nikkorn/mistreevous-visualiser</a></li>
+</ul>
+</li>
+</ul>
+<p>behavior3js 乍看是聲望最高、又有視覺化工具，但是它自 2018 年以來就沒有更新了，而且文件十分凌亂，分散在程式碼內、GitHub Wiki、死掉的網站連結...內，所以我沒辦法快速的搞清楚這東西要怎麼使用。</p>
+<p>BehaviorTree.js 則是 2021 年以來沒有更新，2026 年有推出支援 Typescript 的 beta 版本，不過缺乏生態系其他配套（特別是視覺化）。</p>
+<p>Sutra.js 就算撇除作者在 Reddit 跟別人筆戰「Javascript 不需要型別」以外，README 映入眼簾的是 <code>if/else</code> 語法以及事件驅動等功能，完全背離 BT 的設計哲學。並且同樣缺乏 BT 視覺化配套。</p>
+<p>Mistreevous 的聲望（星星數）並不是最高的，但是從文件的易用性、原生 Typescript 支援、視覺化的支援、序列化與反序列化的重視程度...綜合考量下是一個優秀的選擇。</p>
+<p>具體差異我就不在這邊解釋，情況有一點複雜。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="資料組織方案">資料組織方案<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E8%B3%87%E6%96%99%E7%B5%84%E7%B9%94%E6%96%B9%E6%A1%88" class="hash-link" aria-label="Direct link to 資料組織方案" title="Direct link to 資料組織方案">​</a></h2>
+<p>這邊我要先補充一個關於 BT 的先備知識，BT 原則上是無狀態的，典型的 BT 會使用「黑板模式」：所有狀態是儲存在一個叫做黑板 (blackboard) 的東西裡面，簡單來說就是一個 key-value 表，然而實務上容易變成「一堆放在一起的全域變數」。</p>
+<p>這對我而言是無法接受的，而碰巧我有使用 ECS (Entity-Component-System) 的經驗：</p>
+<p><a href="https://flyskypie.github.io/blog/2023-09-24_a-journey-about-learning-ecs/" target="_blank" rel="noopener noreferrer">ECS 學習與 aimAndShoot 重構之旅</a></p>
+<p>於是這件事就這樣自然發生了：</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_ec-bt-aac31bbb4a0f0082e52c32b5d6f96362.webp" width="735" height="413" class="img_RpFt"></p>
+<p>簡單來說 ECS 和 BT 都遵守 DoP (Data-oriented programming) 的哲學，因此資料跟邏輯本來就解偶了，所以把 ECS 中處理的資料的 EC 嫁接到 BT 上非常容易。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="poc">POC<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#poc" class="hash-link" aria-label="Direct link to POC" title="Direct link to POC">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_demo-88de5372a6e76b3a3019fbfe896aa85b.webp" width="1400" height="768" class="img_RpFt"></p>
+<p>結論，我完成了一個能夠在「深度優先遍歷」與「廣度優先遍歷」切換的 BT：</p>
+<p><a href="https://github.com/FlySkyPie/tiddlyrag-poc/tree/poc/type-c" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/tiddlyrag-poc/tree/poc/type-c</a></p>
+<p>「僵化的資料探勘策略」的問題並未完全解決，但是 POC 的策略就是一次只驗證一件事情，我認為完成一個具有彈性的 BT 框架就算完成階段性任務了。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="下一步">下一步？<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E4%B8%8B%E4%B8%80%E6%AD%A5" class="hash-link" aria-label="Direct link to 下一步？" title="Direct link to 下一步？">​</a></h2>
+<p>以下節錄自我的腦力激盪過程：</p>
+<blockquote>
+<p>原始的設計期望透過「逐步探索」的方式來降低無用的資訊，並假設可以無須遍歷所有檔案，但是這個構想當中存在著謬誤。</p>
+<p>LOD (Level of Development) 是在多媒體中經常被使用的技巧，白話來說就是越不重要的東西做得越粗糙，其中一個經典的應用就是遊戲場景，遠景時使用低面數、粗糙的模型，當攝影機拉近時再切換成高面數、精緻的模型。</p>
+<p>但是即便如此，LOD 能夠運作的前提是先有一個高面數的理想模型，再對其進行降低面數的處理，因此低模存在的前提是該模型的細緻特徵已知。</p>
+<p>再回過頭看原始「逐步探索」的設計就顯得不合理，因為資訊聚合 (Aggregation) 的前提是要先具備完整資訊。</p>
+</blockquote>
+<p>最後我將這個問題定位為：探索與利用問題 (Exploration and Exploitation)。</p>
+<p>我已經稍微回顧了：</p>
+<ul>
+<li>多臂老虎機問題 (multi-armed bandit problem, MAB)</li>
+<li>ϵ-greedy</li>
+<li>UCB (Upper Confidence Bound)</li>
+<li>Thompson Sampling</li>
+</ul>
+<p>下一步的重點可能會放在「如何用蒙地卡羅樹搜尋 (MCTS, Monte Carlo tree search) 解決這個資料探勘問題」上。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="題外話">題外話<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E9%A1%8C%E5%A4%96%E8%A9%B1" class="hash-link" aria-label="Direct link to 題外話" title="Direct link to 題外話">​</a></h2>
+<p>因為 TiddlyRAG 這個 Side Project 我也跑好一陣子了，最近想該給它一個正式的 LOGO 了，於是這張圖就產生了：</p>
+<p><img decoding="async" loading="lazy" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBDcmVhdGVkIHdpdGggSW5rc2NhcGUgKGh0dHA6Ly93d3cuaW5rc2NhcGUub3JnLykgLS0+Cjxzdmcgd2lkdGg9Ijg3LjM1MW1tIiBoZWlnaHQ9Ijc2LjQzM21tIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA4Ny4zNTEgNzYuNDMzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEuNjI5NSAtODYuMzcyKSI+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTk2LjEyMiAtMjA1Ljc1KSI+CiAgIDxyZWN0IHg9Ijk3Ljc1MiIgeT0iMjkyLjEyIiB3aWR0aD0iODcuMzUxIiBoZWlnaHQ9Ijc2LjQzMyIgcng9IjAiIHJ5PSIwIiBmaWxsPSIjNTc3OGQ4IiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTU1LjkxIDM0Ny42OCAxMC4yNzMtMTIuNzM4aC01My44NzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNDQ3MiIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPHBhdGggZD0ibTE1MS41OCAzMjAuMDljMS42MjI3IDEuNjE5IDMuMzA2OSAzLjczNzYgNS4xODQ1IDQuNjAyNiAxLjg3NzUgMC44NjQ5NiA0LjMzMzQgMy4yMzQ3IDUuNjg1NyAzLjg1NzUgMS4yNjY4IDAuNTgzNDYgNC4zMjQ5IDEuMzAxNCA0Ljc1OTQgMi43OTk0IDAuNDM0NDMgMS40OTgxLTAuODMxNDggMi41NTItMi40NzMgMi41MTExcy0zLjM0MzYtMS40NTkzLTUuMzA0Mi0yLjYyMTZjLTEuOTYwNS0xLjE2MjMtOC41MDA1LTMuOTgwOC05LjY1NjYtNC41NDg1LTAuMjAxNTYtMS44ODAzLTAuNDM5NDQtNi4xNzA4IDEuODA0My02LjYwMDV6IiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTQzLjY3IDMzMy4yM2g3LjU3MTdsMC45OTMwOCAzLjEzMDhoLTcuNTcxN3oiIGZpbGw9IiM1Nzc4ZDgiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMi44OTQ0IiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTE1Ljk1IDMzMy40MWgxMy4yNTNsMi42MTc0IDIuNjc2OWgtMTQuMzMxeiIgZmlsbD0iIzU3NzhkOCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjg5NDQiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgIDxwYXRoIGQ9Im0xMDMuMTQgMzAxLjIxYy0wLjI5MzU4IDAuMDEwMi0wLjQ4ODg1IDAuMzc0ODctMC42OTIxNSAwLjc2ODgtMy44NDc2IDguMTg3OSAyLjk4NTggMTMuNDU2IDEwLjc1NiAxMy40OCAyLjQzOTgtMC4xODQ1NyAxLjI2MzQtMC4wMjY0IDMuNTMxNC0wLjQ1MDk3bC0wLjA1NzYgMC4zMTM3NGMtMC4xNjAyNiAyLjcxMjIgMS4wNzQyIDUuMTA2NyAzLjM3OTIgNi41Nzc1LTEuMDU3NSAyLjk1NDQtMy4xNDc4IDUuMzE3Ni00LjU4MjYgOC4wMzEgMC41MzkzMiAzLjM3MzMgNC4wMjc4IDcuODc3NSA1LjQ3MTQgOC41MTg5IDEuMjcwOCAwLjU2NDc2IDQuMDQ1MyAwLjU3MDA3IDQuNjg2OS0wLjMzODc4IDAuMjI5MTQtMC40Mjc0MiAwLjA3ODctMS4zNDU3LTAuMTczODgtMS44MTYyIDEuMDg1MSAxLjE3ODIgMi41NDU1IDIuODE5MSAzLjk1OTYgMy42MDg1IDAuODQ2NzYgMC4zOTU3MSAxLjY5NiAwLjY1MjMxIDIuNjQ2MyAwLjY4NDI5bDEuMjA3OC0wLjA1NjVjMC42MDM3My0wLjEyNzQ3IDEuMzE0My0wLjIyMzE5IDEuNzE4Ni0wLjc0OTM1IDAuNDU2NzgtMC43NjEzNCAwLjAzMDMtMi44OTMtMS44NTc3LTMuMDQ1My0xLjg4OC0wLjE1MjQtMy4xMDU5LTAuODUyNDItNC44NDE3LTMuMzgtMS40My0yLjQ0MzUgMC4zMDAwNi01LjgwODcgMC44ODIxLTguMjEzMSAyLjk4NjcgMC40NzEwNCA1Ljk5NTEgMC44NDE4MyA5LjAyNDEgMC44NDkyIDEuMzE0MS0wLjA2NTUgMi42MTY0LTAuMTEyMSAzLjkxMTctMC4zNTU5OCAwLjI1MTY4IDAuNjMwMDMgMC43Nzc0MiAxLjk0NzYgMS4xNTM2IDMuMDY3OCAxLjU3NzggNC4yMDUzIDEuODQyMiA1LjAyMTcgMi4wNTgxIDYuMTI4OCAwLjMxNDgzIDEuNjE0MiAxLjMzNjggMy41MDY4IDEuOTAyNiA0LjY1MDIgMS4zMDA0IDIuMDYwMyAyLjQ1OTggMi4wNjExIDUuMDI2NCAyLjEzMzdsMC41OTk3OS0wLjA3NzhjMC40NDIzMS0wLjE2MTM0IDAuODU2MzctMC4zMTAyOCAxLjEyNy0wLjcyNjE4IDAuODg0NzUtMS4yNTkzLTEuMzk1NC0xLjc2OTYtMi4yMTIyLTMuMTY1LTAuODE2ODktMS4zOTUyLTQuMTg2MS05LjA1MjYtMS42MzM3LTExLjE5NyAyLjU1MjUtMi4xNDQgNS4zMDk0LTMuMDI5IDYuMzY0My01LjAzNjkgMC4yOTg0Mi0wLjU5MTYxIDAuNjAyMTEtMS4xODczIDAuODExODEtMS44MTQzYTExLjA0NyAxMy41OTMgNzEuNjU3IDAgMS04Ljc0NjctNi44MzU1IDExLjA0NyAxMy41OTMgNzEuNjU3IDAgMS0wLjQ1NTQ0LTMuMTQ4MWMtMC45MzYxMi0wLjE4MzM3LTEuODgyNi0wLjMwODA3LTIuODQtMC4zNTE4Ny0yLjExLTAuMTM2MTQtNS41NDczIDAuNTEwMzctNy45NjM2IDAuNDQyMzctMi40MTYzLTAuMDY4MS03LjE3MTgtMi4xNTIzLTExLjEyOS0xLjcwMTQtMS41OTA5IDAuMTkxNzMtMy4xOTM5IDAuNDU3NzQtNC42NzA4IDEuMTEzNi0wLjkwMzUgMC40MDEyNS0yLjIwNzggMS42MTE4LTIuODYzNiAxLjc5MTUtNi42MDc3IDEuODEwNC0xNy4zNTcgMS43MzUzLTE1LjE1OC04LjA0ODEgMC4xNzEyNC0wLjc1MTQ1IDAuMjIwMDQtMS40MjkzLTAuMTIwNC0xLjU5ODItMC4wNzk1LTAuMDM5Ni0wLjE1MjUtMC4wNTU4LTAuMjIwMjYtMC4wNTM1em0xOC44NDkgMjcuOTAyLTAuMDE0MiAwLjA5ODNjLTAuMDcyIDEuMTkxNS0wLjIxNSAyLjM2NjIgMC4xMTk2NiAzLjUzMzMgMS4wMTk2IDAuOTY0MDcgMi40MzUgMi40OTMxIDMuMzc0NCAzLjUzNDQtMC41MTAxMi0wLjE2MTc0LTEuNDcyLTAuNDkyMjYtMS45NTA0LTAuMjc4MmwtMC4zODA2Ni0wLjExMjU2LTAuMjMxODMtMC4yMzcwN2MtMC42NzcyNC0wLjgzNzUzLTIuNDIzOC0yLjI5ODktMi4xMDMtMy42NTMzIDAuMjc0MTMtMS4wMDQgMC43ODQyMS0xLjkzMTEgMS4xODYxLTIuODg0OXoiIHN0cm9rZS13aWR0aD0iLjEzNTQ3Ii8+CiAgIDxwYXRoIGQ9Im0xNTUuNTggMzAxLjgzYy0yLjM4MjEgMC4zMDg4My0zLjE1ODQgMy42NTQ0LTUuMDU3NiA4LjAxNDgtMC41MTA5Ni0wLjI1ODc5LTIuMjc2OS0wLjE2NTA4LTIuNDE2OS0wLjIyOTcxLTAuMjU0MzcgMS4wNTE2LTEuMDg4OSAyLjMzNTMtMC45NzA5NiAzLjM4ODkgMC40MTcxMiAzLjcwMjggNC43MzAyIDYuMTg3MiA4Ljc3MDYgNy43ODY2IDAuMTc3NzQtMC4zMDI1OSAwLjMzMjY3LTAuNjE4NiAwLjQ0NzAzLTAuOTU3MyAwLjUwMzUgMC42MjMxNyAwLjg4MDk2IDEuMTg2OSAxLjY5MzYgMS4zODU4IDIuMTM2MSAwLjU5MDgyIDQuNTQ5OS0xLjYxMTggNi4wMzY0LTMuODcxNSAwLjgzNTcyLTEuNDAzMiAxLjU5MjItMi45MTg4IDEuODA2LTQuNDE2NyAwLjMzNzA0LTIuOTAyNCAxLjMwMjMtNS45MTQxIDMuOTM4LTcuMjU4NSAwLjAyNzMtMC4wMTk0IDAuMDY3MS0wLjAyMzQgMC4wODE4LTAuMDU3Ni0yLjUyNjMgMC42NDc3OC01LjAwNzEgMS42NDI4LTcuNjc0NyAxLjQ2MjgtMS4zNDA1LTAuNzI4MTgtMi42OTgtMS40MTU5LTQuMjIyNS0xLjY3NTlsLTNlLTMgLTIuM2UtNGMtMC41NDE5Ny0xLjEwNDYtMS4xNjk4LTMuMDkwNi0yLjQyNzgtMy41NzEzeiIgc3Ryb2tlLXdpZHRoPSIuMTM1NDciLz4KICAgPHBhdGggZD0ibTE3MyAzMzQuOTZjMy4wOTA3IDMuMDkwNyA2LjQxMTUgNC43ODE1IDcuNDE2OCAzLjc3NjIgMS4wMDYtMS4wMDYtMC42ODQ4OC00LjMyNjgtMy43NzU1LTcuNDE3NC0zLjA5MDctMy4wOTA2LTYuNDExNS00Ljc4MTUtNy40MTc0LTMuNzc1NS0xLjAwNTMgMS4wMDUzIDAuNjg1NTcgNC4zMjYxIDMuNzc2MiA3LjQxNjhtLTEwLjM1IDEwLjM1YzMuNDcxOSAzLjQ3MTkgNi43NzU5IDQuNDE3IDcuNDE3NCAzLjc3NTVsMy4wODA4LTMuMDgwOWMtMC4wNTc2LTAuMDE1My0wLjEyMDMtMC4wMzYyLTAuMTc4NDYtMC4wNTI2YTcuOTE0NiA3LjkxNDYgMCAwIDEtMC43OTE4OS0wLjI1MDQzcS0wLjI5NTA3LTAuMTEwNTItMC41OTY2Mi0wLjI0Mjg1LTAuMDkxNS0wLjAzODUtMC4xODMyNC0wLjA4MTFhMTguNzk3IDE4Ljc5NyAwIDAgMS01LjEwNTQtMy43MDkxYy0xLjUxMjEtMS40NzUtMi43NjMzLTMuMTk3LTMuNzA5MS01LjEwNTRsLTAuMDgxMi0wLjE4MzI0YTkuODkzMyA5Ljg5MzMgMCAwIDEtMC4zMzUwNS0wLjg1Njk3IDcuOTE0NiA3LjkxNDYgMCAwIDEtMC4xNTgyMS0wLjUzMTU2Yy0wLjAxNTgtMC4wNTgxLTAuMDM4Ni0wLjExOTQ5LTAuMDUyNi0wLjE3ODQ3bC0zLjA4MDkgMy4wODA5Yy0wLjY0NDA5IDAuNjQwMyAwLjMwMjIzIDMuOTQ0MSAzLjc3NDIgNy40MTZtMTQuNzAzLTQuNzgzNmE5Ljg5MzMgOS44OTMzIDAgMCAxLTAuNTk2NjItMC4yNDI4NnEtMC4wOTE3LTAuMDM4My0wLjE4NDAzLTAuMDgwNGExOC43OTcgMTguNzk3IDAgMCAxLTUuMTA1NC0zLjcwOWMtMS41MTIxLTEuNDc1MS0yLjc2MzQtMy4xOTctMy43MDkxLTUuMTA1NGwtMC4wODAzLTAuMTg0MDRhOS44OTMzIDkuODkzMyAwIDAgMS0wLjMzNTgzLTAuODU2MTcgNy45MTQ2IDcuOTE0NiAwIDAgMS0wLjE1NzQzLTAuNTMyMzZjLTAuMDE3NC0wLjA1OTctMC4wMzk3LTAuMTIxMS0wLjA1MzktMC4xNzk3OWwtMy4wODE2IDMuMDgxNmMtMC42NDE0OSAwLjY0MTQ5IDAuMzAzNjEgMy45NDU1IDMuNzc1NSA3LjQxNzQgMy40NzE5IDMuNDcxOSA2Ljc3NiA0LjQxNyA3LjQxNzUgMy43NzU1bDMuMDgwOS0zLjA4MDljLTAuMDU3Ni0wLjAxNTMtMC4xMTk0Ni0wLjAzNzEtMC4xNzg0Ny0wLjA1MjdhNy45MTQ2IDcuOTE0NiAwIDAgMS0wLjc5MTE3LTAuMjUxMTUiIGZpbGw9ImN1cnJlbnRDb2xvciIgc3Ryb2tlPSIjNTc3OGQ4IiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIuNjg0OSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPHRleHQgeD0iMTQxLjgzMjU3IiB5PSIzNjMuMDAzNjkiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJTYW5zLXNlcmlmIiBmb250LXNpemU9IjEzLjUxMXB4IiBmb250LXdlaWdodD0iYm9sZCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjEyNzYiIHRleHQtYWxpZ249ImNlbnRlciIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSIxNDEuODMyNTciIHk9IjM2My4wMDM2OSIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IlNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBzdHJva2Utd2lkdGg9IjIuMTI3NiI+VGlkZGx5UkFHPC90c3Bhbj48L3RleHQ+CiAgPC9nPgogPC9nPgo8L3N2Zz4K" width="330" height="289" class="img_RpFt"></p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-sutra-js-f9bf5f">
+<p>Sutra.js - Fluent Behavior Trees for JavaScript Game Development : r/javascript. <a href="https://www.reddit.com/r/javascript/comments/194e8ef/" target="_blank" rel="noopener noreferrer">https://www.reddit.com/r/javascript/comments/194e8ef/</a> <a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#user-content-fnref-sutra-js-f9bf5f" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>]]></content:encoded>
+            <category>TiddlyRAG</category>
+        </item>
         <item>
             <title><![CDATA[GOAP 和 HTN 學習筆記]]></title>
             <link>https://flyskypie.github.io/posts/2026-05-08_goap-htn-learning</link>
@@ -1405,21 +1587,6 @@ M1001 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlis
 <p>一來是比較專業，二來是這個用詞可能會給人一種「可獨立運作的 AI」的感覺（<del>可以用來欺騙投資人和大眾</del>）。不過老實說，目前大部分的 LLM 應用軟體都受到 OpenAI API 的設計影響（比如那個會不對累積最後把上下文塞爆的對話紀錄萬惡設計），與其去牽扯什麼高大上的理論，目前的實做方式就只是透過 OpenAI API 的特性反轉了請求與回應之間的關係罷了。</p>
 <p>最近在研究 RAG 的範式，便看到了 Agentic RAG，我的天啊！Agentic Coding （俗稱 Vibe Coding） 就已經夠我煩躁的了，連 RAG 也來？總之我想說試著以這個視角整理一下思緒，順便寫下來向其他人解釋 Agent 是什麼。</p>]]></content:encoded>
             <category>LLM</category>
-        </item>
-        <item>
-            <title><![CDATA[軟體成長陷阱]]></title>
-            <link>https://flyskypie.github.io/posts/2026-03-17_software-growing-trap</link>
-            <guid>https://flyskypie.github.io/posts/2026-03-17_software-growing-trap</guid>
-            <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[一圖以敝之：]]></description>
-            <content:encoded><![CDATA[<p>一圖以敝之：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_software-growing-trap-2f723ff20d00a7f7e0ef67255d9ff148.svg" width="1940" height="1756" class="img_RpFt"></p>
-<p>開發者本應跟著專案一起成長，實際上只有部份被開發者消化過的領域知識會變成程式碼，並且程式碼本身又隱性的蘊含了一些領域知識，如果不具備相關領域知識的人可能無法從程式碼表面得知那些領域知識。一般透過註解或是文件來降低這種落差。</p>
-<p>透過 Agentic Coding （俗成 Vibe Coding），即 LLM （大型語言模型）的幫助，程式碼產出的速度來到前所未有的高度，但是這可能會面臨一些問題：</p>
-<p>程式碼本身並不蘊含來自現實世界的領域模型或領域知識，又或是蘊含甚少，因為 LLM 的上下文可能缺少了關鍵的領域知識，程式碼是根據表象的需求實做的，如此建立的軟體模型很有可能會跟現實問題脫句。</p>
-<p>開發者成長遭到削弱，當工作流程一謂的關注堆砌程式碼，開發者不再學習領域知識，而是專注於建構虛有其表的程式碼，這不論是對開發者個個人生涯還是專案擁有者都十分不利，開發者的成長停滯；開發者缺乏對領域知識的理解更不可能撰寫出對應的交接文件。</p>
-<p>表象上軟體的程式碼成長了，但是實際上軟體專案本身的成長是受阻的。</p>]]></content:encoded>
-            <category>philosophy</category>
         </item>
     </channel>
 </rss>

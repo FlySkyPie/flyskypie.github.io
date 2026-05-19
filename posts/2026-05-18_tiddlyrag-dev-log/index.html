@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="blog-wrapper blog-post-page plugin-blog plugin-id-post" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.1">
+<title data-rh="true">TiddlyRAG Dev Log | 工程屍 FlyPie 的異想世界</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:locale" content="zh_tw"><meta data-rh="true" property="og:title" content="TiddlyRAG Dev Log | 工程屍 FlyPie 的異想世界"><meta data-rh="true" name="description" content="前情提要"><meta data-rh="true" property="og:description" content="前情提要"><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2026-05-18T00:00:00.000Z"><meta data-rh="true" property="article:author" content="https://github.com/FlySkyPie"><meta data-rh="true" property="article:tag" content="TiddlyRAG"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log"><link data-rh="true" rel="alternate" href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log" hreflang="en"><link data-rh="true" rel="alternate" href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="工程屍 FlyPie 的異想世界 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="工程屍 FlyPie 的異想世界 Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="工程屍 FlyPie 的異想世界 JSON Feed">
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/posts/rss.xml" title="工程屍 FlyPie 的異想世界 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/posts/atom.xml" title="工程屍 FlyPie 的異想世界 Atom Feed">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.4a9022c6.css">
+<script src="/assets/js/runtime~main.dfcbe589.js" defer="defer"></script>
+<script src="/assets/js/main.46181e52.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_LBgp" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_RjML themedComponent--light_RyNI"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_RjML themedComponent--dark_ntqO"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/docs/the-key-of-huanche/">專案文件</a><a class="navbar__item navbar__link" href="/blogs">數位手記</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/posts">廢文雜談</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_s2nU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_DonJ colorModeToggle_KBLq"><button class="clean-btn toggleButton_qwn5 toggleButtonDisabled_tRn_" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_bYdl"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_D9Q4"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Cbrq"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_GUBX"><div class="container margin-vert--lg"><div class="row"><aside class="col col--3"><nav class="sidebar_UgN6 thin-scrollbar" aria-label="Blog recent posts navigation"><div class="sidebarItemTitle_PkUw margin-bottom--md">Recent posts</div><ul class="sidebarItemList_HFnO clean-list"><li class="sidebarItem_NmoJ"><a aria-current="page" class="sidebarItemLink_GF4N sidebarItemLinkActive_abzQ" href="/posts/2026-05-18_tiddlyrag-dev-log">TiddlyRAG Dev Log</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/posts/2026-05-08_goap-htn-learning">GOAP 和 HTN 學習筆記</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/posts/2026-05-08_strips-learning-note">STRIPS 學習筆記</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/posts/2026-05-06_nodejs-template-engine">用於 LLM 提示詞的 Node.js 樣板引擎選型</a></li><li class="sidebarItem_NmoJ"><a class="sidebarItemLink_GF4N" href="/posts/2026-05-01_code-review">從 Zettelize 到糞坑：評點 deepwiki-open 程式碼</a></li></ul></nav></aside><main class="col col--7" itemscope="" itemtype="https://schema.org/Blog"><article itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting"><meta itemprop="description" content="前情提要"><header><h1 class="title_BVkY" itemprop="headline">TiddlyRAG Dev Log</h1><div class="container_sDB1 margin-vert--md"><time datetime="2026-05-18T00:00:00.000Z" itemprop="datePublished">May 18, 2026</time></div><div class="margin-top--md margin-bottom--sm row"><div class="col col--6 authorCol_SrKl"><div class="avatar margin-bottom--sm"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" class="avatar__photo-link"><img class="avatar__photo" src="https://avatars.githubusercontent.com/u/9475660" alt="Wei Ji" itemprop="image"></a><div class="avatar__intro" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><div class="avatar__name"><a href="https://github.com/FlySkyPie" target="_blank" rel="noopener noreferrer" itemprop="url"><span itemprop="name">Wei Ji</span></a></div><small class="avatar__subtitle" itemprop="description">閃亮症候群工程屍</small></div></div></div></div></header><div id="__blog-post-container" class="markdown" itemprop="articleBody"><h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="#前情提要" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
+<p>TiddlyRAG 的概念最早我在這篇文章就已經提出：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt/" target="_blank" rel="noopener noreferrer">2025-10-06 一種人類友善 llms.txt 構想</a></li>
+</ul>
+<p>試著在本地運行嵌入模型：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-03-12_llama-cpp/" target="_blank" rel="noopener noreferrer">2026-03-12 llama.cpp 本地嵌入伺服器初體驗</a></li>
+</ul>
+<p>調查幾個開源 LLM 應用程式在處理 RAG 相關的功能：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-03-14_anything-llm-survey/" target="_blank" rel="noopener noreferrer">2026-03-14 不正經 LLM APP 調查：AnythingLLM</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-15_bionic-gpt/" target="_blank" rel="noopener noreferrer">2026-03-15 不正經 LLM APP 調查：Bionic</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-15_astr-bot-survey/" target="_blank" rel="noopener noreferrer">2026-03-15 不正經 LLM APP 調查：AstrBot</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-16_open-webui/" target="_blank" rel="noopener noreferrer">2026-03-16 不正經 LLM APP 調查：Open WebUI</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-16_lobehub/" target="_blank" rel="noopener noreferrer">2026-03-16 不正經 LLM APP 調查：LobeHub</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-16_libre-chat/" target="_blank" rel="noopener noreferrer">2026-03-16 不正經 LLM APP 調查：LibreChat</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-03-16_kotaemon/" target="_blank" rel="noopener noreferrer">2026-03-16 不正經 LLM APP 調查：kotaemon</a></li>
+</ul>
+<p>完成 POC Type-A，能夠匯入 TiddlyRAG 進行嵌入；並透過 MCP 進行檢索：</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/tiddlyrag-poc/tree/poc/type-a" target="_blank" rel="noopener noreferrer">2026-04-28 POC Type-A</a></li>
+</ul>
+<p>研究卡片化 (Zettelize) 的其中用例，將 Git Repo 轉換成文件，調查已經存在的實作，沒想到卻十分差勁：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-05-01_code-review/" target="_blank" rel="noopener noreferrer">2026-05-01 從 Zettelize 到糞坑：評點 deepwiki-open 程式碼</a></li>
+</ul>
+<p>完成 POC Type-B，試著從 <code>deepwiki-open</code> 抽出部份邏輯重新實做：</p>
+<ul>
+<li><a href="https://github.com/FlySkyPie/tiddlyrag-poc/tree/poc/type-b" target="_blank" rel="noopener noreferrer">2026-05-06 POC Type-B</a></li>
+</ul>
+<p>接著回到本文的重點。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="僵化的資料探勘策略">僵化的資料探勘策略<a href="#僵化的資料探勘策略" class="hash-link" aria-label="Direct link to 僵化的資料探勘策略" title="Direct link to 僵化的資料探勘策略">​</a></h2>
+<p><code>deepwiki-open</code> 的實作方式是採取兩步驟：</p>
+<ol>
+<li>建立大綱（8~12頁）。</li>
+<li>根據大綱對每一頁生成內容。</li>
+</ol>
+<p>並且輸入是從事先把所有文件嵌入的資料中檢索 20 個檔案出來，但是我實際實驗發現在特定情況會有問題。</p>
+<p>以 <code>deepwiki-open</code> 自己的 Repo 為例，它包含了 10 個不同語言的 README，因此使用 README 進行向量檢索的時候，會得到一堆不同語言的 README 跟一些 i18n 的檔案，完全不能作為有效的參考資訊。</p>
+<p>所以我完成 POC Type-B 到一個程度後沒打算繼續深入，因為這明顯是一條死路。</p>
+<p>根本性的原因是僵化的資料探勘策略，Git Repo 的不確定性很高：</p>
+<ul>
+<li>這是一個後端/後端/嵌入式系統/函式庫/UI 庫...專案？</li>
+<li>這是一個程式專案？</li>
+<li>這是一個文件專案？</li>
+<li>這是一個 Monorepo？</li>
+<li>這是很多 Microservice？</li>
+<li>...</li>
+</ul>
+<p>需要一種非固定流水線 (Pipeline) 的機制才有可能處理這種不確定性。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="決策算法">決策算法<a href="#決策算法" class="hash-link" aria-label="Direct link to 決策算法" title="Direct link to 決策算法">​</a></h2>
+<p>我的直覺是透過行為樹 (Behavior Tree) 建立兼富彈性與可控性的資料探勘策略，不過在正式使用以前，我需要調查一下同樣在遊戲界常用的演算法，因此有了以下幾篇文章：</p>
+<ul>
+<li><a href="https://flyskypie.github.io/posts/2026-05-08_strips-learning-note/" target="_blank" rel="noopener noreferrer">2026-05-08 STRIPS 學習筆記</a></li>
+<li><a href="https://flyskypie.github.io/posts/2026-05-08_goap-htn-learning/" target="_blank" rel="noopener noreferrer">2026-05-08 GOAP 和 HTN 學習筆記</a></li>
+</ul>
+<p>GOAP 和 HTN 建立在 STRIPS 模型之上，而 STRIPS 模型要求建模者必須  對環境有一定程度的理解與掌控，用在遊戲環境沒問題（環境是遊戲開發者自己設定的），但是在 Git Repo 這種不確定性高的環境就顯得不合適。</p>
+<p>Utility AI 是另外一個遊戲常用的古典 AI，它的行為比較簡單我就沒有特別深入研究寫文章了，基本上運作機制很接近感知機 (Perceptron) 配上可客製化的激勵函數，所以它的可預測性與可解釋性比 BT (Behavior Tree) 來得差。</p>
+<p>所以最後還是選擇行為樹。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="行為樹生態">行為樹生態<a href="#行為樹生態" class="hash-link" aria-label="Direct link to 行為樹生態" title="Direct link to 行為樹生態">​</a></h2>
+<p>下一步是了解行為樹的生態，一個完整的行為樹解決方案應該包含以下條件：</p>
+<ul>
+<li>Runtime SDK：用來運行 BT 的函式庫。</li>
+<li>序列化與反序列化：BT 能夠以檔案形式存在，而不是硬編碼在程式內。</li>
+<li>日誌：運行時紀錄下 BT 的狀態，用於事後除錯。</li>
+<li>靜態視覺化：能夠以 GUI 瀏覽 BT 檔案。</li>
+<li>動態視覺化：能夠以 GUI 遙測或模擬 BT。</li>
+<li>視覺化編輯器：能夠以 GUI 編輯行為樹。</li>
+</ul>
+<p>話雖如此，但是不考慮遊戲引擎生態的，因為它們的 BT 通常和遊戲引擎高度整合。因此條件變得更嚴苛了，要滿足上述條件還要有解偶與高內聚的特性。</p>
+<p><a href="https://github.com/BehaviorTree/BehaviorTree.CPP" target="_blank" rel="noopener noreferrer">BehaviorTree.CPP</a> 是唯一一個我找到滿足上述條件的，另外一個發現是看來 BT 不只是用在遊戲產業，（實體）機器人產業似乎也有使用。</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/01_BehaviorTree-CPP-9136b15745f4e572b1d8cc73f72b8be3.webp" width="1400" height="772" class="img_RpFt"></p>
+<p>BehaviorTree.CPP 生態系內一款名為 <a href="https://github.com/BehaviorTree/Groot" target="_blank" rel="noopener noreferrer">Groot</a> 的視覺化工具，包含了編輯、遙測與回放功能，乍看之下似乎很完美。就算我另外用 Javascript 做，只要照著 Spec 刻就能對接 BehaviorTree.CPP 的生態系直接使用 Groot。</p>
+<p>然而隨著深入調查卻發現不盡人意的事實，Groot 1 不再維護，且僅支援到 BehaviorTree.CPP 3.X （最新版為 4.9），Groot 2 則採取閉源訂閱制付費的方案。</p>
+<p>接著我一邊看著 Mistreevous 的行為與文件，並和 BehaviorTree.CPP 的文件比較，我發現我無法理解「正宗行為樹」的邏輯應該為何。BehaviorTree.CPP 的文件經常使用反應式 (Reactive)、非同步 (Async)、觸發 (Trigger)、中斷 (Interrupt)...等詞彙，但是根據描述我又無法跟我平時開發 Javascript 的經驗做連結。</p>
+<p>於是我花了一、兩天整理了行為樹的一些先備知識：</p>
+<p><a href="https://flyskypie.github.io/microproject-wikis/behavior-tree.html" target="_blank" rel="noopener noreferrer">https://flyskypie.github.io/microproject-wikis/behavior-tree.html</a></p>
+<p>簡單來說：</p>
+<blockquote>
+<p>BT 最早是無狀態的，但是因為這樣每個 Cycle 都需要重新遍歷，這在大型或複雜的樹中會造成效能方面的問題。</p>
+<p>於是狀態被引入了，讓下一個 Cycle 可以根據情況從特定的節點開始檢查，減少重複運算。但是這造成另外一個問題，當環境發生變化時，行為樹無法適應這些變化，因為一些檢查被跳過去了。</p>
+<p>於是反應式 (Reactive)、非同步 (Async)、觸發 (Trigger)、中斷 (Interrupt) ...之類概念又被引入，用於抵銷狀態帶來的行為；可以在有狀態的 Scope 下條件性的觸發重新遍歷。</p>
+<p>這個歷史過程造成了一些概念上的混淆，然而大部分 BT 教學並沒有提及這個過程。</p>
+</blockquote>
+<p>如果不把一些觀念釐清（Cycle vs Tick, 有狀態 vs 無狀態），跟 LLM 討論會陷入雞 同鴨講的情況。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="javascript-行為樹技術選型">Javascript 行為樹技術選型<a href="#javascript-行為樹技術選型" class="hash-link" aria-label="Direct link to Javascript 行為樹技術選型" title="Direct link to Javascript 行為樹技術選型">​</a></h2>
+<p>調查了一下列一個清單：</p>
+<ul>
+<li><a href="https://github.com/behavior3/behavior3js" target="_blank" rel="noopener noreferrer">https://github.com/behavior3/behavior3js</a>
+<ul>
+<li>428 ⭐</li>
+<li><a href="https://github.com/behavior3/behavior3editor" target="_blank" rel="noopener noreferrer">https://github.com/behavior3/behavior3editor</a>
+<ul>
+<li>701 ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/renatopp/behavior3js" target="_blank" rel="noopener noreferrer">https://github.com/renatopp/behavior3js</a>
+<ul>
+<li>145 ⭐</li>
+</ul>
+</li>
+<li><a href="https://github.com/renatopp/behavior3js/wiki/JSON" target="_blank" rel="noopener noreferrer">https://github.com/renatopp/behavior3js/wiki/JSON</a></li>
+<li><a href="https://github.com/mybios/behavior3-typescript" target="_blank" rel="noopener noreferrer">https://github.com/mybios/behavior3-typescript</a>
+<ul>
+<li>Typescript Fork</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/Calamari/BehaviorTree.js" target="_blank" rel="noopener noreferrer">https://github.com/Calamari/BehaviorTree.js</a>
+<ul>
+<li>339 ⭐</li>
+<li><a href="https://github.com/Calamari/BehaviorTree.js-Examples" target="_blank" rel="noopener noreferrer">https://github.com/Calamari/BehaviorTree.js-Examples</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/yantra-core/Sutra.js" target="_blank" rel="noopener noreferrer">https://github.com/yantra-core/Sutra.js</a>
+<ul>
+<li>188 ⭐</li>
+<li>作者大概非常不喜歡 Typescript<sup><a href="#user-content-fn-sutra-js-f9bf5f" id="user-content-fnref-sutra-js-f9bf5f" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></li>
+</ul>
+</li>
+<li><a href="https://github.com/nikkorn/mistreevous" target="_blank" rel="noopener noreferrer">https://github.com/nikkorn/mistreevous</a>
+<ul>
+<li>132 ⭐</li>
+<li>作者大概很喜歡 Typescript</li>
+<li><a href="https://github.com/nikkorn/mistreevous-visualiser" target="_blank" rel="noopener noreferrer">https://github.com/nikkorn/mistreevous-visualiser</a></li>
+</ul>
+</li>
+</ul>
+<p>behavior3js 乍看是聲望最高、又有視覺化工具，但是它自 2018 年以來就沒有更新了，而且文件十分凌亂，分散在程式碼內、GitHub Wiki、死掉的網站連結...內，所以我沒辦法快速的搞清楚這東西要怎麼使用。</p>
+<p>BehaviorTree.js 則是 2021 年以來沒有更新，2026 年有推出支援 Typescript 的 beta 版本，不過缺乏生態系其他配套（特別是視覺化）。</p>
+<p>Sutra.js 就算撇除作者在 Reddit 跟別人筆戰「Javascript 不需要型別」以外，README 映入眼簾的是 <code>if/else</code> 語法以及事件驅動等功能，完全背離 BT 的設計哲學。並且同樣缺乏 BT 視覺化配套。</p>
+<p>Mistreevous 的聲望（星星數）並不是最高的，但是從文件的易用性、原生 Typescript 支援、視覺化的支援、序列化與反序列化的重視程度...綜合考量下是一個優秀的選擇。</p>
+<p>具體差異我就不在這邊解釋，情況有一點複雜。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="資料組織方案">資料組織方案<a href="#資料組織方案" class="hash-link" aria-label="Direct link to 資料組織方案" title="Direct link to 資料組織方案">​</a></h2>
+<p>這邊我要先補充一個關於 BT 的先備知識，BT 原則上是無狀態的，典型的 BT 會使用「黑板模式」：所有狀態是儲存在一個叫做黑板 (blackboard) 的東西裡面，簡單來說就是一個 key-value 表，然而實務上容易變成「一堆放在一起的全域變數」。</p>
+<p>這對我而言是無法接受的，而碰巧我有使用 ECS (Entity-Component-System) 的經驗：</p>
+<p><a href="https://flyskypie.github.io/blog/2023-09-24_a-journey-about-learning-ecs/" target="_blank" rel="noopener noreferrer">ECS 學習與 aimAndShoot 重構之旅</a></p>
+<p>於是這件事就這樣自然發生了：</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/02_ec-bt-aac31bbb4a0f0082e52c32b5d6f96362.webp" width="735" height="413" class="img_RpFt"></p>
+<p>簡單來說 ECS 和 BT 都遵守 DoP (Data-oriented programming) 的哲學，因此資料跟邏輯本來就解偶了，所以把 ECS 中處理的資料的 EC 嫁接到 BT 上非常容易。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="poc">POC<a href="#poc" class="hash-link" aria-label="Direct link to POC" title="Direct link to POC">​</a></h2>
+<p><img decoding="async" loading="lazy" src="/assets/images/03_demo-88de5372a6e76b3a3019fbfe896aa85b.webp" width="1400" height="768" class="img_RpFt"></p>
+<p>結論，我完成了一個能夠在「深度優先遍歷」與「廣度優先遍歷」切換的 BT：</p>
+<p><a href="https://github.com/FlySkyPie/tiddlyrag-poc/tree/poc/type-c" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/tiddlyrag-poc/tree/poc/type-c</a></p>
+<p>「僵化的資料探勘策略」的問題並未完全解決，但是 POC 的策略就是一次只驗證一件事情，我認為完成一個具有彈性的 BT 框架就算完成階段性任務了。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="下一步">下一步？<a href="#下一步" class="hash-link" aria-label="Direct link to 下一步？" title="Direct link to 下一步？">​</a></h2>
+<p>以下節錄自我的腦力激盪過程：</p>
+<blockquote>
+<p>原始的設計期望透過「逐步探索」的方式來降低無用的資訊，並假設可以無須遍歷所有檔案，但是這個構想當中存在著謬誤。</p>
+<p>LOD (Level of Development) 是在多媒體中經常被使用的技巧，白話來說就是越不重要的東西做得越粗糙，其中一個經典的應用就是遊戲場景，遠景時使用低面數、粗糙的模型，當攝影機拉近時再切換成高面數、精緻的模型。</p>
+<p>但是即便如此，LOD 能夠運作的前提是先有一個高面數的理想模型，再對其進行降低面數的處理，因此低模存在的前提是該模型的細緻特徵已知。</p>
+<p>再回過頭看原始「逐步探索」的設計就顯得不合理，因為資訊聚合 (Aggregation) 的前提是要先具備完整資訊。</p>
+</blockquote>
+<p>最後我將這個問題定位為：探索與利用問題 (Exploration and Exploitation)。</p>
+<p>我已經稍微回顧了：</p>
+<ul>
+<li>多臂老虎機問題 (multi-armed bandit problem, MAB)</li>
+<li>ϵ-greedy</li>
+<li>UCB (Upper Confidence Bound)</li>
+<li>Thompson Sampling</li>
+</ul>
+<p>下一步的重點可能會放在「如何用蒙地卡羅樹搜尋 (MCTS, Monte Carlo tree search) 解決這個資料探勘問題」上。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="題外話">題外話<a href="#題外話" class="hash-link" aria-label="Direct link to 題外話" title="Direct link to 題外話">​</a></h2>
+<p>因為 TiddlyRAG 這個 Side Project 我也跑好一陣子了，最近想該給它一個正式的 LOGO 了，於是這張圖就產生了：</p>
+<p><img decoding="async" loading="lazy" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBDcmVhdGVkIHdpdGggSW5rc2NhcGUgKGh0dHA6Ly93d3cuaW5rc2NhcGUub3JnLykgLS0+Cjxzdmcgd2lkdGg9Ijg3LjM1MW1tIiBoZWlnaHQ9Ijc2LjQzM21tIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA4Ny4zNTEgNzYuNDMzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEuNjI5NSAtODYuMzcyKSI+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTk2LjEyMiAtMjA1Ljc1KSI+CiAgIDxyZWN0IHg9Ijk3Ljc1MiIgeT0iMjkyLjEyIiB3aWR0aD0iODcuMzUxIiBoZWlnaHQ9Ijc2LjQzMyIgcng9IjAiIHJ5PSIwIiBmaWxsPSIjNTc3OGQ4IiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTU1LjkxIDM0Ny42OCAxMC4yNzMtMTIuNzM4aC01My44NzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNDQ3MiIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPHBhdGggZD0ibTE1MS41OCAzMjAuMDljMS42MjI3IDEuNjE5IDMuMzA2OSAzLjczNzYgNS4xODQ1IDQuNjAyNiAxLjg3NzUgMC44NjQ5NiA0LjMzMzQgMy4yMzQ3IDUuNjg1NyAzLjg1NzUgMS4yNjY4IDAuNTgzNDYgNC4zMjQ5IDEuMzAxNCA0Ljc1OTQgMi43OTk0IDAuNDM0NDMgMS40OTgxLTAuODMxNDggMi41NTItMi40NzMgMi41MTExcy0zLjM0MzYtMS40NTkzLTUuMzA0Mi0yLjYyMTZjLTEuOTYwNS0xLjE2MjMtOC41MDA1LTMuOTgwOC05LjY1NjYtNC41NDg1LTAuMjAxNTYtMS44ODAzLTAuNDM5NDQtNi4xNzA4IDEuODA0My02LjYwMDV6IiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTQzLjY3IDMzMy4yM2g3LjU3MTdsMC45OTMwOCAzLjEzMDhoLTcuNTcxN3oiIGZpbGw9IiM1Nzc4ZDgiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMi44OTQ0IiBzdHlsZT0icGFpbnQtb3JkZXI6bWFya2VycyBzdHJva2UgZmlsbCIvPgogICA8cGF0aCBkPSJtMTE1Ljk1IDMzMy40MWgxMy4yNTNsMi42MTc0IDIuNjc2OWgtMTQuMzMxeiIgZmlsbD0iIzU3NzhkOCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjg5NDQiIHN0eWxlPSJwYWludC1vcmRlcjptYXJrZXJzIHN0cm9rZSBmaWxsIi8+CiAgIDxwYXRoIGQ9Im0xMDMuMTQgMzAxLjIxYy0wLjI5MzU4IDAuMDEwMi0wLjQ4ODg1IDAuMzc0ODctMC42OTIxNSAwLjc2ODgtMy44NDc2IDguMTg3OSAyLjk4NTggMTMuNDU2IDEwLjc1NiAxMy40OCAyLjQzOTgtMC4xODQ1NyAxLjI2MzQtMC4wMjY0IDMuNTMxNC0wLjQ1MDk3bC0wLjA1NzYgMC4zMTM3NGMtMC4xNjAyNiAyLjcxMjIgMS4wNzQyIDUuMTA2NyAzLjM3OTIgNi41Nzc1LTEuMDU3NSAyLjk1NDQtMy4xNDc4IDUuMzE3Ni00LjU4MjYgOC4wMzEgMC41MzkzMiAzLjM3MzMgNC4wMjc4IDcuODc3NSA1LjQ3MTQgOC41MTg5IDEuMjcwOCAwLjU2NDc2IDQuMDQ1MyAwLjU3MDA3IDQuNjg2OS0wLjMzODc4IDAuMjI5MTQtMC40Mjc0MiAwLjA3ODctMS4zNDU3LTAuMTczODgtMS44MTYyIDEuMDg1MSAxLjE3ODIgMi41NDU1IDIuODE5MSAzLjk1OTYgMy42MDg1IDAuODQ2NzYgMC4zOTU3MSAxLjY5NiAwLjY1MjMxIDIuNjQ2MyAwLjY4NDI5bDEuMjA3OC0wLjA1NjVjMC42MDM3My0wLjEyNzQ3IDEuMzE0My0wLjIyMzE5IDEuNzE4Ni0wLjc0OTM1IDAuNDU2NzgtMC43NjEzNCAwLjAzMDMtMi44OTMtMS44NTc3LTMuMDQ1My0xLjg4OC0wLjE1MjQtMy4xMDU5LTAuODUyNDItNC44NDE3LTMuMzgtMS40My0yLjQ0MzUgMC4zMDAwNi01LjgwODcgMC44ODIxLTguMjEzMSAyLjk4NjcgMC40NzEwNCA1Ljk5NTEgMC44NDE4MyA5LjAyNDEgMC44NDkyIDEuMzE0MS0wLjA2NTUgMi42MTY0LTAuMTEyMSAzLjkxMTctMC4zNTU5OCAwLjI1MTY4IDAuNjMwMDMgMC43Nzc0MiAxLjk0NzYgMS4xNTM2IDMuMDY3OCAxLjU3NzggNC4yMDUzIDEuODQyMiA1LjAyMTcgMi4wNTgxIDYuMTI4OCAwLjMxNDgzIDEuNjE0MiAxLjMzNjggMy41MDY4IDEuOTAyNiA0LjY1MDIgMS4zMDA0IDIuMDYwMyAyLjQ1OTggMi4wNjExIDUuMDI2NCAyLjEzMzdsMC41OTk3OS0wLjA3NzhjMC40NDIzMS0wLjE2MTM0IDAuODU2MzctMC4zMTAyOCAxLjEyNy0wLjcyNjE4IDAuODg0NzUtMS4yNTkzLTEuMzk1NC0xLjc2OTYtMi4yMTIyLTMuMTY1LTAuODE2ODktMS4zOTUyLTQuMTg2MS05LjA1MjYtMS42MzM3LTExLjE5NyAyLjU1MjUtMi4xNDQgNS4zMDk0LTMuMDI5IDYuMzY0My01LjAzNjkgMC4yOTg0Mi0wLjU5MTYxIDAuNjAyMTEtMS4xODczIDAuODExODEtMS44MTQzYTExLjA0NyAxMy41OTMgNzEuNjU3IDAgMS04Ljc0NjctNi44MzU1IDExLjA0NyAxMy41OTMgNzEuNjU3IDAgMS0wLjQ1NTQ0LTMuMTQ4MWMtMC45MzYxMi0wLjE4MzM3LTEuODgyNi0wLjMwODA3LTIuODQtMC4zNTE4Ny0yLjExLTAuMTM2MTQtNS41NDczIDAuNTEwMzctNy45NjM2IDAuNDQyMzctMi40MTYzLTAuMDY4MS03LjE3MTgtMi4xNTIzLTExLjEyOS0xLjcwMTQtMS41OTA5IDAuMTkxNzMtMy4xOTM5IDAuNDU3NzQtNC42NzA4IDEuMTEzNi0wLjkwMzUgMC40MDEyNS0yLjIwNzggMS42MTE4LTIuODYzNiAxLjc5MTUtNi42MDc3IDEuODEwNC0xNy4zNTcgMS43MzUzLTE1LjE1OC04LjA0ODEgMC4xNzEyNC0wLjc1MTQ1IDAuMjIwMDQtMS40MjkzLTAuMTIwNC0xLjU5ODItMC4wNzk1LTAuMDM5Ni0wLjE1MjUtMC4wNTU4LTAuMjIwMjYtMC4wNTM1em0xOC44NDkgMjcuOTAyLTAuMDE0MiAwLjA5ODNjLTAuMDcyIDEuMTkxNS0wLjIxNSAyLjM2NjIgMC4xMTk2NiAzLjUzMzMgMS4wMTk2IDAuOTY0MDcgMi40MzUgMi40OTMxIDMuMzc0NCAzLjUzNDQtMC41MTAxMi0wLjE2MTc0LTEuNDcyLTAuNDkyMjYtMS45NTA0LTAuMjc4MmwtMC4zODA2Ni0wLjExMjU2LTAuMjMxODMtMC4yMzcwN2MtMC42NzcyNC0wLjgzNzUzLTIuNDIzOC0yLjI5ODktMi4xMDMtMy42NTMzIDAuMjc0MTMtMS4wMDQgMC43ODQyMS0xLjkzMTEgMS4xODYxLTIuODg0OXoiIHN0cm9rZS13aWR0aD0iLjEzNTQ3Ii8+CiAgIDxwYXRoIGQ9Im0xNTUuNTggMzAxLjgzYy0yLjM4MjEgMC4zMDg4My0zLjE1ODQgMy42NTQ0LTUuMDU3NiA4LjAxNDgtMC41MTA5Ni0wLjI1ODc5LTIuMjc2OS0wLjE2NTA4LTIuNDE2OS0wLjIyOTcxLTAuMjU0MzcgMS4wNTE2LTEuMDg4OSAyLjMzNTMtMC45NzA5NiAzLjM4ODkgMC40MTcxMiAzLjcwMjggNC43MzAyIDYuMTg3MiA4Ljc3MDYgNy43ODY2IDAuMTc3NzQtMC4zMDI1OSAwLjMzMjY3LTAuNjE4NiAwLjQ0NzAzLTAuOTU3MyAwLjUwMzUgMC42MjMxNyAwLjg4MDk2IDEuMTg2OSAxLjY5MzYgMS4zODU4IDIuMTM2MSAwLjU5MDgyIDQuNTQ5OS0xLjYxMTggNi4wMzY0LTMuODcxNSAwLjgzNTcyLTEuNDAzMiAxLjU5MjItMi45MTg4IDEuODA2LTQuNDE2NyAwLjMzNzA0LTIuOTAyNCAxLjMwMjMtNS45MTQxIDMuOTM4LTcuMjU4NSAwLjAyNzMtMC4wMTk0IDAuMDY3MS0wLjAyMzQgMC4wODE4LTAuMDU3Ni0yLjUyNjMgMC42NDc3OC01LjAwNzEgMS42NDI4LTcuNjc0NyAxLjQ2MjgtMS4zNDA1LTAuNzI4MTgtMi42OTgtMS40MTU5LTQuMjIyNS0xLjY3NTlsLTNlLTMgLTIuM2UtNGMtMC41NDE5Ny0xLjEwNDYtMS4xNjk4LTMuMDkwNi0yLjQyNzgtMy41NzEzeiIgc3Ryb2tlLXdpZHRoPSIuMTM1NDciLz4KICAgPHBhdGggZD0ibTE3MyAzMzQuOTZjMy4wOTA3IDMuMDkwNyA2LjQxMTUgNC43ODE1IDcuNDE2OCAzLjc3NjIgMS4wMDYtMS4wMDYtMC42ODQ4OC00LjMyNjgtMy43NzU1LTcuNDE3NC0zLjA5MDctMy4wOTA2LTYuNDExNS00Ljc4MTUtNy40MTc0LTMuNzc1NS0xLjAwNTMgMS4wMDUzIDAuNjg1NTcgNC4zMjYxIDMuNzc2MiA3LjQxNjhtLTEwLjM1IDEwLjM1YzMuNDcxOSAzLjQ3MTkgNi43NzU5IDQuNDE3IDcuNDE3NCAzLjc3NTVsMy4wODA4LTMuMDgwOWMtMC4wNTc2LTAuMDE1My0wLjEyMDMtMC4wMzYyLTAuMTc4NDYtMC4wNTI2YTcuOTE0NiA3LjkxNDYgMCAwIDEtMC43OTE4OS0wLjI1MDQzcS0wLjI5NTA3LTAuMTEwNTItMC41OTY2Mi0wLjI0Mjg1LTAuMDkxNS0wLjAzODUtMC4xODMyNC0wLjA4MTFhMTguNzk3IDE4Ljc5NyAwIDAgMS01LjEwNTQtMy43MDkxYy0xLjUxMjEtMS40NzUtMi43NjMzLTMuMTk3LTMuNzA5MS01LjEwNTRsLTAuMDgxMi0wLjE4MzI0YTkuODkzMyA5Ljg5MzMgMCAwIDEtMC4zMzUwNS0wLjg1Njk3IDcuOTE0NiA3LjkxNDYgMCAwIDEtMC4xNTgyMS0wLjUzMTU2Yy0wLjAxNTgtMC4wNTgxLTAuMDM4Ni0wLjExOTQ5LTAuMDUyNi0wLjE3ODQ3bC0zLjA4MDkgMy4wODA5Yy0wLjY0NDA5IDAuNjQwMyAwLjMwMjIzIDMuOTQ0MSAzLjc3NDIgNy40MTZtMTQuNzAzLTQuNzgzNmE5Ljg5MzMgOS44OTMzIDAgMCAxLTAuNTk2NjItMC4yNDI4NnEtMC4wOTE3LTAuMDM4My0wLjE4NDAzLTAuMDgwNGExOC43OTcgMTguNzk3IDAgMCAxLTUuMTA1NC0zLjcwOWMtMS41MTIxLTEuNDc1MS0yLjc2MzQtMy4xOTctMy43MDkxLTUuMTA1NGwtMC4wODAzLTAuMTg0MDRhOS44OTMzIDkuODkzMyAwIDAgMS0wLjMzNTgzLTAuODU2MTcgNy45MTQ2IDcuOTE0NiAwIDAgMS0wLjE1NzQzLTAuNTMyMzZjLTAuMDE3NC0wLjA1OTctMC4wMzk3LTAuMTIxMS0wLjA1MzktMC4xNzk3OWwtMy4wODE2IDMuMDgxNmMtMC42NDE0OSAwLjY0MTQ5IDAuMzAzNjEgMy45NDU1IDMuNzc1NSA3LjQxNzQgMy40NzE5IDMuNDcxOSA2Ljc3NiA0LjQxNyA3LjQxNzUgMy43NzU1bDMuMDgwOS0zLjA4MDljLTAuMDU3Ni0wLjAxNTMtMC4xMTk0Ni0wLjAzNzEtMC4xNzg0Ny0wLjA1MjdhNy45MTQ2IDcuOTE0NiAwIDAgMS0wLjc5MTE3LTAuMjUxMTUiIGZpbGw9ImN1cnJlbnRDb2xvciIgc3Ryb2tlPSIjNTc3OGQ4IiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIuNjg0OSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiLz4KICAgPHRleHQgeD0iMTQxLjgzMjU3IiB5PSIzNjMuMDAzNjkiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJTYW5zLXNlcmlmIiBmb250LXNpemU9IjEzLjUxMXB4IiBmb250LXdlaWdodD0iYm9sZCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjEyNzYiIHRleHQtYWxpZ249ImNlbnRlciIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InBhaW50LW9yZGVyOm1hcmtlcnMgc3Ryb2tlIGZpbGwiIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0c3BhbiB4PSIxNDEuODMyNTciIHk9IjM2My4wMDM2OSIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IlNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBzdHJva2Utd2lkdGg9IjIuMTI3NiI+VGlkZGx5UkFHPC90c3Bhbj48L3RleHQ+CiAgPC9nPgogPC9nPgo8L3N2Zz4K" width="330" height="289" class="img_RpFt"></p>
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-sutra-js-f9bf5f">
+<p>Sutra.js - Fluent Behavior Trees for JavaScript Game Development : r/javascript. <a href="https://www.reddit.com/r/javascript/comments/194e8ef/" target="_blank" rel="noopener noreferrer">https://www.reddit.com/r/javascript/comments/194e8ef/</a> <a href="#user-content-fnref-sutra-js-f9bf5f" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section></div><footer class="row docusaurus-mt-lg blogPostFooterDetailsFull_Dvxa"><div class="col"><b>Tags:</b><ul class="tags_Wp5O padding--none margin-left--sm"><li class="tag_UXKs"><a class="tag_lXMw tagRegular_c460" href="/posts/tags/tiddly-rag">TiddlyRAG</a></li></ul></div></footer></article><div id="disqus_thread"></div><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--next" href="/posts/2026-05-08_goap-htn-learning"><div class="pagination-nav__sublabel">Older Post</div><div class="pagination-nav__label">GOAP 和 HTN 學習筆記</div></a></nav></main><div class="col col--2"><div class="tableOfContents_OfXd thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#前情提要" class="table-of-contents__link toc-highlight">前情提要</a></li><li><a href="#僵化的資料探勘策略" class="table-of-contents__link toc-highlight">僵化的資料探勘策略</a></li><li><a href="#決策算法" class="table-of-contents__link toc-highlight">決策算法</a></li><li><a href="#行為樹生態" class="table-of-contents__link toc-highlight">行為樹生態</a></li><li><a href="#javascript-行為樹技術選型" class="table-of-contents__link toc-highlight">Javascript 行為樹技術選型</a></li><li><a href="#資料組織方案" class="table-of-contents__link toc-highlight">資料組織方案</a></li><li><a href="#poc" class="table-of-contents__link toc-highlight">POC</a></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步？</a></li><li><a href="#題外話" class="table-of-contents__link toc-highlight">題外話</a></li></ul></div></div></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 FlyPie (Wei Ji)</div></div></div></footer></div>
+</body>
+</html>
