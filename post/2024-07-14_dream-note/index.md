@@ -1,7 +1,7 @@
 ---
 slug: 2024-07-14_dream-note
 authors: [weiji,]
-tags: [夢筆記]
+tags: [夢筆記, Dream]
 --- 
 
 # 夢筆記 - 外星軟體開發者

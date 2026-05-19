@@ -1,7 +1,7 @@
 ---
 slug: 2026-01-07_emoji
 authors: [weiji]
-tags: []
+tags: [Philosophy]
 ---
 
 # 工作哲學 - 已讀 Emoji

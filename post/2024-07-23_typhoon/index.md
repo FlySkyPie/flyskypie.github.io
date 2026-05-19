@@ -1,7 +1,7 @@
 ---
 slug: 2024-07-23_typhoon
 authors: [weiji,]
-tags: []
+tags: [Philosophy]
 --- 
 
 # 私以為颱風假是一種恥辱

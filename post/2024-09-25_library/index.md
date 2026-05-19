@@ -1,7 +1,7 @@
 ---
 slug: 2024-09-25_library
 authors: [weiji,]
-tags: []
+tags: [Philosophy]
 --- 
 
 # 圖書館之於圖書館員（學者），就像網際網路 (FOSS) 之於軟體工程師

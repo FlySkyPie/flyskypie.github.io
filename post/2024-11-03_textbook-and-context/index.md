@@ -1,7 +1,7 @@
 ---
 slug: 2024-11-03_textbook-and-context
 authors: [weiji,]
-tags: []
+tags: [Philosophy]
 --- 
 
 # 教科書 (Textbook) 與上下文 (Context)

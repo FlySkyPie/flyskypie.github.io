@@ -1,7 +1,7 @@
 ---
 slug: 2025_02_22_the-distance-between-life-and-lifeless
 authors: [weiji,]
-tags: []
+tags: [Philosophy]
 --- 
 
 # 生者與死物的距離，一種人形仿生機器人開發路徑的視角

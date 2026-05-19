@@ -1,7 +1,7 @@
 ---
 slug: 2025-03-26_rpg-maker
 authors: [weiji]
-tags: []
+tags: [RPG Maker]
 ---
 
 # RPG Maker MV 與 NW.js

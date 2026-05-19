@@ -1,7 +1,7 @@
 ---
 slug: 2018-02-03_inventory
 authors: [weiji,]
-tags: []
+tags: [Storage]
 --- 
 
 # 純粹喝零件櫃

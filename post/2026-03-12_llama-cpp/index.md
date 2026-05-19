@@ -1,7 +1,7 @@
 ---
 slug: 2026-03-12_llama-cpp
 authors: [weiji]
-tags: [homelab]
+tags: [AI]
 ---
 
 # llama.cpp 本地嵌入伺服器初體驗

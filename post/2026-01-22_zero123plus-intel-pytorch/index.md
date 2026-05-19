@@ -1,7 +1,7 @@
 ---
 slug: 2026-01-22_zero123plus-intel-pytorch
 authors: [weiji]
-tags: []
+tags: [AI]
 ---
 
 # XPU 運行 Zero123++ 筆記 (Intel PyTorch)

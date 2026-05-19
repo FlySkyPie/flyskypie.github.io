@@ -1,7 +1,7 @@
 ---
 slug: 2026-04-14_scan-to-bim
 authors: [weiji]
-tags: []
+tags: [BIM]
 ---
 
 # 新的坑：Scan to BIM

@@ -1,7 +1,7 @@
 ---
 slug: 2025-04-26_homelab-homepage
 authors: [weiji]
-tags: [homelabe]
+tags: [homelab]
 ---
 
 # Homelab 入口網站或 Dashboard

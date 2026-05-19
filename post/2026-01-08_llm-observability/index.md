@@ -1,7 +1,7 @@
 ---
 slug: 2026-01-08_llm-observability
 authors: [weiji]
-tags: [LLM Proxy, LLM Gateway, LLM Observability]
+tags: [LLM Proxy, LLM Gateway, LLM Observability, Observability]
 ---
 
 # LLM 可觀測筆記

@@ -1,7 +1,7 @@
 ---
 slug: 2024-07-27_traefik
 authors: [weiji,]
-tags: []
+tags: [Traefik, Reverse Proxy]
 --- 
 
 # Jojo 我不想再寫反向代理設定檔啦！

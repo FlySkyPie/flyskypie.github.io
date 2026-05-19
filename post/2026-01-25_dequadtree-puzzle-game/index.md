@@ -1,7 +1,7 @@
 ---
 slug: 2026-01-25_dequadtree-puzzle-game
 authors: [weiji]
-tags: []
+tags: [Idea]
 ---
 
 # 一種有限像素影像辨識謎題

@@ -1,7 +1,7 @@
 ---
 slug: 2024-10-25_pd-charger
 authors: [weiji,]
-tags: []
+tags: [PD]
 --- 
 
 # YADI 的 PD 充電器

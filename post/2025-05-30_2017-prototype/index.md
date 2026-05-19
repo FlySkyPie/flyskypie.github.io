@@ -1,7 +1,7 @@
 ---
 slug: 2025-05-30_2017-prototype
 authors: [weiji]
-tags: []
+tags: [Digital Twin, prototype]
 ---
 
 # 來自 2017 年的 prototype

@@ -1,7 +1,7 @@
 ---
 slug: 2024-11-03_talk-about-diy-gynoid
 authors: [weiji,]
-tags: []
+tags: [Philosophy]
 --- 
 
 # 潛談我對自製人形機器人的看法

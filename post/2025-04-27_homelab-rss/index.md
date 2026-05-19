@@ -1,7 +1,7 @@
 ---
 slug: 2025-04-27_homelab-rss
 authors: [weiji]
-tags: []
+tags: [homelab]
 ---
 
 # RSS

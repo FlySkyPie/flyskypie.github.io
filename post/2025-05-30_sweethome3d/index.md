@@ -1,7 +1,7 @@
 ---
 slug: 2025-05-30_sweethome3d
 authors: [weiji]
-tags: []
+tags: [SweetHome3D]
 ---
 
 # Using Sweet Home 3D Modeling Bedroom

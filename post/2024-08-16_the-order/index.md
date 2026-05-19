@@ -1,7 +1,7 @@
 ---
 slug: 2024-08-16_the-order
 authors: [weiji,]
-tags: []
+tags: [Philosophy]
 --- 
 
 # 他說世界的秩序何其脆弱，我不同意

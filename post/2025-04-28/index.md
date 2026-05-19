@@ -1,7 +1,7 @@
 ---
 slug: 2025-04-28_post
 authors: [weiji]
-tags: []
+tags: [homelab]
 ---
 
 # 整理書籤

@@ -1,7 +1,7 @@
 ---
 slug: 2025-05-30_sweethome3djs
 authors: [weiji]
-tags: []
+tags: [SweetHome3D]
 ---
 
 # Refactoring SweetHome3DJS

@@ -1,7 +1,7 @@
 ---
 slug: 2025-04-26_homelab-project-manage
 authors: [weiji]
-tags: []
+tags: [homelab]
 ---
 
 # 自架專案管理軟體

@@ -1,7 +1,7 @@
 ---
 slug: 2024-07-29_reversed-online-shop
 authors: [weiji,]
-tags: []
+tags: [Idea]
 --- 
 
 # 一個蠢想法：逆線上購物

@@ -1,7 +1,7 @@
 ---
 slug: 2024-10-26_rifling
 authors: [weiji,]
-tags: []
+tags: [Literature]
 --- 
 
 # 膛線

@@ -1,7 +1,7 @@
 ---
 slug: 2026-01-07_observability-outage
 authors: [weiji]
-tags: []
+tags: [Homelab, Observability]
 ---
 
 # Homelab 可觀測重建進度

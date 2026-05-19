@@ -1,7 +1,7 @@
 ---
 slug: 2025-12-06_stdio
 authors: [weiji]
-tags: []
+tags: [Biomes, Node.js, STDIO]
 ---
 
 # stdin, stdout, stderr 我有印象，但是 stdio[3], stdio[4] 是怎麼回事？

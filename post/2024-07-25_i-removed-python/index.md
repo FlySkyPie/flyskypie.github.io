@@ -1,7 +1,7 @@
 ---
 slug: 2024-07-25_i-removed-python
 authors: [weiji,]
-tags: []
+tags: [Python, Ubuntu]
 --- 
 
 # 我把 Python 移除了，然後就嗚呼了
