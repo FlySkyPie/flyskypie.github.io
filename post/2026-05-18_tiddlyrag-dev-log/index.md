@@ -6,6 +6,10 @@ tags: [TiddlyRAG]
 
 # TiddlyRAG Dev Log
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-05-18_tiddlyrag-dev-log/03_demo.webp" />
+</head>
+
 ## 前情提要
 
 TiddlyRAG 的概念最早我在這篇文章就已經提出：
