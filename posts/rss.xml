@@ -14,7 +14,8 @@
             <guid>https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log</guid>
             <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[前情提要]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
+            <content:encoded><![CDATA[
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前情提要">前情提要<a href="https://flyskypie.github.io/posts/2026-05-18_tiddlyrag-dev-log#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81" class="hash-link" aria-label="Direct link to 前情提要" title="Direct link to 前情提要">​</a></h2>
 <p>TiddlyRAG 的概念最早我在這篇文章就已經提出：</p>
 <ul>
 <li><a href="https://flyskypie.github.io/blog/2025-10-06_a-idea-about-using-tiddlywiki-as-llmstxt/" target="_blank" rel="noopener noreferrer">2025-10-06 一種人類友善 llms.txt 構想</a></li>
