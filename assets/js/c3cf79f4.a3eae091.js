@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[4996],{88958:s=>{s.exports=JSON.parse('{"label":"BIM","permalink":"/posts/tags/bim","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);

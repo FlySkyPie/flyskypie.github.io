@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[83249],{71713:s=>{s.exports=JSON.parse('{"label":"RPG Maker","permalink":"/posts/tags/rpg-maker","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);

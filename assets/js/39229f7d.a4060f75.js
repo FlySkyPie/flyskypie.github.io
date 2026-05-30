@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[36666],{14347:s=>{s.exports=JSON.parse('{"label":"Traefik","permalink":"/posts/tags/traefik","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);
