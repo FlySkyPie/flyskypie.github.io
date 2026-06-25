@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[2922],{26934:e=>{e.exports=JSON.parse('{"permalink":"/posts/tags/homelab/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":16,"previousPage":"/posts/tags/homelab","blogDescription":"Random post just like FB or Twitter.","blogTitle":"\u5ee2\u6587\u96dc\u8ac7"}')}}]);
