@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[23205],{99852:s=>{s.exports=JSON.parse('{"label":"OpenBMC","permalink":"/posts/tags/open-bmc","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[27043],{36752:s=>{s.exports=JSON.parse('{"label":"Linux","permalink":"/posts/tags/linux","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);
