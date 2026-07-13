@@ -25,8 +25,6 @@ tags: [OpenBMC, Linux]
 (其他補充野史)
 
 - Linux From Scratch 1999 年初版。
-- Buildroot 發布於 2005 年。
-- Facebook 於 2014 年使用 Buildroot 建立自己的 "OpenBMC"。
 
 ## 補充
 
