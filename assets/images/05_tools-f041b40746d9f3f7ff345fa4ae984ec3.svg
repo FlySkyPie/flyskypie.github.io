@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="351.54mm" height="161.84mm" version="1.1" viewBox="0 0 351.54 161.84" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <marker id="TriangleStart-3" overflow="visible" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 5.3244081 6.1553851">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+  <marker id="TriangleStart-3-1-0" overflow="visible" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 5.3244081 6.1553851">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+  <radialGradient id="SVGgcMrYocr-3" cx="42.64" cy="63.19" r="11.5" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#FFF" offset=".48"/>
+   <stop stop-color="#FDFDFD" offset=".77"/>
+   <stop stop-color="#F6F6F6" offset=".88"/>
+   <stop stop-color="#EBEBEB" offset=".96"/>
+   <stop stop-color="#E0E0E0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="SVGAeuzyeQG-7" cx="84.95" cy="63.22" r="11.5" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#FFF" offset=".48"/>
+   <stop stop-color="#FDFDFD" offset=".77"/>
+   <stop stop-color="#F6F6F6" offset=".88"/>
+   <stop stop-color="#EBEBEB" offset=".96"/>
+   <stop stop-color="#E0E0E0" offset="1"/>
+  </radialGradient>
+  <marker id="TriangleStart-3-6" overflow="visible" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 5.3244081 6.1553851">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+  <linearGradient id="linearGradient5046" x1="64.005" x2="64.005" y1="22.44" y2="35.55" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#E0E0E0" offset=".12"/>
+   <stop stop-color="#FFF" offset=".52"/>
+   <stop stop-color="#EAEAEA" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5048" x1="54.85" x2="54.85" y1="22.44" y2="35.53" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#333" offset="0"/>
+   <stop stop-color="#666" offset=".55"/>
+   <stop stop-color="#333" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5050" x1="64.06" x2="64.06" y1="22.44" y2="35.53" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#333" offset="0"/>
+   <stop stop-color="#666" offset=".55"/>
+   <stop stop-color="#333" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5052" x1="73.15" x2="73.15" y1="22.44" y2="35.53" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#333" offset="0"/>
+   <stop stop-color="#666" offset=".55"/>
+   <stop stop-color="#333" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5054" x1="82.8" x2="82.8" y1="22.44" y2="35.53" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#333" offset="0"/>
+   <stop stop-color="#666" offset=".55"/>
+   <stop stop-color="#333" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5056" x1="45.2" x2="45.2" y1="22.46" y2="35.55" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#333" offset="0"/>
+   <stop stop-color="#666" offset=".55"/>
+   <stop stop-color="#333" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5058" x1="30.14" x2="55.14" y1="63.19" y2="63.19" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#333" offset="0"/>
+   <stop stop-color="#666" offset=".55"/>
+   <stop stop-color="#333" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5060" x1="72.45" x2="97.45" y1="63.22" y2="63.22" gradientTransform="matrix(.26458 0 0 -.26458 71.16 119.4)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#333" offset="0"/>
+   <stop stop-color="#666" offset=".55"/>
+   <stop stop-color="#333" offset="1"/>
+  </linearGradient>
+  <marker id="TriangleStart-3-2" overflow="visible" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 5.3244081 6.1553851">
+   <path transform="scale(.5)" d="m5.77 0-8.65 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <g transform="translate(-74.045 -279.82)">
+  <rect x="74.095" y="279.87" width="351.44" height="161.74" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" style="paint-order:markers stroke fill"/>
+  <path transform="rotate(153.93)" d="m48.043-355.93a39.535 39.535 0 0 1-44.415 18.435 39.535 39.535 0 0 1-29.359-38.087" fill="none" marker-end="url(#TriangleStart-3-1-0)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:markers stroke fill"/>
+  <g transform="translate(64.101 243.66)">
+   <g stroke-width=".26458">
+    <path d="m71.16 85.003h33.867v33.867h-33.867z" fill="none"/>
+    <path d="m74.475 99.039c-1.2091 0.0026-2.1908 0.98425-2.1908 2.1934v10.155a2.1952 2.1952 0 0 0 2.1908 2.1908h1.4684v-14.552zm27.302 0c1.2092 0.0026 2.1908 0.98425 2.1908 2.1934v10.155c-3e-3 1.2091-0.9816 2.1908-2.1908 2.1934h-1.4684v-14.552z" fill="#c62828"/>
+    <path d="m101.1 99.399-0.0318-2.6458c-8e-3 -1.1377-0.93398-2.0558-2.0717-2.0505h-10.099v-3.5481c1.352-0.44715 2.0876-1.905 1.6404-3.257s-1.905-2.0876-3.257-1.6404-2.0876 1.905-1.6404 3.257a2.577 2.577 0 0 0 1.6404 1.6404v3.5613h-10.096c-1.1324 0.0026-2.0505 0.9181-2.0585 2.0505v18.992c0.0079 1.1324 0.92604 2.0479 2.0585 2.0532h21.812c1.1377 3e-3 2.0637-0.91546 2.0717-2.0532v-1.95h0.0318z" fill="#90a4ae"/>
+    <path d="m88.093 89.766c-0.58473 0-1.0583-0.4736-1.0583-1.0583s0.4736-1.0583 1.0583-1.0583 1.0583 0.4736 1.0583 1.0583-0.4736 1.0583-1.0583 1.0583" fill="#c62828"/>
+    <path d="m82.841 109.99h10.507c0.91546 0 1.6589 0.74348 1.6589 1.6589v0.15081c0 0.91546-0.74348 1.6589-1.6589 1.6589h-10.507c-0.91546 0-1.6589-0.74348-1.6589-1.6589v-0.15081c0-0.91546 0.74348-1.6589 1.6589-1.6589" fill="url(#linearGradient5046)"/>
+    <path d="m85.36 110h0.62442v3.4634h-0.62442z" fill="url(#linearGradient5048)"/>
+    <path d="m87.797 110h0.62442v3.4634h-0.62442z" fill="url(#linearGradient5050)"/>
+    <path d="m90.202 110h0.62442v3.4634h-0.62442z" fill="url(#linearGradient5052)"/>
+    <path d="m92.755 110h0.62442v3.4634h-0.62442z" fill="url(#linearGradient5054)"/>
+    <path d="m82.807 109.99h0.62442v3.4634h-0.62442z" fill="url(#linearGradient5056)"/>
+    <path d="m88.093 107.58h-1.4102c-0.14552 0-0.26458-0.11906-0.26458-0.26458 0-0.0423 0.01058-0.082 0.0291-0.11906l0.72496-1.4314 0.68527-1.2647a0.26352 0.26352 0 0 1 0.46567 0l0.69056 1.3229 0.71702 1.3732c0.06615 0.12964 0.01588 0.28839-0.11377 0.35718-0.03704 0.0185-0.07673 0.0291-0.11906 0.0291z" fill="#c62828"/>
+    <circle cx="82.442" cy="102.68" r="3.0427" fill="url(#SVGgcMrYocr-3)"/>
+   </g>
+   <circle cx="82.442" cy="102.68" r="3.0427" fill="none" stroke="url(#linearGradient5058)" stroke-miterlimit="10" stroke-width=".52917"/>
+   <path d="m93.649 99.629c-1.6801 0-3.0427 1.3626-3.0427 3.0427 0 1.6801 1.3626 3.0427 3.0427 3.0427s3.0427-1.3626 3.0427-3.0427c-0.0026-1.6801-1.3626-3.0401-3.0427-3.0427" fill="url(#SVGAeuzyeQG-7)" stroke-width=".26458"/>
+   <path d="m93.649 99.629c-1.6801 0-3.0427 1.3626-3.0427 3.0427 0 1.6801 1.3626 3.0427 3.0427 3.0427s3.0427-1.3626 3.0427-3.0427c-0.0026-1.6801-1.3626-3.0401-3.0427-3.0427z" fill="none" stroke="url(#linearGradient5060)" stroke-miterlimit="10" stroke-width=".52917"/>
+  </g>
+  <g transform="translate(58.296 231.7)" stroke-width=".26458">
+   <path d="m32.776 96.959h33.867v33.867h-33.867z" fill="none"/>
+   <path d="m49.596 103.57c-4.9371-0.045-12.946 1.9632-16.579 12.348 0 0-0.43392 1.6034 0.15346 2.2939 0.66146 0.77258 1.6669 0.47096 1.6669 0.47096s5.0482 6.8474 14.751 6.7813c9.7049-0.0662 14.018-6.305 14.018-6.305s1.0213 0.7276 1.9024 0.28575c0.71438-0.35719 1.0345-1.0266 1.0451-2.204 0.0291-2.9739-5.3366-13.568-16.957-13.671" fill="#eee"/>
+   <path d="m63.383 115.07c0 4.2942-6.2786 7.7708-14.044 7.7708-7.7496 0-14.044-3.4766-14.044-7.7708 0-4.2942 6.2944-7.7708 14.044-7.7708 7.7655 0 14.044 3.4766 14.044 7.7708" fill="#fff"/>
+   <path d="m64.939 113.89c-2.8178-5.7759-8.3767-9.2181-14.086-9.689-2.4527-0.19579-4.7837 0.0926-6.9189 0.82021-3.9158 1.3441-7.1649 4.1725-9.2842 8.2021-0.59267 1.1192-1.3335 2.4077-1.3864 3.7148-0.02381 0.60589 0.17462 1.1165 0.80169 1.2515 0.99483 0.21696 1.5319-0.65088 2.1643-1.2568 0.38894-0.37571 0.82285-0.91282 1.2832-1.1906 0.31485-0.1905 1.061-0.32014 1.397-0.12171 0.96838 0.58473 1.1827 2.1987 1.5849 3.1803 2.3178 5.6383 10.446 6.2838 14.542 2.2675 1.0239-0.99747 2.0452-2.6352 2.3918-4.0428 0.16404-0.66675-0.01852-2.958 1.0001-3.1194 0.68527-0.10318 1.4288 0.64823 1.9235 1.0213 1.1642 0.889 2.8998 4.1857 4.5561 4.0561 0.4445-0.0318 1.0054-0.71702 1.098-1.1086 0.30692-1.2938-0.79375-3.4237-1.0663-3.9846" fill="#2f2f2f"/>
+   <path d="m47.948 113.17c-0.64558 1.7542-3.3443 2.4712-4.5985 1.0292-0.98425-1.1271-0.61912-2.6564 0.42069-3.5851 1.8785-1.6775 5.0139 0.2884 4.1778 2.5559" fill="#fff"/>
+  </g>
+  <path transform="rotate(-26.07)" d="m16.494 401.19a39.535 39.535 0 0 1-44.415 18.435 39.535 39.535 0 0 1-29.359-38.087" fill="none" marker-end="url(#TriangleStart-3-6)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:markers stroke fill"/>
+  <g transform="matrix(-1.0034 0 0 1.0034 210.98 329.54)" fill="none">
+   <path d="m0 0h32v32h-32z"/>
+   <path d="m24.313 11.438c-4.216-1.728-5.875-5.563-6.783-6.438-0.906-0.875-2.594-0.973-3.63 0-1.338 1.258-0.864 2.413 0.037 3.937 0.304 0.516 1.328 2.094 1.328 2.094h-10.235c-2.11 0-3.041 1.529-3.041 2.689s1.166 2.546 3.041 2.546h3.94s-1.281 0.501-1.281 2.298 1.625 2.311 1.625 2.311-0.797 0.516-0.797 2.188c0 1.578 1.593 2.28 1.593 2.28s-0.546 0.641-0.546 2.048c0 1.078 1.406 2.593 3.046 2.593 7.09 0 17.381-0.56 17.381-9.954 0.01-2.49-1.462-6.866-5.677-8.593" fill="#ffc83d"/>
+   <path d="m8.953 16.266c3.08-0.208 4.86-0.844 5.36-1.266h-8.375c-2.217 0-3.467-0.48-3.908-0.898 0.22 1.061 1.329 2.164 3.001 2.164zm0.359 4.609h3.188a0.5 0.5 0 1 0 0-1h-4.45a2.58 2.58 0 0 0 1.262 1m4.376 4.469h-3.579c-8e-3 -4e-3 -0.719-0.32-1.188-1h4.767a0.5 0.5 0 1 1 0 1" fill="#d67d00"/>
+  </g>
+  <g fill="#000000" font-family="sans-serif" stroke-linecap="round" stroke-linejoin="round">
+   <g font-size="25.4px" stroke-width="2">
+    <text x="115.33498" y="415.13815" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="115.33498" y="415.13815" fill="#000000" font-family="sans-serif" stroke-width="2">Agent</tspan></text>
+    <text x="356.16168" y="338.93802" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="356.16168" y="338.93802" fill="#000000" font-family="sans-serif" stroke-width="2">檔案</tspan></text>
+    <text x="355.66559" y="416.60312" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="355.66559" y="416.60312" fill="#000000" font-family="sans-serif" stroke-width="2">網頁</tspan></text>
+   </g>
+   <text x="259.32574" y="351.2551" font-size="16.688px" stroke-width="1.314" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="259.32574" y="351.2551" fill="#000000" font-family="sans-serif" stroke-width="1.314">讀/寫</tspan></text>
+   <text x="270.26566" y="412.66541" font-size="16.688px" stroke-width="1.314" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="270.26566" y="412.66541" fill="#000000" font-family="sans-serif" stroke-width="1.314">訪問</tspan></text>
+  </g>
+  <g transform="matrix(1.1157 0 0 1.1157 188.87 -198.7)" stroke-width=".52806">
+   <path d="m120.01 461.09h25.347v25.347h-25.347z" fill="none"/>
+   <path d="m140.08 467.43h-8.4491l-2.1122-2.1123h-5.2806c-1.1618 0-2.1123 0.95052-2.1123 2.1123v12.674c0 1.1618 0.95052 2.1123 2.1123 2.1123h16.37c0.89771 0 1.5842-0.68649 1.5842-1.5842v-11.089c0-1.1618-0.95052-2.1123-2.1123-2.1123" fill="#ffa000"/>
+   <path d="m142.3 470.6h-14.205c-1.0033 0-1.901 0.7393-2.0594 1.7426l-1.7954 9.8748h16.74c1.0033 0 1.901-0.7393 2.0594-1.7426l1.3202-7.3929c0.26403-1.2674-0.7393-2.4819-2.0594-2.4819" fill="#ffca28"/>
+  </g>
+  <rect x="85.263" y="290.45" width="155.41" height="139.55" fill="none" stroke="#000" stroke-dasharray="2, 4" stroke-linecap="round" stroke-linejoin="round" style="paint-order:markers stroke fill"/>
+  <g transform="translate(-2.3852 1.7475)" stroke-linecap="round" stroke-linejoin="round">
+   <rect x="202.66" y="367.96" width="77.531" height="24.833" fill="#fff" stroke="#000" style="paint-order:fill markers stroke"/>
+   <text x="210.96756" y="389.90463" fill="#000000" font-family="sans-serif" font-size="25.4px" stroke-width="2" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="210.96756" y="389.90463" fill="#000000" font-family="sans-serif" stroke-width="2">Tools</tspan></text>
+  </g>
+  <g transform="matrix(1.1353 0 0 1.1353 -50.702 -22.611)" stroke-width="1.2461">
+   <path d="m327.41 363.92h29.907v29.907h-29.907z" fill="none"/>
+   <path d="m347.8 381.37c0.0998-0.82242 0.17426-1.6449 0.17426-2.4923 0-0.84733-0.0749-1.6698-0.17426-2.4922h4.2119c0.19922 0.79751 0.32403 1.6324 0.32403 2.4922 0 0.85987-0.12481 1.6948-0.32403 2.4923m-6.4175 6.9285c0.74768-1.3832 1.3209-2.8785 1.7197-4.4362h3.6761a10.006 10.006 0 0 1-5.3958 4.4362m-0.31178-6.9285h-5.8319c-0.12434-0.82242-0.19922-1.6449-0.19922-2.4923 0-0.84733 0.0749-1.6822 0.19922-2.4922h5.8319c0.11209 0.80999 0.19922 1.6449 0.19922 2.4922 0 0.84739-0.0871 1.6698-0.19922 2.4923m-2.9159 7.4269c-1.0343-1.4954-1.8692-3.1527-2.3801-4.9347h4.7602c-0.51091 1.782-1.3458 3.4393-2.3801 4.9347m-4.9845-14.904h-3.6387a9.8693 9.8693 0 0 1 5.3833-4.4362c-0.74767 1.3832-1.3084 2.8786-1.7445 4.4362m-3.6387 9.969h3.6387c0.43612 1.5577 0.99687 3.053 1.7445 4.4362a9.969 9.969 0 0 1-5.3833-4.4362m-1.0218-2.4923c-0.19922-0.7975-0.32403-1.6324-0.32403-2.4923 0-0.85981 0.12481-1.6947 0.32403-2.4922h4.212c-0.0999 0.82242-0.17426 1.6449-0.17426 2.4922 0 0.84739 0.0749 1.6698 0.17426 2.4923m5.4331-12.424c1.0343 1.4954 1.8692 3.1652 2.3801 4.9471h-4.7602c0.51087-1.7819 1.3458-3.4518 2.3801-4.9471m8.6232 4.9471h-3.6761a19.564 19.564 0 0 0-1.7197-4.4362c2.2929 0.78507 4.1995 2.3676 5.3958 4.4362m-8.6232-7.4768c-6.8911 0-12.461 5.6076-12.461 12.461a12.461 12.461 0 0 0 12.461 12.461 12.461 12.461 0 0 0 12.461-12.461 12.461 12.461 0 0 0-12.461-12.461" fill="currentColor"/>
+  </g>
+  <path d="m280.03 366.7 38.925-27.998" fill="#fff" marker-end="url(#TriangleStart-3)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" style="paint-order:fill markers stroke"/>
+  <path d="m281.14 389.46 39.585 15.1" fill="#fff" marker-end="url(#TriangleStart-3-2)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" style="paint-order:fill markers stroke"/>
+ </g>
+</svg>
