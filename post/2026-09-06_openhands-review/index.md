@@ -4,9 +4,7 @@ authors: [weiji]
 tags: [Agent, OpenHands, ReAct]
 ---
 
-# Agnetic Tool 調查筆記與圖解 OpenHands
-
-這篇文章並不是針對 OpenHands 準備的，只是在一個調查過程剛好輪到 OpenHands 作為調查對象時產生比較多的結果，於是想說難得都跑起來了，稍微對 OpenHands 進行更多觀察然後紀錄一下好了。
+# Agnetic Tool 調查筆記
 
 ## 前因
 
@@ -690,3 +688,32 @@ done
 
 雖然它能夠 Graceful Shutdown，但是卻是用單一腳本維持多個背景程式，這不僅在運行時不妥，佈署時更是像這樣造成了單一映像檔有 4 GB 的不便尺寸。
 
+### OpenAI Compatible API
+
+![](./11_openhands-openai-api.webp)
+
+設定模型時需要加入一個 `openai/` 的前綽，似乎是 litellm SDK 的問題：
+
+![](./12_openhands-openai-api.webp)
+
+### 多 Agent 隔離
+
+我原本想說既然 OpenHands 都有意識到要處理「隔離」的問題，對於這種 client-server 架構的 SaaS 模式，處理多租戶或 Agent 之間的隔離應該是基本功能吧？
+
+不過很遺憾的，並沒有，一個 Agent 能夠訪問其他 Workspace，甚至能訪問運行著 OpenHands 本身的系統目錄：
+
+![](./13_openhands-workspace.webp)
+
+### Backend
+
+在 OpenHands 的設計中存在著名為 "Backend" 的概念：
+
+![](./14_openhands-backend.webp)
+
+我原本以為是 server-worker 架構，如果我開另外一個容器作為 Backend 是不是就能隔離不同的 Agent 了？
+
+![](./15_openhands-backend.webp)
+
+否，瀏覽器的前端是直通 "Backend" 的，所有 LLM Provider 之類的配置要重新設定。
+
+所以一個 "Backend" 其實只是普通、可以訪問所有檔案系統的無頭 Agent，然後運行在 Docker 內就碰巧"沙盒化"了，它甚至不能和其他的 Agent 工具（例如 Crush）搭配使用。
