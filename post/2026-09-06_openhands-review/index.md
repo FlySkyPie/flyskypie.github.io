@@ -6,6 +6,10 @@ tags: [Agent, OpenHands, ReAct]
 
 # Agnetic Tool 調查筆記
 
+<head>
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-09-06_openhands-review/01_agent.webp" />
+</head>
+
 ## 前因
 
 我使用 Agnetic Coding 工具的歷程是從 VSCode 開始的，畢竟我就是個 GUI 仔，先後嘗試了 [Cline](https://github.com/cline/cline) 和 [Kilo](https://github.com/kilo-org/kilocode)，我沒有很喜歡專屬 IDE 整合的方案，一方面是會破壞原本的使用習慣，即便它們大部分都是基於 VS Code，但是細微的調整也會帶來日常使用的摩擦，就像不稱手的廚具。
