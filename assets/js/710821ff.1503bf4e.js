@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[27320],{24649:s=>{s.exports=JSON.parse('{"label":"Minecraft","permalink":"/posts/tags/minecraft","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);

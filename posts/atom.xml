@@ -2,11 +2,118 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyskypie.github.io/posts</id>
     <title>工程屍 FlyPie 的異想世界 Blog</title>
-    <updated>2026-10-04T00:00:00.000Z</updated>
+    <updated>2026-10-10T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyskypie.github.io/posts"/>
     <subtitle>工程屍 FlyPie 的異想世界 Blog</subtitle>
     <icon>https://flyskypie.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[從 Bug 開始的 C++ 之旅：Katabasis]]></title>
+        <id>https://flyskypie.github.io/posts/2026-10-10_project-katabasis</id>
+        <link href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis"/>
+        <updated>2026-10-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[https://www.researchgate.net/figure/Herakles-Perithoos-and-Theseus-in-the-underworld-DAI-Rome-Inst-Neg-661836-Photofig247669178]]></summary>
+        <content type="html"><![CDATA[
+<p><img decoding="async" loading="lazy" alt="https://www.researchgate.net/figure/Herakles-Perithoos-and-Theseus-in-the-underworld-DAI-Rome-Inst-Neg-661836-Photo_fig2_47669178" src="https://flyskypie.github.io/assets/images/00_cover-256413e314f6c86e9ff63106589d1a79.webp" width="714" height="727" class="img_RpFt"></p>
+<p><del>沒錯，作者又挖新坑了</del></p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="前因">前因<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#%E5%89%8D%E5%9B%A0" class="hash-link" aria-label="Direct link to 前因" title="Direct link to 前因">​</a></h2>
+<p>這個專案因為把很多前提混在一起執行，所以因果關係解釋起來有點複雜。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="minecraft-ai-計畫">Minecraft AI 計畫<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#minecraft-ai-%E8%A8%88%E7%95%AB" class="hash-link" aria-label="Direct link to Minecraft AI 計畫" title="Direct link to Minecraft AI 計畫">​</a></h3>
+<p>眾所皆知，我想在 Minecraft 內搞 AI（？）</p>
+<p>有兩種實現路徑：</p>
+<ul>
+<li>自行實現「類 Minecraft」</li>
+<li>使用現成的 Minecraft</li>
+</ul>
+<p>個人是偏好前者，因為我預期的訓練環境跟 Minecraft 原生的遊戲設計有諸多不同之處，與其硬著頭皮修改不如直接做一個不一樣的實做。然而這條路線的進度緩慢，重建 Biomes 的研究越是了解它，就越舉步難行。</p>
+<p>因此最近考慮試著走第二條路徑，雖然它對我而言比較像是抄捷徑。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="特修斯的-minecraft">特修斯的 Minecraft<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#%E7%89%B9%E4%BF%AE%E6%96%AF%E7%9A%84-minecraft" class="hash-link" aria-label="Direct link to 特修斯的 Minecraft" title="Direct link to 特修斯的 Minecraft">​</a></h3>
+<p>一個標準的 Minecraft 配置需要有兩個東西：</p>
+<ul>
+<li>Minecraft Client</li>
+<li>Minecraft Server</li>
+</ul>
+<p>兩者都是 Mojang （現在是 Microsoft） 持有智慧財產權的產品，並且透過 Minecraft 的協定連線。</p>
+<p>架設伺服器方面，為了用更少的資源提供更多的服務，並且並沒有渲染相關的需求，因此有強烈的動機被使用 Java 以外的語言重新實做，諸如：<a href="https://github.com/cuberite/cuberite" target="_blank" rel="noopener noreferrer">Cuberite (C++)</a>、<a href="https://github.com/valence-rs/valence" target="_blank" rel="noopener noreferrer">Valence (Rust)</a>、<a href="https://github.com/p2r3/bareiron" target="_blank" rel="noopener noreferrer">bareiron (C)</a>...。</p>
+<p>另外也有像 <a href="https://github.com/prismarinejs/mineflayer" target="_blank" rel="noopener noreferrer">Mineflayer (Javscript)</a> 或 <a href="https://github.com/adepierre/Botcraft" target="_blank" rel="noopener noreferrer">Botcraft (C++)</a> 這樣為了製作機器人而存在的函式庫可作為 Minecraft Client 端運作，<a href="https://github.com/iceiix/stevenarella" target="_blank" rel="noopener noreferrer">stevenarella (Rust)</a> 或 <a href="https://github.com/Lea-fish/Leafish" target="_blank" rel="noopener noreferrer">Leafish (Rust)</a> 這類專案則是試圖打造具有渲染能力的 Client 端。</p>
+<p>因此倘若我們將任意一個開源的 Client 端和 Server 端做組合，Mojang 創造的程式碼實作就會完全消失，只留下 Minecraft 協定在兩個程式之間通訊。</p>
+<p>這就是特修斯的 Minecraft。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="韌體工程師">"韌體"工程師<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#%E9%9F%8C%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB" class="hash-link" aria-label="Direct link to &quot;韌體&quot;工程師" title="Direct link to &quot;韌體&quot;工程師">​</a></h3>
+<p>最近找到新工作，但是我的感覺像是：</p>
+<p><img decoding="async" loading="lazy" alt="從今天開始你就是資深BMC工程師了(之前都在寫 Typescript 的Web 仔)" src="https://flyskypie.github.io/assets/images/01_bmc-enginner-215375724c6ee875e8ea8e34ee21dede.webp" width="640" height="627" class="img_RpFt"></p>
+<p>但是我寫的C++就像智障一樣，因此我急需找到一個足夠引我入勝的題目來練習 C++。</p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="在-rpg-系統玩-rts">在 RPG 系統玩 RTS<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#%E5%9C%A8-rpg-%E7%B3%BB%E7%B5%B1%E7%8E%A9-rts" class="hash-link" aria-label="Direct link to 在 RPG 系統玩 RTS" title="Direct link to 在 RPG 系統玩 RTS">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="ヘルモード　～やり込み好きのゲーマーは廃設定の異世界で無双する～,黄金の経験値,異世界黙示録マイノグーラ～破滅の文明で始める世界征服～,女王陛下の異世界戦略" src="https://flyskypie.github.io/assets/images/02_rts-in-rpg-636b93f80ec199ff9bb12f2be1eba469.webp" width="514" height="757" class="img_RpFt"></p>
+<p>這些日系輕小說（漫畫）的的轉生者（穿越者）們實際上是在 RPG (Role-Playing Game) 系統的世界中玩著 RTS (Real-time Strategy)：</p>
+<ul>
+<li>ヘルモード　～やり込み好きのゲーマーは廃設定の異世界で無双する～</li>
+<li>黄金の経験値</li>
+<li>異世界黙示録マイノグーラ～破滅の文明で始める世界征服～</li>
+<li>女王陛下の異世界戦略</li>
+</ul>
+<p>看著看著就會冒出一股想征服世界的欲望（？）</p>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_hellsing-the-major-714ce9a9d1bff91cd5878ef34071d50a.webp" width="1080" height="607" class="img_RpFt"></p>
+<h3 class="anchor anchorWithStickyNavbar_mpuI" id="行為樹">行為樹<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#%E8%A1%8C%E7%82%BA%E6%A8%B9" class="hash-link" aria-label="Direct link to 行為樹" title="Direct link to 行為樹">​</a></h3>
+<p>在先前的文章我應該不只一次表示我苟同目前主流的 ReAct 模式，而應該使用行為樹這類經過時間考驗的技術，因此我最近陸陸續續有做一些行為樹相關的小專案。</p>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="katabasis">Katabasis<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#katabasis" class="hash-link" aria-label="Direct link to Katabasis" title="Direct link to Katabasis">​</a></h2>
+<p>Katabasis 出自古希臘語，有「冥界之旅」的意思，並且特修斯在神話中也去過冥界。</p>
+<p><img decoding="async" loading="lazy" alt="メイドインアビス and OCI 7 layers" src="https://flyskypie.github.io/assets/images/04_layers-b0c12d673db1c615ab64ca20e41d9713.webp" width="1818" height="1280" class="img_RpFt"></p>
+<p>看過在「來自深淵」人想必對「上升負荷」與「絕界行」的概念並不陌生，有趣的是以 OSI 網路模型來說，每下降一層工程師都會面臨一定程度的認知負荷，因為在前一層存在的前提條件在這裡可能不存在。</p>
+<blockquote>
+<p>PCIe 上插的東西不是固定的；</p>
+<p>IP 不是固定的；</p>
+<p>MAC 不是固定的；</p>
+<p>BIOS 也不是固定的，</p>
+<p>還有什麼東西不是固定的？普朗克常數嗎？</p>
+</blockquote>
+<p>這是我這個前端 Web 仔經歷了三個月的體驗之後的感想。</p>
+<p>所以這個什麼 Katabasis 專案到底要做些什麼？簡單來說：</p>
+<blockquote>
+<p>用 C++ 實做的 Minecraft 伺服器與 C++ 實做的 Minecraft 客戶端加上用 C++ 實做的行為樹建構的智能體來征服 Minecraft 的大地，順利的話可以再打個幾場總體戰。</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="從-bug-開始的-c-之旅">從 Bug 開始的 C++ 之旅<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#%E5%BE%9E-bug-%E9%96%8B%E5%A7%8B%E7%9A%84-c-%E4%B9%8B%E6%97%85" class="hash-link" aria-label="Direct link to 從 Bug 開始的 C++ 之旅" title="Direct link to 從 Bug 開始的 C++ 之旅">​</a></h2>
+<p>當我興致高昂的把 Cuberite 和 Botcraft 組裝在一起的時候，現實立刻潑了我冷水：</p>
+<div class="codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-text codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">terminate called after throwing an instance of 'std::runtime_error'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  what():  While reading z_dist (7th field) in ClientboundLevelParticlesPacket</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Not enough input in ReadData</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[2026-08-28 15:00:04.714] [ FATAL ] [NetworkPacketProcessing - BCHelloWorld(129371737433792)] NetworkManager.cpp(399): Parsing exception while parsing message "Level Particles"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">While reading z_dist (7th field) in ClientboundLevelParticlesPacket</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Not enough input in ReadData</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[2026-08-28 15:00:04.714] [ FATAL ] [NetworkPacketProcessing - BCHelloWorld(129371737433792)] NetworkManager.cpp(367): Exception:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">While reading z_dist (7th field) in ClientboundLevelParticlesPacket</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Not enough input in ReadData</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>於是我用 Dockerfile 弄了一個再現交給了 Botcraft 的原作者：</p>
+<p><a href="https://github.com/FlySkyPie/20260828_Cuberite-Botcraft_reproduce" target="_blank" rel="noopener noreferrer">https://github.com/FlySkyPie/20260828_Cuberite-Botcraft_reproduce</a></p>
+<p>即便該問題很快的就在九月初 (2026) 被修復了，然而我沒有很快的投入 Botcraft 開發的主要原因有二：</p>
+<ul>
+<li>無頭模式的伺服器難以觀察 Bot 在遊戲中的活動</li>
+<li>缺乏行為樹的理解與設計範式</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="行為樹領域知識">行為樹領域知識<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#%E8%A1%8C%E7%82%BA%E6%A8%B9%E9%A0%98%E5%9F%9F%E7%9F%A5%E8%AD%98" class="hash-link" aria-label="Direct link to 行為樹領域知識" title="Direct link to 行為樹領域知識">​</a></h2>
+<p>行為樹和 ECS (Entity-Component-System) 一樣，都是屬於特定領域的軟體工程範式，有一定的學習曲線以及領域模型要面對，為此我做了一些準備：</p>
+<ul>
+<li>翻譯一個看起來很有參考性的網站 (<a href="https://www.behaviortrees.com/" target="_blank" rel="noopener noreferrer">www.behaviortrees.com</a>)，【<a href="https://flyskypie.github.io/behaviortrees-docs/" target="_blank" rel="noopener noreferrer">Live Demo</a>】【<a href="https://github.com/FlySkyPie/behaviortrees-docs" target="_blank" rel="noopener noreferrer">Source</a>】</li>
+<li>用 Agent 從網路上掃一些東西並整貍成<a href="https://github.com/FlySkyPie/Mind-Palace/blob/017ce8bcd1b23c147b07956413c7402c001e9f7f/agent-zone/researches/006_behavior-tree/00088_behavior-tree-domain-knowledge-zh.md" target="_blank" rel="noopener noreferrer">調查報告</a>，【<a href="https://github.com/FlySkyPie/Mind-Palace/tree/017ce8bcd1b23c147b07956413c7402c001e9f7f/agent-zone/researches/006_behavior-tree" target="_blank" rel="noopener noreferrer">其他報告</a>】</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="可觀測性">可觀測性<a href="https://flyskypie.github.io/posts/2026-10-10_project-katabasis#%E5%8F%AF%E8%A7%80%E6%B8%AC%E6%80%A7" class="hash-link" aria-label="Direct link to 可觀測性" title="Direct link to 可觀測性">​</a></h2>
+<p>最直覺的方式就是讓伺服器端生成 Web GIS (Geographic Information System)，Minecraft 的生態系已經存在 <a href="https://github.com/BlueMap-Minecraft/BlueMap" target="_blank" rel="noopener noreferrer">BlueMap</a>、<a href="https://github.com/webbukkit/dynmap" target="_blank" rel="noopener noreferrer">dynmap</a>、<a href="https://github.com/jpenilla/squaremap" target="_blank" rel="noopener noreferrer">squaremap</a> 和 <a href="https://github.com/granny/Pl3xMap" target="_blank" rel="noopener noreferrer">Pl3xMap</a>，不過很遺憾，這些方案都無法直接在 Cuberite 使用。</p>
+<p>唯一一個有一點參考性的野雞專案：</p>
+<p><a href="https://github.com/KrystilizeNevaDies/StaticMap" target="_blank" rel="noopener noreferrer">https://github.com/KrystilizeNevaDies/StaticMap</a></p>
+<p>實現方式相當土法：</p>
+<ul>
+<li>將圖磚資料寫入 <code>.ppm</code> 檔案</li>
+<li>呼叫 Magick 的執行檔將其轉換成圖片</li>
+</ul>
+<p>原因是 Cuberite 的插件系統使用 Lua，但是在 Lua 的空間內並沒有圖像處理函式庫。</p>
+<p>我計畫簡化這方面的實作，單純作為提供<a href="https://en.wikipedia.org/wiki/Tiled_web_map" target="_blank" rel="noopener noreferrer">地圖圖磚</a>的 HTTP 伺服器，瀏覽器端的實作就交給 Grafana 的 Geomap 處理。</p>
+<p>為了達成這一點，我計畫在 Lua 空間再呼叫由 C++ 實做的 Native Binding，如此一來便能在 C++ 的上下文中引入諸如處理 PNG 、SQLite 或 HTTP 的函式庫。</p>
+<p>目前並沒有太多的進展：</p>
+<ul>
+<li>從 Lua 監聽 Cuberite 提供的 hook</li>
+<li>呼叫 C++ 實做的 ABI (Application binary interface)</li>
+<li>自 C++ 的實作中解開遊戲地圖的資料、渲染成鳥瞰圖並且儲存到檔案系統。</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/05_tiles-b40e15a16b2a87cedab175fccb190275.webp" width="1400" height="733" class="img_RpFt"></p>
+<p>目前因為把水跟樹葉設定成透明，因此只會讓像素變暗而不是呈現樹葉的綠色或海水的藍色。</p>]]></content>
+        <author>
+            <name>Wei Ji</name>
+            <uri>https://github.com/FlySkyPie</uri>
+        </author>
+        <category label="katabasis" term="katabasis"/>
+        <category label="Minecraft" term="Minecraft"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[大創洞洞板]]></title>
         <id>https://flyskypie.github.io/posts/2026-10-04_daiso-design-board</id>
@@ -966,7 +1073,7 @@
 <li>對 Recipe 名下的某個 Tiddler 寫入時，是永遠寫到 Bag 的最上層嗎？這是不是代表每個 Recipe 都至少包含一個 Bag 作為 Overlay？</li>
 <li>Recipe-Bag 模型是從哪裡來的？是如我直覺的啟發自 OverlayFS 還是其實長得很像但是細節不太一樣？</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="翻譯-etl">翻譯 ETL<a href="https://flyskypie.github.io/posts/2026-06-03_tiddlyrag-dev-log#%E7%BF%BB%E8%AD%AF-etl" class="hash-link" aria-label="Direct link to ��翻譯 ETL" title="Direct link to 翻譯 ETL">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_mpuI" id="翻譯-etl">翻譯 ETL<a href="https://flyskypie.github.io/posts/2026-06-03_tiddlyrag-dev-log#%E7%BF%BB%E8%AD%AF-etl" class="hash-link" aria-label="Direct link to 翻譯 ETL" title="Direct link to 翻譯 ETL">​</a></h2>
 <p>於是我計畫建構一個 ETL (Extract, Transform, and Load) 來處理這個問題：透過 GitHub API 拉出 Issue 和 Comment （討論紀錄）、進行翻譯、最後輸出成方便我閱讀的 Markdown。</p>
 <p>除了表面的目的以外還有其他考量：最近我在 104 看職缺的時候，發現一些關於 ETL 的職位會提到 Perfect 這類工具，於是我想這是一個嘗試新東西的機會。</p>
 <p>雖然我也可以嘗試透過最近完成的 EC-BT (Entity Component Behavior Tree) 進行資料探勘，但是我依然需要對標準的 ETL Pipeline 有基本的認識才能避免重複發明輪子。</p>
@@ -2055,96 +2162,5 @@ Okular, Gnome Evince 是 PDF 瀏覽器，但是無法正常在「10 公尺×10 �
         </author>
         <category label="DDD" term="DDD"/>
         <category label="3D" term="3D"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[新的坑：Scan to BIM]]></title>
-        <id>https://flyskypie.github.io/posts/2026-04-14_scan-to-bim</id>
-        <link href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim"/>
-        <updated>2026-04-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[實際上花了一兩天摸索之後，這個坑大概是填不完了，但是姑且還是紀錄一下。]]></summary>
-        <content type="html"><![CDATA[
-<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>實際上花了一兩天摸索之後，這個坑大概是填不完了，但是姑且還是紀錄一下。</p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="起因">起因<a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#%E8%B5%B7%E5%9B%A0" class="hash-link" aria-label="Direct link to 起因" title="Direct link to 起因">​</a></h2>
-<p>最近在 104 看到這樣一個職位描述：</p>
-<blockquote>
-<p><strong>Digital Twins Engineer</strong></p>
-<p>Scope of Work</p>
-<ul>
-<li>Integrate outsourced BIM/3D models into the ██████████ platform.</li>
-<li>Develop capabilities to bind dynamic data (e.g., IoT sensor data, system states) to 3D models and visualize them.</li>
-<li>Embed LLM use-cases into DT scenarios—e.g., natural-language queries for asset status, simulation results, or triggering operations.</li>
-<li>Partner with frontend/UX to optimize DT UI/UX and 3D rendering.</li>
-<li>Work with backend/data teams to ensure efficient DT data flows.</li>
-<li>Participate in DT PoCs to explore and realize innovative applications.</li>
-<li>Ensure DT solution performance, stability, and scalability.</li>
-</ul>
-<p>Qualifications</p>
-<ul>
-<li>Proficient in at least one backend or frontend language (e.g., Python, C#, JavaScript/TypeScript).</li>
-<li>Knowledge of 3D graphics and at least one 3D engine/library (e.g., Unity, Unreal Engine, Omniverse, Three.js, Babylon.js).</li>
-<li>Experience with data integration and APIs (RESTful, WebSocket).</li>
-<li>Understanding of BIM/CAD formats (e.g., IFC, Revit API) and processing workflows.</li>
-</ul>
-</blockquote>
-<p>你知道嗎？我本來就想在我的房間搞數位孿生了，看來這就是我的下一個題目了！</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="工欲善其事必先利其器">工欲善其事，必先利其器<a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8" class="hash-link" aria-label="Direct link to 工欲善其事，必先利其器" title="Direct link to 工欲善其事，必先利其器">​</a></h2>
-<p>正如我在前一篇文章（<a href="https://flyskypie.github.io/posts/2026-04-15_ddd-formats/" target="_blank" rel="noopener noreferrer">從 DDD 看檔案格式</a>）中提到的，打開領域的第一步是先找檔案跟軟體。</p>
-<p>從職缺內容來看 IFC (Industry Foundation Classes) 應該就是這次的重點關注檔案格式了，這些地方可以找到 ifc 的檔案樣本：</p>
-<ul>
-<li><a href="https://github.com/buildingSMART/Sample-Test-Files" target="_blank" rel="noopener noreferrer">https://github.com/buildingSMART/Sample-Test-Files</a></li>
-<li><a href="https://github.com/youshengCode/IfcSampleFiles" target="_blank" rel="noopener noreferrer">https://github.com/youshengCode/IfcSampleFiles</a></li>
-<li><a href="https://www.steptools.com/docs/stpfiles/ifc/" target="_blank" rel="noopener noreferrer">https://www.steptools.com/docs/stpfiles/ifc/</a></li>
-</ul>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/03_freecad-4d5e6ba5e3eaf5bf501ecaeba6c54417.webp" width="1400" height="862" class="img_RpFt"></p>
-<p>並且目前看起來最可靠的開源編輯器方案是 <a href="https://bonsaibim.org/" target="_blank" rel="noopener noreferrer">Bonsai</a> （原名 BlenderBIM），它是一個 <a href="https://extensions.blender.org/add-ons/bonsai/" target="_blank" rel="noopener noreferrer">Blender 插件</a>，IFC 的相關實作則是由 <a href="https://github.com/ifcopenshell/ifcopenshell" target="_blank" rel="noopener noreferrer">IfcOpenShell</a> 提供。</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/04_blender-02bc8ccdd10c64a468761760c5851ae3.webp" width="1400" height="860" class="img_RpFt"></p>
-<p>接下來就是用 Bonsai 繪製我的房間了嗎？我可不這麼認為。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="scan-to-bim">Scan to BIM<a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#scan-to-bim" class="hash-link" aria-label="Direct link to Scan to BIM" title="Direct link to Scan to BIM">​</a></h2>
-<p>現在是 2026 年；「AI」依然大行其道；泡沫尚未被戳破；X 上充滿了高斯潑濺、實景掃描、三維重建的貼文，IFC 總該能透過演算法從點雲自己生出來了...吧？</p>
-<p>事實是，就算撇開 AI 不談，Scan to BIM 也已經是在 AEC (Architecture Engineering Construction) 業界內存在已久的詞彙，用來描述「從現實掃描並建立 BIM (Building Information Modeling)」的過程，不過傳統上這個過程可能是指：把點雲匯入軟體後，由工程師拉出批配的模型，比較接近機械逆向工程的作法。</p>
-<p>OK，所以接下來就是要研究 Scan to BIM 的方案了對吧？</p>
-<p>我：<code>( ՞ټ՞)</code></p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/01_scan-to-bim-workflow-54171dd7e1a8b058cabb112a988b8f26.webp" width="1262" height="623" class="img_RpFt"></p>
-<p>事情是這樣的，在 AEC 領域，掃描通常由 ToF 攝影機或光達 (LiDAR) 這樣的專門設備完成，而我只能透過 SFM (Structure-from-Motion) 的手段獲得點雲。SFM 使用二維圖像回推三維資訊的技術，講白化來說就是我可以用手機拍影片、切成一堆圖片、經過 SFM 處理來獲得點雲。</p>
-<p>高斯潑濺 (3DGS, 3D Gaussian Splatting) 可以向一個點雲填充額外的機率資訊，最後呈現出一種現代 3D 渲染技術所不能企及的寫實度，就像一張 3D 的照片，是近幾年日漸熱門的一種技術。因為 SFM 是主流高斯潑濺資料處理流程的一部分，加上這是一個我之前就有興趣但是沒有花心思跑過的技術，所以我打算在執行 Scan to BIM 之前先試著跑一次 SFM 到高斯潑濺的路徑。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="sfm">SFM<a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#sfm" class="hash-link" aria-label="Direct link to SFM" title="Direct link to SFM">​</a></h2>
-<p>SFM 的經典工具是 <a href="https://github.com/colmap/colmap" target="_blank" rel="noopener noreferrer">colmap</a>，比較遺憾是它在 GitHub 的 release 中預編譯的 release 只有 Windows 的，並且計算過程仰賴 CUDA，2024 年使用它的時候可是稍微折騰了一番。</p>
-<p>不過「去 CUDA」是我目前的主要原則，姑且還是在沒有 CUDA 的環境硬著頭皮編譯跟跑下去了，讓我有點意外是，無 CUDA 版本依然會使用 GPU 加速：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/02_colmap-run-98c2899c5f4bca4dfd96533426fc53af.webp" width="1400" height="435" class="img_RpFt"></p>
-<p>不知道這是本來就有；但是我在 2024 遺漏掉的特性，還是這是近一兩年內新加入的能力。</p>
-<p>整個流程大概是這樣：</p>
-<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">mkdir -p output</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ffmpeg -i video.mp4 -qscale:v 1 -qmin 1 -vf fps=2 ./images/%04d.jpg</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">mkdir -p ./data</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">colmap database_creator --database_path ./data/database.db</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">colmap feature_extractor \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --database_path ./data/database.db \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --image_path ./images</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">colmap exhaustive_matcher \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --database_path ./data/database.db</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">mkdir -p ./data/sparse</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">colmap mapper \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --database_path ./data/database.db \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --image_path ./images \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --output_path ./data/sparse </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">colmap bundle_adjuster \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  --input_path ./data/sparse/0 \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  --output_path ./data/sparse/0 \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  --BundleAdjustment.refine_principal_point 1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">colmap gui \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --database_path ./data/database.db \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --image_path ./images \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    --import_path ./data/sparse/0</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<div class="theme-admonition theme-admonition-info admonition_a71W alert alert--info"><div class="admonitionHeading_ZphC"><span class="admonitionIcon_vqjX"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_fKWC"><p>話說回來，我之前使用過得經驗其中幾次是針對 360 影像修改過得 fork (<a href="https://github.com/json87/spheresfm" target="_blank" rel="noopener noreferrer">json87/spheresfm</a>)就是了。</p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="高斯潑濺">高斯潑濺<a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#%E9%AB%98%E6%96%AF%E6%BD%91%E6%BF%BA" class="hash-link" aria-label="Direct link to 高斯潑濺" title="Direct link to 高斯潑濺">​</a></h2>
-<p>試著用了比較有名的實作 <a href="https://github.com/nerfstudio-project/nerfstudio" target="_blank" rel="noopener noreferrer">nerfstudio</a></p>
-<div class="language-shell codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-shell codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token plain">ns-process-data video --data source.mp4 --output-dir processed_data</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ns-train splatfacto --data processed_data</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>第一個指令實際上是 colmap 的封裝，所以還是要先安裝 colmap。比較遺憾的是第二個指令高度仰賴 CUDA。來回翻了一下其他方案，<strong>全部</strong>都仰賴 CUDA。</p>
-<p><a href="https://github.com/taichi-dev/taichi" target="_blank" rel="noopener noreferrer">Taichi Lang</a> 是一個 GPU API 的高級封裝，允許開發者可以用較簡單的程式使用 GPU 進行平行化運算，並且支援 Vulkan 作為運算後端<sup><a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#user-content-fn-taichi-4c149a" id="user-content-fnref-taichi-4c149a" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup></p>
-<p>後來我找到了 <a href="https://github.com/wanmeihuali/taichi_3d_gaussian_splatting" target="_blank" rel="noopener noreferrer">wanmeihuali/taichi_3d_gaussian_splatting</a>，一個使用 Taichi 的高斯潑濺實作，然而其程式碼依然使用了不少 PyTorch + CUDA，感覺去 CUDA 的成本依然很高，因為我對 GPU 平行化運算跟機器學習的程式相對陌生，所以試著玩高斯潑濺的念頭至此打消了。</p>
-<h2 class="anchor anchorWithStickyNavbar_mpuI" id="scan-to-bim-1">Scan to BIM<a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#scan-to-bim-1" class="hash-link" aria-label="Direct link to Scan to BIM" title="Direct link to Scan to BIM">​</a></h2>
-<p>建了一個口袋名單之後抽從星星數比較高的抽出來看，打開 <a href="https://github.com/LTTM/Scan-to-BIM" target="_blank" rel="noopener noreferrer">LTTM/Scan-to-BIM</a> 就看到滿滿的：</p>
-<div class="language-python codeBlockContainer_HtHN theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_XzDj"><pre tabindex="0" class="prism-code language-python codeBlock_Kgad thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_xOgw"><span class="token-line" style="color:#393A34"><span class="token string" style="color:#e3116c">'cuda'</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">if</span><span class="token plain"> torch</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">cuda</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">is_available</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">else</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'cpu'</span><br></span></code></pre><div class="buttonGroup_PN__"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_lePV" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_mz7K"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_aySJ"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>因為沒有 CUDA 就不讓我用 GPU 加速，那我乾脆不要用好了，下一個。</p>
-<p><a href="https://github.com/VaclavNezerka/Cloud2BIM" target="_blank" rel="noopener noreferrer">VaclavNezerka/Cloud2BIM</a> 雖然沒看到 CUDA 的影子，不過它有其他問題，它在 README 提供的點雲檔案是 Kladno station：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/05_Kladno_railway_station_CZ_020-50d68658c6cf4e97fd7cbdf482ce201f.webp" width="1984" height="1488" class="img_RpFt"></p>
-<p>然而預設組態與論文內使用的是 Hotel Opatov：</p>
-<p><img decoding="async" loading="lazy" src="https://flyskypie.github.io/assets/images/06_Hotel-Opatov-f346d1b9b12d3d8c6b9b096dc471f20b.webp" width="471" height="706" class="img_RpFt"></p>
-<p>看起來是一個結構與格局相對方正的建築，讓我不禁懷疑這個算法處理像我房間這種堆放各種物品空間的可靠性，更重要的是它的 README 還寫著：</p>
-<blockquote>
-<p>This repository contains the foundational open-source research version of the Cloud2BIM algorithm. An advanced, production-ready version of this software, Cloud2BIM-AI, is now available through Constriq (a Czech Technical University spin-off).</p>
-</blockquote>
-<p>看來這是典型的「開源的心不甘情不願」的那種專案。</p>
-<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_mpuI sr-only" id="footnote-label">Footnotes<a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
-<ol>
-<li id="user-content-fn-taichi-4c149a">
-<p>Taichi 和 PyTorch 有哪些相似和不同？ - 知乎. Retrieved 2026-04-15, from <a href="https://www.zhihu.com/question/535601383" target="_blank" rel="noopener noreferrer">https://www.zhihu.com/question/535601383</a> <a href="https://flyskypie.github.io/posts/2026-04-14_scan-to-bim#user-content-fnref-taichi-4c149a" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>]]></content>
-        <author>
-            <name>Wei Ji</name>
-            <uri>https://github.com/FlySkyPie</uri>
-        </author>
-        <category label="BIM" term="BIM"/>
     </entry>
 </feed>
