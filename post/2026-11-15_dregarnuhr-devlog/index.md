@@ -7,7 +7,7 @@ tags: [dregarnuhr, data, microblog, llm]
 # Dregarnuhr 開發筆記
 
 <head>
-  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-11-15_dregarnuhr-devlog/05_tiles.webp" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/FlySkyPie/flyskypie.github.io/main/post/2026-11-15_dregarnuhr-devlog/00_cover.webp" />
 </head>
 
 先講結論，使用 [prof18/feed-flow](https://github.com/prof18/feed-flow) 訂閱這個 Fead:
