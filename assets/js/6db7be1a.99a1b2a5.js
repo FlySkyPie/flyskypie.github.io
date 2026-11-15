@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflyskypie_github_io=self.webpackChunkflyskypie_github_io||[]).push([[44633],{13374:s=>{s.exports=JSON.parse('{"label":"microblog","permalink":"/posts/tags/microblog","allTagsPath":"/posts/tags","count":1,"unlisted":false}')}}]);
